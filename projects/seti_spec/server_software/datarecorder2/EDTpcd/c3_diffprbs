@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ "$1" = "-u" ] ; then
+unit=$2
+else
+unit=$1
+fi
+
+if [ "$unit" = "" ] ; then unit=0 ; fi
+
+echo "Setting unit to $unit"
+
+bitload -u $unit c3_16io
+# set clock 1 to 10MHz
+set_ss_vco -u $unit -F 10000000 1
+#  generate prbs15 on all 8 differential channels
+pdb $unit diffloop.pdb
+genprbs15 -u $unit -N -c 0 -n 8 -l 0

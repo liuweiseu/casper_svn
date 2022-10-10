@@ -1,0 +1,15 @@
+#! /bin/csh
+
+foreach suffix (c h dat)
+    foreach i (`ls *.$suffix`)
+        foreach j (`find /home/seti/AO_sources -name $i | grep -v Not_used`)
+            if (`md5sum $i |& awk '{print $1}'` != `md5sum $j |& awk '{print $1}'`) then
+                echo diff $i $j
+                diff $i $j
+                # md5sum $i
+                # md5sum $j
+            echo ==================================================================
+            endif
+        end
+    end
+end

@@ -1,0 +1,8 @@
+#dump the adc controller registers
+r 140
+r 141
+r 142
+r 143
+r 144
+r 145
+r 146

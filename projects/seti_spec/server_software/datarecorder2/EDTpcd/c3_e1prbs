@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ "$1" = "-u" ] ; then
+unit=$2
+else
+unit=$1
+fi
+
+if [ "$unit" = "" ] ; then unit=0 ; fi
+
+echo "Setting unit to $unit"
+
+bitload -u $unit c3_16io
+c3_set_e1 -u $unit
+#  generate prbs15 on all 16 e1 channels
+pdb $unit c3_e1prbs.pdb
+genprbs15 -u $unit -N -c 0 -n 16 -l 0

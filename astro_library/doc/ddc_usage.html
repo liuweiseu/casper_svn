@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>DDC Usage</title>
+</head>
+
+<body>
+
+<h1>DDC Usage</h1>
+<hr>
+
+<h2>Downmixing</h2>
+<p>
+To set an LO frequency <i>f</i> for the DDC's downmix, two parameters are
+needed: Frequency Divisions <i>M</i> and digital LO Frequency <i>F</i>.
+</p>
+
+<p>
+<img src="ddc_params.png">
+<br>
+<i><font size=-1>Figure 1: DDC Parameters</font></i>
+</p>
+
+<p>
+<i>M</i> and <i>F</i> must both be integers, and <i>M</i> must be a power
+of 2. The ratio <i>F/M</i> should equal the ratio <i>f/r</i> where <i>r</i>
+is the data rate of the sampled signal. For example, an <i>F/M</i> of 3/16
+would downmix an 800Msps signal with an LO of 150MHz.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,2168 @@
+Library {
+  Name			  "delay_lib"
+  Version		  6.2
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Jan 11 16:49:14 2006"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "hchen05"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Oct 13 17:15:04 2006"
+  ModelVersionFormat	  "1.%<AutoIncrement:28>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "delay_lib"
+    Location		    [194, 164, 696, 666]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "bram_en_delay_x"
+      Ports		      [2, 2]
+      Position		      [25, 285, 65, 325]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "delay_bram"
+      MaskPromptString	      "Enabled Delays:|Extra (unenabled) delay for BRA"
+"M Latency"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "DelayLen=@1;bram_latency=@2;"
+      MaskInitialization      "BitWidth = max(ceil(log2(DelayLen)), 2);"
+      MaskDisplay	      "fprintf('Z^-%d', DelayLen);\nport_label('input'"
+",2,'en');\nport_label('output',2,'valid');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "7|4"
+      MaskTabNameString	      ","
+      System {
+	Name			"bram_en_delay_x"
+	Location		[137, 87, 917, 538]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [285, 128, 315, 142]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "en"
+	  Position		  [220, 148, 250, 162]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Counter"
+	  Ports			  [1, 1]
+	  Position		  [310, 70, 350, 110]
+	  SourceBlock		  "xbsIndex_r3/Counter"
+	  SourceType		  "Xilinx Counter Block"
+	  cnt_type		  "Count Limited"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  arith_type		  "Unsigned"
+	  start_count		  "0"
+	  cnt_to		  "DelayLen - 1"
+	  cnt_by_val		  "1"
+	  operation		  "Up"
+	  explicit_period	  off
+	  period		  "1"
+	  load_pin		  off
+	  rst			  off
+	  en			  on
+	  dbl_ovrd		  off
+	  show_param		  off
+	  use_rpm		  off
+	  gen_core		  on
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay"
+	  Ports			  [1, 1]
+	  Position		  [375, 180, 420, 210]
+	  FontSize		  10
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "bram_latency"
+	  reg_retiming		  off
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  accept_only_valid	  off
+	  init_zero		  on
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Single Port RAM"
+	  Ports			  [3, 1]
+	  Position		  [370, 108, 435, 162]
+	  SourceBlock		  "xbsIndex_r3/Single Port RAM"
+	  SourceType		  "Xilinx Single Port Random Access Memory"
+	  depth			  "2^BitWidth"
+	  initVector		  "0"
+	  write_mode		  "Read Before Write"
+	  latency		  "bram_latency"
+	  init_zero		  on
+	  explicit_period	  off
+	  period		  "1"
+	  rst			  off
+	  init_reg		  "0"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  distributed_mem	  off
+	  use_rpm		  off
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [455, 128, 485, 142]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "valid"
+	  Position		  [455, 188, 485, 202]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  DstBlock		  "valid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "en"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, 40]
+	    DstBlock		    "Delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -65]
+	    DstBlock		    "Counter"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Single Port RAM"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Single Port RAM"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Counter"
+	  SrcPort		  1
+	  DstBlock		  "Single Port RAM"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Single Port RAM"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "delay"
+      Ports		      [1, 1]
+      Position		      [235, 284, 270, 316]
+      BackgroundColor	      "magenta"
+      BlockChoice	      "delay_bram"
+      TemplateBlock	      "self"
+      MemberBlocks	      "delay_bram,delay_slr"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      System {
+	Name			"delay"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [20, 40, 40, 60]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "delay_bram"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "delay_lib/delay_bram"
+	  SourceType		  "delay_bram"
+	  ShowPortLabels	  "on"
+	  DelayLen		  "7"
+	  bram_latency		  "4"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [200, 40, 220, 60]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "delay_bram"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "delay_bram"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "delay_bram"
+      Ports		      [1, 1]
+      Position		      [25, 220, 65, 260]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "delay_bram"
+      MaskPromptString	      "Delay By:|BRAM Latency"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "DelayLen=@1;bram_latency=@2;"
+      MaskInitialization      "if (DelayLen <= bram_latency)\n	error('d"
+"elay value must be greater than BRAM Latency');\nend\nBitWidth = max(ceil(log"
+"2(DelayLen)), 2);"
+      MaskDisplay	      "fprintf('Z^-%d', DelayLen)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "7|4"
+      MaskTabNameString	      ","
+      System {
+	Name			"delay_bram"
+	Location		[137, 87, 917, 538]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [285, 128, 315, 142]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant2"
+	  Ports			  [0, 1]
+	  Position		  [320, 143, 355, 167]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "1"
+	  equ			  "P=C"
+	  arith_type		  "Boolean"
+	  n_bits		  "1"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Counter"
+	  Ports			  [0, 1]
+	  Position		  [310, 70, 350, 110]
+	  SourceBlock		  "xbsIndex_r3/Counter"
+	  SourceType		  "Xilinx Counter Block"
+	  cnt_type		  "Count Limited"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  arith_type		  "Unsigned"
+	  start_count		  "0"
+	  cnt_to		  "DelayLen - bram_latency - 1"
+	  cnt_by_val		  "1"
+	  operation		  "Up"
+	  explicit_period	  "off"
+	  period		  "1"
+	  load_pin		  "off"
+	  rst			  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_rpm		  "off"
+	  gen_core		  "on"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Single Port RAM"
+	  Ports			  [3, 1]
+	  Position		  [370, 108, 435, 162]
+	  SourceBlock		  "xbsIndex_r3/Single Port RAM"
+	  SourceType		  "Xilinx Single Port Random Access Memory"
+	  depth			  "2^BitWidth"
+	  initVector		  "0"
+	  write_mode		  "Read Before Write"
+	  latency		  "bram_latency"
+	  init_zero		  "on"
+	  explicit_period	  "off"
+	  period		  "1"
+	  rst			  "off"
+	  init_reg		  "0"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  distributed_mem	  "off"
+	  use_rpm		  "off"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [455, 128, 485, 142]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Single Port RAM"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Counter"
+	  SrcPort		  1
+	  DstBlock		  "Single Port RAM"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Single Port RAM"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Single Port RAM"
+	  DstPort		  3
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "delay_slr"
+      Ports		      [1, 1]
+      Position		      [95, 220, 135, 260]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Delay by:"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "DelayLen=@1;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0"
+      System {
+	Name			"delay_slr"
+	Location		[468, 447, 743, 545]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [30, 38, 60, 52]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "delay_slr"
+	  Ports			  [1, 1]
+	  Position		  [80, 22, 125, 68]
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "DelayLen"
+	  reg_retiming		  "off"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  accept_only_valid	  "off"
+	  init_zero		  "on"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [145, 38, 175, 52]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "delay_slr"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "delay_slr"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "partial_delay"
+      Ports		      [3, 2]
+      Position		      [95, 288, 135, 352]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Number of Inputs (? >= 2)|Mux Latency"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "num_inputs=@1;mux_latency=@2;"
+      MaskInitialization      "if num_inputs < 2,\n    error('Number of inputs"
+" less than 2.')\nend\n\npartial_delay_mask"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "2|0"
+      MaskTabNameString	      ","
+      System {
+	Name			"partial_delay"
+	Location		[2, 74, 1014, 722]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "sel"
+	  Position		  [20, 18, 50, 32]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [20, 93, 50, 107]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In2"
+	  Position		  [20, 168, 50, 182]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay1"
+	  Ports			  [1, 1]
+	  Position		  [95, 90, 125, 120]
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "1"
+	  reg_retiming		  "off"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  accept_only_valid	  "off"
+	  init_zero		  "on"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay2"
+	  Ports			  [1, 1]
+	  Position		  [95, 165, 125, 195]
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "1"
+	  reg_retiming		  "off"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  accept_only_valid	  "off"
+	  init_zero		  "on"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux1"
+	  Ports			  [3, 1]
+	  Position		  [170, 92, 195, 158]
+	  SourceBlock		  "xbsIndex_r3/Mux"
+	  SourceType		  "Xilinx Multiplexer Block"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mux_latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  mux_type		  "off"
+	  use_rpm		  "off"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux2"
+	  Ports			  [3, 1]
+	  Position		  [170, 167, 195, 233]
+	  SourceBlock		  "xbsIndex_r3/Mux"
+	  SourceType		  "Xilinx Multiplexer Block"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mux_latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  mux_type		  "off"
+	  use_rpm		  "off"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [245, 93, 275, 107]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2"
+	  Position		  [245, 168, 275, 182]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Delay1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Mux2"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sel"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Mux1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Mux2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Delay1"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "In2"
+	  SrcPort		  1
+	  DstBlock		  "Delay2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  DstBlock		  "Out2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Mux2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Mux1"
+	    DstPort		    3
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "prog_delay_bram"
+      Ports		      [2, 1]
+      Position		      [165, 285, 205, 325]
+      BackgroundColor	      "magenta"
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "delay_bram"
+      MaskPromptString	      "Max Delay (2^?):|BRAM Latency"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "MaxDelay=@1;bram_latency=@2;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "7|4"
+      MaskTabNameString	      ","
+      System {
+	Name			"prog_delay_bram"
+	Location		[431, 281, 897, 666]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din"
+	  Position		  [200, 158, 230, 172]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "delay"
+	  Position		  [25, 153, 55, 167]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AddSub"
+	  Ports			  [2, 1]
+	  Position		  [75, 145, 125, 200]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Subtraction"
+	  precision		  "User Defined"
+	  arith_type		  "Unsigned"
+	  n_bits		  "MaxDelay"
+	  bin_pt		  "0"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "2"
+	  explicit_period	  "off"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "off"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant1"
+	  Ports			  [0, 1]
+	  Position		  [20, 188, 55, 212]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "bram_latency + 1"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "MaxDelay"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant2"
+	  Ports			  [0, 1]
+	  Position		  [235, 173, 270, 197]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "1"
+	  equ			  "P=C"
+	  arith_type		  "Boolean"
+	  n_bits		  "1"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Counter"
+	  Ports			  [1, 1]
+	  Position		  [120, 30, 160, 70]
+	  SourceBlock		  "xbsIndex_r3/Counter"
+	  SourceType		  "Xilinx Counter Block"
+	  cnt_type		  "Free Running"
+	  n_bits		  "MaxDelay"
+	  bin_pt		  "0"
+	  arith_type		  "Unsigned"
+	  start_count		  "0"
+	  cnt_to		  "DelayLen - bram_latency - 1"
+	  cnt_by_val		  "1"
+	  operation		  "Up"
+	  explicit_period	  "on"
+	  period		  "1"
+	  load_pin		  "off"
+	  rst			  "on"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_rpm		  "off"
+	  gen_core		  "on"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Relational"
+	  Ports			  [2, 1]
+	  Position		  [190, 63, 235, 107]
+	  SourceBlock		  "xbsIndex_r3/Relational"
+	  SourceType		  "Xilinx Relational Block"
+	  mode			  "a>=b"
+	  latency		  "0"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Single Port RAM"
+	  Ports			  [3, 1]
+	  Position		  [285, 138, 350, 192]
+	  SourceBlock		  "xbsIndex_r3/Single Port RAM"
+	  SourceType		  "Xilinx Single Port Random Access Memory"
+	  depth			  "2^MaxDelay"
+	  initVector		  "0"
+	  write_mode		  "Read Before Write"
+	  latency		  "bram_latency"
+	  init_zero		  "on"
+	  explicit_period	  "off"
+	  period		  "1"
+	  rst			  "off"
+	  init_reg		  "0"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  distributed_mem	  "off"
+	  use_rpm		  "off"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dout"
+	  Position		  [370, 158, 400, 172]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Single Port RAM"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "din"
+	  SrcPort		  1
+	  DstBlock		  "Single Port RAM"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Counter"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    Points		    [95, 0]
+	    DstBlock		    "Single Port RAM"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Relational"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Single Port RAM"
+	  SrcPort		  1
+	  DstBlock		  "dout"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational"
+	  SrcPort		  1
+	  Points		  [0, 40; -135, 0]
+	  DstBlock		  "Counter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "delay"
+	  SrcPort		  1
+	  DstBlock		  "AddSub"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "AddSub"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "Relational"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "AddSub"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "prog_sync_delay"
+      Ports		      [2, 1]
+      Position		      [165, 345, 235, 380]
+      BackgroundColor	      "magenta"
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Max Delay (2^?): "
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "MaxDelay=@1;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "4"
+      System {
+	Name			"prog_sync_delay"
+	Location		[383, 134, 876, 622]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync"
+	  Position		  [15, 203, 45, 217]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "delay"
+	  Position		  [80, 223, 110, 237]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant"
+	  Ports			  [0, 1]
+	  Position		  [145, 157, 190, 183]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "1"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "MaxDelay"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant1"
+	  Ports			  [0, 1]
+	  Position		  [140, 267, 185, 293]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "0"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "MaxDelay"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Counter"
+	  Ports			  [3, 1]
+	  Position		  [135, 203, 185, 257]
+	  SourceBlock		  "xbsIndex_r3/Counter"
+	  SourceType		  "Xilinx Counter Block"
+	  cnt_type		  "Free Running"
+	  n_bits		  "MaxDelay"
+	  bin_pt		  "0"
+	  arith_type		  "Unsigned"
+	  start_count		  "0"
+	  cnt_to		  "Inf"
+	  cnt_by_val		  "1"
+	  operation		  "Down"
+	  explicit_period	  "on"
+	  period		  "1"
+	  load_pin		  "on"
+	  rst			  "off"
+	  en			  "on"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical"
+	  Ports			  [2, 1]
+	  Position		  [85, 257, 115, 288]
+	  SourceBlock		  "xbsIndex_r3/Logical"
+	  SourceType		  "Xilinx Logical Block"
+	  logical_function	  "OR"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  align_bp		  "on"
+	  latency		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Relational"
+	  Ports			  [2, 1]
+	  Position		  [210, 158, 255, 202]
+	  SourceBlock		  "xbsIndex_r3/Relational"
+	  SourceType		  "Xilinx Relational Block"
+	  mode			  "a=b"
+	  latency		  "0"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Relational1"
+	  Ports			  [2, 1]
+	  Position		  [210, 218, 255, 262]
+	  SourceBlock		  "xbsIndex_r3/Relational"
+	  SourceType		  "Xilinx Relational Block"
+	  mode			  "a!=b"
+	  latency		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  Position		  [275, 173, 305, 187]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Counter"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "Relational1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Relational"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [0, -30]
+	  DstBlock		  "Relational1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Relational"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "delay"
+	  SrcPort		  1
+	  DstBlock		  "Counter"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "sync"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Counter"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 55]
+	    DstBlock		    "Logical"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical"
+	  SrcPort		  1
+	  DstBlock		  "Counter"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Relational1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 75; -210, 0]
+	  DstBlock		  "Logical"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational"
+	  SrcPort		  1
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "sync_delay"
+      Ports		      [1, 1]
+      Position		      [165, 219, 205, 261]
+      BackgroundColor	      "magenta"
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Delay Length: "
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "DelayLen=@1;"
+      MaskInitialization      "BitWidth = max(2, ceil(log2(DelayLen+1)));\nUse"
+"Counter = 1;\nif DelayLen == 0,\n	UseCounter = 0;\nend"
+      MaskDisplay	      "fprintf('Z^-%d', DelayLen)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "4"
+      System {
+	Name			"sync_delay"
+	Location		[383, 134, 876, 622]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [15, 203, 45, 217]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant"
+	  Ports			  [0, 1]
+	  Position		  [145, 157, 190, 183]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "1"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant1"
+	  Ports			  [0, 1]
+	  Position		  [140, 267, 185, 293]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "0"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant2"
+	  Ports			  [0, 1]
+	  Position		  [70, 217, 115, 243]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "DelayLen"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant3"
+	  Ports			  [0, 1]
+	  Position		  [235, 102, 280, 128]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "UseCounter"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "1"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Counter"
+	  Ports			  [3, 1]
+	  Position		  [135, 203, 185, 257]
+	  SourceBlock		  "xbsIndex_r3/Counter"
+	  SourceType		  "Xilinx Counter Block"
+	  cnt_type		  "Free Running"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  arith_type		  "Unsigned"
+	  start_count		  "0"
+	  cnt_to		  "Inf"
+	  cnt_by_val		  "1"
+	  operation		  "Down"
+	  explicit_period	  "on"
+	  period		  "1"
+	  load_pin		  "on"
+	  rst			  "off"
+	  en			  "on"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical"
+	  Ports			  [2, 1]
+	  Position		  [85, 257, 115, 288]
+	  SourceBlock		  "xbsIndex_r3/Logical"
+	  SourceType		  "Xilinx Logical Block"
+	  logical_function	  "OR"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  align_bp		  "on"
+	  latency		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux"
+	  Ports			  [3, 1]
+	  Position		  [300, 112, 325, 178]
+	  SourceBlock		  "xbsIndex_r3/Mux"
+	  SourceType		  "Xilinx Multiplexer Block"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "0"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  mux_type		  "off"
+	  use_rpm		  "off"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Relational"
+	  Ports			  [2, 1]
+	  Position		  [210, 158, 255, 202]
+	  SourceBlock		  "xbsIndex_r3/Relational"
+	  SourceType		  "Xilinx Relational Block"
+	  mode			  "a=b"
+	  latency		  "0"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Relational1"
+	  Ports			  [2, 1]
+	  Position		  [210, 218, 255, 262]
+	  SourceBlock		  "xbsIndex_r3/Relational"
+	  SourceType		  "Xilinx Relational Block"
+	  mode			  "a!=b"
+	  latency		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [345, 138, 375, 152]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -15]
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Relational1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 75; -210, 0]
+	  DstBlock		  "Logical"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Logical"
+	  SrcPort		  1
+	  DstBlock		  "Counter"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, -65]
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 55]
+	    DstBlock		    "Logical"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Counter"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Counter"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Relational"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [0, -30]
+	  DstBlock		  "Relational1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Counter"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "Relational"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Relational1"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "sync_en_delay"
+      Ports		      [2, 1]
+      Position		      [235, 219, 275, 261]
+      BackgroundColor	      "magenta"
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Delay Length: "
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "DelayLen=@1;"
+      MaskInitialization      "BitWidth = max(2, ceil(log2(DelayLen+1)));\nUse"
+"Counter = 1;\nif DelayLen == 0,\n	UseCounter = 0;\nend"
+      MaskDisplay	      "fprintf('Z^-%d', DelayLen);\nport_label('input'"
+",2,'en');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "4"
+      System {
+	Name			"sync_en_delay"
+	Location		[383, 134, 814, 380]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [15, 113, 45, 127]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "en"
+	  Position		  [65, 203, 95, 217]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant"
+	  Ports			  [0, 1]
+	  Position		  [175, 67, 220, 93]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "1"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant1"
+	  Ports			  [0, 1]
+	  Position		  [170, 182, 215, 208]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "0"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant2"
+	  Ports			  [0, 1]
+	  Position		  [105, 132, 145, 148]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "DelayLen"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant3"
+	  Ports			  [0, 1]
+	  Position		  [265, 12, 310, 38]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "UseCounter"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "1"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Counter"
+	  Ports			  [3, 1]
+	  Position		  [165, 113, 215, 167]
+	  SourceBlock		  "xbsIndex_r3/Counter"
+	  SourceType		  "Xilinx Counter Block"
+	  cnt_type		  "Free Running"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  arith_type		  "Unsigned"
+	  start_count		  "0"
+	  cnt_to		  "Inf"
+	  cnt_by_val		  "1"
+	  operation		  "Down"
+	  explicit_period	  "on"
+	  period		  "1"
+	  load_pin		  "on"
+	  rst			  "off"
+	  en			  "on"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical"
+	  Ports			  [2, 1]
+	  Position		  [70, 167, 100, 198]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Logical"
+	  SourceType		  "Xilinx Logical Block"
+	  logical_function	  "OR"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  align_bp		  "on"
+	  latency		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical1"
+	  Ports			  [2, 1]
+	  Position		  [115, 177, 145, 208]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Logical"
+	  SourceType		  "Xilinx Logical Block"
+	  logical_function	  "AND"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  align_bp		  "on"
+	  latency		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux"
+	  Ports			  [3, 1]
+	  Position		  [330, 22, 355, 88]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Mux"
+	  SourceType		  "Xilinx Multiplexer Block"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "0"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  mux_type		  "off"
+	  use_rpm		  "off"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Relational"
+	  Ports			  [2, 1]
+	  Position		  [240, 68, 285, 112]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Relational"
+	  SourceType		  "Xilinx Relational Block"
+	  mode			  "a=b"
+	  latency		  "0"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Relational1"
+	  Ports			  [2, 1]
+	  Position		  [240, 128, 285, 172]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Relational"
+	  SourceType		  "Xilinx Relational Block"
+	  mode			  "a!=b"
+	  latency		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [375, 48, 405, 62]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Counter"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "Relational1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Relational"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [0, -35]
+	  DstBlock		  "Relational1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Relational"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Counter"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "Counter"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Logical"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -65]
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Relational1"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 85; -245, 0]
+	  DstBlock		  "Logical"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -15]
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Logical1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical1"
+	  SrcPort		  1
+	  DstBlock		  "Counter"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "en"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Logical1"
+	  DstPort		  2
+	}
+      }
+    }
+    Annotation {
+      Name		      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%                                          "
+"                                   %\n%   Center for Astronomy Signal Process"
+"ing and Electronics Research           %\n%   http://seti.ssl.berkeley.edu/ca"
+"sper/                                      %\n%   Copyright (C) 2006 Universi"
+"ty of California, Berkeley                     %\n%                          "
+"                                                   %\n%   This program is fre"
+"e software; you can redistribute it and/or modify      %\n%   it under the te"
+"rms of the GNU General Public License as published by      %\n%   the Free So"
+"ftware Foundation; either version 2 of the License, or         %\n%   (at you"
+"r option) any later version.                                       %\n%      "
+"                                                                       %\n%  "
+" This program is distributed in the hope that it will be useful,           %"
+"\n%   but WITHOUT ANY WARRANTY; without even the implied warranty of         "
+"   %\n%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the      "
+"       %\n%   GNU General Public License for more details.                   "
+"           %\n%                                                              "
+"               %\n%   You should have received a copy of the GNU General Publ"
+"ic License along   %\n%   with this program; if not, write to the Free Softwa"
+"re Foundation, Inc.,   %\n%   51 Franklin Street, Fifth Floor, Boston, MA 021"
+"10-1301 USA.               %\n%                                              "
+"                               %\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      Position		      [11, 105]
+      HorizontalAlignment     "left"
+      FontName		      "Lucida Console"
+      FontSize		      9
+    }
+  }
+}

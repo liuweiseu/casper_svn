@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: poco
+Version: 0.0.1
+Summary: Allows control of CASPER Pocket correlator reference design over serial port. Requires pySerial, numpy and matplotlib pre-installed.
+Home-page: casper.berkeley.edu
+Author: Jason Manley and Sandeep Chaudhari
+Author-email: jason_manley at hotmail.com
+License: GPL
+Description:  Allows control of CASPER Pocket correlator reference design over serial port. Requires pySerial, numpy and matplotlib pre-installed.
+Platform: UNKNOWN

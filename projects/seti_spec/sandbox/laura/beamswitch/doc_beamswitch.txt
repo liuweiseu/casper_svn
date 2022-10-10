@@ -1,0 +1,88 @@
++Description
+The C program "beam_switch.c" determines the encoder values to be written to the LUT Shared BRAM on the iBOB that controls the splitter/switcher box for the BEE2-based SETI spectrometer. The current version also automatically fills the BRAM using the iBOB UDP server. 
+Everytime the sync_pulse goes HI, the BRAM read address is incremented by 1. If the switching schedule is set such that it dwells on a particular beam/pol for multiple sync pulses, the encoder value is written into the BRAM multiple times. Also automaticalled set by the C code is a software register named 'max_addr', that sets the maximum address to read from the BRAM. Once that value is reached, the switcher returns to start of the BRAM.
+
++Setup
+Before compiling two #define constants must be set. 
+BEAMDWL - Sets whether the switching schedule should dwell on the beam number or polarization. If 1, it switches both polariztions for a given beam (if 2pol mode choosen) before proceeding to the next beam. If 0, it cycles through all the beams at a given polarization before cycling through all of the beams from the other polarization. 
+IP_REM - The iBOB's IP address. 
+
++Usage
+>a.out mode_string dwell_flag (dwelltime | ncycles) (beam | pol) [pol]
+
+mode string:
+-7beam2pol = cycle through all 7 beams and 2 polarizations
+-7beam1pol = cycle through all 7 beams but only 1 given polarization
+-1beam2pol = cycle through 2 polarizations for single specified beam
+-1beam1pol = stay fixed on a single specified beam and polarization
+-custom = specifiy desired beams and polarization in a list on the command line
+-help = gives a brief description of usage
+
+
+dwell_flag:
+Specifies how 3rd argument is interpreted.
+0 = 3rd argument dictates how many sync pulses to dwell for
+1 = Number of times the requested switching schedule is be carried out and fills BRAM maximally
+Likely you'll want 0.
+
+dwelltime | ncycles: specifies either the number of sync pulses to stay on a particular beam/polarization or the number of complete switching cycles. 
+
+The rest of the arguments depend on the choosen mode. Valid beam arguments are 0-6 and valid polarization flags are 0 = L, 1 = R and 2 = both. Examples are probably clearest.
+
+EXAMPLE 1
+
+>a.out 7beam2pol 0 2
+
+Cycles through all 7 beams and polarizations. Rests on each beam/pol for 2 sync pulses before proceeding to the next. Note no beam/pol argument given since this mode uses them all. LUT BRAM output:
+
+0x0000 / 00000 -> 0x000000EE / 0b00000000000000000000000011101110 / 0000000238
+0x0001 / 00001 -> 0x000000EE / 0b00000000000000000000000011101110 / 0000000238
+0x0002 / 00002 -> 0x000000DE / 0b00000000000000000000000011011110 / 0000000222
+0x0003 / 00003 -> 0x000000DE / 0b00000000000000000000000011011110 / 0000000222
+0x0004 / 00004 -> 0x000000BE / 0b00000000000000000000000010111110 / 0000000190
+0x0005 / 00005 -> 0x000000BE / 0b00000000000000000000000010111110 / 0000000190
+0x0006 / 00006 -> 0x0000007E / 0b00000000000000000000000001111110 / 0000000126
+0x0007 / 00007 -> 0x0000007E / 0b00000000000000000000000001111110 / 0000000126
+0x0008 / 00008 -> 0x000000ED / 0b00000000000000000000000011101101 / 0000000237
+0x0009 / 00009 -> 0x000000ED / 0b00000000000000000000000011101101 / 0000000237
+0x000A / 00010 -> 0x000000DD / 0b00000000000000000000000011011101 / 0000000221
+0x000B / 00011 -> 0x000000DD / 0b00000000000000000000000011011101 / 0000000221
+0x000C / 00012 -> 0x000000BD / 0b00000000000000000000000010111101 / 0000000189
+0x000D / 00013 -> 0x000000BD / 0b00000000000000000000000010111101 / 0000000189
+0x000E / 00014 -> 0x0000007D / 0b00000000000000000000000001111101 / 0000000125
+0x000F / 00015 -> 0x0000007D / 0b00000000000000000000000001111101 / 0000000125
+0x0010 / 00016 -> 0x000000EB / 0b00000000000000000000000011101011 / 0000000235
+0x0011 / 00017 -> 0x000000EB / 0b00000000000000000000000011101011 / 0000000235
+0x0012 / 00018 -> 0x000000DB / 0b00000000000000000000000011011011 / 0000000219
+0x0013 / 00019 -> 0x000000DB / 0b00000000000000000000000011011011 / 0000000219
+0x0014 / 00020 -> 0x000000BB / 0b00000000000000000000000010111011 / 0000000187
+0x0015 / 00021 -> 0x000000BB / 0b00000000000000000000000010111011 / 0000000187
+0x0016 / 00022 -> 0x0000007B / 0b00000000000000000000000001111011 / 0000000123
+0x0017 / 00023 -> 0x0000007B / 0b00000000000000000000000001111011 / 0000000123
+0x0018 / 00024 -> 0x000000E7 / 0b00000000000000000000000011100111 / 0000000231
+0x0019 / 00025 -> 0x000000E7 / 0b00000000000000000000000011100111 / 0000000231
+0x001A / 00026 -> 0x000000D7 / 0b00000000000000000000000011010111 / 0000000215
+0x001B / 00027 -> 0x000000D7 / 0b00000000000000000000000011010111 / 0000000215
+
+EXAMPLE 2
+
+>a.out 1beam2pol 0 3 4
+Switches between L and R polarizations for beam 4 every 3 sync pulses.
+LUT BRAM output:
+
+0x0000 / 00000 -> 0x000000EB / 0b00000000000000000000000011101011 / 0000000235
+0x0001 / 00001 -> 0x000000EB / 0b00000000000000000000000011101011 / 0000000235
+0x0002 / 00002 -> 0x000000EB / 0b00000000000000000000000011101011 / 0000000235
+0x0003 / 00003 -> 0x000000DB / 0b00000000000000000000000011011011 / 0000000219
+0x0004 / 00004 -> 0x000000DB / 0b00000000000000000000000011011011 / 0000000219
+0x0005 / 00005 -> 0x000000DB / 0b00000000000000000000000011011011 / 0000000219
+
+EXAMPLE 3
+
+>a.out custom 0 1 1 1 2 1
+Switches between R polarization of beam 1 and R polarization of beam 2 every sync pulse.
+LUT BRAM output:
+
+0x0000 / 00000 -> 0x000000BE / 0b00000000000000000000000010111110 / 0000000190
+0x0001 / 00001 -> 0x0000007E / 0b00000000000000000000000001111110 / 0000000126
+

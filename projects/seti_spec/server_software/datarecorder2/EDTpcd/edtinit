@@ -1,0 +1,519 @@
+#!/bin/bash
+module="edt"
+device="edt"
+group="wheel"
+mode="666"
+ver=`uname -r `
+RETVAL=0
+
+uname -v | grep -i smp > /dev/null
+
+if [ $? = 0 ] ; then
+  SMP=_SMP
+else
+  SMP=""
+fi
+
+
+function check_run_pdvload()
+{
+	RUN_PDVLOAD="n"
+	
+	if [ -f /opt/EDTpdv/.run_pdvload ] ; then 
+	
+		RUN_PDVLOAD=`cat /opt/EDTpdv/.run_pdvload`
+
+		if [ $RUN_PDVLOAD == "y" ] ; then 
+	
+		     cd /opt/EDTpdv 
+		
+		     ./pdvload
+		fi
+
+	fi
+
+}
+
+function check_run_pcdload()
+{
+	RUN_PCDLOAD="n"
+	
+	if [ -f /opt/EDTpcd/.run_pcdload ] ; then 
+	
+		RUN_PCDLOAD=`cat /opt/EDTpcd/.run_pcdload`
+
+		if [ $RUN_PCDLOAD == "y" ] ; then 
+	
+		     cd /opt/EDTpcd 
+		
+		     ./pcdload
+		fi
+	fi
+}
+
+
+function load_edt_module()
+{
+
+	echo "Version ${ver}${SMP}/$module.o"
+	# invoke insmod with all arguments we got
+	#/sbin/insmod -f ${ver}${SMP}/$module.o $* || exit 1
+
+	# call modprobe
+
+
+	modprobe edt
+
+
+	major=`cat /proc/devices | awk "\\$2==\"$module\" {print \\$1}"`
+	echo major is $major
+}
+
+
+function build_boardids()
+{
+
+
+	ids=`lspci -d 123d:* -n | awk 'BEGIN {FS=":"} ; {print $NF}'`
+
+	echo "ids = $ids"
+
+	board_ids=""
+	
+
+
+	##
+	## The following sorts the boards according to the order of the
+	## device structs in the driver so that minor numbers match.
+	##
+	for board in $ids ; do
+		if [ $board == "0" -o $board == "00" -o $board == "0000" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "1" -o $board == "01" -o $board == "0001" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "10" -o $board == "0010" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "48" -o $board == "0048" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "49" -o $board == "0049" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "4c" -o $board == "004c" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "38" -o $board == "0038" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "39" -o $board == "0039" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "14" -o $board == "0014" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "30" -o $board == "0030" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "15" -o $board == "0015" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "34" -o $board == "0034" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "16" -o $board == "0016" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "24" -o $board == "0024" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "40" -o $board == "0040" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "50" -o $board == "0050" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "44" -o $board == "0044" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "11" -o $board == "0011" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "12" -o $board == "0012" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "13" -o $board == "0013" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "21" -o $board == "0021" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "22" -o $board == "0022" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "23" -o $board == "0023" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "26" -o $board == "0026" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "27" -o $board == "0027" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "41" -o $board == "0041" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "51" -o $board == "0051" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "45" -o $board == "0045" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "4e" -o $board == "004e" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "3a" -o $board == "003a" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "3b" -o $board == "003b" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "25" -o $board == "0025" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+	for board in $ids ; do
+		if [ $board == "20" -o $board == "0020" ] ; then
+			board_ids="$board_ids $board"
+		fi
+	done
+
+	ids="$board_ids"
+
+	echo "sorted ids = $ids"
+
+}
+
+
+function build_links()
+{
+
+	##
+	## End of sorting code
+	##
+
+	echo "Build Links..."
+	# keep independent indices for individual boards
+
+	index=0
+	p11windex=0
+	p16dindex=0
+	pcdindex=0
+	pdvindex=0
+	devindex=0
+
+
+	rm -f /dev/edt* /dev/pdv* /dev/pcicd* /dev/p16d* /dev/p11w*
+
+
+	for board in $ids ; do
+
+	echo BOARD $board
+
+	if [ $board != "20" -a $board != "0020" ] ; then
+
+		echo "devindex = $devindex"
+
+		echo "Setting up board $board ($module$index)"
+		mknod /dev/${device}${index} c $major $devindex
+		echo "mknod /dev/${device}${index} c $major $devindex"
+		chgrp $group /dev/${device}[0-3] 
+		chmod $mode  /dev/${device}[0-3]
+
+		case $board in 
+		0 | 0000 ) 
+			echo "Type P11W"
+			devname="p11w"
+			ln -s /dev/${device}${index} /dev/${devname}${p11windex}
+			p11windex=`expr ${p11windex} + 1`
+		let devindex=devindex+1
+			;;
+
+		1 | 0001 ) 
+			echo "Type P16D"
+			devname="p16d"
+			ln -s /dev/${device}${index} /dev/${devname}${p16dindex}
+			p16dindex=`expr ${p16dindex} + 1`
+		let devindex=devindex+1
+			;;
+
+		10 | 0010 | 15 | 0015 | 16 | 0016 | 14 | 0014 | 38 | 0038 | 39 | 0039 | 48 | 0048 | 4c | 004c )
+			echo "Type PDV"
+			devname="pdv"
+			ln -s /dev/${device}${index} /dev/${devname}${pdvindex}
+			pdvindex=`expr $pdvindex + 1`
+		let devindex=devindex+1
+			;;
+
+		30 | 0030 )
+			echo "Type PDVFOI"
+			devname="pdv"
+			ln -s /dev/${device}${index} /dev/${devname}${pdvindex}
+					minor=0
+			while
+					[ ${minor} -lt 4 ]
+					do
+							mknod /dev/${device}${index}_${minor} c $major $devindex
+							ln -s /dev/${device}${index}_${minor} /dev/${devname}${pdvindex}_${minor}
+							chgrp $group /dev/${device}${index}_${minor}
+							chmod $mode /dev/${device}${index}_${minor}
+							let minor=minor+1
+				let devindex=devindex+1
+					done
+					ls -l /dev/${device}${index}*
+			let pdvindex=pdvindex+1
+
+			;;
+
+		34 | 0034 )
+			echo "Type PDVCL"
+			devname="pdv"
+			ln -s /dev/${device}${index} /dev/${devname}${pdvindex}
+					minor=0
+			while
+					[ ${minor} -lt 3 ]
+					do
+							mknod /dev/${device}${index}_${minor} c $major $devindex
+							ln -s /dev/${device}${index}_${minor} /dev/${devname}${pdvindex}_${minor}
+							chgrp $group /dev/${device}${index}_${minor}
+							chmod $mode /dev/${device}${index}_${minor}
+							let minor=minor+1
+				let devindex=devindex+1
+					done
+					ls -l /dev/${device}${index}*
+			let pdvindex=pdvindex+1
+
+			;;
+
+		11  | 0011 | 12  | 0012 | 13  | 0013 | 21 | 0021 | 22 | 0022 | 23 | 0023 | 26 | 0026 | 40 | 0040 | 44 | 0044 | 4c | 004c | 4e | 004e | 50 | 0050 | 3a | 003a | 3b | 003b)
+
+			echo "Type PCD"
+			devname="pcicd"
+			ln -s /dev/${device}${index} /dev/${devname}${pcdindex}
+					minor=0
+			while
+					[ ${minor} -lt 4 ]
+					do
+							mknod /dev/${device}${index}_${minor} c $major $devindex
+							ln -s /dev/${device}${index}_${minor} /dev/${devname}${pcdindex}_${minor}
+							chgrp $group /dev/${device}${index}_${minor}
+							chmod $mode /dev/${device}${index}_${minor}
+							let minor=minor+1
+				let devindex=devindex+1
+					done
+					ls -l /dev/${device}${index}*
+			let pcdindex=pcdindex+1
+
+			;;
+
+		25 | 0025 )
+
+			echo "Type PCD Tharas"
+			devname="pcicd"
+			ln -s /dev/${device}${index} /dev/${devname}${pcdindex}
+			minor=0
+			mknod /dev/${device}${index}_${minor} c $major $devindex
+			ln -s /dev/${device}${index}_${minor} /dev/${devname}${pcdindex}_${minor}
+			chgrp $group /dev/${device}${index}_${minor}
+			chmod $mode /dev/${device}${index}_${minor}
+			let devindex=devindex+1
+			ls -l /dev/${device}${index}*
+			let pcdindex=pcdindex+1
+
+			;;
+		27 | 0027 | 41 | 0041 | 45 | 0045 | 51 | 0051 )
+
+			echo "Type PCD-16"
+			devname="pcicd"
+			ln -s /dev/${device}${index} /dev/${devname}${pcdindex}
+					minor=0
+			while
+					[ ${minor} -lt 16 ]
+					do
+							echo mknod /dev/${device}${index}_${minor} c $major $devindex
+							mknod /dev/${device}${index}_${minor} c $major $devindex
+							ln -s /dev/${device}${index}_${minor} /dev/${devname}${pcdindex}_${minor}
+							chgrp $group /dev/${device}${index}_${minor}
+							chmod $mode /dev/${device}${index}_${minor}
+							let minor=minor+1
+				let devindex=devindex+1
+					done
+					ls -l /dev/${device}${index}*
+			let pcdindex=pcdindex+1
+
+			;;
+
+		* ) 
+			echo "Unknown EDT Board"
+
+			;;
+		esac
+
+		index=`expr $index + 1`
+
+	fi
+
+	done
+
+
+	ln -s /dev/${device}0 /dev/${device}
+
+
+}
+
+
+function edt_load()
+{
+
+	echo "function edt_load:"
+
+	  build_boardids
+
+	if [ "$ids" == "" ] ; then
+	    echo "No EDT boards found, exiting"
+	    return
+	fi
+	
+	load_edt_module
+
+	  build_links
+
+	check_run_pdvload
+	check_run_pcdload
+
+}
+
+function edt_unload()
+{
+
+   echo "function edt_unload: Unloading module $module"
+
+		/sbin/rmmod $module || exit 1
+
+	# Remove stale nodes
+
+	rm -f /dev/${device}[0-3] /dev/${device}
+	rm -f /dev/${device}priv
+	rm -f /dev/${device}pipe[0-3] /dev/${device}pipe
+	rm -f /dev/${device}single
+	rm -f /dev/${device}uid
+	rm -f /dev/${device}wuid
+
+	rm -f /dev/pcicd*
+	rm -f /dev/pdv*
+	rm -f /dev/p16d*
+	rm -f /dev/p11w*
+	rm -f /dev/edt*
+
+
+}
+
+case $1 in
+	start)
+
+	lsmod | grep "\<edt\>"  > /dev/null
+
+	if [ $? = 0 ] ; then
+
+		echo "Edt module already loaded - removing"
+
+		edt_unload
+
+	fi
+
+	edt_load
+	
+	  ;;
+
+	  stop)
+	  
+	  edt_unload
+
+	  ;;
+
+	  restart)
+
+	  edt_unload
+
+	  edt_load
+
+	  ;;
+
+esac
+	  
+
+exit $RETVAL

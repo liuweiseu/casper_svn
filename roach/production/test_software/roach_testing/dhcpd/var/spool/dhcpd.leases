@@ -1,0 +1,15 @@
+# All times in this file are in UTC (GMT), not your local timezone.   This is
+# not a bug, so please don't ask about it.   There is no portable way to
+# store leases in the local timezone, so please don't request this as a
+# feature.   If this is inconvenient or confusing to you, we sincerely
+# apologize.   Seriously, though - don't ask.
+# The format of this file is documented in the dhcpd.leases(5) manual page.
+# This lease file was written by isc-dhcp-V3.0.1rc12-cygwin-pxe1
+
+lease 192.168.3.240 {
+  starts 5 2009/07/31 21:00:48;
+  ends 5 2009/07/31 21:10:48;
+  binding state active;
+  next binding state free;
+  hardware ethernet 02:02:02:02:02:02;
+}

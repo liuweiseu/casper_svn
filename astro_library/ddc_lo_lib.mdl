@@ -1,0 +1,457 @@
+Library {
+  Name			  "ddc_lo_lib"
+  Version		  6.2
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Jan 18 10:42:38 2006"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "aparsons"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Apr 04 13:54:56 2006"
+  ModelVersionFormat	  "1.%<AutoIncrement:9>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "ddc_lo_lib"
+    Location		    [636, 364, 826, 588]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "ddc_lo"
+      Ports		      [0, 2]
+      Position		      [20, 111, 60, 164]
+      BlockChoice	      "ddc_lo_const"
+      TemplateBlock	      "self"
+      MemberBlocks	      "ddc_lo_const,ddc_lo_osc"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      System {
+	Name			"ddc_lo"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "ddc_lo_const"
+	  Ports			  [0, 2]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "ddc_lo_lib/ddc_lo_const"
+	  SourceType		  "ddc_lo_const"
+	  ShowPortLabels	  "on"
+	  BitWidth		  "18"
+	  Phase			  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sin"
+	  Position		  [200, 40, 220, 60]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cos"
+	  Position		  [200, 80, 220, 100]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "ddc_lo_const"
+	  SrcPort		  1
+	  DstBlock		  "sin"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo_const"
+	  SrcPort		  2
+	  DstBlock		  "cos"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "ddc_lo_const"
+      Ports		      [0, 2]
+      Position		      [90, 15, 130, 75]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "ddc_lo_const"
+      MaskPromptString	      "Output Bitwidth|Phase (0 to 2*pi)"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "BitWidth=@1;Phase=@2;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "18|0"
+      MaskTabNameString	      ","
+      System {
+	Name			"ddc_lo_const"
+	Location		[272, 380, 654, 641]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "const"
+	  Ports			  [0, 1]
+	  Position		  [145, 77, 205, 103]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "real(exp(Phase*1j))"
+	  equ			  "P=C"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "BitWidth - 1"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "const1"
+	  Ports			  [0, 1]
+	  Position		  [145, 37, 205, 63]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "-imag(exp(Phase*1j))"
+	  equ			  "P=C"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "BitWidth - 1"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sin"
+	  Position		  [235, 48, 265, 62]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cos"
+	  Position		  [235, 78, 265, 92]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "const1"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 5]
+	  DstBlock		  "sin"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "const"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -5]
+	  DstBlock		  "cos"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "ddc_lo_osc"
+      Ports		      [0, 2]
+      Position		      [15, 15, 55, 75]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "ddc_lo_osc"
+      MaskPromptString	      "Output Bitwidth|counter step|counter start valu"
+"e|Counter Bitwidth|Latency"
+      MaskStyleString	      "edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "BitWidth=@1;counter_step=@2;counter_start=@3;co"
+"unter_width=@4;latency=@5;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "18|1|1|4|2"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"ddc_lo_osc"
+	Location		[568, 496, 950, 757]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "SineCosine"
+	  Ports			  [1, 2]
+	  Position		  [125, 40, 175, 100]
+	  SourceBlock		  "xbsIndex_r3/SineCosine"
+	  SourceType		  "Xilinx Sine/Cosine Block"
+	  mode			  "Sine and Cosine"
+	  neg_sin		  on
+	  neg_cos		  off
+	  n_bits		  "BitWidth"
+	  latency		  "latency"
+	  sym_output		  off
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  mem_type		  "Block RAM"
+	  pipeline		  on
+	  use_rpm		  on
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "counter"
+	  Ports			  [0, 1]
+	  Position		  [25, 45, 75, 95]
+	  SourceBlock		  "xbsIndex_r3/Counter"
+	  SourceType		  "Xilinx Counter Block"
+	  cnt_type		  "Free Running"
+	  n_bits		  "counter_width"
+	  bin_pt		  "0"
+	  arith_type		  "Unsigned"
+	  start_count		  "counter_start"
+	  cnt_to		  "Inf"
+	  cnt_by_val		  "counter_step"
+	  operation		  "Up"
+	  explicit_period	  off
+	  period		  "1"
+	  load_pin		  off
+	  rst			  off
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  use_rpm		  on
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sin"
+	  Position		  [235, 48, 265, 62]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cos"
+	  Position		  [235, 78, 265, 92]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "SineCosine"
+	  SrcPort		  1
+	  DstBlock		  "sin"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SineCosine"
+	  SrcPort		  2
+	  DstBlock		  "cos"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "counter"
+	  SrcPort		  1
+	  DstBlock		  "SineCosine"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}

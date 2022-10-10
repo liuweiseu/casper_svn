@@ -1,0 +1,4 @@
+#dump the irq contoller registers
+r 2c0
+r 2c1
+r 2c2

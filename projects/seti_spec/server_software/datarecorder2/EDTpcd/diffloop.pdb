@@ -1,0 +1,11 @@
+# set diffin channels 0-7 to DMA 0-7 respectively
+w 60 10
+w 61 11
+w 62 12
+w 63 13
+w 64 14
+w 65 15
+w 66 16
+w 67 17
+# drive out data  loopback just occurs on xilinx inputs
+w 22 f

@@ -1,0 +1,308 @@
+
+		    PCI_GP-SS_SSD16 Application Note
+		        Engineering Design Team
+			  October 19, 2000
+INTRODUCTION
+
+    The ssd16 family of Xilinx bitfiles provides 16 channel serial I/O
+    for the PCD GP and PCD SS boards.  Channels are programmed for either
+    input or output in groups of four:  0-3, 4-7, 8-11, and 12-15.
+
+PROGRAMMING
+
+Note:
+    The SSD16 reqires two bitfiles:  the PCI bitfile and the interface
+    bitfile.  These bitfiles are described by running pcdrequest or in
+    the text file pcd_bitfiles which is shipped with your PCD driver.
+
+    Programming the ssd16 can be accomplished using configuration files
+    with the new initpcd program, or with traditional C code.  Initpcd
+    uses ascii configuration files to simplify and automate register
+    configuration.  Source to initpcd, initpcd.c and initedt.c, are
+    provided as sample C code for those wanting to program the registers
+    directly.
+
+    The SSD16 adds three new register pairs (see edtreg.h):
+
+	#define SSD16_CHENL	0x01010010
+	#define SSD16_CHENH	0x01010011
+
+	#define SSD16_CHDIRL	0x01010012
+	#define SSD16_CHDIRH	0x01010013
+
+	#define SSD16_CHEDGEL	0x01010014
+	#define SSD16_CHEDGEH	0x01010015
+
+    These definitions are used in edt_intfc_read() and edt_intfc_write(),
+    which are in turn used in initpcd.c for the PCD boards.  Each register
+    is 8 bits wide, and each pair represents 16 bits.  In the following
+    descriptions the least significant bit configures channel 0 and the
+    most significant bit configures channel 15:
+
+	SSD16_CHEN (CHannel ENable) is a 16 bit register used to enable
+	each of the 16 channels.  A 1 bit enables and a 0 bit disables
+	the channel.
+
+	SSD16_CHDIR (CHannel DIRection) is a 16 bit register used to set
+	the direction of each of the 16 channels.  A 1 bit configures a
+	channel for output, and a 0 bit configures it for input.
+
+	SSD16_CHEDGE (CHannel EDGE) is a 16 bit register used to configure
+	which clock edge each channel will use to latch data.  A 1 bit
+	latches data on the rising clock edge, while a 0 bit latches data
+	on the falling edge.
+
+    In addition to these channel configuration registers, the PCD Direction
+    register must be set to enable or disable driver and receiver chips
+    connected to the connector pins.  Care must be exercised so as not
+    to enable both inputs and outputs for a given channel, and channels
+    must be configured as inputs or outputs in groups of four as described
+    above.
+
+    A full description of the PCD Direction register programming for the
+    SSD16 is given below, following SAMPLE PROGRAMS.  In many cases
+    the use of initpcd, described in the next section, will be sufficient 
+    to configure the SSD16 registers.
+
+
+
+
+
+SAMPLE PROGRAMS
+
+    initpcd (initpcd.c and initedt.c) is used to configure the SSD16
+    registers.  The .cfg files described here configure the PCI GP
+    board, but the bitfile command in them can be changed to run
+    the PCI SS boards.
+
+    rd16 (rd16.c) is used to read from a specified channel.  It uses
+    a ring buffer composed of four 128K buffers to input 100 buffers by
+    default, and can save it's output to a file.
+
+    wr16 (wr16.c) is used to write to a specified channel.  Like rd16,
+    it uses a ring buffer to output 100 buffers.  At this time it
+    simply sets the data in the four buffers to the selected channel
+    number in each byte.
+
+    rdwr16 (rdwr16.c) is a test program which opens two boards, unit 0
+    and unit 1 by default, runs initpcd with rd16.cfg and wr16.cfg
+    to initialize them, then starts 16 input ring buffers and 16
+    output ring buffers to transfer serial streams across a standard
+    68-pint SCSI cable connecting the boards.
+
+    To test all 16 channels on two boards connected with a SCSI cable,
+    run "rdwr16", then "rdwr16 -r 1 -w 0".  Run "rdwr16 -h" for a complete
+    listing of options.
+
+    The following commands will load the ssd16.bit file and
+    configure unit 0 for 16 inputs and unit 1 for 16 outputs:
+
+	% cd /opt/EDTpcd
+	% ./initpcd -u 0 -v -f rd16.cfg
+	% ./initpcd -u 1 -v -f wr16.cfg
+
+    Without the -v option initpcd is silent.
+
+    With unit 0 configured for inputs and unit 1 configured for outputs,
+    the following commands can be used to transmit and receive data:
+
+	% ./rd16 -u 0 -c <channel>
+	% ./wr16 -u 1 -c <channel>
+
+    Where <channel> is 0-15.  100 buffers will be processed by default.
+
+    Connecting pcd0 and pcd1 with a standard 68-pin SCSI cable will
+    connect channel 0 to channel 0, 1 to 1, 2 to 2, etc.
+
+    With this cable in place, each of the above channels can communicate
+    over the cable as follows:
+
+	% rd16 -u 0 -c 0 &
+	% wr16 -u 1 -c 0
+
+    This will send data over unit 1, channel 0 to unit 0, channel 0.
+    wr16 prints "w<chan>" for each buffer completed, while
+    rd16 prints "r<chan>" and the first few bytes from each
+    completed buffer.  These commands can be run for each of the
+    above 16 connections, or they can be used for other I/O sources.
+
+    Complete documentation for initpcd can be found as a man(1) formatted
+    comment in /opt/EDTpcd/initpcd.c
+
+
+
+
+    Several standard configurations for the CHEN, CHDIR, CHEDGE, and
+    PCD Direction registers are provided as initpcd configuration files:
+
+	rd16.cfg:	Channels 0-15 configured as inputs.
+	wr16.cfg:	Channels 0-15 configured as outputs.
+	rdwr16.cfg:	Channels 0-7 configured as inputs, 8-15 as outputs.
+
+    In the following standard configuration file listings, the command_reg
+    has the ENABLE bit set to enable the PCD, and the funct_reg has the
+    PLL_CLK_SELECT bit set to use the internal PLL clock instead of the
+    PCD clock (the PLL clock is used only for driving output clocks). 
+    Note also that rd16.cfg uses the falling clock edge, while wr16.cfg
+    uses the rising clock edge.
+
+    Standard configuration file listings:
+
+	rd16.cfg:
+	    bitfile:		ssd16.bit
+	    command_reg:	0x08
+	    funct_reg:		0x80
+	    ssd16_chen_reg:	0xFFFF
+	    ssd16_chdir_reg:	0x0000
+	    ssd16_chedge_reg:	0x0000
+	    direction_reg:	0xFCF0
+	    flush_fifo:		1
+
+	wr16.cfg:
+	    bitfile:		ssd16.bit
+	    command_reg:	0x08
+	    funct_reg:		0x80
+	    ssd16_chen_reg:	0xFFFF
+	    ssd16_chdir_reg:	0xFFFF
+	    ssd16_chedge_reg:	0xFFFF
+	    direction_reg:	0xC30F
+	    flush_fifo:		1
+
+	rdwr16.cfg:
+	    bitfile:		ssd16.bit
+	    command_reg:	0x08
+	    funct_reg:		0x80
+	    ssd16_chen_reg:	0xFFFF
+	    ssd16_chdir_reg:	0xFF00
+	    ssd16_chedge_reg:	0xFF00
+	    direction_reg:	0xC3F0
+	    flush_fifo:		1
+
+
+PROGRAMMING THE DIRECTION CONTROL REGISTER
+
+    Programming the PCD direction control register for the SSD16
+    is best done using known sample values.  Unless you must program it
+    directly you may skip this section.  EDT's technical support team
+    will be happy to assist you in programming the direction register.
+
+    The PCD direction register consists of 16 bits which disable drivers
+    and receivers when set and enables them when cleared.  The table that
+    follows describes the relationships between the direction register bits
+    and the drivers and receivers connected to each of the 16 channels.
+
+    Each bit controls either drivers or receivers for two channels.
+    For example, when bit 0 is set the receivers for channels 0 and 1
+    are disabled; conversely when bit 0 is cleared the receivers for
+    channels 0 and 1 are enabled.
+
+
+
+    To configure channels 0 and 1 for inputs you must disable the output
+    drivers for these channels by setting bit 4 to 1 and enable the
+    input receivers for these channels by setting bit 0 to 0.
+
+    Because of loopback connections at the drivers, channels must be
+    configured for input or output in groups of four: 0-3, 4-7, 8-11
+    and 12-15.
+
+		PCD DIRECTION REGISTER FOR SSD16
+
+		        Disables when Set,
+     Bit		Enables when Clear		For Channels
+    ==================================================================
+      0			 Input receivers		   0, 1
+      1			 Input receivers		   2, 3
+      2			 Input receivers		   4, 5
+      3			 Input receivers		   6, 7
+
+      4			 Output drivers			   0, 1
+      5			 Output drivers			   2, 3
+      6			 Output drivers			   4, 5
+      7			 Output drivers			   6, 7
+
+      8			 Input receivers		  10, 11
+      9			 Input receivers		   8, 9
+     10			 Output drivers			  10, 11
+     11			 Output drivers			   8, 9
+
+     12			 Output drivers			  14, 15
+     13			 Output drivers			  12, 13
+     14			 Output drivers (other)		  ALWAYS HIGH
+     15			 Output drivers	(other)		  ALWAYS HIGH
+
+    Input receivers for channels 12-15 are automatically enabled
+    by the CHDIR register when bits 12-13 are zero (inputs).
+
+    Example:
+
+	The following configuration file will program the SSD16
+	with channels 0-7 as inputs and channels 8-15 as outputs:
+
+	    rdwr16.cfg:
+
+		bitfile:		ssd16.bit
+		command_reg:		0x08
+		funct_reg:		0x80
+		ssd16_chen_reg:		0xFFFF
+		ssd16_chdir_reg:	0xFF00
+		ssd16_chedge_reg:	0xFF00
+		direction_reg:		0xC3F0
+		flush_fifo:		1
+	Here:
+	
+	    - The lowest nibble enables inputs for channels 0-7.
+
+	    - The second lowest nibble disables outputs for channels 0-7.
+
+	    - The second highest nibble disables inputs and enables outputs
+	      for channels 8-11.
+
+	    - The two lower bits of the highest nibble enables outputs for
+	      channels 12-15.  The two highest bits are always high.
+
+    Note:  "flush_fifo: 1" should always be included, as the fifo flush
+    enables the Xilinx state machine.  The ssd16 won't run without this.
+
+
+CONNECTOR PINOUT
+
+		    Pinout for SSD16
+
+Channels are labeled 1-16 here, but are 0-15 in software.
+
+     AMP  Signal   			AMP   Signal
+     1  CH16CLK +  			35  CH16CLK -
+     2  CH1D +     			36  CH1D -
+     3  CH1CLK +   			37  CH1CLK -
+     4  CH2D+      			38  CH2D -
+     5  CH2CLK +   			39  CH2CLK -
+     6  CH3D +     			40  CH3D -
+     7  CH3CLK +   			41  CH3CLK -
+     8  CH4D +     			42  CH4D -
+     9  CH4CLK +   			43  CH4CLK -
+     10 CH5D +     			44  CH5D -
+     11 CH5CLK +   			45  CH5CLK -
+     12 CH10CLK+   			46  CH10CLK-
+     13 CH6D+      			47  CH6D -
+     14 CH6CLK +   			48  CH6CLK -
+     15 CH7D +     			49  CH7D -
+     16 CH7CLK +   			50  CH7CLK -
+     17 CH13CLK +  			51  CH13CLK-
+     18 CH14D +    			52  CH14D-
+     19 CH8D +     			53  CH8D -
+     20 CH8CLK +   			54  CH8CLK -
+     21 EXTIN+     			55  EXTIN -
+     22 CH9D+      			56  CH9D-
+     23 CH13D +    			57  CH13D-
+     24 CH12CLK+   			58  CH12CLK-
+     25 CH12D+     			59  CH12D-
+     26 CH11CLK+   			60  CH11CLK-
+     27 CH9CLK+    			61  CH9CLK-
+     28 CH10D+     			62  CH10D-
+     29 CH11D+     			63  CH11D-
+     30 CH14CLK +  			64  CH14CLK -
+     31 CH15D +    			65  CH15D -
+     32 CH15CLK +  			66  CH15CLK -
+     33 CH16D +    			67  CH16D -
+     34 Ground     			68  Ground

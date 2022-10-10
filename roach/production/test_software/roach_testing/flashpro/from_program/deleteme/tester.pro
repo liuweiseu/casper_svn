@@ -1,0 +1,57 @@
+<project name="tester" version="1.1">
+    <ProjectDirectory>
+        c:/roach_testing/flashpro/from_program/deleteme
+    </ProjectDirectory>
+    <View>
+        SingleSTAPLView
+    </View>
+    <LogFile>
+        c:/roach_testing/flashpro/from_program/deleteme\tester.log
+    </LogFile>
+    <SerializationOption>
+        Skip
+    </SerializationOption>
+    <programmer status="enable" type="FlashPro3" revision="UndefRev" connection="usb2.0">
+        <name>
+            07156
+        </name>
+        <id>
+            07156
+        </id>
+    </programmer>
+    <configuration>
+        <Hardware>
+            <FlashPro>
+                <TCK>
+                    4000000
+                </TCK>
+                <Vpp/>
+                <Vpn/>
+                <Vddl/>
+                <Vdd>
+2500                </Vdd>
+            </FlashPro>
+            <FlashProLite>
+                <TCK>
+                    4000000
+                </TCK>
+                <Vpp/>
+                <Vpn/>
+            </FlashProLite>
+            <FlashPro3>
+                <TCK>
+                    4000000
+                </TCK>
+                <Vpump/>
+            </FlashPro3>
+        </Hardware>
+        <Algo type="unknown">
+            <irlength>
+                0
+            </irlength>
+            <MaxTCK>
+                4000000
+            </MaxTCK>
+        </Algo>
+    </configuration>
+</project>

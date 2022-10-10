@@ -1,0 +1,234 @@
+9/4/02 jeffc Added the second card to the system.  The edt_load program found
+both cards and set up /dev/ entries for them.
+
+9/25/02 jeffc
+Some disk errors on setirec2.  Had to do a long fsck on bootup
+and measages still says:
+
+Sep 25 15:31:30 setirec2 kernel: scsi7: ERROR on channel 0, id 0, lun 0, CDB: Read (10) 00 0
+0 31 3b ac 00 00 08 00
+Sep 25 15:31:30 setirec2 kernel: Info fld=0x313bac, Current sd08:05: sense key Medium Error
+Sep 25 15:31:30 setirec2 kernel: Additional sense indicates Unrecovered read error
+Sep 25 15:31:30 setirec2 kernel:  I/O error: dev 08:05, sector 3146152
+Sep 25 15:31:30 setirec2 kernel: EXT2-fs error (device sd(8,5)): ext2_write_inode: unable to
+ read inode block - inode=190499, block=393269
+Sep 25 15:31:32 setirec2 kernel: scsi7: ERROR on channel 0, id 0, lun 0, CDB: Read (10) 00 0
+0 31 3b ac 00 00 08 00
+Sep 25 15:31:32 setirec2 kernel: Info fld=0x313bac, Current sd08:05: sense key Medium Error
+Sep 25 15:31:32 setirec2 kernel: Additional sense indicates Unrecovered read error
+Sep 25 15:31:32 setirec2 kernel:  I/O error: dev 08:05, sector 3146152
+Sep 25 15:31:32 setirec2 kernel: EXT2-fs error (device sd(8,5)): ext2_write_inode: unable to
+ read inode block - inode=190499, block=393269
+Sep 25 15:32:25 setirec2 kernel: scsi7: ERROR on channel 0, id 0, lun 0, CDB: Read (10) 00 0
+0 31 3b ac 00 00 08 00
+Sep 25 15:32:25 setirec2 kernel: Info fld=0x313bac, Current sd08:05: sense key Medium Error
+Sep 25 15:32:25 setirec2 kernel: Additional sense indicates Unrecovered read error
+Sep 25 15:32:25 setirec2 kernel:  I/O error: dev 08:05, sector 3146152
+Sep 25 15:32:25 setirec2 kernel: EXT2-fs error (device sd(8,5)): ext2_write_inode: unable to
+ read inode block - inode=190497, block=393269
+Sep 25 15:36:26 setirec2 kernel: scsi7: ERROR on channel 0, id 0, lun 0, CDB: Read (10) 00 0
+0 31 3b ac 00 00 08 00
+Sep 25 15:36:26 setirec2 kernel: Info fld=0x313bac, Current sd08:05: sense key Medium Error
+Sep 25 15:36:26 setirec2 kernel: Additional sense indicates Unrecovered read error
+Sep 25 15:36:26 setirec2 kernel:  I/O error: dev 08:05, sector 3146152
+Sep 25 15:36:26 setirec2 kernel: EXT2-fs error (device sd(8,5)): ext2_write_inode: unable to
+ read inode block - inode=190499, block=393269
+
+9/25/02 jeffc
+I was able to read the 2nd card fine with simple_getdata.  I had to actually 
+connect the data cable to the card in order to read it, even though there
+were no data on the cable.  Was this because of a clock loopback?  The cable
+had to be attached to the test jig for this to work.
+
+9/27/02 jeffc
+The EDT card init script (/etc/init.d/edt) is now working and all cards
+are ready to go on host bootup.  I needed a link in rc5.d as 5 is the 
+default multiuser run level for linux.
+
+11/1/02 jeffc
+Was getting "system call interupted" on one the 2 calls to edt_wait_for_buffers until
+I checked some old email from EDT which stated:
+	libedt is not thread-safe.  You need to call edt_wait_for_buffers()
+	from the same thread that called edt_open() and edt_configure_ring_buffers().
+So I moved the call to InitEdt() from main() to MemBufFunc() and all was well.
+
+9/14/02 jeffc
+I reinstalled linux because of the ufs error requiring fsck on every boot
+(see entry 9/25/02).  I went up to RH 7.3.  The first disk was partitioned as:
+	sda1    /boot   	39
+        sda5    /       	4096/5
+        sda6    swap    	2048/7
+        sda7    /mydisks/a      11178
+I installed all packages excpet:
+	laptop support
+         news serv
+         winfile server
+         ftp server
+         sql server
+         dns server
+         network managed workstation
+         games
+The install size was 2229MB.
+I installed the EDT drivers (EDT PCI 3.2).  I had to create a link
+in/usr/src: linux->linux.4.  Upon running edt_load, both cards were
+found and appropriate /dev entries were made.
+
+9/21/02 jeffc
+finishing up the config of setirec2:
+	/etc/hosts
+	/etc/fstab
+	/etc/passwd
+	/etc/shadow
+	/etc/sysconfig/ipchains : for NFS mounts to work, I had to comment out:
+		#-A input -s 0/0 -d 0/0 -p udp -j REJECT
+
+12/22/02 jeffc
+Set up EDT startup scripts:
+	/etc/rc.d/init.d
+
+	/etc/rc.d/rc5.d/S99edt -> ../init.d/edt
+
+So, the software that came on the CD lacks the all important program pcdrequest,
+which produces a script for loading the correct bit files up to the card(s).
+I downloaded the latest SW from EDT and installed it.  See installpcd.out.11_21_2002.
+The install script installpcd put new, more involved start scripts into 
+/etc/rc.d/init.d with a link out in /etc/rc.d/rc5.d.  I removed the ones I put there.
+The new is called edtinit.  I had to run it before running pcdrequest.  OK, I 
+then finally ran pcd request and was presented with:
+	    Available interface bitfiles:
+
+    0. Do Not Configure  -  Applications will load the interface bitfile
+    1. pcd_src.bit       -  16-bit parallel I/O synced to PCD source clock
+    2. pcd_looped.bit    -  16-bit parallel I/O synced to external clock
+    3. pcd8_src.bit      -  8-bit parallel dual channel I/O synced to PCD clock
+    4. ssd.bit           -  One channel serial input
+    5. ssd2.bit          -  Two channel serial input
+    6. ssd4.bit          -  Four channel serial input
+    7. ssdio.bit         -  Dual channel serial I/O
+    8. ssdio_neg.bit     -  Dual channel serial I/O using negative clock edge
+    9. ssdout1.bit       -  One channel serial output
+
+I chose bitfile 1 for each card.  This produced the script pcdload.  I ran it and 
+it said:
+
+	file <./bitfiles/4013/pcd_src.bit>
+	id: "pcd_src.ncd 4013xlapq208 2002/02/20 13:50:11" loaded
+	file <./bitfiles/4013/pcd_src.bit>
+	id: "pcd_src.ncd 4013xlapq208 2002/02/20 13:50:11" loaded
+
+12/4/02 jeffc
+We ran into a linux problem on setirec2 yesterday.  We could not access (eg via a "cp" 
+command) NFS files (from a solaris server) that were beyond a certain size (1*rsize or 
+1*wsize?)  The cp would hang and the entire system would slow way down.  The cp could 
+not be killed.  Setirec2 emitted:
+
+        setirec2 kernel: nfs: task <pid> can't get a request slot
+
+We tried setting rsize/wsize to 32K as per the NFS HOWTO.  This did not help.
+The cp seemed to hang at 1*{r,w}size.  Finally, I forced NFS version 2 on the mount 
+lines on fstab and the problem cleared up.
+
+
+
+==============================================================================
+
+<<<<<<< notes
+11/18/04 jeffc
+Installed EDT driver and utilities package (v3.3.3.7) on setirec2 testbed.  Install
+was successful with:
+
+Creating uninstall file list
+
+Loading Driver with edt_load
+
+function edt_load:
+ids = 0013
+sorted ids =  0013
+Version 2.4.21-4.EL/edt.o
+Warning: loading /lib/modules/2.4.21-4.EL/kernel/drivers/misc/edt.o will taint the kernel: no license
+  See http://www.tux.org/lkml/#export-tainted for information about tainted modules
+Module edt loaded, with warnings
+Modprobe returns 0
+major is 254
+Build Links...
+BOARD 0013
+devindex = 0
+Setting up board 0013 (edt0)
+mknod /dev/edt0 c 254 0
+Type PCD
+crw-rw-rw-    1 root     wheel    254,   0 Nov 18 15:51 /dev/edt0
+crw-rw-rw-    1 root     wheel    254,   0 Nov 18 15:51 /dev/edt0_0
+crw-rw-rw-    1 root     wheel    254,   1 Nov 18 15:51 /dev/edt0_1
+crw-rw-rw-    1 root     wheel    254,   2 Nov 18 15:51 /dev/edt0_2
+crw-rw-rw-    1 root     wheel    254,   3 Nov 18 15:51 /dev/edt0_3
+=======
+11/23/04 jeffc
+>>>>>>> 1.2
+
+	- removed InitEdt_old() funcstions.  EDT instances are now initialized
+	  via InitEdt(N) from wwithin MemBufFunc().
+
+	dr2.C
+
+11/24/04 jeffc
+	- use mlock() to lock diskbuf mmap to RAM.
+
+	dr2.C
+
+
+12/1/2004 jeffc
+
+pcd unit 0; PCI Xilinx "29F010"; pci flash loaded "pcd60.bit":
+
+    Available interface bitfiles:
+
+    0. Do Not Configure  -  Applications will load the interface bitfile
+    1. pcd_src.bit       -  16-bit parallel I/O synced to PCD source clock
+    2. pcd_looped.bit    -  16-bit parallel I/O synced to external clock
+    3. pcd8_src.bit      -  8-bit parallel dual channel I/O synced to PCD clock
+    4. ssd.bit           -  One channel serial input
+    5. ssd2.bit          -  Two channel serial input
+    6. ssd4.bit          -  Four channel serial input
+    7. ssdio.bit         -  Dual channel serial I/O
+    8. ssdio_neg.bit     -  Dual channel serial I/O using negative clock edge
+    9. ssdout1.bit       -  One channel serial output
+
+        Enter Selection (0 - 9): 2
+
+Selected 2: pcd_looped.bit
+
+Press return to save the PCD configuration script: 
+Creating /opt/EDTpcd/pcdload
+[jeffc@setirec2 EDTpcd]# ./pcdload 
+gunzip ./bitfiles/4005/pcd_looped.bit
+gunzip ./bitfiles/4010/pcd_looped.bit
+gunzip ./bitfiles/4013/pcd_looped.bit
+gunzip ./bitfiles/4085/pcd_looped.bit
+file <./bitfiles/4013/pcd_looped.bit>
+id: "pcd_looped.ncd 4013xlapq208 2002/02/20 13:52:57" loaded #3
+
+
+12/10/04 jeffc
+Added SCRAMNET support and other smaller mods.
+
+	Makefile 
+	do_dr2.csh 
+	dr2.C notes 
+	scram/Makefile
+    	scram/aoui/scram.h
+
+12/13/04 jeffc
+Added config file processing and lots of other small mods.
+
+	dr2.C
+	dr2_config
+
+12/14/04 jeffc
+Added fake data generation.
+
+	dr2.C
+
+12/17/04 jeffc
+Lots of AdvanceDiskBuffer() mods.
+
+	dr2.C

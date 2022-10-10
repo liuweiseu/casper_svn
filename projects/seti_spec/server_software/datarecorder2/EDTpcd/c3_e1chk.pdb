@@ -1,0 +1,23 @@
+#set e1 channel 0-15 to dma 0-15 respectively
+w 60 0
+w 61 1
+w 62 2
+w 63 3
+w 64 4
+w 65 5
+w 66 6
+w 67 7
+w 68 8
+w 69 9
+w 6a a
+w 6b b
+w 6c c
+w 6d d
+w 6e e
+w 6f f
+# enable data to lxt3108 
+w 3a ff
+w 3b ff
+# enable  e1 transmit
+w 3c 00
+w 3d 00

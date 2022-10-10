@@ -1,0 +1,50 @@
+ALFA Splitter / Beam Selector
+Software Control Specification
+
+Billy Mallard
+wjm@berkeley.edu
+25-May-2008
+
+Suggested control bank: iBOB:gpio0
+
+The pins correspond to:
+=======================
+pin 0: line 0 (in0/4/8/12)
+pin 1: line 1 (in1/5/9/13)
+pin 2: line 2 (in2/6/10/14)
+pin 3: line 3 (in3/7/11/15)
+pin 4: group 0 (in0/1/2/3)
+pin 5: group 1 (in4/5/6/7)
+pin 6: group 2 (in8/9/10/11)
+pin 7: group 3 (in12/13/14/15)
+
+So the mapping looks like:
+==========================
+in 00: group 0, line 0 (code 0xEE)
+in 01: group 0, line 1 (code 0xED)
+in 02: group 0, line 2 (code 0xEB)
+in 03: group 0, line 3 (code 0xE7)
+in 04: group 1, line 0 (code 0xDE)
+in 05: group 1, line 1 (code 0xDD)
+in 06: group 1, line 2 (code 0xDB)
+in 07: group 1, line 3 (code 0xD7)
+in 08: group 2, line 0 (code 0xBE)
+in 09: group 2, line 1 (code 0xBD)
+in 10: group 2, line 2 (code 0xBB)
+in 11: group 2, line 3 (code 0xB7)
+in 12: group 3, line 0 (code 0x7E)
+in 13: group 3, line 1 (code 0x7D)
+in 14: group 3, line 2 (code 0x7B)
+in 15: group 3, line 3 (code 0x77)
+
+So, in summary:
+===============
+We use two nibbles to select from 16 channels.
+The most significant nibble selects the group.
+The least significant nibble selects the line.
+The LSB is gpio pin 0; the MSB is gpio pin 7.
+Any digit n is represented in a nibble as 2^n.
+But the muxes use 2.5V LVCMOS active low logic,
+so n should be output as the complement of 2^n.
+So to select in7, which is line 3 of group 1,
+one would output ~(2^1<<4|2^3)=0xD7 to gpio0.

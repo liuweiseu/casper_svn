@@ -1,0 +1,2 @@
+# stop iadc
+w a0018 0

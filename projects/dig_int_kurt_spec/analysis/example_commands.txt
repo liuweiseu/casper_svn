@@ -1,0 +1,23 @@
+siemion@pulsar-1:~> export PATH=$PATH:~siemion/bin
+siemion@pulsar-1:~> rm *.fits
+siemion@pulsar-1:~> rm *.bin
+siemion@pulsar-1:~> ls -al *.pcap
+-rw-r--r-- 1 siemion obs 7507222 2010-02-10 02:12 test.pcap
+siemion@pulsar-1:~> meat_pcap test.pcap prefix
+Completed Successfully
+Spectra count: 908
+Dropped packet count: 0
+siemion@pulsar-1:~> ls -al *.bin
+-rw-r--r-- 1 siemion obs  929792 2010-02-10 02:37 prefix_xpower.bin
+-rw-r--r-- 1 siemion obs 1859584 2010-02-10 02:37 prefix_xpowersq.bin
+-rw-r--r-- 1 siemion obs  929792 2010-02-10 02:37 prefix_ypower.bin
+-rw-r--r-- 1 siemion obs 1859584 2010-02-10 02:37 prefix_ypowersq.bin
+siemion@pulsar-1:~> mkfits.sh prefix 908
+siemion@pulsar-1:~> ls -al *.fits
+-rw-r--r-- 1 siemion obs  933120 2010-02-10 02:37 prefix_xpower.fits
+-rw-r--r-- 1 siemion obs 1863360 2010-02-10 02:37 prefix_xpowersq.fits
+-rw-r--r-- 1 siemion obs  933120 2010-02-10 02:37 prefix_ypower.fits
+-rw-r--r-- 1 siemion obs 1863360 2010-02-10 02:37 prefix_ypowersq.fits
+siemion@pulsar-1:~> ds9 prefix_ypowersq.fits 
+
+

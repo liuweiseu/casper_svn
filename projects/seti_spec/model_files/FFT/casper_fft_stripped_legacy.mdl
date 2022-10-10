@@ -1,0 +1,2533 @@
+Model {
+  Name			  "casper_fft_stripped_legacy"
+  Version		  6.2
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.73"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  on
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Jul 30 15:55:44 2008"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "lspitler"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Apr 07 14:19:37 2009"
+  ModelVersionFormat	  "1.%<AutoIncrement:73>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Scope
+      Floating		      off
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "casper_fft_stripped_legacy"
+    Location		    [717, 408, 1865, 1098]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      " System Generator"
+      Tag		      "genX"
+      Ports		      []
+      Position		      [12, 13, 63, 63]
+      ShowName		      off
+      AttributesFormatString  "System\\nGenerator"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "xbsIndex_r3/ System Generator"
+      SourceType	      "Xilinx System Generator"
+      ShowPortLabels	      on
+      xilinxfamily	      "Virtex2P"
+      part		      "xc2vp70"
+      speed		      "-7"
+      package		      "ff1704"
+      synthesis_tool	      "XST"
+      directory		      "./casper_fft_stripped_legacy/sysgen"
+      testbench		      off
+      simulink_period	      "1"
+      sysclk_period	      "4.878"
+      incr_netlist	      off
+      trim_vbits	      "Everywhere in SubSystem"
+      dbl_ovrd		      "According to Block Masks"
+      core_generation	      "According to Block Masks"
+      run_coregen	      off
+      deprecated_control      off
+      eval_field	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant1"
+      Ports		      [0, 1]
+      Position		      [335, 190, 380, 220]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "36"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant2"
+      Position		      [95, 130, 125, 160]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant3"
+      Position		      [100, 220, 130, 250]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant4"
+      Position		      [125, 83, 165, 107]
+      Value		      "32767"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant5"
+      Position		      [395, 420, 425, 450]
+      Value		      "8"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant9"
+      Position		      [445, 305, 475, 335]
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay"
+      Ports		      [1, 1]
+      Position		      [270, 131, 300, 159]
+      ShowName		      off
+      FontSize		      10
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "1"
+      reg_retiming	      on
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay1"
+      Ports		      [1, 1]
+      Position		      [270, 221, 300, 249]
+      ShowName		      off
+      FontSize		      10
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "1"
+      reg_retiming	      on
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Slice"
+      Ports		      [1, 1]
+      Position		      [310, 81, 355, 109]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Slice"
+      SourceType	      "Xilinx Slice Block"
+      mode		      "Lower Bit Location + Width"
+      nbits		      "15"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      boolean_output	      off
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Slice3"
+      Ports		      [1, 1]
+      Position		      [605, 307, 650, 333]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Slice"
+      SourceType	      "Xilinx Slice Block"
+      mode		      "Lower Bit Location + Width"
+      nbits		      "1"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      boolean_output	      on
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XSG core config"
+      Tag		      "xps:xsg"
+      Ports		      []
+      Position		      [80, 14, 126, 57]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/XSG core config"
+      SourceType	      "xsg core config"
+      ShowPortLabels	      on
+      hw_sys		      "BEE2_usr"
+      ibob_linux	      off
+      clk_src		      "usr_clk2x"
+      gpio_clk_io_group	      "iBOB:sma"
+      gpio_clk_bit_index      "0"
+      clk_rate		      "205"
+      sample_period	      "1"
+      synthesis_tool	      "XST"
+      mpc_type		      "powerpc405"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "concat1"
+      Ports		      [1, 1]
+      Position		      [520, 376, 560, 394]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      System {
+	Name			"concat1"
+	Location		[145, 167, 410, 330]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [15, 63, 45, 77]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Concat1"
+	  Ports			  [4, 1]
+	  Position		  [150, 27, 185, 138]
+	  SourceBlock		  "xbsIndex_r3/Concat"
+	  SourceType		  "Xilinx Bus Concatenator"
+	  num_inputs		  "4"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant11"
+	  Ports			  [0, 1]
+	  Position		  [80, 84, 125, 106]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "0"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "14"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant3"
+	  Ports			  [0, 1]
+	  Position		  [80, 34, 125, 56]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "0"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "14"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice7"
+	  Ports			  [1, 1]
+	  Position		  [80, 57, 125, 83]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Upper Bit Location + Width"
+	  nbits			  "18"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  boolean_output	  off
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice8"
+	  Ports			  [1, 1]
+	  Position		  [80, 108, 125, 132]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Lower Bit Location + Width"
+	  nbits			  "18"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  boolean_output	  off
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [210, 78, 240, 92]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Slice7"
+	  SrcPort		  1
+	  DstBlock		  "Concat1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Slice8"
+	  SrcPort		  1
+	  DstBlock		  "Concat1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  DstBlock		  "Concat1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant11"
+	  SrcPort		  1
+	  DstBlock		  "Concat1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    DstBlock		    "Slice7"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 50]
+	    DstBlock		    "Slice8"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Concat1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "delay_slr"
+      Ports		      [1, 1]
+      Position		      [425, 570, 465, 610]
+      SourceBlock	      "delay_lib/delay_slr"
+      SourceType	      ""
+      ShowPortLabels	      on
+      DelayLen		      "32"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "delay_slr1"
+      Ports		      [1, 1]
+      Position		      [425, 495, 465, 535]
+      SourceBlock	      "delay_lib/delay_slr"
+      SourceType	      ""
+      ShowPortLabels	      on
+      DelayLen		      "32"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "fft"
+      Ports		      [4, 3]
+      Position		      [435, 130, 565, 250]
+      BackgroundColor	      "magenta"
+      SourceBlock	      "fft_library/fft"
+      SourceType	      ""
+      ShowPortLabels	      on
+      FFTSize		      "15"
+      BitWidth		      "18"
+      n_inputs		      "0"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      add_latency	      "1"
+      mult_latency	      "3"
+      bram_latency	      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "fft_shift"
+      Tag		      "xps:sw_reg"
+      Ports		      [1, 1]
+      Position		      [190, 80, 290, 110]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/software register"
+      SourceType	      ""
+      ShowPortLabels	      on
+      io_dir		      "From Processor"
+      arith_type	      "Unsigned"
+      bitwidth		      "32"
+      bin_pt		      "0"
+      sample_period	      "1"
+      gw_name		      "casper_fft_stripped_legacy_fft_shift_user_data_"
+"out"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "gpio"
+      Tag		      "xps:gpio"
+      Ports		      [1, 1]
+      Position		      [505, 20, 605, 50]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/gpio"
+      SourceType	      "gpio"
+      ShowPortLabels	      on
+      io_group		      "BEE2_usr:led"
+      io_dir		      "out"
+      arith_type	      "Boolean"
+      bitwidth		      "1"
+      bin_pt		      "0"
+      bit_index		      "0"
+      sample_period	      "1"
+      use_single_ended	      off
+      use_ddr		      off
+      reg_iob		      on
+      reg_clk_phase	      "0"
+      termination	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "gpio_ctdata_out"
+      Tag		      "xps:gpio"
+      Ports		      [1, 1]
+      Position		      [485, 575, 585, 605]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/gpio"
+      SourceType	      "gpio"
+      ShowPortLabels	      on
+      io_group		      "BEE2_usr:leftlink"
+      io_dir		      "out"
+      arith_type	      "Unsigned"
+      bitwidth		      "36"
+      bin_pt		      "0"
+      bit_index		      "[0:35]"
+      sample_period	      "1"
+      use_single_ended	      off
+      use_ddr		      off
+      reg_iob		      on
+      reg_clk_phase	      "0"
+      termination	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "gpio_ctsync_out"
+      Tag		      "xps:gpio"
+      Ports		      [1, 1]
+      Position		      [485, 500, 585, 530]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/gpio"
+      SourceType	      "gpio"
+      ShowPortLabels	      on
+      io_group		      "BEE2_usr:leftlink"
+      io_dir		      "out"
+      arith_type	      "Boolean"
+      bitwidth		      "1"
+      bin_pt		      "0"
+      bit_index		      "36"
+      sample_period	      "1"
+      use_single_ended	      off
+      use_ddr		      off
+      reg_iob		      on
+      reg_clk_phase	      "0"
+      termination	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "gpio_data_in"
+      Tag		      "xps:gpio"
+      Ports		      [1, 1]
+      Position		      [155, 220, 255, 250]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/gpio"
+      SourceType	      "gpio"
+      ShowPortLabels	      on
+      io_group		      "BEE2_usr:rightlink"
+      io_dir		      "in"
+      arith_type	      "Unsigned"
+      bitwidth		      "36"
+      bin_pt		      "0"
+      bit_index		      "[0:35]"
+      sample_period	      "1"
+      use_single_ended	      off
+      use_ddr		      off
+      reg_iob		      on
+      reg_clk_phase	      "180"
+      termination	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "gpio_pol1_out"
+      Tag		      "xps:gpio"
+      Ports		      [1, 1]
+      Position		      [650, 215, 750, 245]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/gpio"
+      SourceType	      "gpio"
+      ShowPortLabels	      on
+      io_group		      "BEE2_usr:leftlink"
+      io_dir		      "out"
+      arith_type	      "Unsigned"
+      bitwidth		      "36"
+      bin_pt		      "0"
+      bit_index		      "[37:72]"
+      sample_period	      "1"
+      use_single_ended	      off
+      use_ddr		      off
+      reg_iob		      on
+      reg_clk_phase	      "0"
+      termination	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "gpio_sync_in"
+      Tag		      "xps:gpio"
+      Ports		      [1, 1]
+      Position		      [150, 130, 250, 160]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/gpio"
+      SourceType	      "gpio"
+      ShowPortLabels	      on
+      io_group		      "BEE2_usr:rightlink"
+      io_dir		      "in"
+      arith_type	      "Boolean"
+      bitwidth		      "1"
+      bin_pt		      "0"
+      bit_index		      "36"
+      sample_period	      "1"
+      use_single_ended	      off
+      use_ddr		      off
+      reg_iob		      on
+      reg_clk_phase	      "180"
+      termination	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "gpio_sync_out"
+      Tag		      "xps:gpio"
+      Ports		      [1, 1]
+      Position		      [655, 135, 755, 165]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/gpio"
+      SourceType	      "gpio"
+      ShowPortLabels	      on
+      io_group		      "BEE2_usr:leftlink"
+      io_dir		      "out"
+      arith_type	      "Boolean"
+      bitwidth		      "1"
+      bin_pt		      "0"
+      bit_index		      "73"
+      sample_period	      "1"
+      use_single_ended	      off
+      use_ddr		      off
+      reg_iob		      on
+      reg_clk_phase	      "0"
+      termination	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "pulse_extender"
+      Ports		      [1, 1]
+      Position		      [425, 23, 475, 47]
+      SourceBlock	      "adcscope_lib/pulse_extender"
+      SourceType	      ""
+      ShowPortLabels	      on
+      pulse_len		      "2^25"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "snap_delay"
+      Tag		      "xps:sw_reg"
+      Ports		      [1, 1]
+      Position		      [440, 420, 540, 450]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/software register"
+      SourceType	      ""
+      ShowPortLabels	      on
+      io_dir		      "From Processor"
+      arith_type	      "Unsigned"
+      bitwidth		      "32"
+      bin_pt		      "0"
+      sample_period	      "1"
+      gw_name		      "casper_fft_stripped_legacy_snap_delay_user_data"
+"_out"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "snap_fft"
+      Ports		      [3]
+      Position		      [670, 327, 725, 413]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "number of samples (2^?)"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "nsamples=@1;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "12"
+      System {
+	Name			"snap_fft"
+	Location		[220, 296, 1210, 676]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "we"
+	  Position		  [240, 153, 270, 167]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "trig"
+	  Position		  [260, 238, 290, 252]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din"
+	  Position		  [425, 128, 455, 142]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant"
+	  Ports			  [0, 1]
+	  Position		  [500, 241, 530, 259]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "1"
+	  equ			  "P=C"
+	  arith_type		  "Boolean"
+	  n_bits		  "1"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant1"
+	  Ports			  [0, 1]
+	  Position		  [280, 181, 310, 199]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "1"
+	  equ			  "P=C"
+	  arith_type		  "Boolean"
+	  n_bits		  "1"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant2"
+	  Ports			  [0, 1]
+	  Position		  [300, 256, 330, 274]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "1"
+	  equ			  "P=C"
+	  arith_type		  "Boolean"
+	  n_bits		  "1"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  Position		  [15, 310, 45, 340]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Inverter"
+	  Ports			  [1, 1]
+	  Position		  [410, 297, 460, 313]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Inverter"
+	  SourceType		  "Xilinx Inverter"
+	  latency		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical"
+	  Ports			  [2, 1]
+	  Position		  [485, 268, 530, 312]
+	  SourceBlock		  "xbsIndex_r3/Logical"
+	  SourceType		  "Xilinx Logical Block"
+	  logical_function	  "AND"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  align_bp		  on
+	  latency		  "0"
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux"
+	  Ports			  [3, 1]
+	  Position		  [355, 117, 380, 183]
+	  SourceBlock		  "xbsIndex_r3/Mux"
+	  SourceType		  "Xilinx Multiplexer Block"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  mux_type		  off
+	  use_rpm		  off
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux1"
+	  Ports			  [3, 1]
+	  Position		  [355, 212, 380, 278]
+	  SourceBlock		  "xbsIndex_r3/Mux"
+	  SourceType		  "Xilinx Multiplexer Block"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  mux_type		  off
+	  use_rpm		  off
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Register"
+	  Ports			  [3, 1]
+	  Position		  [745, 306, 790, 354]
+	  SourceBlock		  "xbsIndex_r3/Register"
+	  SourceType		  "Xilinx Register Block"
+	  init			  "0"
+	  reg_only_valid	  off
+	  explicit_period	  on
+	  period		  "1"
+	  rst			  on
+	  en			  on
+	  out_en		  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Register1"
+	  Ports			  [3, 1]
+	  Position		  [565, 251, 610, 299]
+	  SourceBlock		  "xbsIndex_r3/Register"
+	  SourceType		  "Xilinx Register Block"
+	  init			  "0"
+	  reg_only_valid	  off
+	  explicit_period	  on
+	  period		  "1"
+	  rst			  on
+	  en			  on
+	  out_en		  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret"
+	  Ports			  [1, 1]
+	  Position		  [480, 119, 520, 151]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  on
+	  arith_type		  "Unsigned"
+	  force_bin_pt		  on
+	  bin_pt		  "0"
+	  force_valid		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "addr"
+	  Tag			  "xps:sw_reg"
+	  Ports			  [1, 1]
+	  Position		  [810, 315, 910, 345]
+	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
+	  SourceBlock		  "xps_library/software register"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  io_dir		  "To Processor"
+	  arith_type		  "Unsigned"
+	  bitwidth		  "32"
+	  bin_pt		  "0"
+	  sample_period		  "1"
+	  gw_name		  "casper_fft_stripped_legacy_snap_fft_addr_us"
+"er_data_in"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "bram_lsb"
+	  Tag			  "xps:bram"
+	  Ports			  [3, 1]
+	  Position		  [790, 106, 870, 164]
+	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
+	  SourceBlock		  "xps_library/Shared BRAM"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  arith_type		  "Unsigned"
+	  addr_width		  "nsamples"
+	  data_width		  "32"
+	  data_bin_pt		  "0"
+	  init_vals		  "0"
+	  sample_rate		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "bram_msb"
+	  Tag			  "xps:bram"
+	  Ports			  [3, 1]
+	  Position		  [790, 26, 870, 84]
+	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
+	  SourceBlock		  "xps_library/Shared BRAM"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  arith_type		  "Unsigned"
+	  addr_width		  "nsamples"
+	  data_width		  "32"
+	  data_bin_pt		  "0"
+	  init_vals		  "0"
+	  sample_rate		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ctrl"
+	  Tag			  "xps:sw_reg"
+	  Ports			  [1, 1]
+	  Position		  [55, 305, 155, 335]
+	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
+	  SourceBlock		  "xps_library/software register"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  io_dir		  "From Processor"
+	  arith_type		  "Unsigned"
+	  bitwidth		  "32"
+	  bin_pt		  "0"
+	  sample_period		  "1"
+	  gw_name		  "casper_fft_stripped_legacy_snap_fft_ctrl_us"
+"er_data_out"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "enable"
+	  Ports			  [1, 1]
+	  Position		  [185, 301, 230, 329]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Lower Bit Location + Width"
+	  nbits			  "1"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  boolean_output	  on
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "enable1"
+	  Ports			  [1, 1]
+	  Position		  [555, 128, 595, 142]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Lower Bit Location + Width"
+	  nbits			  "32"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  boolean_output	  off
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "enable2"
+	  Ports			  [1, 1]
+	  Position		  [555, 48, 595, 62]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Lower Bit Location + Width"
+	  nbits			  "32"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "32"
+	  base0			  "LSB of Input"
+	  boolean_output	  off
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "freeze_cntr"
+	  Ports			  [2, 2]
+	  Position		  [660, 225, 710, 265]
+	  SourceBlock		  "correlator_library/freeze_cntr"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  CounterBits		  "nsamples"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "posedge"
+	  Tag			  "Rising Edge Detector"
+	  Ports			  [1, 1]
+	  Position		  [330, 304, 370, 326]
+	  SourceBlock		  "adcscope_lib/posedge"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  yummy			  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "trig1"
+	  Ports			  [1, 1]
+	  Position		  [185, 201, 230, 229]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Lower Bit Location + Width"
+	  nbits			  "1"
+	  bit1			  "1"
+	  base1			  "MSB of Input"
+	  bit0			  "1"
+	  base0			  "LSB of Input"
+	  boolean_output	  on
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "valid"
+	  Ports			  [1, 1]
+	  Position		  [185, 116, 230, 144]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Lower Bit Location + Width"
+	  nbits			  "1"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "2"
+	  base0			  "LSB of Input"
+	  boolean_output	  on
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  Points		  [-5, 0; 0, -5]
+	  DstBlock		  "ctrl"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ctrl"
+	  SrcPort		  1
+	  Points		  [0, -5]
+	  Branch {
+	    Points		    [0, -100]
+	    Branch {
+	      Points		      [0, -85]
+	      DstBlock		      "valid"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "trig1"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "enable"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "valid"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "trig1"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, 10]
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "freeze_cntr"
+	  SrcPort		  2
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    Points		    [55, 0; 0, -100]
+	    Branch {
+	      DstBlock		      "bram_msb"
+	      DstPort		      3
+	    }
+	    Branch {
+	      DstBlock		      "bram_lsb"
+	      DstPort		      3
+	    }
+	  }
+	  Branch {
+	    Points		    [5, 0; 0, 90]
+	    DstBlock		    "Register"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "freeze_cntr"
+	  SrcPort		  1
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    DstBlock		    "Register"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [40, 0; 0, -120]
+	    Branch {
+	      Points		      [0, -80]
+	      DstBlock		      "bram_msb"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "bram_lsb"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, 85]
+	  DstBlock		  "freeze_cntr"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, 35]
+	  DstBlock		  "Logical"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 10]
+	  DstBlock		  "Register1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -15]
+	  DstBlock		  "Register1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Register1"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, -20]
+	  DstBlock		  "freeze_cntr"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Inverter"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "Logical"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "din"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  3
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "trig"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "we"
+	  SrcPort		  1
+	  Points		  [0, -10]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    Points		    [0, -80]
+	    DstBlock		    "enable2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "enable1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "enable1"
+	  SrcPort		  1
+	  DstBlock		  "bram_lsb"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "enable2"
+	  SrcPort		  1
+	  DstBlock		  "bram_msb"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Register"
+	  SrcPort		  1
+	  DstBlock		  "addr"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "posedge"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    Points		    [0, 15; 165, 0]
+	    Branch {
+	      DstBlock		      "Register1"
+	      DstPort		      3
+	    }
+	    Branch {
+	      DstBlock		      "Register"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    Points		    [0, -10]
+	    DstBlock		    "Inverter"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "enable"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "posedge"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "snap_fft_we"
+      Tag		      "xps:sw_reg"
+      Ports		      [1, 1]
+      Position		      [490, 305, 590, 335]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/software register"
+      SourceType	      ""
+      ShowPortLabels	      on
+      io_dir		      "From Processor"
+      arith_type	      "Unsigned"
+      bitwidth		      "32"
+      bin_pt		      "0"
+      sample_period	      "1"
+      gw_name		      "casper_fft_stripped_legacy_snap_fft_we_user_dat"
+"a_out"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trig_delay"
+      Ports		      [3, 2]
+      Position		      [575, 356, 655, 414]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      System {
+	Name			"trig_delay"
+	Location		[703, 144, 1198, 479]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "trig_in"
+	  Position		  [25, 213, 55, 227]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "data_in"
+	  Position		  [90, 28, 120, 42]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "delay"
+	  Position		  [135, 93, 165, 107]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant"
+	  Ports			  [0, 1]
+	  Position		  [35, 170, 80, 200]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "1"
+	  equ			  "P=C"
+	  arith_type		  "Boolean"
+	  n_bits		  "32"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Counter"
+	  Ports			  [2, 1]
+	  Position		  [175, 167, 225, 218]
+	  SourceBlock		  "xbsIndex_r3/Counter"
+	  SourceType		  "Xilinx Counter Block"
+	  cnt_type		  "Free Running"
+	  n_bits		  "32"
+	  bin_pt		  "0"
+	  arith_type		  "Unsigned"
+	  start_count		  "0"
+	  cnt_to		  "Inf"
+	  cnt_by_val		  "1"
+	  operation		  "Up"
+	  explicit_period	  on
+	  period		  "1"
+	  load_pin		  off
+	  rst			  on
+	  en			  on
+	  dbl_ovrd		  off
+	  show_param		  off
+	  use_rpm		  on
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay"
+	  Ports			  [1, 1]
+	  Position		  [205, 12, 250, 58]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "2"
+	  reg_retiming		  off
+	  explicit_period	  on
+	  period		  "1"
+	  en			  off
+	  accept_only_valid	  off
+	  init_zero		  on
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out"
+	  Ports			  [1, 1]
+	  Position		  [355, 224, 410, 246]
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  on
+	  timing_constraint	  "None"
+	  locs_specified	  off
+	  LOCs			  "{}"
+	  needs_fixed_name	  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out1"
+	  Ports			  [1, 1]
+	  Position		  [355, 264, 410, 286]
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  on
+	  timing_constraint	  "None"
+	  locs_specified	  off
+	  LOCs			  "{}"
+	  needs_fixed_name	  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Register"
+	  Ports			  [3, 1]
+	  Position		  [110, 181, 155, 229]
+	  SourceBlock		  "xbsIndex_r3/Register"
+	  SourceType		  "Xilinx Register Block"
+	  init			  "0"
+	  reg_only_valid	  off
+	  explicit_period	  on
+	  period		  "1"
+	  rst			  on
+	  en			  on
+	  out_en		  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Relational"
+	  Ports			  [3, 1]
+	  Position		  [255, 151, 300, 209]
+	  SourceBlock		  "xbsIndex_r3/Relational"
+	  SourceType		  "Xilinx Relational Block"
+	  mode			  "a=b"
+	  latency		  "1"
+	  explicit_period	  on
+	  period		  "1"
+	  en			  on
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Scope"
+	  Ports			  [2]
+	  Position		  [440, 215, 470, 295]
+	  Location		  [63, 116, 628, 675]
+	  Open			  off
+	  NumInputPorts		  "2"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  YMin			  "-5~-5"
+	  YMax			  "5~5"
+	  DataFormat		  "StructureWithTime"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "posedge"
+	  Tag			  "Rising Edge Detector"
+	  Ports			  [1, 1]
+	  Position		  [340, 170, 380, 190]
+	  SourceBlock		  "adcscope_lib/posedge"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  yummy			  on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "trig_out"
+	  Position		  [400, 173, 430, 187]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "data_out"
+	  Position		  [340, 28, 370, 42]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "delay"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 60]
+	  DstBlock		  "Relational"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "trig_in"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 5]
+	  Branch {
+	    DstBlock		    "Register"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 50]
+	    DstBlock		    "Gateway Out1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Register"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    Points		    [0, -40; -150, 0]
+	    Branch {
+	      Points		      [-70, 0; 0, 65]
+	      DstBlock		      "Register"
+	      DstPort		      2
+	    }
+	    Branch {
+	      DstBlock		      "Counter"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 0; 10, 0]
+	    Branch {
+	      Points		      [0, 55]
+	      DstBlock		      "Gateway Out"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "posedge"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Register"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Counter"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 35; 80, 0]
+	    DstBlock		    "Relational"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Counter"
+	  SrcPort		  1
+	  Points		  [0, -15]
+	  DstBlock		  "Relational"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Gateway Out"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Scope"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gateway Out1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Scope"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "data_in"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  DstBlock		  "data_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "posedge"
+	  SrcPort		  1
+	  DstBlock		  "trig_out"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "fft_shift"
+      SrcPort		      1
+      DstBlock		      "Slice"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      DstBlock		      "fft"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      DstBlock		      "gpio_sync_in"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "gpio_data_in"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "snap_fft_we"
+      SrcPort		      1
+      DstBlock		      "Slice3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Slice3"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "snap_fft"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant9"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "snap_fft_we"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "pulse_extender"
+      SrcPort		      1
+      DstBlock		      "gpio"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant4"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "fft_shift"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Slice"
+      SrcPort		      1
+      Points		      [0, 80]
+      DstBlock		      "fft"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "trig_delay"
+      SrcPort		      1
+      DstBlock		      "snap_fft"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "trig_delay"
+      SrcPort		      2
+      DstBlock		      "snap_fft"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "concat1"
+      SrcPort		      1
+      DstBlock		      "trig_delay"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "fft"
+      SrcPort		      1
+      DstBlock		      "gpio_sync_out"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "delay_slr1"
+      SrcPort		      1
+      DstBlock		      "gpio_ctsync_out"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "delay_slr"
+      SrcPort		      1
+      DstBlock		      "gpio_ctdata_out"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "gpio_sync_in"
+      SrcPort		      1
+      DstBlock		      "Delay"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "gpio_data_in"
+      SrcPort		      1
+      DstBlock		      "Delay1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft"
+      SrcPort		      3
+      DstBlock		      "gpio_pol1_out"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "snap_delay"
+      SrcPort		      1
+      Points		      [15, 0]
+      DstBlock		      "trig_delay"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Constant5"
+      SrcPort		      1
+      DstBlock		      "snap_delay"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	Points			[65, 0]
+	Branch {
+	  Points		  [0, -110]
+	  DstBlock		  "pulse_extender"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [25, 0]
+	  Branch {
+	    DstBlock		    "fft"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    DstBlock		    "trig_delay"
+	    DstPort		    1
+	  }
+	}
+      }
+      Branch {
+	Points			[0, 370]
+	DstBlock		"delay_slr1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Delay1"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	Points			[60, 0]
+	Branch {
+	  DstBlock		  "fft"
+	  DstPort		  4
+	}
+	Branch {
+	  Points		  [0, 150]
+	  DstBlock		  "concat1"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[0, 355]
+	DstBlock		"delay_slr"
+	DstPort			1
+      }
+    }
+    Annotation {
+      Name		      "Modified by: mwagner, lspitler\n6 April 09\n1) "
+"gpio_x_out changed to BEE2:usr_leftink\n2) Clock changed to usr_2x\n3) Fixed "
+"concat1 block into snap_fft\n4) Added fft_shift software register\n5) Put pas"
+"s through links back in\n6) Added SNAP trigger delay\nNote split in model: ca"
+"sper_fft_xaui.mdl\n7) Changed input gpio phases from 0 -> 180 \n(ala Glenn)"
+      Position		      [933, 81]
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "clk: usr_clk2x"
+      Position		      [174, 19]
+      DropShadow	      on
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    J!H   8    (     @         %    "
+"\"     $    !     0         %  0 !@    $    ,    <V%V960 =V]R:P        X    H"
+"#0  !@    @    \"          4    (     0    $    !          4 !  ,     0   !@ "
+"  !S:&%R960       !C;VUP:6QA=&EO;@ .    \" 0   8    (     @         %    \"  "
+"   $    !     0         %  0 $P    $   \"%    8V]M<&EL871I;VX          &-O;7!"
+"I;&%T:6]N7VQU=     !S:6UU;&EN:U]P97)I;V0     :6YC<E]N971L:7-T         '1R:6U?"
+"=F)I=',           !D8FQ?;W9R9               9&5P<F5C871E9%]C;VYT<F]L      X  "
+"  X    !@    @    $          4    (     0    <    !         !     '    =&%R9V"
+"5T,@ .    N $   8    (     @         %    \"     $    !     0         %  0 !P"
+"    $    .    :V5Y<P   '9A;'5E<P    X   \"X    !@    @    !          4    (  "
+"   0    (    !          X   !     !@    @    $          4    (     0    L    "
+"!         !     +    2$1,($YE=&QI<W0       X   !     !@    @    $          4 "
+"   (     0    L    !         !     +    3D=#($YE=&QI<W0       X   \"H    !@  "
+"  @    !          4    (     0    (    !          X    X    !@    @    $     "
+"     4    (     0    <    !         !     '    =&%R9V5T,0 .    .     8    (  "
+"  !          %    \"     $    '     0         0    !P   '1A<F=E=#( #@   #    "
+" &    \"     0         !0    @    !     0    $         $  ! #$    .    ,     "
+"8    (    !          %    \"     $    #     0         0  , ;V9F  X   !(    !@"
+"    @    $          4    (     0   !<    !         !     7    179E<GEW:&5R92!"
+"I;B!3=6)3>7-T96T #@   $@    &    \"     0         !0    @    !    &     $    "
+"     $    !@   !!8V-O<F1I;F<@=&\\@0FQO8VL@36%S:W,.    ,     8    (    !      "
+"    %    \"     $    #     0         0  , ;V9F  X   # \"   !@    @    \"     "
+"     4    (     0    $    !          4 !  (     0   !    !T87)G970Q '1A<F=E=#"
+"( #@   / #   &    \"     (         !0    @    !     0    $         !0 $ !    "
+" !    P    'AI;&EN>&9A;6EL>0    !P87)T                <W!E960              '!"
+"A8VMA9V4           !S>6YT:&5S:7-?=&]O;   9&ER96-T;W)Y         '1E<W1B96YC:   "
+"      !S>7-C;&M?<&5R:6]D    8V]R95]G96YE<F%T:6]N ')U;E]C;W)E9V5N      !E=F%L7"
+"V9I96QD        8VQO8VM?;&]C          X    X    !@    @    $          4    (  "
+"   0    @    !         !     (    5FER=&5X,E .    .     8    (    !          "
+"%    \"     $    '     0         0    !P   'AC,G9P-3  #@   #     &    \"     "
+"0         !0    @    !     @    $         $  \" \"TW   .    .     8    (    !"
+"          %    \"     $    &     0         0    !@   &9F,3$U,@  #@   #     & "
+"   \"     0         !0    @    !     P    $         $  # %A35  .    6     8  "
+"  (    !          %    \"     $    C     0         0    (P   \"XO8V%S<&5R7V9F"
+"=%]S=')I<'!E9%]L96=A8WDO<WES9V5N       .    ,     8    (    !          %    "
+"\"     $    #     0         0  , ;V9F  X    P    !@    @    $          4    ("
+"     0    (    !         !   @ Q,   #@   $@    &    \"     0         !0    @ "
+"   !    &     $         $    !@   !!8V-O<F1I;F<@=&\\@0FQO8VL@36%S:W,.    ,   "
+"  8    (    !          %    \"     $    #     0         0  , ;V9F  X    P    "
+"!@    @    $          4    (     0    $    !         !   0 P    #@   #     & "
+"   \"     0         !0    @               $         $          .    > 0   8  "
+"  (     @         %    \"     $    !     0         %  0 $P    $   #1    ;F=C7"
+"V-O;F9I9P           '-Y;G1H97-I<U]L86YG=6%G90!S>6YT:&5S:7-?=&]O;       >&EL:6"
+"YX9F%M:6QY         '!A<G0                   !S<&5E9                   =&5S=&)"
+"E;F-H             '!A8VMA9V4               !D:7)E8W1O<GD             <WES8VQK"
+"7W!E<FEO9        &-L;V-K7VQO8P                      #@   .@    &    \"     ( "
+"        !0    @    !     0    $         !0 $ !4    !    *@   &EN8VQU9&5?8VQO8"
+"VMW<F%P<&5R &EN8VQU9&5?8V8                       X    X    !@    @    &      "
+"    4    (     0    $    !          D    (            \\#\\.    .     8    ( "
+"   !@         %    \"     $    !     0         )    \"               #@   #  "
+"   &    \"     0         !0    @    !    !     $         $  $ %9(1$P.    ,   "
+"  8    (    !          %    \"     $    #     0         0  , 6%-4  X    X    "
+"!@    @    $          4    (     0    @    !         !     (    5FER=&5X,E . "
+"   .     8    (    !          %    \"     $    '     0         0    !P   'AC,"
+"G9P-S  #@   #     &    \"     0         !0    @    !     @    $         $  \""
+" \"TW   .    ,     8    (    !          %    \"     $    #     0         0  ,"
+" ;V9F  X    X    !@    @    $          4    (     0    8    !         !     &"
+"    9F8Q-S T   .    6     8    (    !          %    \"     $    C     0      "
+"   0    (P   \"XO8V%S<&5R7V9F=%]S=')I<'!E9%]L96=A8WDO<WES9V5N       .    .   "
+"  8    (    !          %    \"     $    %     0         0    !0   #0N.#<X    "
+"#@   #     &    \"     0         !0    @               $         $          ."
+"    * T   8    (     @         %    \"     $    !     0         %  0 #     $ "
+"   8    <VAA<F5D        8V]M<&EL871I;VX #@    @$   &    \"     (         !0  "
+"  @    !     0    $         !0 $ !,    !    A0   &-O;7!I;&%T:6]N          !C;"
+"VUP:6QA=&EO;E]L=70     <VEM=6QI;FM?<&5R:6]D     &EN8W)?;F5T;&ES=         !T<F"
+"EM7W9B:71S            9&)L7V]V<F0              &1E<')E8V%T961?8V]N=')O;      "
+".    .     8    (    !          %    \"     $    '     0         0    !P   '1"
+"A<F=E=#( #@   +@!   &    \"     (         !0    @    !     0    $         !0 "
+"$  <    !    #@   &ME>7,   !V86QU97,    .    N     8    (     0         %    "
+"\"     $    \"     0         .    0     8    (    !          %    \"     $   "
+" +     0         0    \"P   $A$3\"!.971L:7-T       .    0     8    (    !    "
+"      %    \"     $    +     0         0    \"P   $Y'0R!.971L:7-T       .    "
+"J     8    (     0         %    \"     $    \"     0         .    .     8    "
+"(    !          %    \"     $    '     0         0    !P   '1A<F=E=#$ #@   #@"
+"    &    \"     0         !0    @    !    !P    $         $     <   !T87)G970"
+"R  X    P    !@    @    $          4    (     0    $    !         !   0 Q    "
+"#@   #     &    \"     0         !0    @    !     P    $         $  # &]F9@ ."
+"    2     8    (    !          %    \"     $    7     0         0    %P   $5V"
+"97)Y=VAE<F4@:6X@4W5B4WES=&5M  X   !(    !@    @    $          4    (     0   "
+"!@    !         !     8    06-C;W)D:6YG('1O($)L;V-K($UA<VMS#@   #     &    \""
+"     0         !0    @    !     P    $         $  # &]F9@ .    P @   8    (  "
+"   @         %    \"     $    !     0         %  0 \"     $    0    =&%R9V5T,"
+"0!T87)G970R  X   #P P  !@    @    \"          4    (     0    $    !         "
+" 4 !  0     0   ,    !X:6QI;GAF86UI;'D     <&%R=                '-P965D      "
+"        !P86-K86=E            <WEN=&AE<VES7W1O;VP  &1I<F5C=&]R>0        !T97-"
+"T8F5N8V@         <WES8VQK7W!E<FEO9    &-O<F5?9V5N97)A=&EO;@!R=6Y?8V]R96=E;@  "
+"    979A;%]F:65L9        &-L;V-K7VQO8P         .    .     8    (    !        "
+"  %    \"     $    (     0         0    \"    %9I<G1E>#)0#@   #@    &    \"  "
+"   0         !0    @    !    !P    $         $     <   !X8S)V<#4P  X    P    "
+"!@    @    $          4    (     0    (    !         !   @ M-P  #@   #@    & "
+"   \"     0         !0    @    !    !@    $         $     8   !F9C$Q-3(   X  "
+"  P    !@    @    $          4    (     0    ,    !         !   P!84U0 #@   %"
+"@    &    \"     0         !0    @    !    (P    $         $    \",    N+V-A<"
+"W!E<E]F9G1?<W1R:7!P961?;&5G86-Y+W-Y<V=E;@      #@   #     &    \"     0      "
+"   !0    @    !     P    $         $  # &]F9@ .    ,     8    (    !         "
+" %    \"     $    \"     0         0  ( ,3    X   !(    !@    @    $         "
+" 4    (     0   !@    !         !     8    06-C;W)D:6YG('1O($)L;V-K($UA<VMS#@"
+"   #     &    \"     0         !0    @    !     P    $         $  # &]F9@ .  "
+"  ,     8    (    !          %    \"     $    !     0         0  $ ,     X   "
+" P    !@    @    $          4    (               !         !          #@   '@"
+"$   &    \"     (         !0    @    !     0    $         !0 $ !,    !    T0 "
+"  &YG8U]C;VYF:6<           !S>6YT:&5S:7-?;&%N9W5A9V4 <WEN=&AE<VES7W1O;VP     "
+" 'AI;&EN>&9A;6EL>0        !P87)T                    <W!E960                  "
+"'1E<W1B96YC:             !P86-K86=E                9&ER96-T;W)Y             '"
+"-Y<V-L:U]P97)I;V0       !C;&]C:U]L;V,                       X   #H    !@    @"
+"    \"          4    (     0    $    !          4 !  5     0   \"H   !I;F-L=6"
+"1E7V-L;V-K=W)A<'!E<@!I;F-L=61E7V-F                       .    .     8    (   "
+" !@         %    \"     $    !     0         )    \"            / _#@   #@   "
+" &    \"     8         !0    @    !     0    $         \"0    @              "
+" X    P    !@    @    $          4    (     0    0    !         !  ! !62$1,#@"
+"   #     &    \"     0         !0    @    !     P    $         $  # %A35  .  "
+"  .     8    (    !          %    \"     $    (     0         0    \"    %9I<"
+"G1E>#)0#@   #@    &    \"     0         !0    @    !    !P    $         $    "
+" <   !X8S)V<#<P  X    P    !@    @    $          4    (     0    (    !      "
+"   !   @ M-P  #@   #     &    \"     0         !0    @    !     P    $       "
+"  $  # &]F9@ .    .     8    (    !          %    \"     $    &     0        "
+" 0    !@   &9F,3<P-   #@   %@    &    \"     0         !0    @    !    (P    "
+"$         $    \",    N+V-A<W!E<E]F9G1?<W1R:7!P961?;&5G86-Y+W-Y<V=E;@      #@"
+"   #@    &    \"     0         !0    @    !    !0    $         $     4    T+C"
+"@W.     X    P    !@    @    $          4    (               !         !     "
+"     "
+  }
+}

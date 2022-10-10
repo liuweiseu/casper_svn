@@ -1,0 +1,7 @@
+There is a sample config file in this directory.
+
+Shell 1:
+$ make
+$ ./net2mem [path_to_config_file]
+Shell 2:
+$ ./mem2mir [path_to_config_file]

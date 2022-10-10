@@ -1,0 +1,5 @@
+regwrite sync_gen/period 1114110
+regwrite ctrl_sw 0xfff
+regwrite scale 10
+regwrite power/slice_register 2
+startudp 169 254 128 10 6969 

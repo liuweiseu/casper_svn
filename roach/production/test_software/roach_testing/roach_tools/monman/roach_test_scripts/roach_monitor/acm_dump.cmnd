@@ -1,0 +1,51 @@
+#dump the acm registers
+#V0
+r c1
+r c2
+r c3
+r c4
+#V1
+r c5
+r c6
+r c7
+r c8
+#V2
+r c9
+r ca
+r cb
+r cc
+#V3
+r cd
+r ce
+r cf
+r d0
+#V4
+r d1
+r d2
+r d3
+r d4
+#V5
+r d5
+r d6
+r d7
+r d8
+#V6
+r d9
+r da
+r db
+r dc
+#V7
+r dd
+r de
+r df
+r e0
+#V8
+r e1
+r e2
+r e3
+r e4
+#V9
+r e5
+r e6
+r e7
+r e8

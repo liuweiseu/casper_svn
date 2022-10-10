@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+ <open>1</open>
+
+  <NetworkLink>
+  <Link>
+    <href>http://casper.berkeley.edu/dynam.php</href>
+    <refreshMode>onInterval</refreshMode>
+    <refreshInverval>3</refreshInverval>
+  </Link>
+</NetworkLink>
+</Document>
+</kml>
+

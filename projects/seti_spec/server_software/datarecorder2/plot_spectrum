@@ -1,0 +1,119 @@
+#! /bin/csh
+
+set max = 0
+foreach i (`ls /ramdisk/beamset*`)
+    set new_max = `awk '{if ($2 > max) max = $2} END { print int(max) }' $i`
+    if ($new_max > $max) then
+        set max = $new_max
+    endif
+end
+
+echo max is $max
+
+#./dr2_power_spectrum /ramdisk/04jn06db/tape_data_0 beamset_0 16384
+#./dr2_power_spectrum /ramdisk/04jn06db/tape_data_1 beamset_1 16384
+#./dr2_power_spectrum /ramdisk/diskbuf_ds0_0* beamset_0 16384
+#./dr2_power_spectrum /ramdisk/diskbuf_ds1_0* beamset_1 16384
+./dr2_power_spectrum /ramdisk/quicklook0 beamset_0 16384
+./dr2_power_spectrum /ramdisk/quicklook1 beamset_1 16384
+
+set ranges = "[*:*] [1:$max]"
+#set ranges = "[0:4000] [1:$max]"
+set ranges = "[2000:14000] [1:$max]"
+set zoom = "[t=14000:16000]"
+set style = "impulses"
+set xrange = "[*:*]"
+set yrange = "[1:$max]"
+gnuplot -persist << HERE
+
+    set logscale y
+
+    set size 2.0,2.0
+    set origin 0.0,0.0
+    set multiplot
+
+    set size 0.5,0.25
+
+    set origin 0.0,0.0
+    plot $ranges "/ramdisk/beamset_0_6" using 1:2 with $style
+
+    set origin 0.5,0.0
+    plot $ranges "/ramdisk/beamset_0_7" using 1:2 with $style 
+
+    set origin 0.0,0.25
+    plot $ranges "/ramdisk/beamset_0_4" using 1:2 with $style 
+
+    set origin 0.5,0.25
+    plot $ranges "/ramdisk/beamset_0_5" using 1:2 with $style 
+
+    set origin 0.0,0.5
+    plot $ranges "/ramdisk/beamset_0_2" using 1:2 with $style 
+
+    set origin 0.5,0.5
+    plot $ranges "/ramdisk/beamset_0_3" using 1:2 with $style 
+
+    set origin 0.0,0.75
+    plot $ranges "/ramdisk/beamset_0_0" using 1:2 with $style 
+
+    set origin 0.5,0.75
+    plot $ranges "/ramdisk/beamset_0_1" using 1:2 with $style 
+
+    set nomultiplot
+HERE
+
+gnuplot -persist << HERE
+
+    set logscale y
+
+    set size 2.0,2.0
+    set origin 0.0,0.0
+    set multiplot
+
+    set size 0.5,0.25
+
+    set origin 0.0,0.0
+    plot $ranges "/ramdisk/beamset_1_6" using 1:2 with $style 
+
+    set origin 0.5,0.0
+    plot $ranges "/ramdisk/beamset_1_7" using 1:2 with $style 
+
+    set origin 0.0,0.25
+    plot $ranges "/ramdisk/beamset_1_4" using 1:2 with $style 
+
+    set origin 0.5,0.25
+    plot $ranges "/ramdisk/beamset_1_5" using 1:2 with $style 
+
+    set origin 0.0,0.5
+    plot $ranges "/ramdisk/beamset_1_2" using 1:2 with $style 
+
+    set origin 0.5,0.5
+    plot $ranges "/ramdisk/beamset_1_3" using 1:2 with $style 
+
+    set origin 0.0,0.75
+    plot $ranges "/ramdisk/beamset_1_0" using 1:2 with $style 
+
+    set origin 0.5,0.75
+    plot $ranges "/ramdisk/beamset_1_1" using 1:2 with $style 
+
+    set nomultiplot
+HERE
+
+exit 0
+
+foreach i (0 1)
+    foreach j (`ls /ramdisk/beamset_${i}*`)
+
+        if (${#argv} == 3) then
+	        gnuplot -persist << HERE
+	        plot [t=${1}:${2}] "${j}" using 1:2 with lines
+HERE
+
+        else
+	        gnuplot -persist << HERE
+            set multiplot
+	        plot "${j}" using 1:2 with lines
+HERE
+
+        endif
+    end
+end

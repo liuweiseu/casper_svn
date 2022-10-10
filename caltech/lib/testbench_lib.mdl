@@ -1,0 +1,545 @@
+Library {
+  Name			  "testbench_lib"
+  Version		  6.2
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  on
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  on
+  Created		  "Mon Oct 08 14:32:12 2007"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Glenn"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Oct 08 14:38:42 2007"
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Monospaced"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      ComplexToRealImag
+      Output		      "Real and imag"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      RealImagToComplex
+      Input		      "Real and imag"
+      ConstantPart	      "0"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Monospaced"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Monospaced"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "testbench_lib"
+    Location		    [1425, 373, 2205, 674]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "fpga_cplx_to_sim_cplx"
+      Ports		      [1, 3]
+      Position		      [310, 85, 360, 125]
+      AttributesFormatString  "18_17 bit"
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskDescription	      "Converts a Casper complex to a Simulink complex"
+      MaskPromptString	      "Data Width"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "width=@1;"
+      MaskInitialization      "set_param(gcb, 'AttributesFormatString', sprint"
+"f('%d_%d bit',width,width-1));"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "18"
+      System {
+	Name			"fpga_cplx_to_sim_cplx"
+	Location		[467, 452, 871, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "in"
+	  Position		  [25, 43, 55, 57]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out10"
+	  Ports			  [1, 1]
+	  Position		  [150, 52, 205, 68]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  "on"
+	  timing_constraint	  "None"
+	  locs_specified	  "off"
+	  LOCs			  "{}"
+	  needs_fixed_name	  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out6"
+	  Ports			  [1, 1]
+	  Position		  [150, 32, 205, 48]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  "on"
+	  timing_constraint	  "None"
+	  locs_specified	  "off"
+	  LOCs			  "{}"
+	  needs_fixed_name	  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  RealImagToComplex
+	  Name			  "Real-Imag to\nComplex"
+	  Ports			  [2, 1]
+	  Position		  [250, 33, 280, 62]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "c_to_ri"
+	  Ports			  [1, 2]
+	  Position		  [80, 29, 120, 71]
+	  AttributesFormatString  "49_56 r/i48_55 r/i"
+	  UserDataPersistent	  on
+	  UserData		  "DataTag0"
+	  SourceBlock		  "casper_library/Misc/c_to_ri"
+	  SourceType		  "c_to_ri"
+	  ShowPortLabels	  "on"
+	  n_bits		  "width"
+	  bin_pt		  "width-1"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cplx"
+	  Position		  [305, 43, 335, 57]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "re"
+	  Position		  [305, 13, 335, 27]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "im"
+	  Position		  [305, 93, 335, 107]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "in"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "c_to_ri"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Real-Imag to\nComplex"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "cplx"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gateway Out10"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, 40]
+	    DstBlock		    "im"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [10, 0]
+	    DstBlock		    "Real-Imag to\nComplex"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Gateway Out6"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, -20]
+	    DstBlock		    "re"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Real-Imag to\nComplex"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "c_to_ri"
+	  SrcPort		  2
+	  DstBlock		  "Gateway Out10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c_to_ri"
+	  SrcPort		  1
+	  DstBlock		  "Gateway Out6"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "sim_cplx_to_fpga_cplx"
+      Ports		      [1, 1]
+      Position		      [175, 88, 245, 142]
+      AttributesFormatString  "18_17 bit"
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskDescription	      "Converts a Simulink complex to fixed point and "
+"concatenates it to a Casper complex.\nOutput is two Fix_width_(width-1) numbe"
+"rs concatenated."
+      MaskPromptString	      "Data Width"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "width=@1;"
+      MaskInitialization      "set_param(gcb, 'AttributesFormatString', sprint"
+"f('%d_%d bit',width,width-1));"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "18"
+      System {
+	Name			"sim_cplx_to_fpga_cplx"
+	Location		[467, 463, 812, 561]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "sim"
+	  Position		  [25, 48, 55, 62]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  ComplexToRealImag
+	  Name			  "Complex to\nReal-Imag"
+	  Ports			  [1, 2]
+	  Position		  [80, 38, 110, 67]
+	  Output		  "Real and imag"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway In1"
+	  Ports			  [1, 1]
+	  Position		  [140, 30, 190, 40]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Gateway In"
+	  SourceType		  "Xilinx Gateway In"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "width"
+	  bin_pt		  "width-1"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  period		  "1"
+	  timing_constraint	  "None"
+	  locs_specified	  "off"
+	  LOCs			  "{}"
+	  needs_fixed_name	  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway In2"
+	  Ports			  [1, 1]
+	  Position		  [140, 65, 190, 75]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Gateway In"
+	  SourceType		  "Xilinx Gateway In"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "width"
+	  bin_pt		  "width-1"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  period		  "1"
+	  timing_constraint	  "None"
+	  locs_specified	  "off"
+	  LOCs			  "{}"
+	  needs_fixed_name	  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ri_to_c"
+	  Ports			  [2, 1]
+	  Position		  [225, 29, 265, 71]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag1"
+	  SourceBlock		  "casper_library/Misc/ri_to_c"
+	  SourceType		  "ri_to_c"
+	  ShowPortLabels	  "on"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "fpga"
+	  Position		  [290, 43, 320, 57]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "sim"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Complex to\nReal-Imag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ri_to_c"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "fpga"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gateway In2"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -10]
+	  DstBlock		  "ri_to_c"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Gateway In1"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 5]
+	  DstBlock		  "ri_to_c"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nReal-Imag"
+	  SrcPort		  2
+	  Points		  [10, 0]
+	  DstBlock		  "Gateway In2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nReal-Imag"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -10]
+	  DstBlock		  "Gateway In1"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}
+MatData {
+  NumRecords		  2
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    <     8    (     0         %    "
+"\"     $    !     0         .    0     8    (    !          %    \"     $    "
+",     0         0    #    ')I7W1O7V-?:6YI=      "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    \\     8    (     0         %    "
+"\"     $    #     0         .    0     8    (    !          %    \"     $    "
+",     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@      "
+"   %    \"     $    !     0         )    \"            \"! #@   #@    &    \""
+"     8         !0    @    !     0    $         \"0    @            <0 "
+  }
+}

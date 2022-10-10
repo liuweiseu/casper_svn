@@ -1,0 +1,6906 @@
+Library {
+  Name			  "pfb_library"
+  Version		  6.2
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Tue May 20 11:18:19 2003"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "hchen05"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon May 14 18:10:50 2007"
+  ModelVersionFormat	  "1.%<AutoIncrement:324>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "pfb_library"
+    Location		    [222, 180, 877, 732]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "adder_tree"
+      Ports		      [2, 1]
+      Position		      [15, 419, 70, 466]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Inputs|Latency per adder tree"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "num_inputs=@1;latency=@2;"
+      MaskInitialization      "adder_tree_mask;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "2|2"
+      MaskTabNameString	      ","
+      System {
+	Name			"adder_tree"
+	Location		[101, 74, 1010, 744]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din1"
+	  Position		  [30, 42, 60, 58]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din2"
+	  Position		  [30, 82, 60, 98]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder1_1"
+	  Ports			  [2, 1]
+	  Position		  [130, 40, 170, 100]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Addition"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "on"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dout"
+	  Position		  [230, 42, 260, 58]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "din1"
+	  SrcPort		  1
+	  DstBlock		  "adder1_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "din2"
+	  SrcPort		  1
+	  DstBlock		  "adder1_1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "adder1_1"
+	  SrcPort		  1
+	  DstBlock		  "dout"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "first_tap"
+      Ports		      [2, 4]
+      Position		      [15, 212, 120, 288]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "pfb_tap"
+      MaskPromptString	      "This is input number:|Implement Coefficients in"
+" Distributed Memory|Bin Width (normal = 1)"
+      MaskStyleString	      "edit,checkbox,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "nput=@1;CoeffDistMem=&2;fwidth=@3;"
+      MaskInitialization      "cursys = gcb;\ndisp(cursys);\nif ~strcmp(get_pa"
+"ram([cursys,'/pfb_coeff_gen'], 'CoeffDistMem'), CoeffDistMem),\n    set_param"
+"([cursys,'/pfb_coeff_gen'], 'CoeffDistMem', CoeffDistMem);\nend\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|off|1"
+      MaskTabNameString	      ",,"
+      System {
+	Name			"first_tap"
+	Location		[261, 106, 795, 703]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din"
+	  Position		  [35, 33, 65, 47]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync"
+	  Position		  [35, 73, 65, 87]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult"
+	  Ports			  [2, 1]
+	  Position		  [345, 197, 395, 248]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mult_latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult1"
+	  Ports			  [2, 1]
+	  Position		  [345, 132, 395, 183]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mult_latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret"
+	  Ports			  [1, 1]
+	  Position		  [285, 219, 325, 251]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  "on"
+	  arith_type		  "Signed  (2's comp)"
+	  force_bin_pt		  "on"
+	  bin_pt		  "CoeffBitWidth - 1"
+	  force_valid		  "on"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice"
+	  Ports			  [1, 1]
+	  Position		  [225, 221, 270, 249]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Lower Bit Location + Width"
+	  nbits			  "CoeffBitWidth"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  boolean_output	  "off"
+	  explicit_period	  "off"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice1"
+	  Ports			  [1, 1]
+	  Position		  [230, 271, 275, 299]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Two Bit Locations"
+	  nbits			  "CoeffBitWidth * (TotalTaps - 1)"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "CoeffBitWidth"
+	  base0			  "LSB of Input"
+	  boolean_output	  "off"
+	  explicit_period	  "off"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "c_to_ri"
+	  Ports			  [1, 2]
+	  Position		  [260, 149, 300, 191]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "c_to_ri"
+	    Location		    [567, 176, 837, 310]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "c"
+	      Position		      [20, 63, 50, 77]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret"
+	      Ports		      [1, 1]
+	      Position		      [150, 29, 190, 61]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "BitWidthIn - 1"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret1"
+	      Ports		      [1, 1]
+	      Position		      [150, 79, 190, 111]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "BitWidthIn - 1"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice"
+	      Ports		      [1, 1]
+	      Position		      [80, 31, 125, 59]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "BitWidthIn"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice1"
+	      Ports		      [1, 1]
+	      Position		      [80, 81, 125, 109]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Lower Bit Location + Width"
+	      nbits		      "BitWidthIn"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "re"
+	      Position		      [215, 38, 245, 52]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "im"
+	      Position		      [215, 88, 245, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "c"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"Slice1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -25]
+		DstBlock		"Slice"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      DstBlock		      "im"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      DstBlock		      "re"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice1"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "data_delay"
+	  Ports			  [1, 1]
+	  Position		  [345, 15, 385, 55]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "data_delay"
+	    Location		    [137, 87, 917, 538]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [285, 128, 315, 142]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant2"
+	      Ports		      [0, 1]
+	      Position		      [320, 143, 355, 167]
+	      SourceBlock	      "xbsIndex_r3/Constant"
+	      SourceType	      "Xilinx Constant Block"
+	      const		      "1"
+	      equ		      "P=C"
+	      arith_type	      "Boolean"
+	      n_bits		      "1"
+	      bin_pt		      "0"
+	      opselect		      "C"
+	      inp2		      "PCIN>>17"
+	      opr		      "+"
+	      inp1		      "P"
+	      carry		      "CIN"
+	      iostate		      "0"
+	      explicit_period	      "on"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Counter"
+	      Ports		      [0, 1]
+	      Position		      [310, 70, 350, 110]
+	      SourceBlock	      "xbsIndex_r3/Counter"
+	      SourceType	      "Xilinx Counter Block"
+	      cnt_type		      "Count Limited"
+	      n_bits		      "PFBSize-n_inputs"
+	      bin_pt		      "0"
+	      arith_type	      "Unsigned"
+	      start_count	      "0"
+	      cnt_to		      "2^(PFBSize-n_inputs) - bram_latency - 1"
+	      cnt_by_val	      "1"
+	      operation		      "Up"
+	      explicit_period	      "off"
+	      period		      "1"
+	      load_pin		      "off"
+	      rst		      "off"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      use_rpm		      "off"
+	      gen_core		      "on"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Single Port RAM"
+	      Ports		      [3, 1]
+	      Position		      [370, 108, 435, 162]
+	      SourceBlock	      "xbsIndex_r3/Single Port RAM"
+	      SourceType	      "Xilinx Single Port Random Access Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "0"
+	      write_mode	      "Read Before Write"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      distributed_mem	      "off"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [455, 128, 485, 142]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Single Port RAM"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Counter"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "pfb_coeff_gen"
+	  Ports			  [2, 3]
+	  Position		  [95, 22, 190, 98]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskPromptString	  "Size of PFB: (2^? pnts)|Bitwidth of Coeffic"
+"ients:|Total Number of Taps:|Implement Coeff Gen in Distributed Memory|Window"
+"ing Function: |BRAM Latency|Number of Simultaneous Inputs: (2^?)|This is inpu"
+"t number:|Bin Width (normal=1)"
+	  MaskStyleString	  "edit,edit,edit,checkbox,edit,edit,edit,edit"
+",edit"
+	  MaskTunableValueString  "on,on,on,on,on,on,on,on,on"
+	  MaskCallbackString	  "||||||||"
+	  MaskEnableString	  "on,on,on,on,on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on,on,on,on,on"
+	  MaskToolTipString	  "on,on,on,on,on,on,on,on,on"
+	  MaskVarAliasString	  ",,,,,,,,"
+	  MaskVariables		  "PFBSize=@1;CoeffBitWidth=@2;TotalTaps=@3;Co"
+"effDistMem=&4;WindowType=@5;bram_latency=@6;n_inputs=@7;nput=@8;fwidth=@9;"
+	  MaskInitialization	  "pfb_coeff_gen_mask;"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "PFBSize|CoeffBitWidth|TotalTaps|off|WindowT"
+"ype|bram_latency|n_inputs|nput|fwidth"
+	  MaskTabNameString	  ",,,,,,,,"
+	  System {
+	    Name		    "pfb_coeff_gen"
+	    Location		    [7, 94, 520, 764]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "din"
+	      Position		      [235, 28, 265, 42]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "sync"
+	      Position		      [15, 93, 45, 107]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Concat"
+	      Ports		      [8, 1]
+	      Position		      [310, 97, 365, 643]
+	      SourceBlock	      "xbsIndex_r3/Concat"
+	      SourceType	      "Xilinx Bus Concatenator"
+	      num_inputs	      "8"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Counter"
+	      Ports		      [1, 1]
+	      Position		      [65, 75, 115, 125]
+	      SourceBlock	      "xbsIndex_r3/Counter"
+	      SourceType	      "Xilinx Counter Block"
+	      cnt_type		      "Free Running"
+	      n_bits		      "PFBSize-n_inputs"
+	      bin_pt		      "0"
+	      arith_type	      "Unsigned"
+	      start_count	      "0"
+	      cnt_to		      "Inf"
+	      cnt_by_val	      "1"
+	      operation		      "Up"
+	      explicit_period	      "on"
+	      period		      "1"
+	      load_pin		      "off"
+	      rst		      "on"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      use_rpm		      "on"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [1, 1]
+	      Position		      [65, 17, 110, 63]
+	      SourceBlock	      "xbsIndex_r3/Delay"
+	      SourceType	      "Xilinx Delay Block"
+	      latency		      "bram_latency+1"
+	      reg_retiming	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      en		      "off"
+	      accept_only_valid	      "off"
+	      init_zero		      "on"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay1"
+	      Ports		      [1, 1]
+	      Position		      [290, 17, 335, 63]
+	      SourceBlock	      "xbsIndex_r3/Delay"
+	      SourceType	      "Xilinx Delay Block"
+	      latency		      "bram_latency+1"
+	      reg_retiming	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      en		      "off"
+	      accept_only_valid	      "off"
+	      init_zero		      "on"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM1"
+	      Ports		      [1, 1]
+	      Position		      [150, 74, 200, 126]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(0*2^(PFBSize-n_inputs) + 1:1*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM2"
+	      Ports		      [1, 1]
+	      Position		      [150, 139, 200, 191]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(1*2^(PFBSize-n_inputs) + 1:2*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM3"
+	      Ports		      [1, 1]
+	      Position		      [150, 204, 200, 256]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(2*2^(PFBSize-n_inputs) + 1:3*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM4"
+	      Ports		      [1, 1]
+	      Position		      [150, 269, 200, 321]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(3*2^(PFBSize-n_inputs) + 1:4*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM5"
+	      Ports		      [1, 1]
+	      Position		      [150, 334, 200, 386]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(4*2^(PFBSize-n_inputs) + 1:5*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM6"
+	      Ports		      [1, 1]
+	      Position		      [150, 399, 200, 451]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(5*2^(PFBSize-n_inputs) + 1:6*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM7"
+	      Ports		      [1, 1]
+	      Position		      [150, 464, 200, 516]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(6*2^(PFBSize-n_inputs) + 1:7*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM8"
+	      Ports		      [1, 1]
+	      Position		      [150, 529, 200, 581]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(7*2^(PFBSize-n_inputs) + 1:8*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Register"
+	      Ports		      [1, 1]
+	      Position		      [385, 325, 430, 375]
+	      SourceBlock	      "xbsIndex_r3/Register"
+	      SourceType	      "Xilinx Register Block"
+	      init		      "0"
+	      reg_only_valid	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      en		      "off"
+	      out_en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret1"
+	      Ports		      [1, 1]
+	      Position		      [220, 84, 260, 116]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret2"
+	      Ports		      [1, 1]
+	      Position		      [220, 149, 260, 181]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret3"
+	      Ports		      [1, 1]
+	      Position		      [220, 214, 260, 246]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret4"
+	      Ports		      [1, 1]
+	      Position		      [220, 279, 260, 311]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret5"
+	      Ports		      [1, 1]
+	      Position		      [220, 344, 260, 376]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret6"
+	      Ports		      [1, 1]
+	      Position		      [220, 409, 260, 441]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret7"
+	      Ports		      [1, 1]
+	      Position		      [220, 474, 260, 506]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret8"
+	      Ports		      [1, 1]
+	      Position		      [220, 539, 260, 571]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "dout"
+	      Position		      [360, 28, 390, 42]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sync_out"
+	      Position		      [130, 28, 160, 42]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "coeff"
+	      Position		      [450, 343, 480, 357]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "din"
+	      SrcPort		      1
+	      DstBlock		      "Delay1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay1"
+	      SrcPort		      1
+	      DstBlock		      "dout"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "sync"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"Counter"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      DstBlock		      "sync_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Concat"
+	      SrcPort		      1
+	      DstBlock		      "Register"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Register"
+	      SrcPort		      1
+	      DstBlock		      "coeff"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Counter"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"ROM1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM3"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM4"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM5"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM6"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM7"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM8"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "ROM1"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ROM2"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret2"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "ROM3"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret3"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "ROM4"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret4"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "ROM5"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret5"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "ROM6"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret6"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "ROM7"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret7"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "ROM8"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret8"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret8"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      8
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ri_to_c"
+	  Ports			  [2, 1]
+	  Position		  [425, 164, 465, 206]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ri_to_c"
+	    Location		    [512, 151, 787, 285]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "re"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "im"
+	      Position		      [25, 88, 55, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Concat"
+	      Ports		      [2, 1]
+	      Position		      [145, 40, 195, 95]
+	      SourceBlock	      "xbsIndex_r3/Concat"
+	      SourceType	      "Xilinx Bus Concatenator"
+	      num_inputs	      "2"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret"
+	      Ports		      [1, 1]
+	      Position		      [80, 29, 120, 61]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret1"
+	      Ports		      [1, 1]
+	      Position		      [80, 79, 120, 111]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "c"
+	      Position		      [220, 63, 250, 77]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "im"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Concat"
+	      SrcPort		      1
+	      DstBlock		      "c"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "re"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      Points		      [0, -15]
+	      DstBlock		      "Concat"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      Points		      [0, 10]
+	      DstBlock		      "Concat"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "sync_delay"
+	  Ports			  [1, 1]
+	  Position		  [345, 74, 385, 116]
+	  SourceBlock		  "pfb_library/sync_delay"
+	  SourceType		  "Unknown"
+	  ShowPortLabels	  "on"
+	  DelayLen		  "2^(PFBSize-n_inputs)"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dout"
+	  Position		  [410, 28, 440, 42]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  Position		  [410, 88, 440, 102]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "coeff_out"
+	  Position		  [295, 278, 325, 292]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "taps_out"
+	  Position		  [485, 178, 515, 192]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Mult"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Mult1"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Slice"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Slice1"
+	  SrcPort		  1
+	  DstBlock		  "coeff_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sync_delay"
+	  SrcPort		  1
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "data_delay"
+	  SrcPort		  1
+	  DstBlock		  "dout"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "din"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "pfb_coeff_gen"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pfb_coeff_gen"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    DstBlock		    "data_delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 135]
+	    DstBlock		    "c_to_ri"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "sync"
+	  SrcPort		  1
+	  DstBlock		  "pfb_coeff_gen"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "pfb_coeff_gen"
+	  SrcPort		  2
+	  Points		  [65, 0; 0, 35]
+	  DstBlock		  "sync_delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pfb_coeff_gen"
+	  SrcPort		  3
+	  Points		  [10, 0; 0, 150]
+	  Branch {
+	    DstBlock		    "Slice"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 50]
+	    DstBlock		    "Slice1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "c_to_ri"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -15]
+	  DstBlock		  "Mult1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c_to_ri"
+	  SrcPort		  2
+	  Points		  [15, 0; 0, 30]
+	  DstBlock		  "Mult"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult1"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 15]
+	  DstBlock		  "ri_to_c"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -30]
+	  DstBlock		  "ri_to_c"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ri_to_c"
+	  SrcPort		  1
+	  DstBlock		  "taps_out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "first_tap_real"
+      Ports		      [2, 4]
+      Position		      [15, 312, 120, 388]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "pfb_tap_real"
+      MaskPromptString	      "This is input number:|Implement Coefficients in"
+" Distributed Memory|Bin Width (normal = 1)"
+      MaskStyleString	      "edit,checkbox,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "nput=@1;CoeffDistMem=&2;fwidth=@3;"
+      MaskInitialization      "cursys = gcb;\ndisp(cursys);\nif ~strcmp(get_pa"
+"ram([cursys,'/pfb_coeff_gen'], 'CoeffDistMem'), CoeffDistMem),\n    set_param"
+"([cursys,'/pfb_coeff_gen'], 'CoeffDistMem', CoeffDistMem);\nend\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|off|1"
+      MaskTabNameString	      ",,"
+      System {
+	Name			"first_tap_real"
+	Location		[285, 225, 888, 576]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din"
+	  Position		  [35, 33, 65, 47]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync"
+	  Position		  [35, 73, 65, 87]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult"
+	  Ports			  [2, 1]
+	  Position		  [360, 172, 410, 223]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mult_latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret"
+	  Ports			  [1, 1]
+	  Position		  [285, 194, 325, 226]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  "on"
+	  arith_type		  "Signed  (2's comp)"
+	  force_bin_pt		  "on"
+	  bin_pt		  "CoeffBitWidth - 1"
+	  force_valid		  "on"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret1"
+	  Ports			  [1, 1]
+	  Position		  [435, 184, 475, 216]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  "on"
+	  arith_type		  "Unsigned"
+	  force_bin_pt		  "on"
+	  bin_pt		  "0"
+	  force_valid		  "on"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret2"
+	  Ports			  [1, 1]
+	  Position		  [285, 134, 325, 166]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  "on"
+	  arith_type		  "Signed  (2's comp)"
+	  force_bin_pt		  "on"
+	  bin_pt		  "BitWidthIn - 1"
+	  force_valid		  "on"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice"
+	  Ports			  [1, 1]
+	  Position		  [225, 196, 270, 224]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Lower Bit Location + Width"
+	  nbits			  "CoeffBitWidth"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  boolean_output	  "off"
+	  explicit_period	  "off"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice1"
+	  Ports			  [1, 1]
+	  Position		  [230, 246, 275, 274]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Two Bit Locations"
+	  nbits			  "CoeffBitWidth * (TotalTaps - 1)"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "CoeffBitWidth"
+	  base0			  "LSB of Input"
+	  boolean_output	  "off"
+	  explicit_period	  "off"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "data_delay"
+	  Ports			  [1, 1]
+	  Position		  [345, 15, 385, 55]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "data_delay"
+	    Location		    [137, 87, 917, 538]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [285, 128, 315, 142]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant2"
+	      Ports		      [0, 1]
+	      Position		      [320, 143, 355, 167]
+	      SourceBlock	      "xbsIndex_r3/Constant"
+	      SourceType	      "Xilinx Constant Block"
+	      const		      "1"
+	      equ		      "P=C"
+	      arith_type	      "Boolean"
+	      n_bits		      "1"
+	      bin_pt		      "0"
+	      opselect		      "C"
+	      inp2		      "PCIN>>17"
+	      opr		      "+"
+	      inp1		      "P"
+	      carry		      "CIN"
+	      iostate		      "0"
+	      explicit_period	      "on"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Counter"
+	      Ports		      [0, 1]
+	      Position		      [310, 70, 350, 110]
+	      SourceBlock	      "xbsIndex_r3/Counter"
+	      SourceType	      "Xilinx Counter Block"
+	      cnt_type		      "Count Limited"
+	      n_bits		      "PFBSize-n_inputs"
+	      bin_pt		      "0"
+	      arith_type	      "Unsigned"
+	      start_count	      "0"
+	      cnt_to		      "2^(PFBSize-n_inputs) - bram_latency - 1"
+	      cnt_by_val	      "1"
+	      operation		      "Up"
+	      explicit_period	      "off"
+	      period		      "1"
+	      load_pin		      "off"
+	      rst		      "off"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      use_rpm		      "off"
+	      gen_core		      "on"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Single Port RAM"
+	      Ports		      [3, 1]
+	      Position		      [370, 108, 435, 162]
+	      SourceBlock	      "xbsIndex_r3/Single Port RAM"
+	      SourceType	      "Xilinx Single Port Random Access Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "0"
+	      write_mode	      "Read Before Write"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      distributed_mem	      "off"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [455, 128, 485, 142]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Counter"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Single Port RAM"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "pfb_coeff_gen"
+	  Ports			  [2, 3]
+	  Position		  [95, 22, 190, 98]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskPromptString	  "Size of PFB: (2^? pnts)|Bitwidth of Coeffic"
+"ients:|Total Number of Taps:|Implement Coeff Gen in Distributed Memory|Window"
+"ing Function: |BRAM Latency|Number of Simultaneous Inputs: (2^?)|This is inpu"
+"t number:|Bin Width (normal=1)"
+	  MaskStyleString	  "edit,edit,edit,checkbox,edit,edit,edit,edit"
+",edit"
+	  MaskTunableValueString  "on,on,on,on,on,on,on,on,on"
+	  MaskCallbackString	  "||||||||"
+	  MaskEnableString	  "on,on,on,on,on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on,on,on,on,on"
+	  MaskToolTipString	  "on,on,on,on,on,on,on,on,on"
+	  MaskVarAliasString	  ",,,,,,,,"
+	  MaskVariables		  "PFBSize=@1;CoeffBitWidth=@2;TotalTaps=@3;Co"
+"effDistMem=&4;WindowType=@5;bram_latency=@6;n_inputs=@7;nput=@8;fwidth=@9;"
+	  MaskInitialization	  "pfb_coeff_gen_mask;"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "PFBSize|CoeffBitWidth|TotalTaps|off|WindowT"
+"ype|bram_latency|n_inputs|nput|fwidth"
+	  MaskTabNameString	  ",,,,,,,,"
+	  System {
+	    Name		    "pfb_coeff_gen"
+	    Location		    [7, 94, 520, 764]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "din"
+	      Position		      [180, 33, 210, 47]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "sync"
+	      Position		      [15, 93, 45, 107]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Concat"
+	      Ports		      [8, 1]
+	      Position		      [310, 97, 365, 643]
+	      SourceBlock	      "xbsIndex_r3/Concat"
+	      SourceType	      "Xilinx Bus Concatenator"
+	      num_inputs	      "8"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Counter"
+	      Ports		      [1, 1]
+	      Position		      [65, 75, 115, 125]
+	      SourceBlock	      "xbsIndex_r3/Counter"
+	      SourceType	      "Xilinx Counter Block"
+	      cnt_type		      "Free Running"
+	      n_bits		      "PFBSize-n_inputs"
+	      bin_pt		      "0"
+	      arith_type	      "Unsigned"
+	      start_count	      "0"
+	      cnt_to		      "Inf"
+	      cnt_by_val	      "1"
+	      operation		      "Up"
+	      explicit_period	      "on"
+	      period		      "1"
+	      load_pin		      "off"
+	      rst		      "on"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      use_rpm		      "on"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [1, 1]
+	      Position		      [65, 17, 110, 63]
+	      SourceBlock	      "xbsIndex_r3/Delay"
+	      SourceType	      "Xilinx Delay Block"
+	      latency		      "bram_latency+1"
+	      reg_retiming	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      en		      "off"
+	      accept_only_valid	      "off"
+	      init_zero		      "on"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay1"
+	      Ports		      [1, 1]
+	      Position		      [315, 17, 360, 63]
+	      SourceBlock	      "xbsIndex_r3/Delay"
+	      SourceType	      "Xilinx Delay Block"
+	      latency		      "bram_latency+1"
+	      reg_retiming	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      en		      "off"
+	      accept_only_valid	      "off"
+	      init_zero		      "on"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM1"
+	      Ports		      [1, 1]
+	      Position		      [150, 74, 200, 126]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(0*2^(PFBSize-n_inputs) + 1:1*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM2"
+	      Ports		      [1, 1]
+	      Position		      [150, 139, 200, 191]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(1*2^(PFBSize-n_inputs) + 1:2*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM3"
+	      Ports		      [1, 1]
+	      Position		      [150, 204, 200, 256]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(2*2^(PFBSize-n_inputs) + 1:3*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM4"
+	      Ports		      [1, 1]
+	      Position		      [150, 269, 200, 321]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(3*2^(PFBSize-n_inputs) + 1:4*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM5"
+	      Ports		      [1, 1]
+	      Position		      [150, 334, 200, 386]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(4*2^(PFBSize-n_inputs) + 1:5*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM6"
+	      Ports		      [1, 1]
+	      Position		      [150, 399, 200, 451]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(5*2^(PFBSize-n_inputs) + 1:6*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM7"
+	      Ports		      [1, 1]
+	      Position		      [150, 464, 200, 516]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(6*2^(PFBSize-n_inputs) + 1:7*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ROM8"
+	      Ports		      [1, 1]
+	      Position		      [150, 529, 200, 581]
+	      SourceBlock	      "xbsIndex_r3/ROM"
+	      SourceType	      "Xilinx Single Port Read-Only Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "buf(7*2^(PFBSize-n_inputs) + 1:8*2^(PFB"
+"Size-n_inputs))"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "CoeffBitWidth"
+	      bin_pt		      "CoeffBitWidth-1"
+	      latency		      "bram_latency"
+	      init_zero		      "on"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      init_reg		      "0"
+	      en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "on"
+	      distributed_mem	      "on"
+	      use_rpm		      "off"
+	      gen_core		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Register"
+	      Ports		      [1, 1]
+	      Position		      [385, 325, 430, 375]
+	      SourceBlock	      "xbsIndex_r3/Register"
+	      SourceType	      "Xilinx Register Block"
+	      init		      "0"
+	      reg_only_valid	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      rst		      "off"
+	      en		      "off"
+	      out_en		      "off"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret1"
+	      Ports		      [1, 1]
+	      Position		      [220, 84, 260, 116]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret2"
+	      Ports		      [1, 1]
+	      Position		      [220, 149, 260, 181]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret3"
+	      Ports		      [1, 1]
+	      Position		      [220, 214, 260, 246]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret4"
+	      Ports		      [1, 1]
+	      Position		      [220, 279, 260, 311]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret5"
+	      Ports		      [1, 1]
+	      Position		      [220, 344, 260, 376]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret6"
+	      Ports		      [1, 1]
+	      Position		      [220, 409, 260, 441]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret7"
+	      Ports		      [1, 1]
+	      Position		      [220, 474, 260, 506]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret8"
+	      Ports		      [1, 1]
+	      Position		      [220, 539, 260, 571]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret9"
+	      Ports		      [1, 1]
+	      Position		      [245, 24, 285, 56]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "dout"
+	      Position		      [385, 33, 415, 47]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sync_out"
+	      Position		      [130, 28, 160, 42]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "coeff"
+	      Position		      [450, 343, 480, 357]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret8"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "ROM8"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret8"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret7"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "ROM7"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret6"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "ROM6"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret5"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "ROM5"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret4"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "ROM4"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret3"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "ROM3"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret2"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "ROM2"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ROM1"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Counter"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"ROM8"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM7"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM6"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM5"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM4"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM3"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ROM1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Register"
+	      SrcPort		      1
+	      DstBlock		      "coeff"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Concat"
+	      SrcPort		      1
+	      DstBlock		      "Register"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      DstBlock		      "sync_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "sync"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Counter"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Delay1"
+	      SrcPort		      1
+	      DstBlock		      "dout"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "din"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret9"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret9"
+	      SrcPort		      1
+	      DstBlock		      "Delay1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "sync_delay"
+	  Ports			  [1, 1]
+	  Position		  [345, 74, 385, 116]
+	  SourceBlock		  "pfb_library/sync_delay"
+	  SourceType		  "Unknown"
+	  ShowPortLabels	  "on"
+	  DelayLen		  "2^(PFBSize-n_inputs)"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dout"
+	  Position		  [410, 28, 440, 42]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  Position		  [410, 88, 440, 102]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "coeff_out"
+	  Position		  [295, 253, 325, 267]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "taps_out"
+	  Position		  [500, 193, 530, 207]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pfb_coeff_gen"
+	  SrcPort		  3
+	  Points		  [10, 0; 0, 125]
+	  Branch {
+	    Points		    [0, 50]
+	    DstBlock		    "Slice1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Slice"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "pfb_coeff_gen"
+	  SrcPort		  2
+	  Points		  [65, 0; 0, 35]
+	  DstBlock		  "sync_delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sync"
+	  SrcPort		  1
+	  DstBlock		  "pfb_coeff_gen"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "pfb_coeff_gen"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    DstBlock		    "data_delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 115]
+	    DstBlock		    "Reinterpret2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "din"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "pfb_coeff_gen"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "data_delay"
+	  SrcPort		  1
+	  DstBlock		  "dout"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sync_delay"
+	  SrcPort		  1
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Slice1"
+	  SrcPort		  1
+	  DstBlock		  "coeff_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Slice"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  DstBlock		  "Mult"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Reinterpret1"
+	  SrcPort		  1
+	  DstBlock		  "taps_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reinterpret2"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 35]
+	  DstBlock		  "Mult"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "last_tap"
+      Ports		      [4, 2]
+      Position		      [270, 212, 375, 288]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "pfb_tap"
+      MaskPromptString	      "Quantization Behavior:"
+      MaskStyleString	      "popup(Truncate|Round  (unbiased: +/- Inf)|Round"
+"  (unbiased: Even Values))"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "quantization=&1;"
+      MaskInitialization      "cursys = gcb;\ndisp(cursys);\nif ~strcmp(get_pa"
+"ram([cursys,'/pfb_add_tree'], 'quantization'), quantization),\n    set_param("
+"[cursys,'/pfb_add_tree'], 'quantization', quantization);\nend"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Truncate"
+      System {
+	Name			"last_tap"
+	Location		[338, 171, 912, 685]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din"
+	  Position		  [30, 148, 60, 162]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync"
+	  Position		  [280, 243, 310, 257]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "coeff"
+	  Position		  [50, 228, 80, 242]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "taps"
+	  Position		  [255, 208, 285, 222]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Concat"
+	  Ports			  [2, 1]
+	  Position		  [315, 155, 365, 210]
+	  SourceBlock		  "xbsIndex_r3/Concat"
+	  SourceType		  "Xilinx Bus Concatenator"
+	  num_inputs		  "2"
+	  explicit_period	  "off"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay"
+	  Ports			  [1, 1]
+	  Position		  [325, 227, 370, 273]
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "mult_latency"
+	  reg_retiming		  "off"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  accept_only_valid	  "off"
+	  init_zero		  "on"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult"
+	  Ports			  [2, 1]
+	  Position		  [160, 197, 210, 248]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mult_latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult1"
+	  Ports			  [2, 1]
+	  Position		  [160, 132, 210, 183]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mult_latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret"
+	  Ports			  [1, 1]
+	  Position		  [95, 219, 135, 251]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  "on"
+	  arith_type		  "Signed  (2's comp)"
+	  force_bin_pt		  "on"
+	  bin_pt		  "CoeffBitWidth - 1"
+	  force_valid		  "on"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "c_to_ri"
+	  Ports			  [1, 2]
+	  Position		  [85, 134, 125, 176]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "c_to_ri"
+	    Location		    [567, 176, 837, 310]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "c"
+	      Position		      [20, 63, 50, 77]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret"
+	      Ports		      [1, 1]
+	      Position		      [150, 29, 190, 61]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "BitWidthIn - 1"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret1"
+	      Ports		      [1, 1]
+	      Position		      [150, 79, 190, 111]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "BitWidthIn - 1"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice"
+	      Ports		      [1, 1]
+	      Position		      [80, 31, 125, 59]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "BitWidthIn"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice1"
+	      Ports		      [1, 1]
+	      Position		      [80, 81, 125, 109]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Lower Bit Location + Width"
+	      nbits		      "BitWidthIn"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "re"
+	      Position		      [215, 38, 245, 52]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "im"
+	      Position		      [215, 88, 245, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "c"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"Slice1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -25]
+		DstBlock		"Slice"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      DstBlock		      "im"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      DstBlock		      "re"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice1"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "pfb_add_tree"
+	  Ports			  [2, 2]
+	  Position		  [390, 174, 485, 216]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskPromptString	  "Total Number of Taps:|Input Bitwidth:|Outpu"
+"t Bitwidth:|Coeff Bitwidth:|Add Latency|Quantization Behavior"
+	  MaskStyleString	  "edit,edit,edit,edit,edit,popup(Truncate|Rou"
+"nd  (unbiased: +/- Inf)|Round  (unbiased: Even Values))"
+	  MaskTunableValueString  "on,on,on,on,on,on"
+	  MaskCallbackString	  "|||||"
+	  MaskEnableString	  "on,on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on,on"
+	  MaskToolTipString	  "on,on,on,on,on,on"
+	  MaskVarAliasString	  ",,,,,"
+	  MaskVariables		  "TotalTaps=@1;BitWidthIn=@2;BitWidthOut=@3;C"
+"oeffBitWidth=@4;add_latency=@5;quantization=&6;"
+	  MaskInitialization	  "pfb_add_mask;"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "TotalTaps|BitWidthIn|BitWidthOut|CoeffBitWi"
+"dth|add_latency|Truncate"
+	  MaskTabNameString	  ",,,,,"
+	  System {
+	    Name		    "pfb_add_tree"
+	    Location		    [380, 100, 902, 664]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "din"
+	      Position		      [15, 123, 45, 137]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "sync"
+	      Position		      [15, 28, 45, 42]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint0_1"
+	      Ports		      [1, 1]
+	      Position		      [130, 139, 160, 151]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint0_2"
+	      Ports		      [1, 1]
+	      Position		      [130, 164, 160, 176]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint1_1"
+	      Ports		      [1, 1]
+	      Position		      [130, 189, 160, 201]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint1_2"
+	      Ports		      [1, 1]
+	      Position		      [130, 214, 160, 226]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint2_1"
+	      Ports		      [1, 1]
+	      Position		      [130, 239, 160, 251]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint2_2"
+	      Ports		      [1, 1]
+	      Position		      [130, 264, 160, 276]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint3_1"
+	      Ports		      [1, 1]
+	      Position		      [130, 289, 160, 301]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint3_2"
+	      Ports		      [1, 1]
+	      Position		      [130, 314, 160, 326]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint4_1"
+	      Ports		      [1, 1]
+	      Position		      [130, 339, 160, 351]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint4_2"
+	      Ports		      [1, 1]
+	      Position		      [130, 364, 160, 376]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint5_1"
+	      Ports		      [1, 1]
+	      Position		      [130, 389, 160, 401]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint5_2"
+	      Ports		      [1, 1]
+	      Position		      [130, 414, 160, 426]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint6_1"
+	      Ports		      [1, 1]
+	      Position		      [130, 439, 160, 451]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint6_2"
+	      Ports		      [1, 1]
+	      Position		      [130, 464, 160, 476]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint7_1"
+	      Ports		      [1, 1]
+	      Position		      [130, 489, 160, 501]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint7_2"
+	      Ports		      [1, 1]
+	      Position		      [130, 514, 160, 526]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice0_1"
+	      Ports		      [1, 1]
+	      Position		      [70, 139, 115, 151]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-0*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice0_2"
+	      Ports		      [1, 1]
+	      Position		      [70, 164, 115, 176]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-1*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice1_1"
+	      Ports		      [1, 1]
+	      Position		      [70, 189, 115, 201]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-2*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice1_2"
+	      Ports		      [1, 1]
+	      Position		      [70, 214, 115, 226]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-3*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice2_1"
+	      Ports		      [1, 1]
+	      Position		      [70, 239, 115, 251]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-4*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice2_2"
+	      Ports		      [1, 1]
+	      Position		      [70, 264, 115, 276]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-5*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice3_1"
+	      Ports		      [1, 1]
+	      Position		      [70, 289, 115, 301]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-6*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice3_2"
+	      Ports		      [1, 1]
+	      Position		      [70, 314, 115, 326]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-7*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice4_1"
+	      Ports		      [1, 1]
+	      Position		      [70, 339, 115, 351]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-8*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice4_2"
+	      Ports		      [1, 1]
+	      Position		      [70, 364, 115, 376]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-9*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice5_1"
+	      Ports		      [1, 1]
+	      Position		      [70, 389, 115, 401]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-10*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice5_2"
+	      Ports		      [1, 1]
+	      Position		      [70, 414, 115, 426]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-11*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice6_1"
+	      Ports		      [1, 1]
+	      Position		      [70, 439, 115, 451]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-12*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice6_2"
+	      Ports		      [1, 1]
+	      Position		      [70, 464, 115, 476]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-13*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice7_1"
+	      Ports		      [1, 1]
+	      Position		      [70, 489, 115, 501]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-14*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice7_2"
+	      Ports		      [1, 1]
+	      Position		      [70, 514, 115, 526]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-15*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "adder_tree1"
+	      Ports		      [8, 1]
+	      Position		      [200, 115, 350, 515]
+	      SourceBlock	      "pfb_library/adder_tree"
+	      SourceType	      "Unknown"
+	      ShowPortLabels	      "on"
+	      num_inputs	      "TotalTaps"
+	      latency		      "add_latency"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "adder_tree2"
+	      Ports		      [8, 1]
+	      Position		      [200, 565, 350, 965]
+	      SourceBlock	      "pfb_library/adder_tree"
+	      SourceType	      "Unknown"
+	      ShowPortLabels	      "on"
+	      num_inputs	      "TotalTaps"
+	      latency		      "add_latency"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "convert1"
+	      Ports		      [1, 1]
+	      Position		      [400, 313, 430, 327]
+	      SourceBlock	      "xbsIndex_r3/Convert"
+	      SourceType	      "Xilinx Converter Block"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "BitWidthOut"
+	      bin_pt		      "BitWidthOut-1"
+	      quantization	      "Truncate"
+	      overflow		      "Saturate"
+	      latency		      "add_latency"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      inserted_by_tool	      "off"
+	      pipeline		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "convert2"
+	      Ports		      [1, 1]
+	      Position		      [400, 358, 430, 372]
+	      SourceBlock	      "xbsIndex_r3/Convert"
+	      SourceType	      "Xilinx Converter Block"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "BitWidthOut"
+	      bin_pt		      "BitWidthOut-1"
+	      quantization	      "Truncate"
+	      overflow		      "Saturate"
+	      latency		      "add_latency"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      inserted_by_tool	      "off"
+	      pipeline		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "delay"
+	      Ports		      [1, 1]
+	      Position		      [80, 14, 120, 56]
+	      SourceBlock	      "xbsIndex_r3/Delay"
+	      SourceType	      "Xilinx Delay Block"
+	      latency		      "(log2(TotalTaps)+1)*add_latency"
+	      reg_retiming	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      en		      "off"
+	      accept_only_valid	      "off"
+	      init_zero		      "on"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "ri_to_c"
+	      Ports		      [2, 1]
+	      Position		      [450, 312, 480, 343]
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      System {
+		Name			"ri_to_c"
+		Location		[512, 151, 787, 285]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "re"
+		  Position		  [25, 38, 55, 52]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "im"
+		  Position		  [25, 88, 55, 102]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Concat"
+		  Ports			  [2, 1]
+		  Position		  [145, 40, 195, 95]
+		  SourceBlock		  "xbsIndex_r3/Concat"
+		  SourceType		  "Xilinx Bus Concatenator"
+		  num_inputs		  "2"
+		  explicit_period	  "off"
+		  period		  "1"
+		  dbl_ovrd		  "off"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Reinterpret"
+		  Ports			  [1, 1]
+		  Position		  [80, 29, 120, 61]
+		  SourceBlock		  "xbsIndex_r3/Reinterpret"
+		  SourceType		  "Xilinx Type Reinterpreting Block"
+		  force_arith_type	  "on"
+		  arith_type		  "Unsigned"
+		  force_bin_pt		  "on"
+		  bin_pt		  "0"
+		  force_valid		  "on"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Reinterpret1"
+		  Ports			  [1, 1]
+		  Position		  [80, 79, 120, 111]
+		  SourceBlock		  "xbsIndex_r3/Reinterpret"
+		  SourceType		  "Xilinx Type Reinterpreting Block"
+		  force_arith_type	  "on"
+		  arith_type		  "Unsigned"
+		  force_bin_pt		  "on"
+		  bin_pt		  "0"
+		  force_valid		  "on"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "c"
+		  Position		  [220, 63, 250, 77]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Reinterpret"
+		  SrcPort		  1
+		  Points		  [0, 10]
+		  DstBlock		  "Concat"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Reinterpret1"
+		  SrcPort		  1
+		  Points		  [0, -15]
+		  DstBlock		  "Concat"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "re"
+		  SrcPort		  1
+		  DstBlock		  "Reinterpret"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Concat"
+		  SrcPort		  1
+		  DstBlock		  "c"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "im"
+		  SrcPort		  1
+		  DstBlock		  "Reinterpret1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "dout"
+	      Position		      [500, 302, 530, 318]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sync_out"
+	      Position		      [150, 28, 180, 42]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "adder_tree1"
+	      SrcPort		      1
+	      DstBlock		      "convert1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "adder_tree2"
+	      SrcPort		      1
+	      DstBlock		      "convert2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "convert1"
+	      SrcPort		      1
+	      DstBlock		      "ri_to_c"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "convert2"
+	      SrcPort		      1
+	      DstBlock		      "ri_to_c"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "ri_to_c"
+	      SrcPort		      1
+	      DstBlock		      "dout"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "sync"
+	      SrcPort		      1
+	      DstBlock		      "delay"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "delay"
+	      SrcPort		      1
+	      DstBlock		      "sync_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "din"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"Slice0_1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice0_2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice1_1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice1_2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice2_1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice2_2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice3_1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice3_2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice4_1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice4_2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice5_1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice5_2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice6_1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice6_2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice7_1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice7_2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Slice0_1"
+	      SrcPort		      1
+	      DstBlock		      "Reint0_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint0_1"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice0_2"
+	      SrcPort		      1
+	      DstBlock		      "Reint0_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint0_2"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice1_1"
+	      SrcPort		      1
+	      DstBlock		      "Reint1_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint1_1"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Slice1_2"
+	      SrcPort		      1
+	      DstBlock		      "Reint1_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint1_2"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Slice2_1"
+	      SrcPort		      1
+	      DstBlock		      "Reint2_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint2_1"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Slice2_2"
+	      SrcPort		      1
+	      DstBlock		      "Reint2_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint2_2"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Slice3_1"
+	      SrcPort		      1
+	      DstBlock		      "Reint3_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint3_1"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Slice3_2"
+	      SrcPort		      1
+	      DstBlock		      "Reint3_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint3_2"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree2"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Slice4_1"
+	      SrcPort		      1
+	      DstBlock		      "Reint4_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint4_1"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Slice4_2"
+	      SrcPort		      1
+	      DstBlock		      "Reint4_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint4_2"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree2"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Slice5_1"
+	      SrcPort		      1
+	      DstBlock		      "Reint5_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint5_1"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Slice5_2"
+	      SrcPort		      1
+	      DstBlock		      "Reint5_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint5_2"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree2"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Slice6_1"
+	      SrcPort		      1
+	      DstBlock		      "Reint6_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint6_1"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "Slice6_2"
+	      SrcPort		      1
+	      DstBlock		      "Reint6_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint6_2"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree2"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "Slice7_1"
+	      SrcPort		      1
+	      DstBlock		      "Reint7_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint7_1"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "Slice7_2"
+	      SrcPort		      1
+	      DstBlock		      "Reint7_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint7_2"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree2"
+	      DstPort		      8
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ri_to_c"
+	  Ports			  [2, 1]
+	  Position		  [235, 149, 275, 191]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ri_to_c"
+	    Location		    [512, 151, 787, 285]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "re"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "im"
+	      Position		      [25, 88, 55, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Concat"
+	      Ports		      [2, 1]
+	      Position		      [145, 40, 195, 95]
+	      SourceBlock	      "xbsIndex_r3/Concat"
+	      SourceType	      "Xilinx Bus Concatenator"
+	      num_inputs	      "2"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret"
+	      Ports		      [1, 1]
+	      Position		      [80, 29, 120, 61]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret1"
+	      Ports		      [1, 1]
+	      Position		      [80, 79, 120, 111]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "c"
+	      Position		      [220, 63, 250, 77]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "im"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Concat"
+	      SrcPort		      1
+	      DstBlock		      "c"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "re"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      Points		      [0, -15]
+	      DstBlock		      "Concat"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      Points		      [0, 10]
+	      DstBlock		      "Concat"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dout"
+	  Position		  [510, 168, 540, 182]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  Position		  [510, 198, 540, 212]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "Mult"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Mult1"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "coeff"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Concat"
+	  SrcPort		  1
+	  DstBlock		  "pfb_add_tree"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "taps"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Concat"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "sync"
+	  SrcPort		  1
+	  DstBlock		  "Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pfb_add_tree"
+	  SrcPort		  1
+	  Points		  [0, -10]
+	  DstBlock		  "dout"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pfb_add_tree"
+	  SrcPort		  2
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  DstBlock		  "pfb_add_tree"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "c_to_ri"
+	  SrcPort		  1
+	  DstBlock		  "Mult1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c_to_ri"
+	  SrcPort		  2
+	  Points		  [10, 0; 0, 45]
+	  DstBlock		  "Mult"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "din"
+	  SrcPort		  1
+	  DstBlock		  "c_to_ri"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult1"
+	  SrcPort		  1
+	  DstBlock		  "ri_to_c"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "ri_to_c"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ri_to_c"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "last_tap_real"
+      Ports		      [4, 2]
+      Position		      [270, 312, 375, 388]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "pfb_tap_real"
+      MaskPromptString	      "Quantization Behavior:"
+      MaskStyleString	      "popup(Truncate|Round  (unbiased: +/- Inf)|Round"
+"  (unbiased: Even Values))"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "quantization=&1;"
+      MaskInitialization      "cursys = gcb;\ndisp(cursys);\nif ~strcmp(get_pa"
+"ram([cursys,'/pfb_add_tree'], 'quantization'), quantization),\n    set_param("
+"[cursys,'/pfb_add_tree'], 'quantization', quantization);\nend"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Truncate"
+      System {
+	Name			"last_tap_real"
+	Location		[338, 171, 912, 685]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din"
+	  Position		  [15, 133, 45, 147]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync"
+	  Position		  [260, 243, 290, 257]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "coeff"
+	  Position		  [35, 188, 65, 202]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "taps"
+	  Position		  [235, 188, 265, 202]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Concat"
+	  Ports			  [2, 1]
+	  Position		  [295, 155, 345, 210]
+	  SourceBlock		  "xbsIndex_r3/Concat"
+	  SourceType		  "Xilinx Bus Concatenator"
+	  num_inputs		  "2"
+	  explicit_period	  "off"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay"
+	  Ports			  [1, 1]
+	  Position		  [305, 227, 350, 273]
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "mult_latency"
+	  reg_retiming		  "off"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  accept_only_valid	  "off"
+	  init_zero		  "on"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult"
+	  Ports			  [2, 1]
+	  Position		  [160, 142, 210, 193]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mult_latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret"
+	  Ports			  [1, 1]
+	  Position		  [85, 179, 125, 211]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  "on"
+	  arith_type		  "Signed  (2's comp)"
+	  force_bin_pt		  "on"
+	  bin_pt		  "CoeffBitWidth - 1"
+	  force_valid		  "on"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret1"
+	  Ports			  [1, 1]
+	  Position		  [85, 124, 125, 156]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  "on"
+	  arith_type		  "Signed  (2's comp)"
+	  force_bin_pt		  "on"
+	  bin_pt		  "BitWidthIn - 1"
+	  force_valid		  "on"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret2"
+	  Ports			  [1, 1]
+	  Position		  [230, 154, 270, 186]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  "on"
+	  arith_type		  "Unsigned"
+	  force_bin_pt		  "on"
+	  bin_pt		  "0"
+	  force_valid		  "on"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "pfb_add_tree"
+	  Ports			  [2, 2]
+	  Position		  [370, 174, 465, 216]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskPromptString	  "Total Number of Taps:|Input Bitwidth:|Outpu"
+"t Bitwidth:|Coeff Bitwidth:|Add Latency|Quantization Behavior"
+	  MaskStyleString	  "edit,edit,edit,edit,edit,popup(Truncate|Rou"
+"nd  (unbiased: +/- Inf)|Round  (unbiased: Even Values))"
+	  MaskTunableValueString  "on,on,on,on,on,on"
+	  MaskCallbackString	  "|||||"
+	  MaskEnableString	  "on,on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on,on"
+	  MaskToolTipString	  "on,on,on,on,on,on"
+	  MaskVarAliasString	  ",,,,,"
+	  MaskVariables		  "TotalTaps=@1;BitWidthIn=@2;BitWidthOut=@3;C"
+"oeffBitWidth=@4;add_latency=@5;quantization=&6;"
+	  MaskInitialization	  "pfb_add_real_mask;"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "TotalTaps|BitWidthIn|BitWidthOut|CoeffBitWi"
+"dth|add_latency|Truncate"
+	  MaskTabNameString	  ",,,,,"
+	  System {
+	    Name		    "pfb_add_tree"
+	    Location		    [380, 100, 902, 664]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "din"
+	      Position		      [15, 123, 45, 137]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "sync"
+	      Position		      [15, 28, 45, 42]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint0"
+	      Ports		      [1, 1]
+	      Position		      [130, 114, 160, 126]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint1"
+	      Ports		      [1, 1]
+	      Position		      [130, 164, 160, 176]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint2"
+	      Ports		      [1, 1]
+	      Position		      [130, 214, 160, 226]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reint3"
+	      Ports		      [1, 1]
+	      Position		      [130, 264, 160, 276]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      "on"
+	      bin_pt		      "CoeffBitWidth + BitWidthIn - 2"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice0"
+	      Ports		      [1, 1]
+	      Position		      [70, 114, 115, 126]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-0*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice1"
+	      Ports		      [1, 1]
+	      Position		      [70, 164, 115, 176]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-1*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice2"
+	      Ports		      [1, 1]
+	      Position		      [70, 214, 115, 226]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-2*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice3"
+	      Ports		      [1, 1]
+	      Position		      [70, 264, 115, 276]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "CoeffBitWidth + BitWidthIn"
+	      bit1		      "-3*(CoeffBitWidth + BitWidthIn)"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "MSB of Input"
+	      boolean_output	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "adder_tree1"
+	      Ports		      [4, 1]
+	      Position		      [200, 115, 350, 315]
+	      SourceBlock	      "pfb_library/adder_tree"
+	      SourceType	      "Unknown"
+	      ShowPortLabels	      "on"
+	      num_inputs	      "TotalTaps"
+	      latency		      "add_latency"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "convert1"
+	      Ports		      [1, 1]
+	      Position		      [400, 213, 430, 227]
+	      SourceBlock	      "xbsIndex_r3/Convert"
+	      SourceType	      "Xilinx Converter Block"
+	      arith_type	      "Signed  (2's comp)"
+	      n_bits		      "BitWidthOut"
+	      bin_pt		      "BitWidthOut-1"
+	      quantization	      "Truncate"
+	      overflow		      "Saturate"
+	      latency		      "add_latency"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      inserted_by_tool	      "off"
+	      pipeline		      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "delay"
+	      Ports		      [1, 1]
+	      Position		      [80, 14, 120, 56]
+	      SourceBlock	      "xbsIndex_r3/Delay"
+	      SourceType	      "Xilinx Delay Block"
+	      latency		      "(log2(TotalTaps)+1)*add_latency"
+	      reg_retiming	      "off"
+	      explicit_period	      "off"
+	      period		      "1"
+	      en		      "off"
+	      accept_only_valid	      "off"
+	      init_zero		      "on"
+	      dbl_ovrd		      "off"
+	      show_param	      "off"
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      "off"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "dout"
+	      Position		      [500, 202, 530, 218]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sync_out"
+	      Position		      [150, 28, 180, 42]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "adder_tree1"
+	      SrcPort		      1
+	      DstBlock		      "convert1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "convert1"
+	      SrcPort		      1
+	      DstBlock		      "dout"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "sync"
+	      SrcPort		      1
+	      DstBlock		      "delay"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "delay"
+	      SrcPort		      1
+	      DstBlock		      "sync_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "din"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"Slice0"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice2"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Slice0"
+	      SrcPort		      1
+	      DstBlock		      "Reint0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint0"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice1"
+	      SrcPort		      1
+	      DstBlock		      "Reint1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint1"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Slice2"
+	      SrcPort		      1
+	      DstBlock		      "Reint2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint2"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Slice3"
+	      SrcPort		      1
+	      DstBlock		      "Reint3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reint3"
+	      SrcPort		      1
+	      DstBlock		      "adder_tree1"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dout"
+	  Position		  [490, 168, 520, 182]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  Position		  [490, 198, 520, 212]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "din"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  DstBlock		  "pfb_add_tree"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "pfb_add_tree"
+	  SrcPort		  2
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pfb_add_tree"
+	  SrcPort		  1
+	  Points		  [0, -10]
+	  DstBlock		  "dout"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sync"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "taps"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Concat"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Concat"
+	  SrcPort		  1
+	  DstBlock		  "pfb_add_tree"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "coeff"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  Points		  [0, -15]
+	  DstBlock		  "Mult"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reinterpret1"
+	  SrcPort		  1
+	  Points		  [0, 15]
+	  DstBlock		  "Mult"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reinterpret2"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "pfb_fir"
+      Ports		      [2, 2]
+      Position		      [415, 213, 505, 342]
+      BackgroundColor	      "magenta"
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Size of PFB: (2^? pnts)|Total Number of Taps:|W"
+"indowing Function: |Number of Simultaneous Inputs: (2^?)|Make Biplex|Input Bi"
+"twidth:|Output Bitwidth:|Coefficient Bitwidth:|Use Distributed Memory for Coe"
+"ffs|Add Latency|Mult Latency|BRAM Latency|Quantization Behavior|Bin Width Sca"
+"ling (normal=1)"
+      MaskStyleString	      "edit,edit,popup(bartlett|barthannwin|blackman|b"
+"lackmanharris|bohamwin|chebwin|flattopwin|gausswin|hamming|hann|kaiser|nuttal"
+"lwin|parzenwin|rectwin|tukeywin|triang),edit,checkbox,edit,edit,edit,checkbox"
+",edit,edit,edit,popup(Truncate|Round  (unbiased: +/- Inf)|Round  (unbiased: E"
+"ven Values)),edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskCallbackString      "|||||||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,,,,,,,,"
+      MaskVariables	      "PFBSize=@1;TotalTaps=@2;WindowType=&3;n_inputs="
+"@4;MakeBiplex=@5;BitWidthIn=@6;BitWidthOut=@7;CoeffBitWidth=@8;CoeffDistMem=&"
+"9;add_latency=@10;mult_latency=@11;bram_latency=@12;quantization=&13;fwidth=@"
+"14;"
+      MaskInitialization      "pfb_fir_mask;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "5|2|hamming|0|off|8|18|8|off|2|3|2|Round  (unbi"
+"ased: +/- Inf)|1"
+      MaskTabNameString	      ",,,,,,,,,,,,,"
+      System {
+	Name			"pfb_fir"
+	Location		[192, 203, 923, 641]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync"
+	  Position		  [15, 52, 45, 68]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "pol1_in1"
+	  Position		  [15, 102, 45, 118]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pol1_in1_first_tap"
+	  Ports			  [2, 4]
+	  Position		  [150, 52, 250, 83]
+	  SourceBlock		  "pfb_library/first_tap"
+	  SourceType		  "pfb_tap"
+	  ShowPortLabels	  "on"
+	  nput			  "0"
+	  CoeffDistMem		  "off"
+	  fwidth		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pol1_in1_last_tap"
+	  Ports			  [4, 2]
+	  Position		  [300, 52, 400, 83]
+	  SourceBlock		  "pfb_library/last_tap"
+	  SourceType		  "pfb_tap"
+	  ShowPortLabels	  "on"
+	  quantization		  "Round  (unbiased: +/- Inf)"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  Position		  [450, 52, 480, 68]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pol1_out1"
+	  Position		  [450, 102, 480, 118]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "pol1_in1"
+	  SrcPort		  1
+	  DstBlock		  "pol1_in1_first_tap"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sync"
+	  SrcPort		  1
+	  DstBlock		  "pol1_in1_first_tap"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_first_tap"
+	  SrcPort		  1
+	  DstBlock		  "pol1_in1_last_tap"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_first_tap"
+	  SrcPort		  2
+	  DstBlock		  "pol1_in1_last_tap"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_first_tap"
+	  SrcPort		  3
+	  DstBlock		  "pol1_in1_last_tap"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_first_tap"
+	  SrcPort		  4
+	  DstBlock		  "pol1_in1_last_tap"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_last_tap"
+	  SrcPort		  1
+	  DstBlock		  "pol1_out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_last_tap"
+	  SrcPort		  2
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "pfb_fir_real"
+      Ports		      [2, 2]
+      Position		      [415, 370, 505, 505]
+      BackgroundColor	      "magenta"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Size of PFB: (2^? pnts)|Total Number of Taps:|W"
+"indowing Function: |Number of Simultaneous Inputs: (2^?)|Make Biplex|Input Bi"
+"twidth:|Output Bitwidth:|Coefficient Bitwidth:|Use Distributed Memory for Coe"
+"ffs|Add Latency|Mult Latency|BRAM Latency|Quantization Behavior|Bin Width Sca"
+"ling (normal=1)"
+      MaskStyleString	      "edit,edit,popup(bartlett|barthannwin|blackman|b"
+"lackmanharris|bohamwin|chebwin|flattopwin|gausswin|hamming|hann|kaiser|nuttal"
+"lwin|parzenwin|rectwin|tukeywin|triang),edit,checkbox,edit,edit,edit,checkbox"
+",edit,edit,edit,popup(Truncate|Round  (unbiased: +/- Inf)|Round  (unbiased: E"
+"ven Values)),edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskCallbackString      "|||||||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,,,,,,,,"
+      MaskVariables	      "PFBSize=@1;TotalTaps=@2;WindowType=&3;n_inputs="
+"@4;MakeBiplex=@5;BitWidthIn=@6;BitWidthOut=@7;CoeffBitWidth=@8;CoeffDistMem=&"
+"9;add_latency=@10;mult_latency=@11;bram_latency=@12;quantization=&13;fwidth=@"
+"14;"
+      MaskInitialization      "pfb_fir_real_mask;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "5|2|hamming|0|off|8|18|8|off|2|3|2|Round  (unbi"
+"ased: +/- Inf)|1"
+      MaskTabNameString	      ",,,,,,,,,,,,,"
+      System {
+	Name			"pfb_fir_real"
+	Location		[192, 203, 923, 657]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync"
+	  Position		  [15, 52, 45, 68]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "pol1_in1"
+	  Position		  [15, 102, 45, 118]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pol1_in1_first_tap"
+	  Ports			  [2, 4]
+	  Position		  [150, 52, 250, 83]
+	  FontSize		  10
+	  SourceBlock		  "pfb_library/first_tap_real"
+	  SourceType		  "pfb_tap_real"
+	  ShowPortLabels	  on
+	  nput			  "0"
+	  CoeffDistMem		  off
+	  fwidth		  "fwidth"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pol1_in1_last_tap"
+	  Ports			  [4, 2]
+	  Position		  [300, 52, 400, 83]
+	  FontSize		  10
+	  SourceBlock		  "pfb_library/last_tap_real"
+	  SourceType		  "pfb_tap_real"
+	  ShowPortLabels	  on
+	  quantization		  "Round  (unbiased: +/- Inf)"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  Position		  [450, 52, 480, 68]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pol1_out1"
+	  Position		  [450, 102, 480, 118]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "pol1_in1"
+	  SrcPort		  1
+	  DstBlock		  "pol1_in1_first_tap"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sync"
+	  SrcPort		  1
+	  DstBlock		  "pol1_in1_first_tap"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_first_tap"
+	  SrcPort		  1
+	  DstBlock		  "pol1_in1_last_tap"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_first_tap"
+	  SrcPort		  2
+	  DstBlock		  "pol1_in1_last_tap"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_first_tap"
+	  SrcPort		  3
+	  DstBlock		  "pol1_in1_last_tap"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_first_tap"
+	  SrcPort		  4
+	  DstBlock		  "pol1_in1_last_tap"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_last_tap"
+	  SrcPort		  1
+	  DstBlock		  "pol1_out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pol1_in1_last_tap"
+	  SrcPort		  2
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "sync_delay"
+      Ports		      [1, 1]
+      Position		      [115, 419, 155, 461]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Delay Length: "
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "DelayLen=@1;"
+      MaskInitialization      "BitWidth = max(2, ceil(log2(DelayLen+1)));\nUse"
+"Counter = 1;\nif DelayLen == 0,\n	UseCounter = 0;\nend"
+      MaskDisplay	      "fprintf('Z^-%d', DelayLen)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "4"
+      System {
+	Name			"sync_delay"
+	Location		[383, 134, 876, 622]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [15, 203, 45, 217]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant"
+	  Ports			  [0, 1]
+	  Position		  [145, 157, 190, 183]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "1"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant1"
+	  Ports			  [0, 1]
+	  Position		  [140, 267, 185, 293]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "0"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant2"
+	  Ports			  [0, 1]
+	  Position		  [70, 217, 115, 243]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "DelayLen"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant3"
+	  Ports			  [0, 1]
+	  Position		  [235, 102, 280, 128]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "UseCounter"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "1"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Counter"
+	  Ports			  [3, 1]
+	  Position		  [135, 203, 185, 257]
+	  SourceBlock		  "xbsIndex_r3/Counter"
+	  SourceType		  "Xilinx Counter Block"
+	  cnt_type		  "Free Running"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "0"
+	  arith_type		  "Unsigned"
+	  start_count		  "0"
+	  cnt_to		  "Inf"
+	  cnt_by_val		  "1"
+	  operation		  "Down"
+	  explicit_period	  "on"
+	  period		  "1"
+	  load_pin		  "on"
+	  rst			  "off"
+	  en			  "on"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical"
+	  Ports			  [2, 1]
+	  Position		  [85, 257, 115, 288]
+	  SourceBlock		  "xbsIndex_r3/Logical"
+	  SourceType		  "Xilinx Logical Block"
+	  logical_function	  "OR"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  align_bp		  "on"
+	  latency		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux"
+	  Ports			  [3, 1]
+	  Position		  [300, 112, 325, 178]
+	  SourceBlock		  "xbsIndex_r3/Mux"
+	  SourceType		  "Xilinx Multiplexer Block"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "0"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  mux_type		  "off"
+	  use_rpm		  "off"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Relational"
+	  Ports			  [2, 1]
+	  Position		  [210, 158, 255, 202]
+	  SourceBlock		  "xbsIndex_r3/Relational"
+	  SourceType		  "Xilinx Relational Block"
+	  mode			  "a=b"
+	  latency		  "0"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Relational1"
+	  Ports			  [2, 1]
+	  Position		  [210, 218, 255, 262]
+	  SourceBlock		  "xbsIndex_r3/Relational"
+	  SourceType		  "Xilinx Relational Block"
+	  mode			  "a!=b"
+	  latency		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [345, 138, 375, 152]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Counter"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "Relational1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Relational"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [0, -30]
+	  DstBlock		  "Relational1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Relational"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Counter"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Counter"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 55]
+	    DstBlock		    "Logical"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -65]
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical"
+	  SrcPort		  1
+	  DstBlock		  "Counter"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Relational1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 75; -210, 0]
+	  DstBlock		  "Logical"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -15]
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "tap"
+      Ports		      [4, 4]
+      Position		      [140, 212, 245, 288]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "pfb_tap"
+      MaskInitialization      "cursys = gcb;\ndisp(cursys);\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"tap"
+	Location		[476, 122, 978, 494]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din"
+	  Position		  [20, 33, 50, 47]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync"
+	  Position		  [130, 98, 160, 112]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "coeff"
+	  Position		  [15, 243, 45, 257]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "taps"
+	  Position		  [290, 243, 320, 257]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Concat"
+	  Ports			  [2, 1]
+	  Position		  [340, 210, 390, 265]
+	  SourceBlock		  "xbsIndex_r3/Concat"
+	  SourceType		  "Xilinx Bus Concatenator"
+	  num_inputs		  "2"
+	  explicit_period	  off
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult"
+	  Ports			  [2, 1]
+	  Position		  [190, 212, 240, 263]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mult_latency"
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  on
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  on
+	  pipeline		  on
+	  use_rpm		  on
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult1"
+	  Ports			  [2, 1]
+	  Position		  [190, 147, 240, 198]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mult_latency"
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  on
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  on
+	  pipeline		  on
+	  use_rpm		  on
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret"
+	  Ports			  [1, 1]
+	  Position		  [130, 234, 170, 266]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  on
+	  arith_type		  "Signed  (2's comp)"
+	  force_bin_pt		  on
+	  bin_pt		  "CoeffBitWidth - 1"
+	  force_valid		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice"
+	  Ports			  [1, 1]
+	  Position		  [70, 236, 115, 264]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Lower Bit Location + Width"
+	  nbits			  "CoeffBitWidth"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  boolean_output	  off
+	  explicit_period	  off
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice1"
+	  Ports			  [1, 1]
+	  Position		  [70, 281, 115, 309]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Two Bit Locations"
+	  nbits			  "0"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "CoeffBitWidth"
+	  base0			  "LSB of Input"
+	  boolean_output	  off
+	  explicit_period	  off
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "c_to_ri"
+	  Ports			  [1, 2]
+	  Position		  [115, 144, 155, 186]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "c_to_ri"
+	    Location		    [567, 176, 837, 310]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "c"
+	      Position		      [20, 63, 50, 77]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret"
+	      Ports		      [1, 1]
+	      Position		      [150, 29, 190, 61]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      on
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      on
+	      bin_pt		      "BitWidthIn - 1"
+	      force_valid	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret1"
+	      Ports		      [1, 1]
+	      Position		      [150, 79, 190, 111]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      on
+	      arith_type	      "Signed  (2's comp)"
+	      force_bin_pt	      on
+	      bin_pt		      "BitWidthIn - 1"
+	      force_valid	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice"
+	      Ports		      [1, 1]
+	      Position		      [80, 31, 125, 59]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "BitWidthIn"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      off
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice1"
+	      Ports		      [1, 1]
+	      Position		      [80, 81, 125, 109]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Lower Bit Location + Width"
+	      nbits		      "BitWidthIn"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      off
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "re"
+	      Position		      [215, 38, 245, 52]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "im"
+	      Position		      [215, 88, 245, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "c"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"Slice1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -25]
+		DstBlock		"Slice"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      DstBlock		      "im"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      DstBlock		      "re"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice1"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "data_delay"
+	  Ports			  [1, 1]
+	  Position		  [190, 20, 230, 60]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "data_delay"
+	    Location		    [137, 87, 917, 538]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [285, 128, 315, 142]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant2"
+	      Ports		      [0, 1]
+	      Position		      [320, 143, 355, 167]
+	      SourceBlock	      "xbsIndex_r3/Constant"
+	      SourceType	      "Xilinx Constant Block"
+	      const		      "1"
+	      equ		      "P=C"
+	      arith_type	      "Boolean"
+	      n_bits		      "1"
+	      bin_pt		      "0"
+	      opselect		      "C"
+	      inp2		      "PCIN>>17"
+	      opr		      "+"
+	      inp1		      "P"
+	      carry		      "CIN"
+	      iostate		      "0"
+	      explicit_period	      on
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Counter"
+	      Ports		      [0, 1]
+	      Position		      [310, 70, 350, 110]
+	      SourceBlock	      "xbsIndex_r3/Counter"
+	      SourceType	      "Xilinx Counter Block"
+	      cnt_type		      "Count Limited"
+	      n_bits		      "PFBSize-n_inputs"
+	      bin_pt		      "0"
+	      arith_type	      "Unsigned"
+	      start_count	      "0"
+	      cnt_to		      "2^(PFBSize-n_inputs) - bram_latency - 1"
+	      cnt_by_val	      "1"
+	      operation		      "Up"
+	      explicit_period	      off
+	      period		      "1"
+	      load_pin		      off
+	      rst		      off
+	      en		      off
+	      dbl_ovrd		      off
+	      show_param	      off
+	      use_rpm		      off
+	      gen_core		      on
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Single Port RAM"
+	      Ports		      [3, 1]
+	      Position		      [370, 108, 435, 162]
+	      SourceBlock	      "xbsIndex_r3/Single Port RAM"
+	      SourceType	      "Xilinx Single Port Random Access Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "0"
+	      write_mode	      "Read Before Write"
+	      latency		      "bram_latency"
+	      init_zero		      on
+	      explicit_period	      off
+	      period		      "1"
+	      rst		      off
+	      init_reg		      "0"
+	      en		      off
+	      dbl_ovrd		      off
+	      show_param	      off
+	      distributed_mem	      off
+	      use_rpm		      off
+	      gen_core		      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [455, 128, 485, 142]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Single Port RAM"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Counter"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ri_to_c"
+	  Ports			  [2, 1]
+	  Position		  [270, 184, 310, 226]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ri_to_c"
+	    Location		    [512, 151, 787, 285]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "re"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "im"
+	      Position		      [25, 88, 55, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Concat"
+	      Ports		      [2, 1]
+	      Position		      [145, 40, 195, 95]
+	      SourceBlock	      "xbsIndex_r3/Concat"
+	      SourceType	      "Xilinx Bus Concatenator"
+	      num_inputs	      "2"
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret"
+	      Ports		      [1, 1]
+	      Position		      [80, 29, 120, 61]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      on
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      on
+	      bin_pt		      "0"
+	      force_valid	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret1"
+	      Ports		      [1, 1]
+	      Position		      [80, 79, 120, 111]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      on
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      on
+	      bin_pt		      "0"
+	      force_valid	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "c"
+	      Position		      [220, 63, 250, 77]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "im"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Concat"
+	      SrcPort		      1
+	      DstBlock		      "c"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "re"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      Points		      [0, -15]
+	      DstBlock		      "Concat"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      Points		      [0, 10]
+	      DstBlock		      "Concat"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "sync_delay"
+	  Ports			  [1, 1]
+	  Position		  [190, 84, 230, 126]
+	  SourceBlock		  "pfb_library/sync_delay"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  DelayLen		  "2^(PFBSize-n_inputs)"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dout"
+	  Position		  [255, 33, 285, 47]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  Position		  [255, 98, 285, 112]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "coeff_out"
+	  Position		  [130, 288, 160, 302]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "taps_out"
+	  Position		  [410, 233, 440, 247]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Mult"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Mult1"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Slice"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Slice1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "coeff_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "coeff"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "Slice1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Slice"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Concat"
+	  SrcPort		  1
+	  DstBlock		  "taps_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "taps"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "sync_delay"
+	  SrcPort		  1
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sync"
+	  SrcPort		  1
+	  DstBlock		  "sync_delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult1"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 20]
+	  DstBlock		  "ri_to_c"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -25]
+	  DstBlock		  "ri_to_c"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ri_to_c"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 20]
+	  DstBlock		  "Concat"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c_to_ri"
+	  SrcPort		  1
+	  Points		  [0, 5]
+	  DstBlock		  "Mult1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c_to_ri"
+	  SrcPort		  2
+	  Points		  [10, 0; 0, 50]
+	  DstBlock		  "Mult"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "din"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "data_delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "c_to_ri"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "data_delay"
+	  SrcPort		  1
+	  DstBlock		  "dout"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "tap_real"
+      Ports		      [4, 4]
+      Position		      [140, 312, 245, 388]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "pfb_tap_real"
+      MaskInitialization      "cursys = gcb;\ndisp(cursys);\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"tap_real"
+	Location		[476, 138, 978, 510]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din"
+	  Position		  [20, 33, 50, 47]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync"
+	  Position		  [130, 98, 160, 112]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "coeff"
+	  Position		  [15, 178, 45, 192]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "taps"
+	  Position		  [290, 193, 320, 207]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Concat"
+	  Ports			  [2, 1]
+	  Position		  [340, 160, 390, 215]
+	  SourceBlock		  "xbsIndex_r3/Concat"
+	  SourceType		  "Xilinx Bus Concatenator"
+	  num_inputs		  "2"
+	  explicit_period	  off
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult"
+	  Ports			  [2, 1]
+	  Position		  [190, 147, 240, 198]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mult_latency"
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  on
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  on
+	  pipeline		  on
+	  use_rpm		  on
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret"
+	  Ports			  [1, 1]
+	  Position		  [130, 169, 170, 201]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  on
+	  arith_type		  "Signed  (2's comp)"
+	  force_bin_pt		  on
+	  bin_pt		  "CoeffBitWidth - 1"
+	  force_valid		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret1"
+	  Ports			  [1, 1]
+	  Position		  [70, 119, 110, 151]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  on
+	  arith_type		  "Signed  (2's comp)"
+	  force_bin_pt		  on
+	  bin_pt		  "BitWidthIn - 1"
+	  force_valid		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret2"
+	  Ports			  [1, 1]
+	  Position		  [270, 159, 310, 191]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  on
+	  arith_type		  "Unsigned"
+	  force_bin_pt		  on
+	  bin_pt		  "0"
+	  force_valid		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice"
+	  Ports			  [1, 1]
+	  Position		  [70, 171, 115, 199]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Lower Bit Location + Width"
+	  nbits			  "CoeffBitWidth"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  boolean_output	  off
+	  explicit_period	  off
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice1"
+	  Ports			  [1, 1]
+	  Position		  [70, 216, 115, 244]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Two Bit Locations"
+	  nbits			  "0"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "CoeffBitWidth"
+	  base0			  "LSB of Input"
+	  boolean_output	  off
+	  explicit_period	  off
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "data_delay"
+	  Ports			  [1, 1]
+	  Position		  [190, 20, 230, 60]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "data_delay"
+	    Location		    [137, 87, 917, 538]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [285, 128, 315, 142]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant2"
+	      Ports		      [0, 1]
+	      Position		      [320, 143, 355, 167]
+	      SourceBlock	      "xbsIndex_r3/Constant"
+	      SourceType	      "Xilinx Constant Block"
+	      const		      "1"
+	      equ		      "P=C"
+	      arith_type	      "Boolean"
+	      n_bits		      "1"
+	      bin_pt		      "0"
+	      opselect		      "C"
+	      inp2		      "PCIN>>17"
+	      opr		      "+"
+	      inp1		      "P"
+	      carry		      "CIN"
+	      iostate		      "0"
+	      explicit_period	      on
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Counter"
+	      Ports		      [0, 1]
+	      Position		      [310, 70, 350, 110]
+	      SourceBlock	      "xbsIndex_r3/Counter"
+	      SourceType	      "Xilinx Counter Block"
+	      cnt_type		      "Count Limited"
+	      n_bits		      "PFBSize-n_inputs"
+	      bin_pt		      "0"
+	      arith_type	      "Unsigned"
+	      start_count	      "0"
+	      cnt_to		      "2^(PFBSize-n_inputs) - bram_latency - 1"
+	      cnt_by_val	      "1"
+	      operation		      "Up"
+	      explicit_period	      off
+	      period		      "1"
+	      load_pin		      off
+	      rst		      off
+	      en		      off
+	      dbl_ovrd		      off
+	      show_param	      off
+	      use_rpm		      off
+	      gen_core		      on
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Single Port RAM"
+	      Ports		      [3, 1]
+	      Position		      [370, 108, 435, 162]
+	      SourceBlock	      "xbsIndex_r3/Single Port RAM"
+	      SourceType	      "Xilinx Single Port Random Access Memory"
+	      depth		      "2^(PFBSize-n_inputs)"
+	      initVector	      "0"
+	      write_mode	      "Read Before Write"
+	      latency		      "bram_latency"
+	      init_zero		      on
+	      explicit_period	      off
+	      period		      "1"
+	      rst		      off
+	      init_reg		      "0"
+	      en		      off
+	      dbl_ovrd		      off
+	      show_param	      off
+	      distributed_mem	      off
+	      use_rpm		      off
+	      gen_core		      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [455, 128, 485, 142]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Counter"
+	      SrcPort		      1
+	      DstBlock		      "Single Port RAM"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Single Port RAM"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "sync_delay"
+	  Ports			  [1, 1]
+	  Position		  [190, 84, 230, 126]
+	  SourceBlock		  "pfb_library/sync_delay"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  DelayLen		  "2^(PFBSize-n_inputs)"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dout"
+	  Position		  [255, 33, 285, 47]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  Position		  [255, 98, 285, 112]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "coeff_out"
+	  Position		  [130, 223, 160, 237]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "taps_out"
+	  Position		  [410, 183, 440, 197]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "data_delay"
+	  SrcPort		  1
+	  DstBlock		  "dout"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "din"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "data_delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Reinterpret1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sync"
+	  SrcPort		  1
+	  DstBlock		  "sync_delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sync_delay"
+	  SrcPort		  1
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "taps"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Concat"
+	  SrcPort		  1
+	  DstBlock		  "taps_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "coeff"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "Slice"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Slice1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Slice1"
+	  SrcPort		  1
+	  DstBlock		  "coeff_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Slice"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  DstBlock		  "Mult"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Reinterpret1"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 25]
+	  DstBlock		  "Mult"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reinterpret2"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  1
+	}
+      }
+    }
+    Annotation {
+      Name		      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%                                          "
+"                                   %\n%   Center for Astronomy Signal Process"
+"ing and Electronics Research           %\n%   http://seti.ssl.berkeley.edu/ca"
+"sper/                                      %\n%   Copyright (C) 2006 Universi"
+"ty of California, Berkeley                     %\n%                          "
+"                                                   %\n%   This program is fre"
+"e software; you can redistribute it and/or modify      %\n%   it under the te"
+"rms of the GNU General Public License as published by      %\n%   the Free So"
+"ftware Foundation; either version 2 of the License, or         %\n%   (at you"
+"r option) any later version.                                       %\n%      "
+"                                                                       %\n%  "
+" This program is distributed in the hope that it will be useful,           %"
+"\n%   but WITHOUT ANY WARRANTY; without even the implied warranty of         "
+"   %\n%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the      "
+"       %\n%   GNU General Public License for more details.                   "
+"           %\n%                                                              "
+"               %\n%   You should have received a copy of the GNU General Publ"
+"ic License along   %\n%   with this program; if not, write to the Free Softwa"
+"re Foundation, Inc.,   %\n%   51 Franklin Street, Fifth Floor, Boston, MA 021"
+"10-1301 USA.               %\n%                                              "
+"                               %\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      Position		      [16, 105]
+      HorizontalAlignment     "left"
+      FontName		      "Lucida Console"
+      FontSize		      9
+    }
+  }
+}

@@ -1,0 +1,100 @@
+set term png transparent font "arial" 9
+set output "scatter.png"
+unset key
+set title "Hit Dynamic Scatter"
+set xlabel "Time (Spectra)"
+set ylabel "IF Frequency (MHz)" 1.0,0.0
+set cblabel "Normalized Power"
+set palette color
+set palette model RGB rgbformulae 7,5,15
+set autoscale y
+set xr [0:500]
+set log z
+splot "gnuplot.txt" using 1:3:4 with points pt 6 ps 0.5 lt palette
+unset log z
+
+set output "histogram.png"
+set title "Bandpass Histogram"
+set boxwidth 0.0244140625
+set xlabel "IF Frequency (MHz)"
+set ylabel "Number of Detections"
+set style histogram
+set autoscale x
+set yrange [1:1000000]
+set log y
+unset key
+plot "out_freq.txt" using 1:2 with impulses
+
+set output "histogram_sigma.png"
+set title "Normalized Power Histogram"
+set boxwidth 0.0244140625
+set xlabel "Log (Normalized Power)"
+set ylabel "Number of Detections"
+set style histogram
+set xrange [1:5]
+set yrange [1:1000000]
+set log y
+unset key
+plot "out_sigma.txt" using 1:2 with impulses
+
+set term png transparent font "arial" 9
+set size 1.0, 1.0
+set output "newimage.png"
+unset key
+set title "Hit Dynamic Image"
+set xlabel "Time (Spectra)"
+set ylabel "IF Frequency (MHz)" 1.0,0.0
+set cblabel "Normalized Power"
+set palette color
+set palette model RGB rgbformulae 7,5,15
+set autoscale y
+set xr [0:500]
+set ytics 50
+set log z
+set log cb
+set pm3d map
+splot "imagefile.txt" using 1:2:3
+
+set term png transparent font "arial" 9
+set size 1.0, 1.0
+set output "2dscatter.png"
+unset key
+set title "Hit 2D Scatter"
+set xlabel "Time (Spectra)"
+set ylabel "IF Frequency (MHz)" 0.0,0.0
+unset cblabel
+set palette color
+set palette model RGB rgbformulae 7,5,15
+set autoscale y
+set ytics 25
+set xr [0:500]
+set ytics 50
+plot "gnuplot.txt" using 1:3: with points lt 3 pt 1 ps variable
+
+set size 1.2, 0.4
+set term png transparent font "arial" 12
+set output "filter.png"
+set title "Band-Pass Filter Status"
+set ylabel "Status (Boolean)"
+set xlabel "Spectra"
+set ytics 1
+set autoscale x
+set yrange [-1:2]
+unset log y
+plot "metafile.txt" using 1:6 with lines  
+
+set output "time.png"
+set boxwidth 0.67
+set title "Observing Time"
+set ytics 500
+set xlabel "Spectra"
+set ylabel "Unix Time"
+set format y "%10f"
+set style histogram
+set autoscale x
+set autoscale y
+plot "metafile.txt" using 4 with impulses
+
+
+
+

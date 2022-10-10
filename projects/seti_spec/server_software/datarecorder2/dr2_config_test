@@ -1,0 +1,36 @@
+# SETI@home data recorder configuration file
+# beam_res is in degrees
+#limited_run		2000
+#use_fake_data
+#very_verbose
+# uncomment skip_scram and no_synth to force data taking during non-alfa times
+skip_scram
+no_synth
+### synth_step_synth was commented out on 7/7/06 by jeffc.  This turns off frequency
+### stepping and was done so that we could start distributing WUs before we make 
+### the client changes needed to handle frequency stepping.
+#synth_step_synth
+trigger_file_name   ./dr2_run_trigger
+num_data_streams	1
+beam_res            0.05
+quicklook_interval  4
+quicklook_freq      1420000000
+quicklook_bufs      64
+freq_steps          1420000000 1422500000 1417500000 1425000000 1415000000 1427500000 1412500000 1430000000 1410000000 1432500000 1407500000 1435000000 1405000000 1437500000 1402500000 1440000000 1400000000 1442500000 1397500000 1445000000 1395000000 
+min_synth_freq          50000000
+max_synth_freq         450000000
+min_rec_freq          1200000000
+max_rec_freq          1530000000
+filtered_min_rec_freq 1380000000 
+filtered_max_rec_freq 1500000000  
+sample_rate		    2.5
+receiver		    alfa
+num_m_in_d          8
+#num_m_in_d          128
+num_diskbufs        4
+#num_diskbufs        6
+synth_model         PTS500
+# min_vgc           525 = 65536/5v * .04v <- the correct value
+#min_vgc             525
+turret_degrees_alfa     26.62
+turret_degrees_tolerance    1

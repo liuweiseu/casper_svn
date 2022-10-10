@@ -1,0 +1,9 @@
+#pragma ident "@(#)sserot8	1.1 01/10/01 EDT"
+sserot 0 $1
+sserot 1 $1
+sserot 2 $1
+sserot 3 $1
+sserot 4 $1
+sserot 5 $1
+sserot 6 $1
+sserot 7 $1

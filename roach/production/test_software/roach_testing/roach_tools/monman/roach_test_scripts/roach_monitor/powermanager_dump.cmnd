@@ -1,0 +1,10 @@
+# Dump the registers on the power manager
+r 280
+r 281
+r 282
+r 283
+r 284
+r 285
+r 286
+r 287
+r 288

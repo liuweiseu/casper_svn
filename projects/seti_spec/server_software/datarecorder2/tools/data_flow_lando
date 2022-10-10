@@ -1,0 +1,168 @@
+#! /usr/bin/perl
+
+# list of possible data drives and where they should be mounted
+@drive_array=("/dev/sda1","/dev/sdb1","/dev/sdc1","/dev/sdd1");
+@drive_mount_points=("/mnt/seti_data_1","/mnt/seti_data_2","/mnt/seti_data_3","/mnt/seti_data_4");
+$num_drives = scalar(@drive_array);
+
+# a list of possible block sizes for data drives (to check for proper disk in fdisk)
+@partition_block_sizes=(488384001,732572001); 
+
+# where to write data to (via scp)
+$datato = 'seti@thumper:/mydisks/raid5_d/users/seti/dr2_data/production/from_lando';
+
+# where to check for full disk (via nfs/df) and where files will end up:
+$fullcheck = "/disks/thumper/raid5_d/users/seti/dr2_data/production/from_lando";
+
+# buffer space (in bytes) for full disk (i.e. how much under 100% full before we just call it full)
+$buffer = 30000000000; # ~30GB
+
+# md5sum size (bytes)
+$md5size = 1073741824;
+
+# where to write md5s to (via scp)
+$md5to = 'seti@thumper-gbit:/mydisks/raid5_d/users/seti/dr2_data/production/md5';
+
+# email recipients
+$mailto = 'mattl@ssl.berkeley.edu jeffc@ssl.berkeley.edu';
+
+# lock file to avoid restart:
+$lockfile = "/root/lock.data_flow_lando";
+
+$awk = "/bin/awk";
+$df = "/bin/df";
+$fdisk = "/sbin/fdisk";
+$grep = "/bin/grep";
+$head = "/usr/bin/head";
+$ls = "/bin/ls";
+$mail = "/bin/mail";
+$md5sum = "/usr/bin/md5sum";
+$mount = "/bin/mount";
+$mv = "/bin/mv";
+$ps = "/bin/ps";
+$scp = "/usr/bin/scp";
+$su = "/bin/su";
+$tail = "/usr/bin/tail";
+$touch = "/bin/touch";
+$umount = "/bin/umount";
+$wc = "/usr/bin/wc";
+
+# FUNCTIONS:
+
+sub send_mail {
+  my $subject = $_[0];
+  my $message = $_[1];
+  open (SENDMAIL,"|$mail -s \"$subject\" $mailto");
+  print SENDMAIL "$message\n";
+  close (SENDMAIL);
+  return 0;
+  }
+
+# MAIN:
+
+# Is this already running?
+$pidcount = `$ps -ef | $grep data_flow_lando | $grep -v grep | $wc -l | $awk '{print \$1}'`;
+if ($pidcount > 1) {
+  print "data_flow_lando is already running - exiting...\n";
+  exit(1);
+  }
+
+# Is there a lock file?
+if (-f $lockfile) {
+  print "data_flow_lando is locked (to start remove file: $lockfile)\n";
+  exit(1);
+  }
+
+# mount all possible disks:
+
+for ($index = 0; $index < $num_drives; $index++) {
+  # is it a viable disk?
+  $num_blocks = `$fdisk -s $drive_array[$index]`;
+  chomp $num_blocks;
+  $not_right_size = 1;
+  foreach $partition_block_size (@partition_block_sizes) {
+    if ($num_blocks == $partition_block_size) { $not_right_size = 0; }
+    }
+  if ($not_right_size) {
+    print "$drive_array[$index] not of any suitable partition size - skipping...\n";
+    }
+  else {
+    # is it already mounted? if not, mount it! 
+    $mount_line = `$mount | $grep $drive_array[$index]`;
+    chomp $mount_line;
+    if ($mount_line eq "") {
+      system("$mount $drive_array[$index] $drive_mount_points[$index]");
+      }
+    }
+  }
+  
+# now copy anything you can from each disk to thumper
+
+$movecount = 0; # how many files moved during entire run
+for ($index = 0; $index < $num_drives; $index++) {
+  chdir $drive_mount_points[$index];
+  @mount_ls = `$ls -tr | $grep -v lost+found`;
+  chomp @mount_ls;
+  $moved_something = 0; # how many files moved on this particular drive
+  foreach $file (@mount_ls) {
+    $filesize = `$ls -l $file | $awk '{print \$5}'`;
+    chomp $filesize;
+    $spaceleft = `$df -P $fullcheck | $tail -1 | $awk '{print \$4}'`;
+    chomp $spaceleft;
+    $spaceleft *= 1024;
+    if (($filesize + $buffer) > $spaceleft) {
+      print "file: $file is too big to currently fit on remote partition - moving on..\n";
+      }
+    else {
+      print "file: $file (get md5s... ";
+      # get initial md5s 
+      $headmd5 = `$head -c $md5size $file | $md5sum | awk '{print \$1}'`;
+      chomp $headmd5;
+      $tailmd5 = `$tail -c $md5size $file | $md5sum | awk '{print \$1}'`;
+      chomp $tailmd5;
+      open (OUTFILE,">${file}.md5_head_${md5size}");
+      print OUTFILE $headmd5 . "\n";
+      close (OUTFILE);
+      open (OUTFILE,">${file}.md5_tail_${md5size}");
+      print OUTFILE $tailmd5 . "\n";
+      close (OUTFILE);
+      # copy everything over
+      print "scp files... ";
+      $fullfile = $drive_mount_points[$index] . "/" . $file;
+      system ("$su - seti -c \"$scp $fullfile ${datato}/${file}.copying\" > /dev/null 2>&1");
+      system ("$su - seti -c \"$scp ${fullfile}.md5_head_${md5size} $md5to\" > /dev/null 2>&1");
+      system ("$su - seti -c \"$scp ${fullfile}.md5_tail_${md5size} $md5to\" > /dev/null 2>&1");
+      # check remote md5s
+      print "checking md5s... ";
+      $rheadmd5 = `$head -c $md5size $fullcheck/${file}.copying | $md5sum | awk '{print \$1}'`;
+      chomp $rheadmd5;
+      $rtailmd5 = `$tail -c $md5size $fullcheck/${file}.copying | $md5sum | awk '{print \$1}'`;
+      chomp $rtailmd5;
+      if ($rheadmd5 ne $headmd5 || $rtailmd5 ne $tailmd5) {
+        print "failure!)\n";
+        send_mail("ALERT: lando md5 mismatch","The file: $file failed to copy from lando to thumper due to md5 mismatch.\nScript exiting...\n\nThe script will not restart on its own due to lockfile on lando. This is so you can check\nand see what went wrong. To restart, you must first remove the file:\n\n$lockfile\n\n");
+        system ("$touch $lockfile");
+        exit(1); 
+        }
+      system ("$su - seti -c \"$mv $fullcheck/${file}.copying $fullcheck/${file}\" > /dev/null 2>&1");    
+      print "unlinking... ";
+      unlink "$fullfile";
+      unlink "${fullfile}.md5_head_${md5size}";
+      unlink "${fullfile}.md5_tail_${md5size}";
+      print "done!)\n";
+      $movecount++; 
+      $moved_something++;
+      }
+    } # end foreach $file...
+  $lscount = `$ls -tr | $grep -cv lost+found `;
+  chomp $lscount;
+  if ($lscount == 0 && $moved_something > 0) {
+    send_mail("lando: drive $drive_array[$index] done","All files on drive $drive_array[$index] ($drive_mount_points[$index]) have been\nsuccessfully copied elsewhere. Please insert a new drive full of data at your earliest convenience.\n\n");
+    }
+  chdir "/root";
+  system ("$umount $drive_mount_points[$index]");
+  } # end for ($index = 0...)
+
+if ($movecount == 0) {
+  print "Warning: no files were moved at all during this run.\n";
+  }

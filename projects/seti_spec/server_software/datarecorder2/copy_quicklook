@@ -1,0 +1,66 @@
+#! /usr/bin/env perl
+
+sub get_last_mtime {
+  my $file = $_[0];
+  my $statefile = "mtime." . $file;
+  if (! -f $statefile) { return 0; }
+  my $last_mtime = `cat $statefile`;
+  chomp $last_mtime;
+  return $last_mtime;
+  }
+
+sub get_new_mtime {
+  my $file = $_[0];
+  my $mtime = (stat $file)[9];
+  return $mtime; 
+  }
+
+sub write_new_mtime {
+  my $file = $_[0];
+  my $mtime = $_[1];
+  open (OUTFILE, ">mtime." . $file) or die "cannot open mtime file : $file";
+  print OUTFILE $mtime;
+  close (OUTFILE);
+  } 
+
+chdir "/ramdisk";
+
+# remove any quicklooks older than the most recent 8:
+@delfiles = `ls -t quicklook.* | tail -n +9`;
+chomp @delfiles;
+foreach $delfile (@delfiles) { print "deleting: $delfile\n"; unlink $delfile; }
+
+# get remaining quicklooks and see if they changed:
+@files = `ls quicklook*`;
+chomp @files;
+
+# cleanup old mtime files
+foreach $file (@files) {
+  rename "mtime." . $file, "temp.mtime." . $file;
+  }
+system ("/bin/rm mtime.* > /dev/null 2>&1");
+foreach $file (@files) {
+  rename "temp.mtime." . $file, "mtime." . $file;
+  }
+
+foreach $file (@files) {
+  $old_time = get_last_mtime($file);
+  $current_time = get_new_mtime($file);
+  print "$file : $old_time $current_time\n";
+  if ($old_time != $current_time) {
+    $new_name = $file;
+    $new_name =~ s/quicklook.//;
+    $new_name .= "." . $current_time;
+    system ("cp $file $new_name");
+    system ("scp $new_name seti\@siren.naic.edu:dr2_data/quicklook/$new_name");
+    write_new_mtime($file,$current_time);
+    }
+  }
+    
+chdir "/tmp";
+@tmpfiles = (`ls dr2_log.*`);
+chomp @tmpfiles;
+foreach $tmpfile (@tmpfiles) {
+  system ("scp $tmpfile seti\@siren.naic.edu:dr2_data/logs");
+  unlink $tmpfile;
+  }

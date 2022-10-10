@@ -1,0 +1,4 @@
+#reset iadc
+w a0000 ffff
+s 10000
+w a0000 0

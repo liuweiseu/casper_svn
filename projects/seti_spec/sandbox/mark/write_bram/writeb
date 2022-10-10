@@ -1,0 +1,3 @@
+./write_bram 5089 0 511 data_out_mux_tvg_ram_im tvg_cos.dat
+./write_bram 5089 0 511 data_out_mux_tvg_ram_re tvg_sin.dat
+

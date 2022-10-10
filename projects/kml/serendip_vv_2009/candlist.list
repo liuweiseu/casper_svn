@@ -1,0 +1,743 @@
+ # seti spectrometer test run candidates
+# june 6-7, 2009
+#
+
+# crab
+b0531+21               053431.937 +220052.06 j 0 T zo #
+
+# seti candidates
+ET-05.20390_04.41400   051214.04  +042450.40 j 0 T zo # score: NA star: 24205 (G0) gaussians: 0 pulses: 0 triplets: 0 spikes: 0 comment: "planetary system qpix:  no signals or not observed"
+ET-05.62607_20.73662   053733.85  +204411.83 j 0 T zo # score: NA star: 26381 (G4IV-V) gaussians: 0 pulses: 0 triplets: 0 spikes: 0 comment: "planetary system qpix:  no signals or not observed"
+ET-05.67496_06.06537   054029.86  +060355.33 j 0 T zo # score: NA star: 26664 (K0) gaussians: 0 pulses: 0 triplets: 0 spikes: 0 comment: "planetary system qpix:  no signals or not observed"
+ET-05.78392_01.17134   054702.11  +011016.82 j 0 T zo # score: NA star: 27253 (G4V) gaussians: 0 pulses: 0 triplets: 0 spikes: 0 comment: "planetary system qpix:  no signals or not observed"
+ET-05.45510_27.00710   052718.36  +270025.56 j 0 T zo # score: -7201 star: 25450 (F8) gaussians: 7 pulses: 3 triplets: 19 spikes: "95 comment:  6 qpix:  26"
+ET-05.48291_27.06996   052901.52  +270411.86 j 0 T zo # score: -803124 star: none gaussians: 325 pulses: 296 triplets: 52 spikes: "2060 comment:  476 qpix:  458"
+ET-05.64110_22.50800   053827.96  +223028.80 j 0 T zo # score: -986 star: 26484 (A0) gaussians: 0 pulses: 2 triplets: 19 spikes: "18 comment:  0 qpix:  4"
+ET-05.70260_19.39210   054209.36  +192331.56 j 0 T zo # score: -12675 star: 26826 (A0) gaussians: 26 pulses: 28 triplets: "648 spikes:  0 comment:  77" qpix: "132
+ET-05.50050_27.11190   053001.80  +270642.84 j 0 T zo # score: -3720 star: none gaussians: 9 pulses: 5 triplets: "170 spikes:  1 comment:  13" qpix: "37
+ET-05.50780_27.13280   053028.08  +270801.92 j 0 T zo # score: -56269 star: none gaussians: 14 pulses: 14 triplets: "385 spikes:  1 comment:  75" qpix: "424
+ET-05.51660_27.13280   053100.24  +270801.92 j 0 T zo # score: -77142 star: none gaussians: 9 pulses: 21 triplets: "379 spikes:  1 comment:  84" qpix: "498
+ET-05.70260_19.43170   054209.36  +192554.12 j 0 T zo # score: -17099 star: none gaussians: 38 pulses: 46 triplets: "992 spikes:  1 comment:  115" qpix: "156
+ET-05.70410_19.41190   054214.76  +192442.84 j 0 T zo # score: -18559 star: none gaussians: 45 pulses: 52 triplets: "1043 spikes:  1 comment:  120" qpix: "162
+ET-05.90186_17.27001   055406.70  +171612.04 j 0 T zo # score: -133448 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  58" comment: "0 qpix:  99"
+ET-05.90332_17.25047   055411.95  +171501.69 j 0 T zo # score: -116230 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  53" comment: "0 qpix:  93"
+ET-05.65869_17.30907   053931.28  +171832.65 j 0 T zo # score: -95382 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  46" comment: "0 qpix:  63"
+ET-06.01611_17.30907   060102.00  +171832.65 j 0 T zo # score: -95054 star:  gaussians: "0 pulses:  0" triplets: "1 spikes:  36" comment: "0 qpix:  76"
+ET-06.01465_17.28954   060052.74  +171722.34 j 0 T zo # score: -91739 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  31" comment: "0 qpix:  72"
+ET-05.54443_17.27001   053239.95  +171612.04 j 0 T zo # score: -87613 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  36" comment: "0 qpix:  77"
+ET-05.54590_17.28954   053245.24  +171722.34 j 0 T zo # score: -81969 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  34" comment: "0 qpix:  82"
+ET-05.51660_27.13282   053100.24  +270801.85 j 0 T zo # score: -77142 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  4" comment: "1 qpix:  84"
+ET-05.90039_17.28954   055401.40  +171722.34 j 0 T zo # score: -75793 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  44" comment: "0 qpix:  63"
+ET-05.54297_17.25047   053234.69  +171501.69 j 0 T zo # score: -73923 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  38" comment: "0 qpix:  55"
+ET-05.65723_17.32861   053926.03  +171943.00 j 0 T zo # score: -67560 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  37" comment: "0 qpix:  30"
+ET-05.90479_17.27001   055417.24  +171612.04 j 0 T zo # score: -66013 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  33" comment: "0 qpix:  66"
+ET-05.50781_27.13282   053028.12  +270801.85 j 0 T zo # score: -56270 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  2" comment: "1 qpix:  75"
+ET-05.85791_17.27001   055128.48  +171612.04 j 0 T zo # score: -54804 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  10" comment: "0 qpix:  52"
+ET-05.65576_17.30907   053920.74  +171832.65 j 0 T zo # score: -52940 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  23" comment: "0 qpix:  22"
+ET-06.01611_17.27001   060102.00  +171612.04 j 0 T zo # score: -41395 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  15" comment: "0 qpix:  27"
+ET-05.51807_27.11186   053105.05  +270642.70 j 0 T zo # score: -39460 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  2" comment: "0 qpix:  64"
+ET-06.01172_17.28954   060042.19  +171722.34 j 0 T zo # score: -34934 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  12" comment: "0 qpix:  33"
+ET-05.54883_17.28954   053255.79  +171722.34 j 0 T zo # score: -34507 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  16" comment: "0 qpix:  30"
+ET-05.85938_17.25047   055133.77  +171501.69 j 0 T zo # score: -34036 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  2" comment: "0 qpix:  31"
+ET-05.85645_17.28954   055123.22  +171722.34 j 0 T zo # score: -33676 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  11" comment: "0 qpix:  45"
+ET-05.87695_17.25047   055237.02  +171501.69 j 0 T zo # score: -33259 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  11"
+ET-06.01758_17.32861   060103.29  +171943.00 j 0 T zo # score: -33243 star:  gaussians: "0 pulses:  0" triplets: "1 spikes:  24" comment: "0 qpix:  44"
+ET-05.55029_17.27001   053301.04  +171612.04 j 0 T zo # score: -31778 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  7" comment: "0 qpix:  24"
+ET-05.53418_27.13282   053203.05  +270801.85 j 0 T zo # score: -30544 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  5" comment: "0 qpix:  55"
+ET-05.53565_27.11186   053208.34  +270642.70 j 0 T zo # score: -27450 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  2" comment: "0 qpix:  32"
+ET-05.85791_17.30907   055128.48  +171832.65 j 0 T zo # score: -26238 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  21"
+ET-05.99268_17.30907   055933.65  +171832.65 j 0 T zo # score: -26203 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  0"
+ET-05.54297_27.13282   053234.69  +270801.85 j 0 T zo # score: -25132 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  43"
+ET-05.86084_17.27001   055139.02  +171612.04 j 0 T zo # score: -24119 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  8"
+ET-05.52539_27.13282   053131.40  +270801.85 j 0 T zo # score: -23025 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  50"
+ET-05.90186_17.30907   055406.70  +171832.65 j 0 T zo # score: -22540 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  14" comment: "0 qpix:  25"
+ET-06.01025_17.30907   060036.90  +171832.65 j 0 T zo # score: -21560 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  7" comment: "0 qpix:  27"
+ET-06.01904_17.30907   060108.54  +171832.65 j 0 T zo # score: -21251 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  18" comment: "0 qpix:  26"
+ET-05.86670_16.95776   055200.12  +165727.94 j 0 T zo # score: -20812 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  3" comment: "0 qpix:  11"
+ET-05.63672_17.28954   053812.19  +171722.34 j 0 T zo # score: -20477 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  3" comment: "0 qpix:  0"
+ET-05.70264_19.51079   054209.50  +193038.84 j 0 T zo # score: -19964 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  7" comment: "0 qpix:  109"
+ET-05.63818_17.30907   053817.45  +171832.65 j 0 T zo # score: -18683 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  0"
+ET-05.59424_17.97450   053539.26  +175828.20 j 0 T zo # score: -18645 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  9" comment: "0 qpix:  2"
+ET-05.70410_19.41188   054214.76  +192442.77 j 0 T zo # score: -18559 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  12" comment: "1 qpix:  120"
+
+#OSETI CANDIDATES
+OSET_HD+185734         193923.00  +300912.00 j 0 T zo # 5 13.00 (0.59) K0 III-binary, 433 day period 
+OSET_HD+73343          083909.00  +314744.00 j 0 T zo # 9 3.25 (1.56) cool Algol binary, 21 day period 
+OSET_HD+39801          055510.00  +072425.00 j 0 T zo # 1 7.73 (1.64) M2 Ib-supergiant, variable 
+OSET_HD+84207          094411.00  +252111.00 j 0 T zo # 10 - G0 V-binary, 1.37 day period 
+OSET_HIP+115279        232053.00  +164239.00 j 0 T zo # 9 13.07 (1.51) F7 V-visual binary, 0B23 separation 
+OSET_GSC+03598-00615   144657.00  +181800.00 j 0 T zo # 9 - G8 V 
+OSET_GSC+01481-00366   085144.00  +114426.00 j 0 T zo # 11 - K1 III-binary, 6394 day period 
+OSET_HD+202448         211549.00  +051452.00 j 0 T zo # 4 17.51 (0.89) G0 III and A-binary, 99 day period 
+OSET_HD+196610         203755.00  +181607.00 j 0 T zo # 6 9.16 (0.99) M6 III-semiregular variable 
+OSET_HIP+69893A        141812.00  +124429.00 j 0 T zo # 11 14.24 (2.92) K3 V-binary, 4837 day period 
+OSET_HIP+35919         072417.00  +361839.00 j 0 T zo # 7 8.01 (1.18) F5 V-triple, 1.5 day inner period 
+OSET_HD+53212          105302.00  +045743.00 j 0 T zo # 8 13.02 (0.92) G5 V-double-lined binary 
+OSET_HD+98230/98231    111811.00  +313145.00 j 0 T zo # 4 - F and G dwarf-quadruple 
+OSET_HIP+14135         030217.00  +040523.00 j 0 T zo # 3 14.82 (0.83) M2 III-low-level variable 
+OSET_HD+2411           002803.00  +175335.00 j 0 T zo # 5 6.65 (0.78) M3 III-semiregular variable 
+OSET_HIP+81272         163557.00  +375802.00 j 0 T zo # 8 - 0.15 (0.91) F2 Ib-semiregular variable
+
+#HABCAT CANDIDATES
+HAB-HIP+H+19337+       040837.03  +333812.20  j 0 T zo   # appx distance: 13.696753869333 pc
+HAB-HIP+H+20917+       042900.17  +215520.20  j 0 T zo   # appx distance: 11.471836641046 pc
+HAB-HIP+H+21932+       044255.37  +185739.20  j 0 T zo   # appx distance: 9.4197437829691 pc
+HAB-HIP+H+22627+       045205.64  +062838.30  j 0 T zo   # appx distance: 12.118274357731 pc
+HAB-HIP+H+25220+       052338.23  +171926.90  j 0 T zo   # appx distance: 14.334862385321 pc
+HAB-HIP+H+25578+       052800.27  +093844.80  j 0 T zo   # appx distance: 8.692628650904 pc
+HAB-HIP+H+26335+       053630.99  +111940.80  j 0 T zo   # appx distance: 11.376564277588 pc
+HAB-HIP+H+29316+H      061054.77  +101913.10  j 0 T zo   # appx distance: 10.779346771586 pc
+HAB-HIP+H+33226+       065449.47  +331608.90  j 0 T zo   # appx distance: 5.5151114052504 pc
+HAB-HIP+H+35191+       071619.80  +270834.70  j 0 T zo   # appx distance: 12.338062924121 pc
+HAB-HIP+H+36208+       072724.16  +051405.20  j 0 T zo   # appx distance: 3.7985261718453 pc
+HAB-HIP+H+36627+       073157.51  +361349.60  j 0 T zo   # appx distance: 11.474469305795 pc
+HAB-HIP+H+37288+       073923.12  +021103.30  j 0 T zo   # appx distance: 14.865467518953 pc
+
+HABHIP+H+9405+         020049.01  +132304.50  j 0 T zo   # appx distance: 92.506938020352 pc
+HABHIP+H+9463+         020147.83  +130128.20  j 0 T zo   # appx distance: 40.273862263391 pc
+HABHIP+H+9466+         020149.64  +025218.90  j 0 T zo   # appx distance: 74.626865671642 pc
+HABHIP+H+9477+         020154.41  +200928.70  j 0 T zo   # appx distance: 97.751710654936 pc
+HABHIP+H+9492+         020207.17  +220615.20  j 0 T zo   # appx distance: 53.879310344828 pc
+HABHIP+H+9543+         020239.28  +334547.40  j 0 T zo   # appx distance: 78.247261345853 pc
+HABHIP+H+9559+         020247.73  +284710.10  j 0 T zo   # appx distance: 91.996320147194 pc
+HABHIP+H+9576+         020301.60  +032129.80  j 0 T zo   # appx distance: 48.473097430926 pc
+HABHIP+H+9607+         020332.80  +123505.40  j 0 T zo   # appx distance: 46.082949308756 pc
+HABHIP+H+9618+         020336.93  +211650.20  j 0 T zo   # appx distance: 65.876152832675 pc
+HABHIP+H+9643+         020356.50  +141103.00  j 0 T zo   # appx distance: 64.020486555698 pc
+HABHIP+H+9709+         020453.44  +112418.10  j 0 T zo   # appx distance: 49.140049140049 pc
+HABHIP+H+9762+         020530.18  +054150.10  j 0 T zo   # appx distance: 38.153376573827 pc
+HABHIP+H+9764+         020531.67  +121007.90  j 0 T zo   # appx distance: 47.869794159885 pc
+HABHIP+H+9788+         020549.41  +304702.80  j 0 T zo   # appx distance: 28.752156411731 pc
+HABHIP+H+9820+         020622.13  +165225.20  j 0 T zo   # appx distance: 72.358900144718 pc
+HABHIP+H+9829+         020630.24  +242003.70  j 0 T zo   # appx distance: 23.180343069077 pc
+HABHIP+H+9842+         020639.60  +102839.20  j 0 T zo   # appx distance: 94.161958568738 pc
+HABHIP+H+9873+         020700.34  +352145.20  j 0 T zo   # appx distance: 96.993210475267 pc
+HABHIP+H+9920+         020742.19  +075731.90  j 0 T zo   # appx distance: 44.563279857398 pc
+HABHIP+H+9967+         020819.94  +030339.10  j 0 T zo   # appx distance: 57.803468208092 pc
+HABHIP+H+10050+        020923.03  +171328.70  j 0 T zo   # appx distance: 39.261876717707 pc
+HABHIP+H+10056+        020926.17  +054041.10  j 0 T zo   # appx distance: 58.582308142941 pc
+HABHIP+H+10118+        021007.92  +120650.10  j 0 T zo   # appx distance: 56.947608200456 pc
+HABHIP+H+10168+        021046.14  +092428.00  j 0 T zo   # appx distance: 65.659881812213 pc
+HABHIP+H+10201+        021109.36  +231300.70  j 0 T zo   # appx distance: 80.775444264943 pc
+HABHIP+H+10276+        021218.10  +215858.20  j 0 T zo   # appx distance: 33.875338753388 pc
+HABHIP+H+10306+        021247.98  +211239.50  j 0 T zo   # appx distance: 30.129557095511 pc
+HABHIP+H+10329+        021303.93  +130301.30  j 0 T zo   # appx distance: 92.336103416436 pc
+HABHIP+H+10351+        021321.85  +252245.40  j 0 T zo   # appx distance: 66.622251832112 pc
+HABHIP+H+10353+        021327.74  +143207.30  j 0 T zo   # appx distance: 81.10300081103 pc
+HABHIP+H+10373+        021339.94  +325852.70  j 0 T zo   # appx distance: 97.94319294809 pc
+HABHIP+H+10378+        021341.40  +253546.70  j 0 T zo   # appx distance: 66.844919786096 pc
+HABHIP+H+10412+        021410.58  +013312.00  j 0 T zo   # appx distance: 60.204695966285 pc
+HABHIP+H+10414+H       021410.94  +090838.50  j 0 T zo   # appx distance: 59.630292188432 pc
+HABHIP+H+10419+        021415.52  +060035.10  j 0 T zo   # appx distance: 83.333333333333 pc
+HABHIP+H+10480+        021507.79  +035105.20  j 0 T zo   # appx distance: 65.789473684211 pc
+HABHIP+H+10496+        021520.10  +185028.90  j 0 T zo   # appx distance: 79.365079365079 pc
+HABHIP+H+10500+        021521.72  +072942.70  j 0 T zo   # appx distance: 29.359953024075 pc
+HABHIP+H+10505+        021524.12  +241618.40  j 0 T zo   # appx distance: 26.406126221283 pc
+HABHIP+H+10510+        021527.15  +272127.40  j 0 T zo   # appx distance: 37.188545927854 pc
+HABHIP+H+10599+        021627.60  +122249.10  j 0 T zo   # appx distance: 34.071550255537 pc
+HABHIP+H+10616+        021640.56  +063145.90  j 0 T zo   # appx distance: 55.005500550055 pc
+HABHIP+H+10668+        021716.40  +261705.10  j 0 T zo   # appx distance: 64.557779212395 pc
+HABHIP+H+10682+        021726.41  +270816.40  j 0 T zo   # appx distance: 54.024851431659 pc
+HABHIP+H+10710+        021755.49  +194050.40  j 0 T zo   # appx distance: 66.666666666667 pc
+HABHIP+H+10723+        021801.23  +014524.80  j 0 T zo   # appx distance: 24.975024975025 pc
+HABHIP+H+10789+        021854.49  +351305.90  j 0 T zo   # appx distance: 45.045045045045 pc
+HABHIP+H+10810+        021908.73  +194116.80  j 0 T zo   # appx distance: 33.624747814391 pc
+HABHIP+H+10868+        021952.84  +312015.70  j 0 T zo   # appx distance: 61.957868649318 pc
+HABHIP+H+10921+        022039.17  +134012.80  j 0 T zo   # appx distance: 54.347826086957 pc
+HABHIP+H+11005+        022146.93  +071054.00  j 0 T zo   # appx distance: 67.65899864682 pc
+HABHIP+H+11028+        022200.87  +044447.60  j 0 T zo   # appx distance: 39.635354736425 pc
+HABHIP+H+11053+        022216.77  +261609.70  j 0 T zo   # appx distance: 73.046018991965 pc
+HABHIP+H+11083+        022241.49  +182437.60  j 0 T zo   # appx distance: 33.886818027787 pc
+HABHIP+H+11132+        022314.80  +055954.40  j 0 T zo   # appx distance: 90.252707581227 pc
+HABHIP+H+11154+        022330.14  +164346.30  j 0 T zo   # appx distance: 87.412587412587 pc
+HABHIP+H+11157+        022332.22  +193755.40  j 0 T zo   # appx distance: 53.763440860215 pc
+HABHIP+H+11182+        022400.27  +045218.30  j 0 T zo   # appx distance: 37.467216185837 pc
+HABHIP+H+11280+        022516.63  +125049.80  j 0 T zo   # appx distance: 68.493150684932 pc
+HABHIP+H+11317+        022540.07  +284558.90  j 0 T zo   # appx distance: 35.5871886121 pc
+HABHIP+H+11349+        022601.55  +054646.00  j 0 T zo   # appx distance: 27.886224205243 pc
+HABHIP+H+11355+        022614.10  +185419.00  j 0 T zo   # appx distance: 76.569678407351 pc
+HABHIP+H+11411+        022703.43  +061335.70  j 0 T zo   # appx distance: 69.93006993007 pc
+HABHIP+H+11427+        022723.56  +101155.70  j 0 T zo   # appx distance: 36.363636363636 pc
+HABHIP+H+11443+        022733.31  +074245.10  j 0 T zo   # appx distance: 34.328870580158 pc
+HABHIP+H+11457+        022746.94  +160729.50  j 0 T zo   # appx distance: 94.517958412098 pc
+HABHIP+H+11506+        022821.90  +103403.50  j 0 T zo   # appx distance: 67.430883344572 pc
+HABHIP+H+11507+        022822.93  +012854.40  j 0 T zo   # appx distance: 45.871559633028 pc
+HABHIP+H+11538+        022844.66  +033422.20  j 0 T zo   # appx distance: 69.204152249135 pc
+HABHIP+H+11541+        022845.74  +294113.30  j 0 T zo   # appx distance: 69.252077562327 pc
+HABHIP+H+11548+        022848.54  +295553.70  j 0 T zo   # appx distance: 30.788177339901 pc
+HABHIP+H+11558+        022854.68  +120520.30  j 0 T zo   # appx distance: 26.631158455393 pc
+HABHIP+H+11560+        022855.37  +153600.50  j 0 T zo   # appx distance: 78.369905956113 pc
+HABHIP+H+11597+        022930.98  +021123.60  j 0 T zo   # appx distance: 92.421441774492 pc
+HABHIP+H+11686+        023043.31  +210152.40  j 0 T zo   # appx distance: 61.996280223187 pc
+HABHIP+H+11707+        023103.06  +082255.90  j 0 T zo   # appx distance: 35.473572188719 pc
+HABHIP+H+11728+        023124.08  +220514.40  j 0 T zo   # appx distance: 41.8410041841 pc
+HABHIP+H+11749+        023135.55  +313048.00  j 0 T zo   # appx distance: 92.421441774492 pc
+HABHIP+H+11786+        023206.75  +344041.70  j 0 T zo   # appx distance: 64.516129032258 pc
+HABHIP+H+11793+H       023210.89  +090052.20  j 0 T zo   # appx distance: 81.30081300813 pc
+HABHIP+H+11836+        023249.46  +051236.40  j 0 T zo   # appx distance: 61.919504643963 pc
+HABHIP+H+11862+        023304.43  +074943.10  j 0 T zo   # appx distance: 36.218761318363 pc
+HABHIP+H+11941+        023403.53  +121051.40  j 0 T zo   # appx distance: 43.0848772081 pc
+HABHIP+H+11981+        023432.99  +335456.40  j 0 T zo   # appx distance: 95.510983763133 pc
+HABHIP+H+12025+        023504.79  +143303.50  j 0 T zo   # appx distance: 76.745970836531 pc
+HABHIP+H+12087+        023547.57  +063615.40  j 0 T zo   # appx distance: 48.543689320388 pc
+HABHIP+H+12097+        023553.15  +201312.80  j 0 T zo   # appx distance: 13.966480446927 pc
+HABHIP+H+12099+        023554.65  +310824.30  j 0 T zo   # appx distance: 87.489063867017 pc
+HABHIP+H+12155+        023638.45  +121229.50  j 0 T zo   # appx distance: 46.382189239332 pc
+HABHIP+H+12198+        023705.65  +125407.60  j 0 T zo   # appx distance: 74.46016381236 pc
+HABHIP+H+12200+        023706.51  +325327.70  j 0 T zo   # appx distance: 55.218111540585 pc
+HABHIP+H+12278+        023810.00  +220112.30  j 0 T zo   # appx distance: 89.047195013357 pc
+HABHIP+H+12291+        023820.25  +114532.70  j 0 T zo   # appx distance: 66.889632107023 pc
+HABHIP+H+12314+        023835.00  +342157.30  j 0 T zo   # appx distance: 62.539086929331 pc
+HABHIP+H+12323+        023840.82  +065648.30  j 0 T zo   # appx distance: 88.495575221239 pc
+HABHIP+H+12440+        024008.66  +025507.40  j 0 T zo   # appx distance: 70.077084793273 pc
+HABHIP+H+12491+H       024042.23  +263720.30  j 0 T zo   # appx distance: 72.202166064982 pc
+HABHIP+H+12493+        024042.71  +011153.20  j 0 T zo   # appx distance: 22.301516503122 pc
+HABHIP+H+12505+        024054.47  +081425.00  j 0 T zo   # appx distance: 64.308681672026 pc
+HABHIP+H+12532+        024114.51  +244324.30  j 0 T zo   # appx distance: 78.988941548183 pc
+HABHIP+H+12665+        024243.72  +230323.30  j 0 T zo   # appx distance: 73.099415204678 pc
+HABHIP+H+12771+        024409.25  +072313.70  j 0 T zo   # appx distance: 93.283582089552 pc
+HABHIP+H+12787+        024421.32  +105741.60  j 0 T zo   # appx distance: 33.579583613163 pc
+HABHIP+H+12790+        024423.56  +365315.00  j 0 T zo   # appx distance: 53.879310344828 pc
+HABHIP+H+12838+H       024502.41  +141415.50  j 0 T zo   # appx distance: 92.764378478664 pc
+HABHIP+H+12916+        024603.34  +284100.90  j 0 T zo   # appx distance: 82.576383154418 pc
+HABHIP+H+12919+        024606.82  +361601.30  j 0 T zo   # appx distance: 75.528700906344 pc
+HABHIP+H+12926+        024615.05  +253900.90  j 0 T zo   # appx distance: 25.673940949936 pc
+HABHIP+H+12929+        024617.12  +114632.70  j 0 T zo   # appx distance: 15.915963711603 pc
+HABHIP+H+13026+        024726.98  +010333.40  j 0 T zo   # appx distance: 53.106744556559 pc
+HABHIP+H+13035+        024730.35  +233811.90  j 0 T zo   # appx distance: 68.306010928962 pc
+HABHIP+H+13065+        024755.98  +284244.10  j 0 T zo   # appx distance: 27.434842249657 pc
+HABHIP+H+13122+        024846.77  +143649.10  j 0 T zo   # appx distance: 68.212824010914 pc
+HABHIP+H+13223+        025012.95  +134237.80  j 0 T zo   # appx distance: 83.194675540765 pc
+HABHIP+H+13257+        025035.30  +365655.10  j 0 T zo   # appx distance: 60.753341433779 pc
+HABHIP+H+13258+        025036.69  +154239.20  j 0 T zo   # appx distance: 22.416498542928 pc
+HABHIP+H+13269+        025042.49  +190938.30  j 0 T zo   # appx distance: 60.790273556231 pc
+HABHIP+H+13278+        025053.66  +034900.70  j 0 T zo   # appx distance: 87.1839581517 pc
+HABHIP+H+13291+        025104.20  +301712.60  j 0 T zo   # appx distance: 47.125353440151 pc
+HABHIP+H+13342+        025142.93  +103843.20  j 0 T zo   # appx distance: 27.609055770293 pc
+HABHIP+H+13398+        025225.02  +265832.00  j 0 T zo   # appx distance: 26.490066225166 pc
+HABHIP+H+13410+        025239.90  +054304.80  j 0 T zo   # appx distance: 43.782837127846 pc
+HABHIP+H+13412+        025241.33  +031650.10  j 0 T zo   # appx distance: 39.231071008239 pc
+HABHIP+H+13481+        025336.82  +015239.60  j 0 T zo   # appx distance: 79.365079365079 pc
+HABHIP+H+13589+        025504.80  +213543.40  j 0 T zo   # appx distance: 62.460961898813 pc
+HABHIP+H+13600+        025516.21  +175330.30  j 0 T zo   # appx distance: 52.938062466914 pc
+HABHIP+H+13601+        025517.28  +161833.50  j 0 T zo   # appx distance: 26.109660574413 pc
+HABHIP+H+13603+        025518.25  +080815.40  j 0 T zo   # appx distance: 88.261253309797 pc
+HABHIP+H+13631+        025532.13  +184626.90  j 0 T zo   # appx distance: 57.603686635945 pc
+HABHIP+H+13642+H       025538.89  +265225.30  j 0 T zo   # appx distance: 22.878059940517 pc
+HABHIP+H+13644+        025541.07  +280748.80  j 0 T zo   # appx distance: 36.271309394269 pc
+HABHIP+H+13678+        025612.04  +135447.50  j 0 T zo   # appx distance: 43.402777777778 pc
+HABHIP+H+13679+        025613.73  +082254.40  j 0 T zo   # appx distance: 44.523597506679 pc
+HABHIP+H+13748+        025658.63  +102852.70  j 0 T zo   # appx distance: 76.394194041253 pc
+HABHIP+H+13757+        025705.28  +073912.50  j 0 T zo   # appx distance: 87.108013937282 pc
+HABHIP+H+13791+        025734.69  +294234.60  j 0 T zo   # appx distance: 95.057034220532 pc
+HABHIP+H+13813+        025748.55  +070110.10  j 0 T zo   # appx distance: 91.996320147194 pc
+HABHIP+H+13855+        025823.74  +191346.00  j 0 T zo   # appx distance: 73.691967575534 pc
+HABHIP+H+13875+        025842.27  +353339.40  j 0 T zo   # appx distance: 39.588281868567 pc
+HABHIP+H+13891+        025852.44  +264625.60  j 0 T zo   # appx distance: 28.571428571429 pc
+HABHIP+H+13932+        025930.70  +062023.00  j 0 T zo   # appx distance: 99.601593625498 pc
+HABHIP+H+13974+        030000.59  +070609.60  j 0 T zo   # appx distance: 93.54536950421 pc
+HABHIP+H+13977+        030003.01  +091042.50  j 0 T zo   # appx distance: 55.586436909394 pc
+HABHIP+H+14048+        030053.51  +150152.90  j 0 T zo   # appx distance: 71.530758226037 pc
+HABHIP+H+14098+        030150.48  +163105.40  j 0 T zo   # appx distance: 81.10300081103 pc
+HABHIP+H+14132+H       030215.51  +181945.60  j 0 T zo   # appx distance: 83.752093802345 pc
+HABHIP+H+14175+        030246.44  +122114.40  j 0 T zo   # appx distance: 51.733057423694 pc
+HABHIP+H+14211+        030313.68  +222211.10  j 0 T zo   # appx distance: 42.680324370465 pc
+HABHIP+H+14261+        030354.77  +051433.70  j 0 T zo   # appx distance: 75.757575757576 pc
+HABHIP+H+14364+        030519.99  +293226.30  j 0 T zo   # appx distance: 97.27626459144 pc
+HABHIP+H+14370+        030523.16  +320548.20  j 0 T zo   # appx distance: 71.942446043165 pc
+HABHIP+H+14445+        030626.51  +015802.70  j 0 T zo   # appx distance: 14.773230905599 pc
+HABHIP+H+14532+        030739.23  +363705.30  j 0 T zo   # appx distance: 42.662116040956 pc
+HABHIP+H+14548+        030750.52  +253307.90  j 0 T zo   # appx distance: 61.652281134402 pc
+HABHIP+H+14614+        030844.26  +152007.10  j 0 T zo   # appx distance: 40.916530278232 pc
+HABHIP+H+14640+        030910.53  +072737.50  j 0 T zo   # appx distance: 76.804915514593 pc
+HABHIP+H+14705+        030959.73  +152226.10  j 0 T zo   # appx distance: 46.948356807512 pc
+HABHIP+H+14711+        031004.20  +125950.00  j 0 T zo   # appx distance: 48.851978505129 pc
+HABHIP+H+14721+        031009.80  +182044.60  j 0 T zo   # appx distance: 56.980056980057 pc
+HABHIP+H+14729+        031015.01  +120303.20  j 0 T zo   # appx distance: 27.056277056277 pc
+HABHIP+H+14803+        031110.18  +091147.50  j 0 T zo   # appx distance: 52.273915316257 pc
+HABHIP+H+14810+        031114.23  +210551.00  j 0 T zo   # appx distance: 52.882072977261 pc
+HABHIP+H+14840+        031140.23  +311523.40  j 0 T zo   # appx distance: 54.704595185996 pc
+HABHIP+H+14974+        031302.12  +204348.20  j 0 T zo   # appx distance: 52.083333333333 pc
+HABHIP+H+15020+        031336.59  +074233.90  j 0 T zo   # appx distance: 40.290088638195 pc
+HABHIP+H+15035+        031345.56  +360824.50  j 0 T zo   # appx distance: 37.622272385252 pc
+HABHIP+H+15062+        031404.80  +181815.70  j 0 T zo   # appx distance: 40.783034257749 pc
+HABHIP+H+15074+        031417.64  +090752.00  j 0 T zo   # appx distance: 55.309734513274 pc
+HABHIP+H+15099+        031446.99  +085854.40  j 0 T zo   # appx distance: 22.241992882562 pc
+HABHIP+H+15205+        031601.87  +350243.00  j 0 T zo   # appx distance: 55.897149245388 pc
+HABHIP+H+15206+        031603.01  +113742.50  j 0 T zo   # appx distance: 93.109869646182 pc
+HABHIP+H+15207+        031603.44  +032349.30  j 0 T zo   # appx distance: 59.2768227623 pc
+HABHIP+H+15273+        031701.51  +253512.40  j 0 T zo   # appx distance: 76.745970836531 pc
+HABHIP+H+15278+        031706.45  +240206.50  j 0 T zo   # appx distance: 54.347826086957 pc
+HABHIP+H+15288+        031715.19  +100831.80  j 0 T zo   # appx distance: 94.876660341556 pc
+HABHIP+H+15332+        031744.73  +251509.50  j 0 T zo   # appx distance: 21.146119687037 pc
+HABHIP+H+15362+        031804.49  +062904.50  j 0 T zo   # appx distance: 68.027210884354 pc
+HABHIP+H+15374+        031815.03  +091442.40  j 0 T zo   # appx distance: 40.749796251019 pc
+HABHIP+H+15381+        031820.03  +181018.80  j 0 T zo   # appx distance: 52.110474205315 pc
+HABHIP+H+15401+        031835.12  +101845.30  j 0 T zo   # appx distance: 44.130626654898 pc
+HABHIP+H+15406+        031838.18  +323957.70  j 0 T zo   # appx distance: 30.487804878049 pc
+HABHIP+H+15427+        031850.27  +041234.40  j 0 T zo   # appx distance: 81.833060556465 pc
+HABHIP+H+15436+        031856.95  +021816.80  j 0 T zo   # appx distance: 79.554494828958 pc
+HABHIP+H+15563+        032029.06  +082716.00  j 0 T zo   # appx distance: 29.256875365711 pc
+HABHIP+H+15572+        032036.83  +090201.30  j 0 T zo   # appx distance: 50.735667174023 pc
+HABHIP+H+15599+H       032053.41  +010954.00  j 0 T zo   # appx distance: 66.844919786096 pc
+HABHIP+H+15661+        032141.85  +104947.80  j 0 T zo   # appx distance: 71.736011477762 pc
+HABHIP+H+15720+        032227.99  +270922.40  j 0 T zo   # appx distance: 33.613445378151 pc
+HABHIP+H+15724+        032232.55  +174331.50  j 0 T zo   # appx distance: 42.462845010616 pc
+HABHIP+H+15875+        032428.63  +065906.30  j 0 T zo   # appx distance: 40.485829959514 pc
+HABHIP+H+15961+        032530.83  +170834.00  j 0 T zo   # appx distance: 80.192461908581 pc
+HABHIP+H+15980+        032547.94  +255215.90  j 0 T zo   # appx distance: 85.836909871245 pc
+HABHIP+H+16107+        032729.39  +344824.50  j 0 T zo   # appx distance: 71.225071225071 pc
+HABHIP+H+16136+        032755.30  +185256.90  j 0 T zo   # appx distance: 69.832402234637 pc
+HABHIP+H+16158+        032813.04  +071808.70  j 0 T zo   # appx distance: 74.294205052006 pc
+HABHIP+H+16359+        033045.42  +141745.90  j 0 T zo   # appx distance: 89.766606822262 pc
+HABHIP+H+16399+        033109.42  +133434.00  j 0 T zo   # appx distance: 90.00900090009 pc
+HABHIP+H+16405+        033115.49  +204606.80  j 0 T zo   # appx distance: 49.900199600798 pc
+HABHIP+H+16504+        033227.11  +104416.90  j 0 T zo   # appx distance: 97.94319294809 pc
+HABHIP+H+16532+H       033253.62  +153258.80  j 0 T zo   # appx distance: 91.074681238616 pc
+HABHIP+H+16548+        033305.23  +045729.00  j 0 T zo   # appx distance: 58.139534883721 pc
+HABHIP+H+16560+        033313.31  +072710.90  j 0 T zo   # appx distance: 33.624747814391 pc
+HABHIP+H+16663+        033426.54  +060217.00  j 0 T zo   # appx distance: 71.994240460763 pc
+HABHIP+H+16709+        033459.50  +343641.00  j 0 T zo   # appx distance: 42.955326460481 pc
+HABHIP+H+16739+        033519.20  +054331.40  j 0 T zo   # appx distance: 62.111801242236 pc
+HABHIP+H+16748+        033528.13  +141030.10  j 0 T zo   # appx distance: 90.579710144928 pc
+HABHIP+H+16813+        033624.28  +200403.80  j 0 T zo   # appx distance: 93.54536950421 pc
+HABHIP+H+16824+        033628.77  +234751.20  j 0 T zo   # appx distance: 63.856960408685 pc
+HABHIP+H+16891+        033720.70  +150544.00  j 0 T zo   # appx distance: 68.166325835037 pc
+HABHIP+H+16896+        033722.60  +183548.80  j 0 T zo   # appx distance: 85.251491901108 pc
+HABHIP+H+16900+        033728.02  +310712.60  j 0 T zo   # appx distance: 54.585152838428 pc
+HABHIP+H+16930+        033752.48  +053828.60  j 0 T zo   # appx distance: 65.061808718282 pc
+HABHIP+H+16991+        033832.01  +133622.20  j 0 T zo   # appx distance: 76.27765064836 pc
+HABHIP+H+17032+        033904.45  +093910.50  j 0 T zo   # appx distance: 59.844404548175 pc
+HABHIP+H+17129+H       034007.24  +340659.30  j 0 T zo   # appx distance: 45.703839122486 pc
+HABHIP+H+17174+        034041.05  +180602.70  j 0 T zo   # appx distance: 75.585789871504 pc
+HABHIP+H+17187+        034049.50  +314935.50  j 0 T zo   # appx distance: 31.786395422759 pc
+HABHIP+H+17207+        034110.55  +033643.00  j 0 T zo   # appx distance: 25.081514923501 pc
+HABHIP+H+17238+        034129.64  +133124.90  j 0 T zo   # appx distance: 95.147478591817 pc
+HABHIP+H+17326+        034231.18  +353159.40  j 0 T zo   # appx distance: 54.97526113249 pc
+HABHIP+H+17332+        034234.96  +065913.00  j 0 T zo   # appx distance: 79.239302694136 pc
+HABHIP+H+17458+        034430.81  +345824.70  j 0 T zo   # appx distance: 25.947067981318 pc
+HABHIP+H+17472+        034439.46  +101042.60  j 0 T zo   # appx distance: 48.995590396864 pc
+HABHIP+H+17481+        034444.84  +204453.20  j 0 T zo   # appx distance: 99.009900990099 pc
+HABHIP+H+17496+        034450.94  +115510.90  j 0 T zo   # appx distance: 21.800741225202 pc
+HABHIP+H+17525+        034508.19  +261733.50  j 0 T zo   # appx distance: 74.906367041199 pc
+HABHIP+H+17609+        034619.89  +261257.50  j 0 T zo   # appx distance: 14.573010784028 pc
+HABHIP+H+17684+        034717.16  +234336.50  j 0 T zo   # appx distance: 62.111801242236 pc
+HABHIP+H+17714+        034738.29  +140512.80  j 0 T zo   # appx distance: 99.206349206349 pc
+HABHIP+H+17722+        034742.97  +103002.90  j 0 T zo   # appx distance: 62.266500622665 pc
+HABHIP+H+17732+        034749.04  +321143.80  j 0 T zo   # appx distance: 55.803571428571 pc
+HABHIP+H+17743+        034758.33  +024719.90  j 0 T zo   # appx distance: 17.36412571627 pc
+HABHIP+H+17766+        034811.76  +070846.40  j 0 T zo   # appx distance: 41.631973355537 pc
+HABHIP+H+17794+        034832.88  +151208.00  j 0 T zo   # appx distance: 35.198873636044 pc
+HABHIP+H+17796+        034835.58  +303923.50  j 0 T zo   # appx distance: 66.934404283802 pc
+HABHIP+H+17803+        034838.80  +210325.40  j 0 T zo   # appx distance: 67.069081153588 pc
+HABHIP+H+17944+        035013.20  +160001.30  j 0 T zo   # appx distance: 97.847358121331 pc
+HABHIP+H+17960+        035022.90  +172837.10  j 0 T zo   # appx distance: 46.511627906977 pc
+HABHIP+H+18060+        035136.66  +361534.10  j 0 T zo   # appx distance: 55.157198014341 pc
+HABHIP+H+18096+        035204.97  +180805.60  j 0 T zo   # appx distance: 89.365504915103 pc
+HABHIP+H+18097+        035205.47  +224020.80  j 0 T zo   # appx distance: 26.845637583893 pc
+HABHIP+H+18106+        035211.48  +250948.50  j 0 T zo   # appx distance: 39.463299131807 pc
+HABHIP+H+18163+        035259.28  +264043.80  j 0 T zo   # appx distance: 87.336244541485 pc
+HABHIP+H+18174+        035313.16  +074614.60  j 0 T zo   # appx distance: 78.43137254902 pc
+HABHIP+H+18204+        035335.53  +304624.60  j 0 T zo   # appx distance: 79.808459696728 pc
+HABHIP+H+18253+        035415.86  +083331.80  j 0 T zo   # appx distance: 40.633888663145 pc
+HABHIP+H+18266+        035427.82  +212323.50  j 0 T zo   # appx distance: 97.465886939571 pc
+HABHIP+H+18273+        035433.35  +253156.90  j 0 T zo   # appx distance: 99.009900990099 pc
+HABHIP+H+18322+        035501.36  +122908.20  j 0 T zo   # appx distance: 37.750094375236 pc
+HABHIP+H+18347+        035521.05  +192252.10  j 0 T zo   # appx distance: 62.5 pc
+HABHIP+H+18433+        035628.62  +224029.90  j 0 T zo   # appx distance: 46.707146193368 pc
+HABHIP+H+18555+        035815.45  +073619.10  j 0 T zo   # appx distance: 72.098053352559 pc
+HABHIP+H+18595+        035844.03  +170709.00  j 0 T zo   # appx distance: 91.491308325709 pc
+HABHIP+H+18609+        035855.43  +165413.70  j 0 T zo   # appx distance: 57.770075101098 pc
+HABHIP+H+18625+        035909.43  +225918.30  j 0 T zo   # appx distance: 66.622251832112 pc
+HABHIP+H+18692+        040016.62  +141821.40  j 0 T zo   # appx distance: 91.491308325709 pc
+HABHIP+H+18700+        040022.40  +104716.90  j 0 T zo   # appx distance: 58.927519151444 pc
+HABHIP+H+18761+        040106.76  +043228.70  j 0 T zo   # appx distance: 70.224719101124 pc
+HABHIP+H+18806+        040146.26  +135015.20  j 0 T zo   # appx distance: 85.178875638842 pc
+HABHIP+H+18843+        040226.27  +150802.00  j 0 T zo   # appx distance: 57.87037037037 pc
+HABHIP+H+18856+H       040232.85  +063752.10  j 0 T zo   # appx distance: 79.176563737134 pc
+HABHIP+H+18877+        040248.01  +015058.40  j 0 T zo   # appx distance: 79.239302694136 pc
+HABHIP+H+18893+        040259.45  +091232.00  j 0 T zo   # appx distance: 44.052863436123 pc
+HABHIP+H+18909+        040310.19  +184007.60  j 0 T zo   # appx distance: 83.125519534497 pc
+HABHIP+H+18946+        040338.96  +192718.30  j 0 T zo   # appx distance: 43.346337234504 pc
+HABHIP+H+18965+        040350.66  +291152.90  j 0 T zo   # appx distance: 35.161744022504 pc
+HABHIP+H+19082+        040525.60  +192632.00  j 0 T zo   # appx distance: 68.681318681319 pc
+HABHIP+H+19093+        040536.75  +195718.00  j 0 T zo   # appx distance: 91.996320147194 pc
+HABHIP+H+19117+        040554.28  +115758.10  j 0 T zo   # appx distance: 34.458993797381 pc
+HABHIP+H+19207+        040701.15  +152006.30  j 0 T zo   # appx distance: 42.426813746288 pc
+HABHIP+H+19257+        040739.47  +092938.80  j 0 T zo   # appx distance: 53.908355795148 pc
+HABHIP+H+19263+        040743.12  +163107.90  j 0 T zo   # appx distance: 50.761421319797 pc
+HABHIP+H+19316+        040826.60  +121130.70  j 0 T zo   # appx distance: 40.160642570281 pc
+HABHIP+H+19325+        040830.80  +122019.40  j 0 T zo   # appx distance: 32.133676092545 pc
+HABHIP+H+19337+        040837.03  +333812.20  j 0 T zo   # appx distance: 13.696753869333 pc
+HABHIP+H+19416+        040928.93  +334601.50  j 0 T zo   # appx distance: 34.470872113064 pc
+HABHIP+H+19427+        040938.10  +112803.00  j 0 T zo   # appx distance: 92.936802973978 pc
+HABHIP+H+19441+        040949.26  +091819.80  j 0 T zo   # appx distance: 33.579583613163 pc
+HABHIP+H+19449+        040954.14  +041925.10  j 0 T zo   # appx distance: 82.372322899506 pc
+HABHIP+H+19532+        041104.55  +083222.60  j 0 T zo   # appx distance: 58.788947677837 pc
+HABHIP+H+19572+        041137.97  +294949.60  j 0 T zo   # appx distance: 77.459333849729 pc
+HABHIP+H+19583+H       041148.94  +255901.80  j 0 T zo   # appx distance: 86.880973066898 pc
+HABHIP+H+19617+        041212.83  +145557.40  j 0 T zo   # appx distance: 99.206349206349 pc
+HABHIP+H+19637+        041229.07  +260244.50  j 0 T zo   # appx distance: 80.710250201776 pc
+HABHIP+H+19696+        041310.87  +164601.00  j 0 T zo   # appx distance: 88.261253309797 pc
+HABHIP+H+19712+H       041323.04  +025207.80  j 0 T zo   # appx distance: 97.181729834791 pc
+HABHIP+H+19757+        041408.05  +092424.20  j 0 T zo   # appx distance: 60.386473429952 pc
+HABHIP+H+19781+        041425.59  +143730.30  j 0 T zo   # appx distance: 45.641259698768 pc
+HABHIP+H+19788+        041430.24  +030117.00  j 0 T zo   # appx distance: 33.311125916056 pc
+HABHIP+H+19818+        041459.30  +051039.90  j 0 T zo   # appx distance: 76.219512195122 pc
+HABHIP+H+19834+        041510.34  +142354.60  j 0 T zo   # appx distance: 31.308703819662 pc
+HABHIP+H+19912+        041618.63  +084312.70  j 0 T zo   # appx distance: 37.750094375236 pc
+HABHIP+H+19927+        041631.78  +023908.00  j 0 T zo   # appx distance: 91.827364554637 pc
+HABHIP+H+19946+        041640.66  +034156.10  j 0 T zo   # appx distance: 77.579519006982 pc
+HABHIP+H+19971+        041654.90  +043233.70  j 0 T zo   # appx distance: 64.766839378238 pc
+HABHIP+H+19981+        041706.80  +224024.30  j 0 T zo   # appx distance: 32.722513089005 pc
+HABHIP+H+20082+        041819.20  +160518.20  j 0 T zo   # appx distance: 49.975012493753 pc
+HABHIP+H+20084+        041820.76  +202137.70  j 0 T zo   # appx distance: 39.292730844794 pc
+HABHIP+H+20187+        041936.77  +123727.70  j 0 T zo   # appx distance: 49.677098857427 pc
+HABHIP+H+20227+H       042006.27  +310827.90  j 0 T zo   # appx distance: 59.066745422327 pc
+HABHIP+H+20273+        042043.98  +082433.60  j 0 T zo   # appx distance: 92.506938020352 pc
+HABHIP+H+20369+        042142.55  +192806.70  j 0 T zo   # appx distance: 83.612040133779 pc
+HABHIP+H+20373+        042146.30  +022325.60  j 0 T zo   # appx distance: 62.034739454094 pc
+HABHIP+H+20397+        042200.93  +123032.10  j 0 T zo   # appx distance: 52.219321148825 pc
+HABHIP+H+20415+        042220.63  +302526.40  j 0 T zo   # appx distance: 64.766839378238 pc
+HABHIP+H+20419+        042225.62  +111820.60  j 0 T zo   # appx distance: 52.164840897235 pc
+HABHIP+H+20485+        042325.20  +154547.50  j 0 T zo   # appx distance: 47.438330170778 pc
+HABHIP+H+20512+        042343.91  +281111.80  j 0 T zo   # appx distance: 83.47245409015 pc
+HABHIP+H+20528+        042355.15  +274921.50  j 0 T zo   # appx distance: 51.921079958463 pc
+HABHIP+H+20563+        042416.87  +180010.80  j 0 T zo   # appx distance: 51.679586563307 pc
+HABHIP+H+20626+        042510.79  +254457.30  j 0 T zo   # appx distance: 62.814070351759 pc
+HABHIP+H+20652+        042530.86  +261732.80  j 0 T zo   # appx distance: 45.599635202918 pc
+HABHIP+H+20705+        042608.81  +060316.40  j 0 T zo   # appx distance: 90.826521344233 pc
+HABHIP+H+20719+        042624.54  +165112.10  j 0 T zo   # appx distance: 45.955882352941 pc
+HABHIP+H+20762+        042654.28  +130817.60  j 0 T zo   # appx distance: 45.808520384792 pc
+HABHIP+H+20769+H       042700.56  +190704.70  j 0 T zo   # appx distance: 65.530799475754 pc
+HABHIP+H+20785+        042707.38  +205927.60  j 0 T zo   # appx distance: 90.171325518485 pc
+HABHIP+H+20794+        042722.19  +070345.00  j 0 T zo   # appx distance: 65.44502617801 pc
+HABHIP+H+20827+        042746.97  +142504.10  j 0 T zo   # appx distance: 57.836899942163 pc
+HABHIP+H+20850+        042804.37  +135204.70  j 0 T zo   # appx distance: 46.970408642555 pc
+HABHIP+H+20917+        042900.17  +215520.20  j 0 T zo   # appx distance: 11.471836641046 pc
+HABHIP+H+20948+        042930.29  +175147.70  j 0 T zo   # appx distance: 46.317739694303 pc
+HABHIP+H+20951+        042931.54  +175335.70  j 0 T zo   # appx distance: 41.339396444812 pc
+HABHIP+H+20964+        042943.06  +271637.80  j 0 T zo   # appx distance: 72.046109510086 pc
+HABHIP+H+20978+        042957.66  +164022.50  j 0 T zo   # appx distance: 40.469445568596 pc
+HABHIP+H+21008+        043017.91  +195026.30  j 0 T zo   # appx distance: 50.150451354062 pc
+HABHIP+H+21010+        043019.96  +280754.40  j 0 T zo   # appx distance: 39.714058776807 pc
+HABHIP+H+21090+        043110.91  +144123.30  j 0 T zo   # appx distance: 94.517958412098 pc
+HABHIP+H+21099+        043115.63  +200759.80  j 0 T zo   # appx distance: 45.850527281064 pc
+HABHIP+H+21105+        043123.14  +311641.80  j 0 T zo   # appx distance: 76.745970836531 pc
+HABHIP+H+21158+        043207.91  +213756.50  j 0 T zo   # appx distance: 39.138943248532 pc
+HABHIP+H+21186+H       043230.41  +040823.80  j 0 T zo   # appx distance: 41.597337770383 pc
+HABHIP+H+21197+        043240.90  +340809.40  j 0 T zo   # appx distance: 39.984006397441 pc
+HABHIP+H+21226+        043309.84  +045813.10  j 0 T zo   # appx distance: 88.105726872247 pc
+HABHIP+H+21256+        043337.11  +210903.50  j 0 T zo   # appx distance: 40.032025620496 pc
+HABHIP+H+21261+        043341.87  +190050.80  j 0 T zo   # appx distance: 47.483380816714 pc
+HABHIP+H+21272+        043350.45  +052308.50  j 0 T zo   # appx distance: 26.7881060809 pc
+HABHIP+H+21308+        043430.13  +100059.70  j 0 T zo   # appx distance: 46.816479400749 pc
+HABHIP+H+21321+        043436.74  +063126.30  j 0 T zo   # appx distance: 90.00900090009 pc
+HABHIP+H+21397+        043535.43  +323447.50  j 0 T zo   # appx distance: 77.399380804954 pc
+HABHIP+H+21403+        043540.01  +195808.20  j 0 T zo   # appx distance: 64.892926670993 pc
+HABHIP+H+21411+        043544.00  +012642.20  j 0 T zo   # appx distance: 78.308535630384 pc
+HABHIP+H+21436+        043613.94  +213211.90  j 0 T zo   # appx distance: 33.681374200067 pc
+HABHIP+H+21442+        043617.56  +214121.80  j 0 T zo   # appx distance: 89.365504915103 pc
+HABHIP+H+21475+        043641.19  +115444.80  j 0 T zo   # appx distance: 52.826201796091 pc
+HABHIP+H+21478+        043644.58  +271519.50  j 0 T zo   # appx distance: 94.428706326723 pc
+HABHIP+H+21516+        043714.39  +302400.50  j 0 T zo   # appx distance: 78.492935635793 pc
+HABHIP+H+21617+        043828.41  +284303.60  j 0 T zo   # appx distance: 87.032201914708 pc
+HABHIP+H+21710+H       043942.62  +095222.70  j 0 T zo   # appx distance: 28.401022436808 pc
+HABHIP+H+21783+        044046.78  +301730.00  j 0 T zo   # appx distance: 61.996280223187 pc
+HABHIP+H+21788+        044049.03  +234835.10  j 0 T zo   # appx distance: 51.334702258727 pc
+HABHIP+H+21918+        044248.79  +121237.10  j 0 T zo   # appx distance: 54.2888165038 pc
+HABHIP+H+21926+        044252.23  +180842.60  j 0 T zo   # appx distance: 52.029136316337 pc
+HABHIP+H+21932+        044255.37  +185739.20  j 0 T zo   # appx distance: 9.4197437829691 pc
+HABHIP+H+21953+        044306.31  +203747.80  j 0 T zo   # appx distance: 86.880973066898 pc
+HABHIP+H+21961+        044313.75  +240520.30  j 0 T zo   # appx distance: 49.925112331503 pc
+HABHIP+H+21983+        044331.68  +110959.90  j 0 T zo   # appx distance: 46.554934823091 pc
+HABHIP+H+22021+        044403.72  +125928.40  j 0 T zo   # appx distance: 65.876152832675 pc
+HABHIP+H+22063+        044444.74  +143736.60  j 0 T zo   # appx distance: 89.928057553957 pc
+HABHIP+H+22067+H       044448.24  +051722.30  j 0 T zo   # appx distance: 42.680324370465 pc
+HABHIP+H+22177+        044618.74  +033810.70  j 0 T zo   # appx distance: 44.543429844098 pc
+HABHIP+H+22217+        044639.63  +323754.60  j 0 T zo   # appx distance: 88.41732979664 pc
+HABHIP+H+22265+        044737.52  +181531.70  j 0 T zo   # appx distance: 50.479555779909 pc
+HABHIP+H+22298+        044806.46  +254825.90  j 0 T zo   # appx distance: 74.019245003701 pc
+HABHIP+H+22347+        044841.26  +163804.10  j 0 T zo   # appx distance: 86.580086580087 pc
+HABHIP+H+22349+        044842.02  +184237.30  j 0 T zo   # appx distance: 30.759766225777 pc
+HABHIP+H+22362+        044851.04  +053241.00  j 0 T zo   # appx distance: 75.131480090158 pc
+HABHIP+H+22382+        044905.51  +270041.90  j 0 T zo   # appx distance: 93.370681605976 pc
+HABHIP+H+22559+        045116.78  +325324.80  j 0 T zo   # appx distance: 48.685491723466 pc
+HABHIP+H+22576+        045129.43  +354855.50  j 0 T zo   # appx distance: 32.776138970829 pc
+HABHIP+H+22627+        045205.64  +062838.30  j 0 T zo   # appx distance: 12.118274357731 pc
+HABHIP+H+22688+        045244.97  +143723.60  j 0 T zo   # appx distance: 50.632911392405 pc
+HABHIP+H+22712+        045301.06  +111603.00  j 0 T zo   # appx distance: 85.324232081911 pc
+HABHIP+H+22718+        045307.03  +344220.70  j 0 T zo   # appx distance: 90.909090909091 pc
+HABHIP+H+22729+        045322.04  +241038.70  j 0 T zo   # appx distance: 92.764378478664 pc
+HABHIP+H+22751+        045338.68  +230113.20  j 0 T zo   # appx distance: 86.05851979346 pc
+HABHIP+H+22782+        045403.00  +170136.60  j 0 T zo   # appx distance: 67.476383265857 pc
+HABHIP+H+22801+        045416.94  +235858.40  j 0 T zo   # appx distance: 95.877277085331 pc
+HABHIP+H+22802+        045417.97  +264827.90  j 0 T zo   # appx distance: 88.731144631766 pc
+HABHIP+H+22826+        045443.60  +122108.30  j 0 T zo   # appx distance: 53.821313240043 pc
+HABHIP+H+22828+        045444.77  +044625.00  j 0 T zo   # appx distance: 83.263946711074 pc
+HABHIP+H+22851+        045458.71  +115632.10  j 0 T zo   # appx distance: 91.827364554637 pc
+HABHIP+H+22889+        045522.68  +053810.70  j 0 T zo   # appx distance: 70.224719101124 pc
+HABHIP+H+22940+        045610.61  +025605.60  j 0 T zo   # appx distance: 39.21568627451 pc
+HABHIP+H+22942+        045610.98  +135832.10  j 0 T zo   # appx distance: 73.746312684366 pc
+HABHIP+H+22972+        045635.70  +231745.40  j 0 T zo   # appx distance: 67.934782608696 pc
+HABHIP+H+23056+        045740.73  +272233.80  j 0 T zo   # appx distance: 69.979006298111 pc
+HABHIP+H+23139+        045844.93  +175914.10  j 0 T zo   # appx distance: 96.246390760346 pc
+HABHIP+H+23141+        045845.62  +284725.60  j 0 T zo   # appx distance: 53.619302949062 pc
+HABHIP+H+23205+H       045936.66  +313506.80  j 0 T zo   # appx distance: 93.196644920783 pc
+HABHIP+H+23259+        050017.48  +250811.10  j 0 T zo   # appx distance: 38.431975403536 pc
+HABHIP+H+23266+        050020.90  +010023.70  j 0 T zo   # appx distance: 92.678405931418 pc
+HABHIP+H+23277+H       050029.67  +050556.60  j 0 T zo   # appx distance: 61.804697156984 pc
+HABHIP+H+23286+        050033.77  +142301.30  j 0 T zo   # appx distance: 35.100035100035 pc
+HABHIP+H+23302+        050042.06  +305349.80  j 0 T zo   # appx distance: 40.551500405515 pc
+HABHIP+H+23312+        050048.84  +044359.10  j 0 T zo   # appx distance: 59.630292188432 pc
+HABHIP+H+23384+        050137.45  +243814.00  j 0 T zo   # appx distance: 38.986354775828 pc
+HABHIP+H+23409+        050151.31  +313757.60  j 0 T zo   # appx distance: 87.796312554873 pc
+HABHIP+H+23414+        050157.09  +010258.30  j 0 T zo   # appx distance: 59.844404548175 pc
+HABHIP+H+23423+        050202.43  +161126.70  j 0 T zo   # appx distance: 88.888888888889 pc
+HABHIP+H+23443+        050220.31  +135437.70  j 0 T zo   # appx distance: 38.461538461538 pc
+HABHIP+H+23486+        050255.48  +051119.70  j 0 T zo   # appx distance: 75.528700906344 pc
+HABHIP+H+23498+        050307.62  +134350.60  j 0 T zo   # appx distance: 54.229934924078 pc
+HABHIP+H+23563+        050359.25  +285239.90  j 0 T zo   # appx distance: 37.41114852226 pc
+HABHIP+H+23709+        050549.22  +355045.90  j 0 T zo   # appx distance: 59.52380952381 pc
+HABHIP+H+23765+        050629.85  +353345.10  j 0 T zo   # appx distance: 80.385852090032 pc
+HABHIP+H+23772+H       050633.77  +262944.10  j 0 T zo   # appx distance: 83.333333333333 pc
+HABHIP+H+23789+H       050643.08  +140506.30  j 0 T zo   # appx distance: 59.171597633136 pc
+HABHIP+H+23797+        050647.29  +343207.80  j 0 T zo   # appx distance: 75.987841945289 pc
+HABHIP+H+23854+        050738.49  +231643.10  j 0 T zo   # appx distance: 79.051383399209 pc
+HABHIP+H+23884+        050755.81  +261941.20  j 0 T zo   # appx distance: 35.23608174771 pc
+HABHIP+H+23938+        050839.23  +135759.20  j 0 T zo   # appx distance: 99.403578528827 pc
+HABHIP+H+24065+        051014.45  +303430.10  j 0 T zo   # appx distance: 61.919504643963 pc
+HABHIP+H+24069+        051018.02  +093010.50  j 0 T zo   # appx distance: 30.459945172099 pc
+HABHIP+H+24104+        051039.96  +151646.60  j 0 T zo   # appx distance: 99.108027750248 pc
+HABHIP+H+24136+        051101.80  +255730.30  j 0 T zo   # appx distance: 63.532401524778 pc
+HABHIP+H+24142+        051105.85  +172357.90  j 0 T zo   # appx distance: 73.909830007391 pc
+HABHIP+H+24177+        051129.76  +100717.60  j 0 T zo   # appx distance: 53.3902829685 pc
+HABHIP+H+24180+        051130.97  +054212.80  j 0 T zo   # appx distance: 56.338028169014 pc
+HABHIP+H+24258+        051226.49  +301304.40  j 0 T zo   # appx distance: 75.87253414264 pc
+HABHIP+H+24292+        051247.94  +161827.70  j 0 T zo   # appx distance: 42.826552462527 pc
+HABHIP+H+24298+        051251.43  +180918.10  j 0 T zo   # appx distance: 81.366965012205 pc
+HABHIP+H+24315+H       051303.42  +242349.10  j 0 T zo   # appx distance: 93.808630393996 pc
+HABHIP+H+24336+        051325.06  +034113.40  j 0 T zo   # appx distance: 46.816479400749 pc
+HABHIP+H+24480+        051511.57  +200322.20  j 0 T zo   # appx distance: 60.459492140266 pc
+HABHIP+H+24527+        051543.22  +125246.60  j 0 T zo   # appx distance: 79.744816586922 pc
+HABHIP+H+24533+        051549.29  +183817.60  j 0 T zo   # appx distance: 95.602294455067 pc
+HABHIP+H+24546+        051557.09  +270740.80  j 0 T zo   # appx distance: 82.781456953642 pc
+HABHIP+H+24558+        051609.06  +165634.10  j 0 T zo   # appx distance: 46.403712296984 pc
+HABHIP+H+24681+        051740.98  +072113.30  j 0 T zo   # appx distance: 45.004500450045 pc
+HABHIP+H+24728+        051810.59  +055942.00  j 0 T zo   # appx distance: 65.963060686016 pc
+HABHIP+H+24864+        051949.02  +023049.90  j 0 T zo   # appx distance: 37.481259370315 pc
+HABHIP+H+24877+        052000.71  +324708.50  j 0 T zo   # appx distance: 57.636887608069 pc
+HABHIP+H+25220+        052338.23  +171926.90  j 0 T zo   # appx distance: 14.334862385321 pc
+HABHIP+H+25245+        052353.89  +110500.90  j 0 T zo   # appx distance: 86.95652173913 pc
+HABHIP+H+25274+        052419.18  +221820.40  j 0 T zo   # appx distance: 98.231827111984 pc
+HABHIP+H+25419+        052614.02  +164154.10  j 0 T zo   # appx distance: 96.153846153846 pc
+HABHIP+H+25435+        052623.04  +035123.40  j 0 T zo   # appx distance: 62.65664160401 pc
+HABHIP+H+25523+        052729.99  +185047.10  j 0 T zo   # appx distance: 47.080979284369 pc
+HABHIP+H+25578+        052800.27  +093844.80  j 0 T zo   # appx distance: 8.692628650904 pc
+HABHIP+H+25586+        052806.06  +225550.40  j 0 T zo   # appx distance: 56.529112492934 pc
+HABHIP+H+25589+        052809.27  +162620.90  j 0 T zo   # appx distance: 60.827250608273 pc
+HABHIP+H+25639+        052835.13  +325158.10  j 0 T zo   # appx distance: 86.355785837651 pc
+HABHIP+H+25662+        052851.58  +123304.90  j 0 T zo   # appx distance: 28.943560057887 pc
+HABHIP+H+25666+        052854.18  +092636.90  j 0 T zo   # appx distance: 98.425196850394 pc
+HABHIP+H+25677+        052902.05  +101458.10  j 0 T zo   # appx distance: 55.86592178771 pc
+HABHIP+H+25694+        052915.59  +211857.50  j 0 T zo   # appx distance: 89.52551477171 pc
+HABHIP+H+25711+H       052924.64  +312534.80  j 0 T zo   # appx distance: 96.432015429122 pc
+HABHIP+H+25716+        052927.07  +153439.40  j 0 T zo   # appx distance: 17.391304347826 pc
+HABHIP+H+25717+        052927.28  +132539.30  j 0 T zo   # appx distance: 73.746312684366 pc
+HABHIP+H+25814+        053047.44  +082355.50  j 0 T zo   # appx distance: 78.740157480315 pc
+HABHIP+H+25871+        053122.73  +274608.90  j 0 T zo   # appx distance: 86.580086580087 pc
+HABHIP+H+25966+        053222.84  +145232.00  j 0 T zo   # appx distance: 64.599483204134 pc
+HABHIP+H+26018+H       053306.98  +200210.60  j 0 T zo   # appx distance: 46.061722708429 pc
+HABHIP+H+26027+        053309.13  +155638.60  j 0 T zo   # appx distance: 70.175438596491 pc
+HABHIP+H+26100+        053400.02  +153504.60  j 0 T zo   # appx distance: 57.339449541284 pc
+HABHIP+H+26129+        053417.61  +115919.90  j 0 T zo   # appx distance: 70.771408351026 pc
+HABHIP+H+26159+        053436.58  +213720.30  j 0 T zo   # appx distance: 89.84725965858 pc
+HABHIP+H+26192+        053458.49  +265820.80  j 0 T zo   # appx distance: 85.836909871245 pc
+HABHIP+H+26196+        053500.71  +280557.00  j 0 T zo   # appx distance: 36.968576709797 pc
+HABHIP+H+26290+        053555.22  +353027.40  j 0 T zo   # appx distance: 91.743119266055 pc
+HABHIP+H+26326+        053625.01  +320013.20  j 0 T zo   # appx distance: 61.425061425061 pc
+HABHIP+H+26328+H       053626.41  +215935.90  j 0 T zo   # appx distance: 65.14657980456 pc
+HABHIP+H+26330+        053628.41  +253516.30  j 0 T zo   # appx distance: 68.027210884354 pc
+HABHIP+H+26335+        053630.99  +111940.80  j 0 T zo   # appx distance: 11.376564277588 pc
+HABHIP+H+26444+        053737.03  +060644.00  j 0 T zo   # appx distance: 47.596382674917 pc
+HABHIP+H+26525+        053828.44  +245931.60  j 0 T zo   # appx distance: 79.681274900398 pc
+HABHIP+H+26664+        054001.70  +060340.20  j 0 T zo   # appx distance: 42.881646655232 pc
+HABHIP+H+26689+        054017.59  +162335.60  j 0 T zo   # appx distance: 56.116722783389 pc
+HABHIP+H+26729+        054046.39  +091556.20  j 0 T zo   # appx distance: 73.099415204678 pc
+HABHIP+H+26744+        054057.82  +325345.60  j 0 T zo   # appx distance: 61.996280223187 pc
+HABHIP+H+26799+        054129.08  +344846.70  j 0 T zo   # appx distance: 62.305295950156 pc
+HABHIP+H+26807+        054134.35  +151251.10  j 0 T zo   # appx distance: 37.7216144851 pc
+HABHIP+H+26936+        054259.06  +052953.30  j 0 T zo   # appx distance: 80 pc
+HABHIP+H+27123+        054506.72  +333735.30  j 0 T zo   # appx distance: 53.648068669528 pc
+HABHIP+H+27155+        054523.58  +353704.70  j 0 T zo   # appx distance: 56.022408963585 pc
+HABHIP+H+27336+H       054724.85  +293928.30  j 0 T zo   # appx distance: 81.900081900082 pc
+HABHIP+H+27361+        054741.63  +353324.70  j 0 T zo   # appx distance: 95.32888465205 pc
+HABHIP+H+27527+        054945.68  +270719.30  j 0 T zo   # appx distance: 35.5871886121 pc
+HABHIP+H+27528+        054946.19  +325823.30  j 0 T zo   # appx distance: 40.700040700041 pc
+HABHIP+H+27799+        055258.09  +030253.70  j 0 T zo   # appx distance: 81.900081900082 pc
+HABHIP+H+27820+        055312.59  +114852.20  j 0 T zo   # appx distance: 60.496067755596 pc
+HABHIP+H+27828+        055319.04  +220420.40  j 0 T zo   # appx distance: 88.888888888889 pc
+HABHIP+H+27860+        055339.77  +334415.70  j 0 T zo   # appx distance: 72.306579898771 pc
+HABHIP+H+27878+        055358.75  +122512.20  j 0 T zo   # appx distance: 53.648068669528 pc
+HABHIP+H+27918+        055428.53  +020837.70  j 0 T zo   # appx distance: 26.616981634283 pc
+HABHIP+H+28102+        055623.73  +331308.60  j 0 T zo   # appx distance: 92.678405931418 pc
+HABHIP+H+28135+        055648.25  +102847.20  j 0 T zo   # appx distance: 39.872408293461 pc
+HABHIP+H+28145+        055651.71  +354400.10  j 0 T zo   # appx distance: 57.077625570776 pc
+HABHIP+H+28182+        055716.31  +121046.60  j 0 T zo   # appx distance: 72.886297376093 pc
+HABHIP+H+28212+        055739.74  +331537.30  j 0 T zo   # appx distance: 67.567567567568 pc
+HABHIP+H+28280+        055832.70  +362227.40  j 0 T zo   # appx distance: 89.445438282648 pc
+HABHIP+H+28312+        055857.06  +185847.90  j 0 T zo   # appx distance: 74.074074074074 pc
+HABHIP+H+28356+        055929.91  +022834.10  j 0 T zo   # appx distance: 67.249495628783 pc
+HABHIP+H+28428+        060013.82  +045006.70  j 0 T zo   # appx distance: 53.50454788657 pc
+HABHIP+H+28445+        060021.38  +312550.90  j 0 T zo   # appx distance: 46.104195481789 pc
+HABHIP+H+28494+        060053.99  +210118.70  j 0 T zo   # appx distance: 31.685678073511 pc
+HABHIP+H+28502+        060101.34  +321331.80  j 0 T zo   # appx distance: 49.188391539597 pc
+HABHIP+H+28528+        060118.26  +271653.90  j 0 T zo   # appx distance: 92.592592592593 pc
+HABHIP+H+28626+        060237.61  +323529.00  j 0 T zo   # appx distance: 64.808813998704 pc
+HABHIP+H+28813+        060458.18  +142320.00  j 0 T zo   # appx distance: 40.71661237785 pc
+HABHIP+H+28872+        060544.73  +365604.30  j 0 T zo   # appx distance: 88.105726872247 pc
+HABHIP+H+28908+        060608.62  +352318.40  j 0 T zo   # appx distance: 26.385224274406 pc
+HABHIP+H+29063+        060752.28  +081313.00  j 0 T zo   # appx distance: 34.578146611342 pc
+HABHIP+H+29074+        060759.05  +272542.40  j 0 T zo   # appx distance: 44.523597506679 pc
+HABHIP+H+29111+        060819.99  +112734.30  j 0 T zo   # appx distance: 58.548009367682 pc
+HABHIP+H+29132+        060840.75  +092841.70  j 0 T zo   # appx distance: 31.555695803092 pc
+HABHIP+H+29189+        060927.05  +175004.20  j 0 T zo   # appx distance: 77.579519006982 pc
+HABHIP+H+29221+        060941.90  +190535.80  j 0 T zo   # appx distance: 62.189054726368 pc
+HABHIP+H+29242+        060956.44  +340809.40  j 0 T zo   # appx distance: 40 pc
+HABHIP+H+29248+        061000.94  +175605.20  j 0 T zo   # appx distance: 45.085662759243 pc
+HABHIP+H+29316+H       061054.77  +101913.10  j 0 T zo   # appx distance: 10.779346771586 pc
+HABHIP+H+29432+        061200.45  +064701.30  j 0 T zo   # appx distance: 23.116042533518 pc
+HABHIP+H+29544+        061331.86  +140100.50  j 0 T zo   # appx distance: 79.113924050633 pc
+HABHIP+H+29611+        061424.40  +051007.60  j 0 T zo   # appx distance: 29.63841138115 pc
+HABHIP+H+29810+        061639.56  +251225.50  j 0 T zo   # appx distance: 33.602150537634 pc
+HABHIP+H+29815+        061643.49  +321433.80  j 0 T zo   # appx distance: 64.061499039078 pc
+HABHIP+H+29833+        061655.18  +252944.00  j 0 T zo   # appx distance: 78.864353312303 pc
+HABHIP+H+29875+        061725.77  +175922.00  j 0 T zo   # appx distance: 32.970656116057 pc
+HABHIP+H+29878+        061730.15  +321548.10  j 0 T zo   # appx distance: 66.844919786096 pc
+HABHIP+H+29991+        061848.33  +064332.20  j 0 T zo   # appx distance: 79.681274900398 pc
+HABHIP+H+30067+        061940.18  +160047.80  j 0 T zo   # appx distance: 27.533039647577 pc
+HABHIP+H+30102+        062005.06  +243400.30  j 0 T zo   # appx distance: 97.370983446933 pc
+HABHIP+H+30112+        062013.28  +021532.90  j 0 T zo   # appx distance: 27.979854504757 pc
+HABHIP+H+30220+        062127.70  +171742.30  j 0 T zo   # appx distance: 40.176777822419 pc
+HABHIP+H+30239+        062142.03  +360457.10  j 0 T zo   # appx distance: 92.250922509225 pc
+HABHIP+H+30270+        062203.06  +343551.00  j 0 T zo   # appx distance: 69.492703266157 pc
+HABHIP+H+30421+        062346.42  +060023.70  j 0 T zo   # appx distance: 68.681318681319 pc
+HABHIP+H+30513+        062450.20  +045219.50  j 0 T zo   # appx distance: 48.590864917396 pc
+HABHIP+H+30552+        062520.32  +111400.20  j 0 T zo   # appx distance: 32.938076416337 pc
+HABHIP+H+30573+        062533.95  +331457.20  j 0 T zo   # appx distance: 92.850510677809 pc
+HABHIP+H+30880+        062856.33  +265803.50  j 0 T zo   # appx distance: 45.829514207149 pc
+HABHIP+H+30890+        062903.77  +174444.30  j 0 T zo   # appx distance: 47.778308647874 pc
+HABHIP+H+30905+        062913.07  +105602.60  j 0 T zo   # appx distance: 36.140224069389 pc
+HABHIP+H+31046+        063050.93  +242303.60  j 0 T zo   # appx distance: 86.655112651646 pc
+HABHIP+H+31069+        063111.17  +055237.50  j 0 T zo   # appx distance: 31.162355874104 pc
+HABHIP+H+31083+        063121.55  +025440.60  j 0 T zo   # appx distance: 27.995520716685 pc
+HABHIP+H+31142+        063202.40  +343129.50  j 0 T zo   # appx distance: 29.420417769932 pc
+HABHIP+H+31246+        063312.56  +052747.40  j 0 T zo   # appx distance: 33.41129301704 pc
+HABHIP+H+31345+H       063421.59  +144507.80  j 0 T zo   # appx distance: 79.051383399209 pc
+HABHIP+H+31435+        063512.74  +180355.50  j 0 T zo   # appx distance: 96.993210475267 pc
+HABHIP+H+31495+        063545.73  +135909.40  j 0 T zo   # appx distance: 95.785440613027 pc
+HABHIP+H+31581+        063633.41  +135953.60  j 0 T zo   # appx distance: 49.115913555992 pc
+HABHIP+H+31626+        063705.29  +194510.70  j 0 T zo   # appx distance: 34.423407917384 pc
+HABHIP+H+31802+        063855.87  +151225.00  j 0 T zo   # appx distance: 80.064051240993 pc
+HABHIP+H+31849+        063931.38  +031911.20  j 0 T zo   # appx distance: 60.240963855422 pc
+HABHIP+H+31950+H       064035.03  +173827.00  j 0 T zo   # appx distance: 73.313782991202 pc
+HABHIP+H+32009+        064114.55  +145102.70  j 0 T zo   # appx distance: 54.229934924078 pc
+HABHIP+H+32262+        064411.48  +341000.60  j 0 T zo   # appx distance: 75.414781297134 pc
+HABHIP+H+32364+        064521.89  +353206.30  j 0 T zo   # appx distance: 53.304904051173 pc
+HABHIP+H+32415+        064602.73  +330146.90  j 0 T zo   # appx distance: 53.995680345572 pc
+HABHIP+H+32723+        064935.74  +350828.70  j 0 T zo   # appx distance: 27.654867256637 pc
+HABHIP+H+32728+        064938.11  +362630.50  j 0 T zo   # appx distance: 44.662795891023 pc
+HABHIP+H+32874+        065100.42  +254539.00  j 0 T zo   # appx distance: 37.023324694558 pc
+HABHIP+H+32906+        065121.90  +232150.10  j 0 T zo   # appx distance: 78.308535630384 pc
+HABHIP+H+32933+        065140.37  +054518.00  j 0 T zo   # appx distance: 45.433893684689 pc
+HABHIP+H+32962+        065155.87  +104801.80  j 0 T zo   # appx distance: 86.505190311419 pc
+HABHIP+H+33226+        065449.47  +331608.90  j 0 T zo   # appx distance: 5.5151114052504 pc
+HABHIP+H+33275+        065517.44  +055437.70  j 0 T zo   # appx distance: 51.466803911477 pc
+HABHIP+H+33277+        065518.69  +252232.30  j 0 T zo   # appx distance: 17.274140611505 pc
+HABHIP+H+33287+H       065528.35  +300944.80  j 0 T zo   # appx distance: 39.154267815192 pc
+HABHIP+H+33428+        065704.63  +304525.30  j 0 T zo   # appx distance: 18.632383081796 pc
+HABHIP+H+33497+        065746.43  +225334.40  j 0 T zo   # appx distance: 42.12299915754 pc
+HABHIP+H+33537+        065811.72  +222832.30  j 0 T zo   # appx distance: 24.242424242424 pc
+HABHIP+H+33565+        065827.77  +185950.40  j 0 T zo   # appx distance: 58.309037900875 pc
+HABHIP+H+33566+        065827.86  +245513.30  j 0 T zo   # appx distance: 92.936802973978 pc
+HABHIP+H+33608+        065859.07  +053206.90  j 0 T zo   # appx distance: 58.927519151444 pc
+HABHIP+H+33767+        070046.25  +320313.80  j 0 T zo   # appx distance: 85.324232081911 pc
+HABHIP+H+33848+        070135.58  +065536.40  j 0 T zo   # appx distance: 28.288543140028 pc
+HABHIP+H+33995+        070312.91  +090125.20  j 0 T zo   # appx distance: 84.24599831508 pc
+HABHIP+H+34017+        070330.35  +292020.70  j 0 T zo   # appx distance: 19.094901661256 pc
+HABHIP+H+34095+        070410.47  +051246.50  j 0 T zo   # appx distance: 44.523597506679 pc
+HABHIP+H+34136+        070440.38  +353445.50  j 0 T zo   # appx distance: 70.077084793273 pc
+HABHIP+H+34145+        070449.07  +301707.10  j 0 T zo   # appx distance: 71.479628305933 pc
+HABHIP+H+34222+        070542.28  +272815.80  j 0 T zo   # appx distance: 24.02113860197 pc
+HABHIP+H+34341+        070709.30  +032653.10  j 0 T zo   # appx distance: 26.752273943285 pc
+HABHIP+H+34414+        070804.34  +295006.80  j 0 T zo   # appx distance: 22.261798753339 pc
+HABHIP+H+34511+        070905.05  +152520.20  j 0 T zo   # appx distance: 43.898156277436 pc
+HABHIP+H+34521+        070910.43  +302313.70  j 0 T zo   # appx distance: 90.744101633394 pc
+HABHIP+H+34540+        070922.15  +163259.40  j 0 T zo   # appx distance: 46.360686138155 pc
+HABHIP+H+34633+        071026.23  +013835.40  j 0 T zo   # appx distance: 68.306010928962 pc
+HABHIP+H+34650+        071033.89  +194811.00  j 0 T zo   # appx distance: 97.181729834791 pc
+HABHIP+H+34767+        071151.12  +103043.80  j 0 T zo   # appx distance: 71.377587437545 pc
+HABHIP+H+34812+        071223.09  +340920.30  j 0 T zo   # appx distance: 86.430423509075 pc
+HABHIP+H+34860+H       071249.08  +271330.20  j 0 T zo   # appx distance: 44.150110375276 pc
+HABHIP+H+34865+        071250.48  +152029.40  j 0 T zo   # appx distance: 83.47245409015 pc
+HABHIP+H+35022+        071438.89  +282629.90  j 0 T zo   # appx distance: 60.496067755596 pc
+HABHIP+H+35191+        071619.80  +270834.70  j 0 T zo   # appx distance: 12.338062924121 pc
+HABHIP+H+35198+        071625.42  +350102.50  j 0 T zo   # appx distance: 38.402457757296 pc
+HABHIP+H+35209+        071636.39  +015244.60  j 0 T zo   # appx distance: 41.118421052632 pc
+HABHIP+H+35377+        071828.77  +271511.60  j 0 T zo   # appx distance: 35.473572188719 pc
+HABHIP+H+35459+H       071912.43  +205736.90  j 0 T zo   # appx distance: 75.987841945289 pc
+HABHIP+H+35495+        071930.99  +324951.40  j 0 T zo   # appx distance: 19.766752322593 pc
+HABHIP+H+35755+        072231.05  +355359.10  j 0 T zo   # appx distance: 37.678975131876 pc
+HABHIP+H+35825+        072318.16  +331033.60  j 0 T zo   # appx distance: 79.491255961844 pc
+HABHIP+H+35872+        072347.02  +125756.70  j 0 T zo   # appx distance: 25.056376847908 pc
+HABHIP+H+36180+        072704.40  +240923.40  j 0 T zo   # appx distance: 65.789473684211 pc
+HABHIP+H+36208+        072724.16  +051405.20  j 0 T zo   # appx distance: 3.7985261718453 pc
+HABHIP+H+36215+        072728.78  +220239.20  j 0 T zo   # appx distance: 19.634792852935 pc
+HABHIP+H+36249+        072750.71  +190241.90  j 0 T zo   # appx distance: 29.524653085326 pc
+HABHIP+H+36272+        072804.37  +301922.00  j 0 T zo   # appx distance: 46.707146193368 pc
+HABHIP+H+36278+        072807.31  +153139.20  j 0 T zo   # appx distance: 89.686098654709 pc
+HABHIP+H+36290+        072812.02  +092955.90  j 0 T zo   # appx distance: 43.196544276458 pc
+HABHIP+H+36310+        072825.83  +040911.80  j 0 T zo   # appx distance: 46.882325363338 pc
+HABHIP+H+36319+        072833.50  +193913.10  j 0 T zo   # appx distance: 42.607584149979 pc
+HABHIP+H+36480+        073022.37  +292252.10  j 0 T zo   # appx distance: 55.710306406685 pc
+HABHIP+H+36481+        073023.36  +194851.20  j 0 T zo   # appx distance: 41.305245766212 pc
+HABHIP+H+36551+        073107.67  +143653.50  j 0 T zo   # appx distance: 21.235931195583 pc
+HABHIP+H+36557+        073113.50  +021013.30  j 0 T zo   # appx distance: 66.489361702128 pc
+HABHIP+H+36607+        073142.67  +195756.30  j 0 T zo   # appx distance: 51.072522982635 pc
+HABHIP+H+36620+        073150.32  +084854.70  j 0 T zo   # appx distance: 60.938452163315 pc
+HABHIP+H+36627+        073157.51  +361349.60  j 0 T zo   # appx distance: 11.474469305795 pc
+HABHIP+H+36637+H       073203.01  +171911.50  j 0 T zo   # appx distance: 34.590107229332 pc
+HABHIP+H+36846+        073434.02  +284359.90  j 0 T zo   # appx distance: 70.621468926554 pc
+HABHIP+H+36853+        073439.00  +222016.30  j 0 T zo   # appx distance: 25.438819638769 pc
+HABHIP+H+36898+        073511.32  +230245.20  j 0 T zo   # appx distance: 68.119891008174 pc
+HABHIP+H+36903+H       073514.90  +172116.40  j 0 T zo   # appx distance: 92.764378478664 pc
+HABHIP+H+36952+        073548.39  +325331.00  j 0 T zo   # appx distance: 77.700077700078 pc
+HABHIP+H+36993+        073614.07  +325010.80  j 0 T zo   # appx distance: 51.921079958463 pc
+HABHIP+H+37031+        073634.77  +055143.60  j 0 T zo   # appx distance: 43.630017452007 pc
+HABHIP+H+37177+        073819.93  +342657.70  j 0 T zo   # appx distance: 30.404378230465 pc
+HABHIP+H+37246+        073859.09  +191303.70  j 0 T zo   # appx distance: 46.168051708218 pc
+HABHIP+H+37267+        073910.45  +295433.90  j 0 T zo   # appx distance: 48.851978505129 pc
+HABHIP+H+37288+        073923.12  +021103.30  j 0 T zo   # appx distance: 14.865467518953 pc
+HABHIP+H+37312+        073935.91  +332747.10  j 0 T zo   # appx distance: 35.112359550562 pc
+HABHIP+H+37579+        074243.00  +221326.80  j 0 T zo   # appx distance: 74.183976261128 pc
+HABHIP+H+37589+        074248.10  +363624.80  j 0 T zo   # appx distance: 92.250922509225 pc
+HABHIP+H+37622+        074311.77  +181046.40  j 0 T zo   # appx distance: 30.902348578492 pc
+HABHIP+H+37645+H       074331.09  +032909.80  j 0 T zo   # appx distance: 52.742616033755 pc
+HABHIP+H+37798+        074501.14  +020816.40  j 0 T zo   # appx distance: 24.642681123706 pc
+HABHIP+H+37991+        074710.12  +315616.60  j 0 T zo   # appx distance: 91.407678244973 pc
+HABHIP+H+38126+        074846.76  +364017.80  j 0 T zo   # appx distance: 41.390728476821 pc
+HABHIP+H+38172+        074918.93  +242919.60  j 0 T zo   # appx distance: 43.06632213609 pc
+HABHIP+H+38213+        074941.66  +081052.20  j 0 T zo   # appx distance: 61.842918985776 pc
+HABHIP+H+38312+        075057.63  +250638.40  j 0 T zo   # appx distance: 82.98755186722 pc
+HABHIP+H+38340+        075113.12  +325847.50  j 0 T zo   # appx distance: 78.369905956113 pc
+HABHIP+H+38374+        075142.04  +092311.40  j 0 T zo   # appx distance: 49.850448654038 pc
+HABHIP+H+38422+        075215.53  +361612.00  j 0 T zo   # appx distance: 39.323633503736 pc
+HABHIP+H+38492+        075259.66  +223323.50  j 0 T zo   # appx distance: 33.377837116155 pc
+HABHIP+H+38513+        075314.06  +321204.70  j 0 T zo   # appx distance: 72.833211944647 pc
+HABHIP+H+38658+        075454.22  +321705.30  j 0 T zo   # appx distance: 70.771408351026 pc
+HABHIP+H+38677+        075508.33  +282303.60  j 0 T zo   # appx distance: 68.212824010914 pc
+HABHIP+H+38853+        075703.69  +013047.40  j 0 T zo   # appx distance: 53.850296176629 pc
+HABHIP+H+38899+        075738.71  +184808.30  j 0 T zo   # appx distance: 93.457943925234 pc
+HABHIP+H+38949+        075807.16  +335742.60  j 0 T zo   # appx distance: 95.602294455067 pc
+HABHIP+H+39058+        075925.49  +095608.80  j 0 T zo   # appx distance: 89.928057553957 pc
+HABHIP+H+39064+        075933.82  +205042.80  j 0 T zo   # appx distance: 23.142791020597 pc

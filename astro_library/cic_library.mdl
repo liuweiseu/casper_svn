@@ -1,0 +1,549 @@
+Library {
+  Name			  "cic_library"
+  Version		  6.2
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Tue Jun 13 16:01:59 2006"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "hchen05"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Sep 27 16:23:36 2006"
+  ModelVersionFormat	  "1.%<AutoIncrement:70>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "cic_library"
+    Location		    [248, 281, 920, 709]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "CIC"
+      Description	      "Cascaded integrator-comb filter.  Linear phase "
+"response."
+      Ports		      [9, 2]
+      Position		      [140, 212, 265, 388]
+      BackgroundColor	      "magenta"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "BEE2 CIC"
+      MaskDescription	      "Cascaded integrator-comb filter.  Linear phase "
+"response.  Decimation only; no interpolation."
+      MaskHelp		      "eval('xlWeb([getenv(''MLIB_ROOT''), ''\\astro_l"
+"ibrary\\doc\\cic_usage.html''])')"
+      MaskPromptString	      "Inputs|Input bitwidth|Input binary point|Comb d"
+"ifferential delay (D)|Sample rate change (R) (2+ decimates; set to 1 for no d"
+"ecimation)|Number of stages|Pipeline|Adder latency|Integrator latency|Comb la"
+"tency"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit,checkbox,edit,edi"
+"t,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on,off,off"
+      MaskCallbackString      "|||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,off,off"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,,,,"
+      MaskVariables	      "inputs=@1;input_bitwidth=@2;input_binary_pt=@3;"
+"D=@4;R=@5;stages=@6;pipeline=@7;add_latency=@8;int_latency=@9;comb_latency=@1"
+"0;"
+      MaskInitialization      "cic_mask;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "8|8|7|1|1|1|off|2|1|1"
+      MaskTabNameString	      ",,,,,,,,,"
+      System {
+	Name			"CIC"
+	Location		[-80, 383, 875, 790]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync"
+	  Position		  [15, 468, 45, 482]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "cic_in1"
+	  Position		  [15, 43, 45, 57]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "cic_in2"
+	  Position		  [15, 83, 45, 97]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "cic_in3"
+	  Position		  [15, 128, 45, 142]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "cic_in4"
+	  Position		  [15, 168, 45, 182]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "cic_in5"
+	  Position		  [15, 208, 45, 222]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "cic_in6"
+	  Position		  [15, 253, 45, 267]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "cic_in7"
+	  Position		  [15, 293, 45, 307]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "cic_in8"
+	  Position		  [15, 338, 45, 352]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder_tree"
+	  Ports			  [8, 1]
+	  Position		  [155, 100, 210, 200]
+	  SourceBlock		  "ddc_library/adder_tree"
+	  SourceType		  "Unknown"
+	  ShowPortLabels	  "on"
+	  num_inputs		  "inputs"
+	  latency		  "add_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "comb1"
+	  Ports			  [2, 1]
+	  Position		  [620, 115, 675, 190]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Subtraction"
+	  precision		  "User Defined"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "ceil(input_bitwidth+log2(inputs)+stages*log"
+"2(R*D))"
+	  bin_pt		  "input_binary_pt"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "comb_latency"
+	  explicit_period	  "on"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "delay1"
+	  Ports			  [1, 1]
+	  Position		  [620, 212, 675, 288]
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "D"
+	  reg_retiming		  "off"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  accept_only_valid	  "off"
+	  init_zero		  "on"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "integrator1"
+	  Ports			  [2, 1]
+	  Position		  [410, 115, 465, 190]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Addition"
+	  precision		  "User Defined"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "ceil(input_bitwidth+log2(inputs)+stages*log"
+"2(R*D))"
+	  bin_pt		  "input_binary_pt"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "int_latency"
+	  explicit_period	  "on"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "syncdelay"
+	  Ports			  [1, 1]
+	  Position		  [310, 442, 365, 518]
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "add_latency*log2(inputs)+stages*(int_latenc"
+"y+comb_latency+D+0)"
+	  reg_retiming		  "off"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  accept_only_valid	  "off"
+	  init_zero		  "on"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "syncout"
+	  Position		  [670, 468, 700, 482]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cic_out"
+	  Position		  [900, 113, 930, 127]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "sync"
+	  SrcPort		  1
+	  DstBlock		  "syncdelay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "syncdelay"
+	  SrcPort		  1
+	  DstBlock		  "syncout"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "cic_in8"
+	  SrcPort		  1
+	  DstBlock		  "adder_tree"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "cic_in7"
+	  SrcPort		  1
+	  DstBlock		  "adder_tree"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "cic_in6"
+	  SrcPort		  1
+	  DstBlock		  "adder_tree"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "cic_in5"
+	  SrcPort		  1
+	  DstBlock		  "adder_tree"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "cic_in4"
+	  SrcPort		  1
+	  DstBlock		  "adder_tree"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "cic_in3"
+	  SrcPort		  1
+	  DstBlock		  "adder_tree"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "cic_in2"
+	  SrcPort		  1
+	  DstBlock		  "adder_tree"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "cic_in1"
+	  SrcPort		  1
+	  DstBlock		  "adder_tree"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "integrator1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "comb1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "delay1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "integrator1"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "adder_tree"
+	  SrcPort		  1
+	  DstBlock		  "integrator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "comb1"
+	  SrcPort		  1
+	  DstBlock		  "cic_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "delay1"
+	  SrcPort		  1
+	  DstBlock		  "comb1"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "adder_tree"
+      Ports		      [8, 1]
+      Position		      [25, 210, 85, 370]
+      SourceBlock	      "ddc_library/adder_tree"
+      SourceType	      ""
+      ShowPortLabels	      on
+      num_inputs	      "inputs"
+      latency		      "add_latency"
+    }
+    Annotation {
+      Name		      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%                                          "
+"                                   %\n%   Center for Astronomy Signal Process"
+"ing and Electronics Research           %\n%   http://seti.ssl.berkeley.edu/ca"
+"sper/                                      %\n%   Copyright (C) 2006 Universi"
+"ty of California, Berkeley                     %\n%                          "
+"                                                   %\n%   This program is fre"
+"e software; you can redistribute it and/or modify      %\n%   it under the te"
+"rms of the GNU General Public License as published by      %\n%   the Free So"
+"ftware Foundation; either version 2 of the License, or         %\n%   (at you"
+"r option) any later version.                                       %\n%      "
+"                                                                       %\n%  "
+" This program is distributed in the hope that it will be useful,           %"
+"\n%   but WITHOUT ANY WARRANTY; without even the implied warranty of         "
+"   %\n%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the      "
+"       %\n%   GNU General Public License for more details.                   "
+"           %\n%                                                              "
+"               %\n%   You should have received a copy of the GNU General Publ"
+"ic License along   %\n%   with this program; if not, write to the Free Softwa"
+"re Foundation, Inc.,   %\n%   51 Franklin Street, Fifth Floor, Boston, MA 021"
+"10-1301 USA.               %\n%                                              "
+"                               %\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      Position		      [16, 105]
+      HorizontalAlignment     "left"
+      FontName		      "Lucida Console"
+      FontSize		      9
+    }
+  }
+}

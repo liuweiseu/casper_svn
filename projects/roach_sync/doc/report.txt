@@ -1,0 +1,43 @@
+A background to the problem
+-------------------------------------------
+
+It is well understood that data from two iADCs can become unsynchronized after
+reset.
+
+There are two sources of skew introduced with the current implementation on
+ROACH (and iBOB). The first is caused by a phase difference in the ADC data-
+interface clocks between two iADCs. The second is due to the asynchronous
+FIFO which converts the incoming data's clock domain to the target application
+clock.
+
+The FIFO error introduces skew in the order of application clock cycles. These
+delays have been observed to be typically two or fewer application clock cycles, 
+8 or fewer samples. The ADC clock skew causes typically +2/-2 samples.
+
+The synchronization strategy for the iBOB involved constantly resetting a
+single iADC until the two ADC clocks were in phase. However, this strategy was
+non deterministic and would occasionally fail. Also this scheme does not cater
+for the synchronization error introduced by the FIFO.
+
+Some musing regarding a solution
+-------------------------------------------
+
+It is possible to measure the FIFO skew by observing a common synchronization
+pulse's skew through the two FIFOs, using the two SYNC inputs. Further, it is
+possible to measure the ADC clock phase skew. With these two details it should
+be possible to calculate the sample offsets and uses course delay logic to
+compensate. It would also be possible to repeatedly reset the ADCs until
+synchronized. The latter scheme would be less desirable as it would introduce a
+chance that the system be left unsynchronized.
+
+It might be possible to eliminate the FIFOs by using one ADC clock to sample
+both data interfaces. This would require that the reset-until-aligned scheme be
+implemented (Realignment would be require for 90/270 degree offsets not 180).
+If a little gateware acceleration was added to optimize the alignment process
+it would become a lot more feasible.
+
+The proper way to do it would be to design the hardware with syncing in mind. The
+problem here stems from the fact that the sync/reset pulse must be aligned with
+the sample clock. This is very difficult to guarantee with pulses sent from the
+FPGA. Variable routing delay, pin delays, FPGA clock phase and more cause
+hassles. 

@@ -1,0 +1,58 @@
+#pragma ident "@(#)pcd_bitfiles	1.8 10/23/02 EDT"
+#
+# EDT PCD boards are equipped with a "PCI Xilinx" which has the DMA
+# engine used to transfer data to/from the host computer.  The PCI
+# Xilinx is loaded at power-up from a flash PROM on the EDT board so it
+# is available as the system configures during boot.  The flash PROM
+# may be loaded by the program "pciload" which is described in the
+# "PCI CD User's Guide".  Changes to the flash take effect after the
+# power to the computer is turned off and back on.
+#
+# A second Xilinx FPGA called the "Interface Xilinx" talks directly to the 
+# user's equipment, and may be loaded at anytime by the program "bitload".
+# The "pcdrequest" program accepts menu selections to create a script to
+# load the interface bitfiles.
+# 
+# The PCI flash loaded determines which interface Xilinx bitfiles can be
+# utilized on the PCI CD board.  The dependencies listed here are used
+# by the "pcdrequest" program.
+
+pcd20.bit:	"PCI flash for RS422 PCI CD-20 boards"
+pcd40.bit:	"PCI flash for PECL PCI CD-40 boards"
+pcd60.bit:	"PCI flash for LVDS PCI CD-60 boards"
+	pcd_src.bit	"16-bit parallel I/O synced to PCD source clock"
+	pcd_looped.bit	"16-bit parallel I/O synced to external clock"
+	pcd8_src.bit	"8-bit parallel dual channel I/O synced to PCD clock"
+	ssd.bit		"One channel serial input"
+	ssd2.bit	"Two channel serial input"
+	ssd4.bit	"Four channel serial input"
+	ssdio.bit	"Dual channel serial I/O"
+	ssdio_neg.bit	"Dual channel serial I/O using negative clock edge"
+	ssdout1.bit	"One channel serial output"
+
+pcd16.bit:	"PCI flash for 16-channel serial I/O on PCI GP"
+	ssd16.bit	"16 channel serial input and output on PCI GP-20/60/ECL"
+
+pcd64.bit:	"PCI flash for fast 64-word burst DMA on PCI GP"
+	gp_pcd.bit	"Fast 16-bit parallel I/O for PCI GP"
+	gp_pcd8.bit	"Fast 8-bit parallel I/O for PCI GP"
+
+pcdssd.bit:	"PCI flash 4 channel I/O on PCI GP and 2 channel I/O on PCI SSE"
+	ssd4io.bit	"Four channel DMA serial input and output"
+	gpssd4.bit	"Four channel DMA serial input"
+	sseb.bit+sset.bit "Fast 2 channel serial for PCI GP-SSE, bottom + top"
+
+pcdt.bit:	"PCI flash for one channel Fiber Optic I/O on PCI GP-FOI"
+	gpfoi.bit	"GP Fiber Optic Interface on PCI GP-FOI"
+
+pciss1.bit:	"PCI flash for 1 channel 16-bit I/O on PCI SS"
+	ss_pcd.bit	"16-bit parallel I/O on PCI SS-RS422/LVDS"
+
+pciss16.bit:	"PCI flash for 16 channel I/O on PCI SS and SS-Combo"
+	ssdin.bit	"Fast one channel serial input on PCI SS-LVDS"
+	ssd16in.bit	"16 channel DMA for serial input on PCI SS-RS422/LVDS"
+	eclssd16in.bit	"16 channel DMA for serial input on PCI SS-ECL"
+	combo16in.bit	"16 channel DMA for serial input on PCI SS-Combo"
+
+cda1.bit:	"PCI flash for 1 channel 16-bit I/O on PCI CDA"
+	pcda.bit	"16-bit parallel I/O on PCI CDA-RS422/LVDS"

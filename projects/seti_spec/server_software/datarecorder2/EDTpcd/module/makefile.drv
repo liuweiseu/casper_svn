@@ -1,0 +1,148 @@
+
+# Comment/uncomment the following line to disable/enable debugging
+#DEBUG = y
+
+# Change it here or specify it on the "make" commandline
+
+CC=gcc
+
+# Deal with RedHat 7.1
+
+CONFIG_SMP= $(shell uname -v | grep -i SMP)
+CONFIG_PPC= $(shell uname -m | grep -i ppc)
+
+VER_SERIES=$(shell uname -r | cut -f1-2 -d.)
+VER_MINOR=$(shell uname -r | cut -f3 -d.)
+
+# only set KERNELDIR if not set
+
+ifeq ($(KERNELDIR),)
+KERNELDIR = /lib/modules/$(shell uname -r)/build
+INCLUDEDIR = $(KERNELDIR)/include 
+endif
+
+#hack for Redhat 9
+REMAP_VERSION = $(shell grep remap_page_range /lib/modules/$(shell uname -r)/build/include/linux/mm.h | grep vm_ )
+
+ifneq ($(REMAP_VERSION),)
+CFLAGS += -DREMAP2_5 
+endif
+
+#hack for Redhat Enterprise kernel
+ifeq ($(VER_SERIES),"2.4")
+IOVEC_SZ = $(shell grep kiovec_sz /lib/modules/$(shell uname -r)/build/include/linux/iobuf.h )
+endif
+
+ifneq ($(IOVEC_SZ),)
+CFLAGS += -DUSE_KIOVEC_SZ 
+endif
+
+driver: INCLUDEDIR=/lib/modules/$(shell uname -r)/build/include
+
+TESTDIR = $(shell ls -d $(KERNELDIR) 2> /dev/null)
+
+DEBFLAGS = -O2 -fno-strict-aliasing -fno-common # "-O" is needed to expand inlines
+
+CFLAGS += -D__KERNEL__ -D_KERNEL -DMODULE -Wall $(DEBFLAGS) -D_LINUX
+CFLAGS +=  -I. -I.. -I$(INCLUDEDIR) 
+
+
+USE_MODV = $(shell /sbin/ksyms -a | grep pcibios_find_device | awk '{if ($$2 != pcibios_find_device) print "_MODV" }' )
+
+ifneq ($(strip $(CONFIG_SMP)),)
+CFLAGS += -D__SMP__ 
+AFLAGS += -D__SMP__ 
+SMP=_SMP
+else 
+SMP= 
+endif
+
+ifneq ($(strip $(CONFIG_PPC)),)
+CPUTYPE=PPC
+#CFLAGS += -DBIG_ENDIAN -D_BIG_ENDIAN -D__BIG_ENDIAN -D__BIG_ENDIAN_BITFIELD
+CFLAGS += -DBIG_ENDIAN
+else  
+CPUTYPE= 
+endif
+
+ifneq ($(strip $(USE_MODV)),)
+CFLAGS += -DUSE_MODV
+endif
+
+
+# Extract version number from headers.
+VER = $(shell uname -r)$(SMP)
+
+TARGETBASE = edt
+TARGET = ../$(VER)/$(TARGETBASE).o
+
+
+GCC_VER=$(shell $(CC) --version | head -1 | cut -d" " -f3 | cut -d. -f1)
+
+DRVDIR=module
+
+DRVLIB_ROOT=_edtdrv_$(VER_SERIES)$(CPUTYPE)_$(GCC_VER)
+
+DRVLIB=$(DRVDIR)/lib$(DRVLIB_ROOT).a
+
+thedriver:  check_kernel $(TARGET) install
+
+check_kernel : 
+ifneq ($(KERNELDIR),$(TESTDIR))
+	@echo
+	@echo "**********************************************************"
+	@echo "You need the kernel source for the running kernel (`uname -r`) "
+	@echo "to compile the EDT module." 
+	@echo "The kernel source is expected in /lib/modules/`uname -r`/build," 
+	@echo "which is usually a soft link to /usr/src/linux-`uname -r`."
+	@echo "**********************************************************"
+	@echo
+	@echo
+	@exit 1 
+endif
+
+PATCHLEVEL= $(shell uname -r | cut -d. -f2)
+ifeq ($(PATCHLEVEL),2)
+	KLIBDIR= /lib/modules/`uname -r`/misc
+else
+	KLIBDIR= /lib/modules/`uname -r`/kernel/drivers/misc
+endif
+
+
+test:
+	@echo "CFLAGS $(CFLAGS)"
+	@echo "CONFIG_SMP $(CONFIG_SMP)"
+	@echo "USE_MODV $(USE_MODV)"
+
+$(TARGET): $(TARGETBASE).o 
+	-mkdir -p ../$(VER)
+	mv $(TARGETBASE).o ../$(VER)
+
+$(TARGETBASE).o: edt_lnx_kernel.o $(EXTRAOBJS)
+	$(LD) -r $^ -o $@ -L. -l$(DRVLIB_ROOT)
+
+edt_lnx_kernel.o : FRC
+
+
+
+install: 
+	mkdir -p $(KLIBDIR) 
+	install -c $(TARGET) $(KLIBDIR)
+	depmod -a
+
+uninstall:
+	rm /lib/modules/`uname -r`/kernel/drivers/misc/$(TARGET)
+	depmod -a
+
+load: driver
+	./edt_load
+
+unload:
+	./edt_unload
+
+cleano:
+	-rm -f *.o 
+
+
+FRC:
+

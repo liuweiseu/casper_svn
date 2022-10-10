@@ -1,0 +1,7 @@
+# read the hack stuff out the sys_block
+r a
+r c
+r e
+r 10
+r 12
+w 12

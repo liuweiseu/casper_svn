@@ -1,0 +1,9 @@
+#! /bin/csh -f
+setenv CLASSPATH .
+setenv LD_LIBRARY_PATH .
+echo ""
+if ( ! -f $1.class ) then
+    jar xf $1.jar >& /dev/null
+endif
+echo java $1
+java $1

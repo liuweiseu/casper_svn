@@ -1,0 +1,50 @@
+# V0
+w c1 80
+w c2 80
+w c3 81
+w c4 10
+#V1
+w c5 80
+w c6 80
+w c7 81
+w c8 10
+#V2
+w c9 80
+w ca 80
+w cb 81
+w cc 10
+#V3
+w cd 90
+w ce 10
+w cf 81
+w d0 80
+#V4
+w d1 90
+w d2 10
+w d3 81
+w d4 80
+#V5
+w d5 90
+w d6 10
+w d7 81
+w d8 80
+#V6
+w d9 80
+w da 80
+w db 81
+w dc 80
+#V7
+w dd 90
+w de 10
+w df 81
+w e0 80
+#V8
+w e1 90
+w e2 10
+w e3 81
+w e4 80
+#V9
+w e5 90
+w e6 10
+w e7 81
+w e8 80

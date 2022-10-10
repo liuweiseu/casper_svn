@@ -1,0 +1,171 @@
+CASPER Pocket Correlator User Guide
+-------------------------------------------------------------------------------
+Version: 1.1
+Author: Griffin Foster(gfoster@berkeley.edu)
+Date: 09.04.09 
+
+The most recent PoCo software is in the CASPER SVN repo at http://casper.berkeley.edu/svn/trunk/projects/pocketcorrelator/
+
+-------------------------------------------------------------------------------
+FPGA Setup:
+-------------------------------------------------------------------------------
+
+*In the SVN directory is a Models directory with various compiled bit files. satcorr_108.bit was designed for a 108 MHZ ADC clock with 1024 channels.
+
+*The satcorr_108.bit design is currently running at 108 MHz, which gives the system a 27 MHz band, for PAPER we are looking at the 121.5 - 148.5 MHz band.
+
+-------------------------------------------------------------------------------
+Physical Setup:
+-------------------------------------------------------------------------------
+
+	Required Hardware:
+		1. iBOB with 2 iADC boards, programmed with a PoCo bitstream
+		2. 108 MHz clock source, with 3 dBm ampiltude
+		3. control computer with an open ethernet port
+
+	Once the PoCo has a clock source and is powered up it is ready to be used, control and data is sent through the 100 Mbps port.
+
+
+-------------------------------------------------------------------------------
+Installing Software:
+-------------------------------------------------------------------------------
+
+	There is a collection of C and Python code used with the PoCo, to configure and get raw data only the C programs are required and can be installed by running:
+
+	make all
+
+	To comiple individual programs:
+		gcc -o gen_config_file gen_config_file.c
+		gcc -o corrplot corrplot.c -l grace_np -lm
+		gcc -o poco_conf poco_conf.c
+		gcc -o udprec udprec.c
+
+	Note: the C code uses the GRACE plotting package library to plot the raw data, this can be skipped if the corrplot.c code is not compiled.
+
+	The Python code is built on the CASPER Packetized Correlator and AIPY framework. In order to properly write MIRIAD UV files aipy 0.5.5 or greater is required to run this code. Once aipy is setup run the following command to install the python poco software.
+
+python setup.py install
+
+
+-------------------------------------------------------------------------------
+Recording Data:
+-------------------------------------------------------------------------------
+
+	***Starting poco:
+	
+	1. once poco is turned on and supplied with 108 MHz to each ADC clock the correlator needs to be configured. there is a program called poco_conf which will do this.
+
+	./poco_conf config52000.txt 169.254.128.1
+
+the config file loads the equalizations, integration times, the ip to transmit data to and the fft shift schedule. (the program ./gen_config_file creates this config file if you want to update it). the ip address is the hard set ip address of the iBOB.
+
+NOTE: Anytime a new cofiguration is needed(i.e. ./poco_conf is run) the system should be power cycled first
+
+	2. after the iBOB is configured there are two routes to take, the first is just to collect the raw data, this is useful for diagnostics or if you want to write to another format then MIRAID UV. The other option is to run the python scripts to create MIRIAD UV files which can be viewed in MIRIAD and aipy.
+
+	***Raw Data:
+
+	a. ./udprec
+
+This program collects the UDP packets and dumps then to a .log file, ./udprec -h will give options on the number of files to write, naming, and number of packets per file
+
+	b. ./corrplot poco_data0.log
+
+This program will load the grace plotting program and realtime plot the raw poco data being received. There is also a program ./corrplot_log which will plot the amplitudes on a log plot
+
+	***MIRIAD Data:
+
+	In the python/ dir is a script called poco_rx.py which is based on cn_rx.py from the correlator software, this script uses a modified version of the corr-0.3.0 package which is currently installed on paper0.
+
+	a. ./poco_rx.py poco.conf
+
+This script uses a similar config file as the correlator setup, a few edits have been made to this config file to make it more useful for PoCo, a -s option will grab a single time file of data. files will be written out as poco.[julian date].uv. Note: with sub seond integration times MIRIAD does not correctly report the time.
+
+
+Direct Access to the iBOB:
+----------------------------------------------------------------------------------
+
+	To directly access the iBOB telnet into it:
+	telnet 169.254.128.1
+
+	Commands can be run from the terminal:
+	listdev : lists the current devices/blocks
+	regread adc_sum_sq : read the current ADC RMS Volatges
+
+
+C Programs:
+----------------------------------------------------------------------------------
+
+gen_config_file: generate poco config file for setting accumullation length, fft shifting and equalizations
+
+	./gen_config_file
+
+corrplot: plot the raw data sent from the correlator, useful for realtime viewing of the data. Requires GRACE plotting package.
+
+	./corrplot corrplot_log
+
+poco_conf: configure the pocket correlator using a config file
+
+	./poco_conf CONFIG_FILE IBOB_IP_ADDRESS
+
+udprec: receive packet from the pocket correlator and save to a log file, this log file can be used to plot with corrplot
+
+	./udprec
+
+paper0 w/ poco setup:
+
+
+
+PoCo at GB Notes:
+----------------------------------------------------------------------------------
+paper0 local w/ poco: 169.254.128.10
+login: obs
+
+*The bitfile for the poco is loaded into the PROM of the iBOB so just turning on PoCo will start the system running
+
+*satcoor_108.bit is the current bit file in PoCo
+
+*useful files are in the /home/obs/poco-0.1.0/ directory
+
+*in the poco dir are a number of c files/programs and a python scripts  with correlator to miriad scripts
+
+starting poco:
+1. once poco is turned on and supplied with 108 MHz to each ADC clock the correlator needs to be configured. there is a program called poco_conf which will do this.
+
+./poco_conf config52000.txt 169.254.128.1
+
+the cofig file loads the equalizations, integration times, the ip to transmit data to and the fft shift schedule. (the program ./configure creates this config file if you want to update it). the ip address is the hard set ip address of the iBOB.
+
+2. after the iBOB is configured there are two routes to take, the first is just to collect the raw data, this is useful for diagnostics or if you want to write to another format then MIRAID UV. The other option is to run the python scripts to create MIRIAD UV files which can be viewed in MIRIAD and aipy.
+
+Raw Data:
+
+a. ./udprec
+
+This program collects the UDP packets and dumps then to a .log file, ./udprec -h will give options on the number of files to write, naming, and number of packets per file
+
+b. ./corrplot poco_data0.log
+
+This program will load the grace plotting program and realtime plot the raw poco data being received. There is also a program ./corrplot_log which will plot the amplitudes on a log plot
+
+MIRIAD Data:
+
+In the python/ dir is a script called poco_rx.py which is based on cn_rx.py from the correlator software, this script uses a modified version of the corr-0.3.0 package which is currently installed on paper0.
+
+a. ./poco_rx.py poco.conf
+
+This script uses a similar config file as the correlator setup, a few edits have been made to this config file to make it more useful for PoCo, a -s option will grab a single time file of data. files will be written out as poco.[julian date].uv. Note: with sub seond integration times MIRIAD does not correctly report the time.
+
+Notes on PoCo:
+
+The design is currently running at 108 MHz, which gives the system a 27 MHz band, for our can we are looking at the 121.5 - 148.5 MHz band.
+
+Anytime a new cofiguration is needed(i.e. ./poco_conf is run) the system should be power cycled first
+
+To directly access the iBOB telnet into it:
+telnet 169.254.128.1
+
+listdev
+regread adc_sum_sq
+
+are useful commands in the iBOB

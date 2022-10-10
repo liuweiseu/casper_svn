@@ -1,0 +1,8 @@
+Redirecting to URL 'https://casper.berkeley.edu/svn/trunk/caltech/lib':
+svn: warning: W205011: Error handling externals definition for 'casper_snv/trunk/mlib_devel_7_1/gavrt_library':
+svn: warning: W170011: Repository moved temporarily to 'https://casper.astro.berkeley.edu/svn/trunk/caltech/lib'
+Redirecting to URL 'https://casper.berkeley.edu/svn/trunk/caltech/lib10.1':
+svn: warning: W205011: Error handling externals definition for 'casper_snv/trunk/mlib_devel_10_1/gavrt_library':
+svn: warning: W170011: Repository moved temporarily to 'https://casper.astro.berkeley.edu/svn/trunk/caltech/lib10.1'
+checked out revision 3500.
+svn: E205011: Failure occurred processing one or more externals definitions

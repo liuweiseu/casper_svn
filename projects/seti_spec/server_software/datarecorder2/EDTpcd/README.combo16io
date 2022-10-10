@@ -1,0 +1,38 @@
+#pragma ident "@(#)README.combo16io	1.2 10/13/03 EDT"
+
+Output capability for e3/t3, e1/t1, and differential has been
+added to the SS/Combo board in the bitfile combo16io.bit.
+This bitfile is supported for the 600E, 1000E, and 2000E Xilinx
+chips.
+
+Three sets of test programs are included in the driver:
+
+	e3prbs(.bat):	Output generated test data to cable.
+	e3chk(.bat):	Input and test generated data from cable.
+	e3chk.pdb:	"pdb" command file to configure registers
+	
+	e1prbs(.bat):	Output generated test data to cable.
+	e1chk(.bat):	Input and test generated data from cable.
+	e1chk.pdb:	"pdb" command file to configure registers
+			for above.
+	
+	diffprbs(.bat):	Output generated test data to cable.
+	diffchk(.bat):	Input and test generated data from cable.
+	diffchk.pdb:	"pdb" command file to configure registers
+			for above.
+
+To run one of these sets of tests, connect cables from one
+SS/Combo to another.  Use a standard 68-pin SCSI cable for
+the 68-pin connectors, and use a straight through 15-pin
+cable for the e3 connectors.  Then, one at a time, run
+"e3prbs -u N" on a board jumpered for output and run
+"e3chk -u M" on a board jumpered for input.  The boards
+may reside on separate machines.  Substitute "e1" and "diff"
+for "e3" for the other two tests.
+
+The tests run forever and print a buffer count unless errors
+are detected on the input side.
+
+From these scripts and .pdb files you can see how to configure
+boards for input and output on e3/t3, e1/t1, and differential
+data streams.

@@ -1,0 +1,12 @@
+Todo:
+
+  floating point argument handling and printing
+
+  more supporting functions
+
+  block EPIPE or use send with nosignal
+
+  make file descriptors nonblocking (safer in production, but masks logic errors )
+
+  possible shutdown/restart logic
+

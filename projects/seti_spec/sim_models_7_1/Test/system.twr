@@ -1,0 +1,306 @@
+--------------------------------------------------------------------------------
+Release 7.1.04i Trace H.42
+Copyright (c) 1995-2005 Xilinx, Inc.  All rights reserved.
+
+trce -e 3 -xml system.twx system.ncd system.pcf
+
+
+Design file:              system.ncd
+Physical constraint file: system.pcf
+Device,speed:             xc2vp70,-7 (PRODUCTION 1.91 2005-07-22)
+Report level:             error report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+WARNING:Timing:2666 - Constraint ignored: PATH "TS_RST2_path" TIG;
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths
+   option. All paths that are not constrained will be reported in the
+   unconstrained paths section(s) of the report.
+
+================================================================================
+Timing constraint: TS_dcm_clk_s = PERIOD TIMEGRP "dcm_clk_s" 9.999 ns HIGH 50%;
+
+ 0 items analyzed, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_RST1_path" TIG;
+
+ 3 items analyzed, 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_RST2_path" TIG;
+
+ 0 items analyzed, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_RST3_path" TIG;
+
+ 3 items analyzed, 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_usrclk_in = PERIOD TIMEGRP "usrclk_in" 100 MHz HIGH 50%;
+
+ 0 items analyzed, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_dcm_0_dcm_0_CLK0_BUF = PERIOD TIMEGRP "dcm_0_dcm_0_CLK0_BUF" TS_dcm_clk_s
+        HIGH 50%;
+
+ 596423 items analyzed, 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Minimum period is   9.937ns.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_dcm_0_dcm_0_CLKFX_BUF = PERIOD TIMEGRP "dcm_0_dcm_0_CLKFX_BUF" TS_dcm_clk_s
+        / 3 HIGH 50%;
+
+ 0 items analyzed, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_dcm_2_dcm_2_CLK2X_BUF = PERIOD TIMEGRP "dcm_2_dcm_2_CLK2X_BUF" TS_usrclk_in
+        * 2 HIGH 50%;
+
+ 0 items analyzed, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_dcm_3_dcm_3_CLK0_BUF = PERIOD TIMEGRP "dcm_3_dcm_3_CLK0_BUF"
+        TS_dcm_2_dcm_2_CLK2X_BUF HIGH 50%;
+
+ 24725 items analyzed, 20 timing errors detected. (20 setup errors, 0 hold errors)
+ Minimum period is   5.219ns.
+--------------------------------------------------------------------------------
+Slack:                  -0.219ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU16 (FF)
+  Destination:          testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU22 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      5.219ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         testblk_uc_data_in_mux_tvg_in_ram_im_ramblk_porta_BRAM_Clk rising at 0.000ns
+  Destination Clock:    testblk_uc_data_in_mux_tvg_in_ram_im_ramblk_porta_BRAM_Clk rising at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Data Path: testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU16 to testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y138.YQ     Tcko                  0.370   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/gateway_out1_x_4(0)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU16
+    SLICE_X30Y136.G2     net (fanout=3)        0.489   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/gateway_out1_x_4(1)
+    SLICE_X30Y136.COUT   Topcyg                0.569   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(0)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU7
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU8
+    SLICE_X30Y137.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/N10
+    SLICE_X30Y137.COUT   Tbyp                  0.073   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(2)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU12
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU16
+    SLICE_X30Y138.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/N20
+    SLICE_X30Y138.Y      Tciny                 0.728   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(4)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU20
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU25
+    SLICE_X31Y138.G2     net (fanout=1)        0.279   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(5)
+    SLICE_X31Y138.COUT   Topcyg                0.569   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo14
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagelut15
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagecy_rn_14
+    SLICE_X31Y139.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo14
+    SLICE_X31Y139.COUT   Tbyp                  0.073   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo16
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagecy_rn_15
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagecy_rn_16
+    SLICE_X31Y140.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo16
+    SLICE_X31Y140.COUT   Tbyp                  0.073   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo18
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagecy_rn_17
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagecy_rn_18
+    SLICE_X31Y141.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo18
+    SLICE_X31Y141.XB     Tcinxb                0.406   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/relational2_dout
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/norcy
+    SLICE_X30Y143.G3     net (fanout=1)        0.206   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/relational2_dout
+    SLICE_X30Y143.Y      Tilo                  0.275   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/logical_dout
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/logical/_n00041
+    SLICE_X32Y139.SR     net (fanout=5)        0.573   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/logical_dout
+    SLICE_X32Y139.CLK    Tsrck                 0.536   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/gateway_out1_x_4(2)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU22
+    -------------------------------------------------  ---------------------------
+    Total                                      5.219ns (3.672ns logic, 1.547ns route)
+                                                       (70.4% logic, 29.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -0.219ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU16 (FF)
+  Destination:          testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU28 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      5.219ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         testblk_uc_data_in_mux_tvg_in_ram_im_ramblk_porta_BRAM_Clk rising at 0.000ns
+  Destination Clock:    testblk_uc_data_in_mux_tvg_in_ram_im_ramblk_porta_BRAM_Clk rising at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Data Path: testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU16 to testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y138.YQ     Tcko                  0.370   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/gateway_out1_x_4(0)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU16
+    SLICE_X30Y136.G2     net (fanout=3)        0.489   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/gateway_out1_x_4(1)
+    SLICE_X30Y136.COUT   Topcyg                0.569   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(0)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU7
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU8
+    SLICE_X30Y137.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/N10
+    SLICE_X30Y137.COUT   Tbyp                  0.073   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(2)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU12
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU16
+    SLICE_X30Y138.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/N20
+    SLICE_X30Y138.Y      Tciny                 0.728   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(4)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU20
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU25
+    SLICE_X31Y138.G2     net (fanout=1)        0.279   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(5)
+    SLICE_X31Y138.COUT   Topcyg                0.569   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo14
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagelut15
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagecy_rn_14
+    SLICE_X31Y139.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo14
+    SLICE_X31Y139.COUT   Tbyp                  0.073   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo16
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagecy_rn_15
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagecy_rn_16
+    SLICE_X31Y140.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo16
+    SLICE_X31Y140.COUT   Tbyp                  0.073   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo18
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagecy_rn_17
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagecy_rn_18
+    SLICE_X31Y141.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo18
+    SLICE_X31Y141.XB     Tcinxb                0.406   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/relational2_dout
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/norcy
+    SLICE_X30Y143.G3     net (fanout=1)        0.206   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/relational2_dout
+    SLICE_X30Y143.Y      Tilo                  0.275   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/logical_dout
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/logical/_n00041
+    SLICE_X32Y139.SR     net (fanout=5)        0.573   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/logical_dout
+    SLICE_X32Y139.CLK    Tsrck                 0.536   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/gateway_out1_x_4(2)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU28
+    -------------------------------------------------  ---------------------------
+    Total                                      5.219ns (3.672ns logic, 1.547ns route)
+                                                       (70.4% logic, 29.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -0.219ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU16 (FF)
+  Destination:          testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU28 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      5.219ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         testblk_uc_data_in_mux_tvg_in_ram_im_ramblk_porta_BRAM_Clk rising at 0.000ns
+  Destination Clock:    testblk_uc_data_in_mux_tvg_in_ram_im_ramblk_porta_BRAM_Clk rising at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Data Path: testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU16 to testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y138.YQ     Tcko                  0.370   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/gateway_out1_x_4(0)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU16
+    SLICE_X30Y136.G2     net (fanout=3)        0.489   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/gateway_out1_x_4(1)
+    SLICE_X30Y136.COUT   Topcyg                0.569   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(0)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU7
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU8
+    SLICE_X30Y137.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/N10
+    SLICE_X30Y137.COUT   Tbyp                  0.073   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(2)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU12
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU16
+    SLICE_X30Y138.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/N20
+    SLICE_X30Y138.COUT   Tbyp                  0.073   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(4)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU20
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU24
+    SLICE_X30Y139.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/N30
+    SLICE_X30Y139.COUT   Tbyp                  0.073   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(6)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU28
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU32
+    SLICE_X30Y140.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/N40
+    SLICE_X30Y140.Y      Tciny                 0.728   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(8)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU36
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub/core_instance0/BU41
+    SLICE_X31Y140.G2     net (fanout=1)        0.279   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/addsub_s(9)
+    SLICE_X31Y140.COUT   Topcyg                0.569   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo18
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagelut19
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stagecy_rn_18
+    SLICE_X31Y141.CIN    net (fanout=1)        0.000   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/XNor_stage_cyo18
+    SLICE_X31Y141.XB     Tcinxb                0.406   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/relational2_dout
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/norcy
+    SLICE_X30Y143.G3     net (fanout=1)        0.206   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/relational2_dout
+    SLICE_X30Y143.Y      Tilo                  0.275   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/logical_dout
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/logical/_n00041
+    SLICE_X32Y139.SR     net (fanout=5)        0.573   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/logical_dout
+    SLICE_X32Y139.CLK    Tsrck                 0.536   testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/gateway_out1_x_4(2)
+                                                       testblk_uc_xsg_core_config/testblk_uc_xsg_core_config/top/data_in_mux/tvg_in/tvg/accumulator/core_instance0/BU28
+    -------------------------------------------------  ---------------------------
+    Total                                      5.219ns (3.672ns logic, 1.547ns route)
+                                                       (70.4% logic, 29.6% route)
+
+--------------------------------------------------------------------------------
+
+
+1 constraint not met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock sysclk_m
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sysclk_m       |    9.937|    1.546|    1.849|         |
+sysclk_p       |    9.937|    1.546|    1.849|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sysclk_p
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sysclk_m       |    9.937|    1.546|    1.849|         |
+sysclk_p       |    9.937|    1.546|    1.849|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock usrclk_m
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+usrclk_m       |    5.219|         |         |         |
+usrclk_p       |    5.219|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock usrclk_p
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+usrclk_m       |    5.219|         |         |         |
+usrclk_p       |    5.219|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 20  Score: 2750
+
+Constraints cover 621154 paths, 0 nets, and 33984 connections
+
+Design statistics:
+   Minimum period:   9.937ns (Maximum frequency: 100.634MHz)
+
+
+Analysis completed Mon Aug 18 20:19:38 2008
+--------------------------------------------------------------------------------
+
+
+
+Peak Memory Usage: 308 MB

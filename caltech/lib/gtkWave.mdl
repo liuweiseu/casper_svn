@@ -1,0 +1,591 @@
+Library {
+  Name			  "gtkWave"
+  Version		  6.2
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  on
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  on
+  Created		  "Wed Mar 19 01:07:03 2008"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Glenn"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Mar 19 03:52:56 2008"
+  ModelVersionFormat	  "1.%<AutoIncrement:11>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Monospaced"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+    }
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      FixptAsFi		      off
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Monospaced"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Monospaced"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "gtkWave"
+    Location		    [108, 259, 718, 651]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "gtkBoolVar"
+      Ports		      [1]
+      Position		      [150, 155, 195, 175]
+      BackgroundColor	      "[0.501961, 1.000000, 1.000000]"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskDescription	      "Capture a Boolean signal to view in gtkWave."
+      MaskInitialization      "gtkBool_init"
+      MaskDisplay	      "disp('gtkBool')"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"gtkBoolVar"
+	Location		[391, 303, 888, 721]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [85, 33, 115, 47]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out1"
+	  Ports			  [1, 1]
+	  Position		  [220, 29, 275, 51]
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  "off"
+	  timing_constraint	  "None"
+	  locs_specified	  "off"
+	  LOCs			  "{}"
+	  needs_fixed_name	  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "var_real"
+	  Position		  [300, 27, 425, 53]
+	  VariableName		  "gtk_gtkWave__gtkBoolVar_bool"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Structure With Time"
+	}
+	Line {
+	  SrcBlock		  "Gateway Out1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "var_real"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Gateway Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "gtkIntVar"
+      Ports		      [1]
+      Position		      [150, 196, 205, 214]
+      BackgroundColor	      "[0.501961, 1.000000, 1.000000]"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskDescription	      "Capture an Integer signal to view in gtkWave.\n"
+"gtkWave does not support fixed point variables, so all integers will appear w"
+"ith binary point at 0.\nThe input signal to this block should be less than 50"
+" bits wide, as it is represented in Matlab as a double."
+      MaskPromptString	      "Bit Width"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "width=@1;"
+      MaskInitialization      "gtkFix_init"
+      MaskDisplay	      "disp(['gtkFix',num2str(width)])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "32"
+      System {
+	Name			"gtkIntVar"
+	Location		[391, 303, 888, 721]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [85, 33, 115, 47]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out2"
+	  Ports			  [1, 1]
+	  Position		  [210, 29, 265, 51]
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  "off"
+	  timing_constraint	  "None"
+	  locs_specified	  "off"
+	  LOCs			  "{}"
+	  needs_fixed_name	  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret"
+	  Ports			  [1, 1]
+	  Position		  [155, 24, 195, 56]
+	  SourceBlock		  "xbsIndex_r3/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreting Block"
+	  force_arith_type	  "on"
+	  arith_type		  "Unsigned"
+	  force_bin_pt		  "on"
+	  bin_pt		  "0"
+	  force_valid		  "on"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "var_int"
+	  Position		  [290, 27, 415, 53]
+	  VariableName		  "gtk_gtkWave__gtkIntVar_int32"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Structure With Time"
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  DstBlock		  "Gateway Out2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gateway Out2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "var_int"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "gtkRealVar"
+      Ports		      [1]
+      Position		      [150, 230, 200, 250]
+      BackgroundColor	      "[0.501961, 1.000000, 1.000000]"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskDescription	      "Capture a Real variable to view in gtkWave.\nIn"
+"put is a Xilinx Fix interpreted as a real number."
+      MaskInitialization      "gtkReal_init"
+      MaskDisplay	      "disp('gtkReal')"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"gtkRealVar"
+	Location		[391, 303, 888, 721]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [85, 33, 115, 47]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out1"
+	  Ports			  [1, 1]
+	  Position		  [220, 29, 275, 51]
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  "off"
+	  timing_constraint	  "None"
+	  locs_specified	  "off"
+	  LOCs			  "{}"
+	  needs_fixed_name	  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "var_real"
+	  Position		  [300, 27, 425, 53]
+	  VariableName		  "gtk_gtkWave__gtkRealVar_real"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Structure With Time"
+	}
+	Line {
+	  SrcBlock		  "Gateway Out1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "var_real"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Gateway Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "gtk_parse"
+      Ports		      [0, 1]
+      Position		      [140, 40, 210, 90]
+      BackgroundColor	      "[0.501961, 1.000000, 1.000000]"
+      StartFcn		      "gtkStartFcn()"
+      OpenFcn		      "gtk_parse()"
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "gtk_parse"
+      MaskDescription	      "asdf"
+      MaskPromptString	      "dummy"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "dummy=@1;"
+      MaskDisplay	      "fprintf('Double Click\\nTo make and\\nView VCD'"
+")"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0"
+      System {
+	Name			"gtk_parse"
+	Location		[565, 435, 932, 712]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [135, 120, 165, 150]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [280, 128, 310, 142]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "gtk_view"
+      Ports		      [0, 1]
+      Position		      [140, 105, 210, 135]
+      BackgroundColor	      "[0.501961, 1.000000, 1.000000]"
+      OpenFcn		      "gtk_view()"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "gtk_view"
+      MaskDescription	      "asdf"
+      MaskDisplay	      "disp('View VCD')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"gtk_view"
+	Location		[565, 435, 932, 712]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [115, 165, 145, 195]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [260, 173, 290, 187]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Annotation {
+      Name		      "gtkWave Capture Blockset\nGlenn Jones <jones_gl"
+"@caltech.edu>\n2008.03.19\n\nConnect the Bool, Int, or Real blocks to Xilinx "
+"Fix signals to capture \nthe simulation data. The signal will show up in gtkW"
+"ave with the same\nname as the Bool, Int, or Real block. Thus the default Boo"
+"l variable name\nwould be 'gtkBoolVar'.\nDouble clicking the 'gtk_parse' bloc"
+"k will parse the captured data \nand create a VCD file and open it in gtkWave"
+" for viewing.\nDouble clicking the 'gtk_view' block opens the previously crea"
+"ted VCD\nfile in gtkWave.\nIn gtkWave, pressing 'File/Write Save File' or 'ct"
+"rl-S' will save the current\nviewing settings. These settings will be reloade"
+"d automatically the next \ntime 'gtk_parse' or 'gtk_view' is run.\n\nNotes:\n"
+"1. You must not name any variables with names starting 'gtk_'\n2. By default,"
+" the signals in gtkWave are simply named after the block that\ncaptured them."
+" If you create a variable in the workspace called\n'full_path_gtk', the signa"
+"ls will be named with the full path heirarchy. This\naids clarity, but takes "
+"up plotting real estate."
+      Position		      [249, 186]
+      HorizontalAlignment     "left"
+      DropShadow	      on
+    }
+  }
+}

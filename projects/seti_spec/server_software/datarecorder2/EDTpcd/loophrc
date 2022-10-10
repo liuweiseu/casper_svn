@@ -1,0 +1,62 @@
+#!/bin/csh -f
+
+set unit=0
+if ( "$1" == "-u" ) then
+	set unit=$2
+else
+	set unit=$1
+endif
+if ( "$unit" == "" ) then
+	set unit=0
+endif
+
+./bitload -u $unit sshrcin
+
+
+
+echo ""
+echo ""
+echo Testing E4 Rate - 139Mbps
+./pdb -u $unit -f hrcin.pdb
+echo ""
+
+echo ""
+echo Testing channel 0
+./chkprbs15 -u $unit -R hrcin.cfg -c 0 -n 1 -l 500
+
+echo ""
+echo Testing channel 1
+./chkprbs15 -u $unit -R hrcin.cfg -c 1 -n 1 -l 500
+
+echo ""
+echo Testing channel 2
+./chkprbs15 -u $unit -R hrcin.cfg -c 2 -n 1 -l 500
+
+echo ""
+echo Testing channel 3
+./chkprbs15 -u $unit -R hrcin.cfg -c 3 -n 1 -l 500
+
+echo ""
+echo ""
+echo Testing STM-1 Rate - 155Mbps
+echo ""
+./pdb -u $unit -f hrc_stm.pdb
+
+echo ""
+echo ""
+echo Testing channel 0
+./chkprbs15 -u $unit -R hrcin.cfg -c 0 -n 1 -l 500
+
+echo ""
+echo Testing channel 1
+./chkprbs15 -u $unit -R hrcin.cfg -c 1 -n 1 -l 500
+
+echo ""
+echo Testing channel 2
+./chkprbs15 -u $unit -R hrcin.cfg -c 2 -n 1 -l 500
+
+echo ""
+echo Testing channel 3
+./chkprbs15 -u $unit -R hrcin.cfg -c 3 -n 1 -l 500
+
+echo ""

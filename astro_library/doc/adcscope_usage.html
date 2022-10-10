@@ -1,0 +1,93 @@
+<html>
+<head><title>ADC scope usage</title>
+</head>
+<body>
+<h1>ADC scope usage</h1>
+<h2>Christina de Jesus, August 2006</h2>
+
+
+<h2>Description</h2>
+<p>The fully parameterized, masked ADC scope block allows the user to capture ADC board samples.
+  Samples are stored into two BRAMs per ADC of programmable length.  
+  Their respective overflow bits are stored in two more BRAMs per ADC.  This makes a total of 4 BRAMs per ADC.  
+  Samples may be viewed via <pre>pocketplot -g -a</pre>.  
+  A combined histogram of the sample levels may be viewed with the -ah option.  Overflow flags 
+  are displayed as red dots on top of the samples that overflowed; flags at zero indicate no overflow.
+  pocketplot will format and display the samples as 8.7 signed numbers. 
+  (8.7 indicates an 8-bit number with the binary point at the seventh bit, e.g. 0.1010101)</p>
+  
+<h2>Data storage in BRAM</h2>
+<p>Each row in a BRAM is 32 bits wide.  Each ADC sample is 8 bits wide; hence there are 4 samples per row.
+The following shows the order in which samples are stored, from MSB to LSB.</p>
+<p>Samples (interleaved):<br>
+	BRAMI Row 1:  o0 o1 o2 o3<br>
+	BRAMI Row 2:  o8 o9 o10 o11<br>
+	BRAMQ Row 1:  o4 o5 o6 o7<br>
+	BRAMQ Row 2:  o12 o13 o14 o15<br>
+	etc.<br>
+	Samples (noninterleaved):<br>
+	BRAMI Row 1:  i0 i1 i2 i3<br>
+	BRAMQ Row 1:  q0 q1 q2 q3<br>
+	BRAMI Row 2:  i4 i5 i6 i7<br>
+	BRAMQ Row 2:  q4 q5 q6 q7<br>
+etc.</p>
+
+<p>Each overflow bit corresponds to two ADC samples.  OF bits are stored as unsigned bytes in BRAM; hence there are 4 overflow bytes per row.
+The following shows the order in which overflow bits are stored, from MSB to LSB.</p>
+<p>Overflow bits (interleaved):<br>
+	oorBRAM0 Row 1:  o1 o3 o0 o2<br>
+	oorBRAM0 Row 2:  o5 o7 o4 o6<br>etc.<br>
+	Overflow bits (noninterleaved):<br>
+	oorBRAM0 Row 1:  i0 i1 q0 q1<br>
+	oorBRAM0 Row 2:  i2 i3 q2 q3<br>
+	etc.
+</p>
+<p>The following shows the correspondence between samples and overflow bits.
+	</p>
+	
+<p>	Interleaved:<br>
+	------------------------------------------------<br>
+	Sample | o0 | o1 | o2 | o3 | o4 | o5 | o6 | o7 |<br>
+	------------------------------------------------<br>
+	OF bit | o0 | o1 | o0 | o1 | o2 | o3 | o2 | o3 |<br>
+	------------------------------------------------<br>
+	<br>
+	Noninterleaved:<br>
+	------------------------------------------------<br>
+	Sample | i0 | i1 | i2 | i3 | q0 | q1 | q2 | q3 |<br>
+	------------------------------------------------<br>
+	OF bit | i0 | i0 | i1 | i1 | q0 | q0 | q1 | q1 |<br>
+	------------------------------------------------<br>
+</p>
+
+<p>The PowerPC code reads out the BRAMs in the appropriate order for pocketplot.</p>
+
+<h2>Block diagram</h2>
+<a href="adcscope.png"><img src="adcscope.png" height="100" width="50" alt="click to see image"></a>
+
+<h2>Resource utilization</h2>
+<p>On the IBOB's Xilinx 2vp50s, the two-ADC scope compiled at 256 MHz (ADCs running at 1024MHz) 
+uses 10% (2433/23616) of available slices and 24% (56/232) of available BRAM.</p>
+
+<h2>Parameters</h2>
+<ul>
+<li>Number of ADCs:  indicates how many ADCs to connect to the scope.</li>
+<li>Interleave mode:  checking the box indicates that the ADCs are interleaved, 
+leaving it clear indicates that they are not.  If there are two ADCs in the design, 
+this setting applies to both of them (for this block, it is not possible for one ADC to be 
+interleaved and the other to not be interleaved).</li>
+<li>BRAM address width (2^?): indicates the number of rows in each of the BRAMs.  
+	Must be at least 11 (2048 rows; this is a BRAM block constraint).  
+	This setting applies to all BRAM in the block.  Each row contains four samples.</li>
+</ul>
+
+<h2>Issues</h2>
+<p>Sometimes the block may not redraw itself properly (e.g. ports aren't in the correct order); if this occurs, delete the existing block 
+from your design and drop in another one from the library.  Updating the design (Ctrl-D) may also 
+help.</p>
+<p>When compiling designs with only 1 ADC attached to the scope, the <pre>if (NUM_ADCS == 2)</pre>
+sections of the PowerPC code must be commented out to avoid compilation errors.  This affects 
+scopedump and scopeasciidump.</p>
+
+</body>
+</html>

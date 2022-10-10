@@ -1,0 +1,5062 @@
+Model {
+  Name			  "pocketcorr"
+  Version		  6.2
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.56"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Tue Aug 08 13:01:23 2006"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "dejesusc"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Aug 16 16:01:06 2006"
+  ModelVersionFormat	  "1.%<AutoIncrement:56>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "500"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Bias
+      Bias		      "0"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      AllPortsSameDT	      on
+      OutDataTypeMode	      "Logical (see Configuration Parameters: Optimiza"
+"tion)"
+      LogicDataType	      "uint(8)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      InputSameDT	      on
+      LogicOutDataTypeMode    "Logical (see Configuration Parameters: Optimiza"
+"tion)"
+      LogicDataType	      "uint(8)"
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      Floating		      off
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Sin
+      SineType		      "Time based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Bias		      "0"
+      Frequency		      "1"
+      Phase		      "0"
+      Samples		      "10"
+      Offset		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "pocketcorr"
+    Location		    [6, 74, 1001, 702]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      " System Generator"
+      Tag		      "genX"
+      Ports		      []
+      Position		      [127, 13, 178, 63]
+      ShowName		      off
+      AttributesFormatString  "System\\nGenerator"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "xbsIndex_r3/ System Generator"
+      SourceType	      "Xilinx System Generator"
+      ShowPortLabels	      on
+      xilinxfamily	      "Virtex2P"
+      part		      "xc2vp50"
+      speed		      "-7"
+      package		      "ff1152"
+      synthesis_tool	      "XST"
+      directory		      "./pocketcorr/sysgen"
+      testbench		      off
+      simulink_period	      "1"
+      sysclk_period	      "3.9063"
+      incr_netlist	      off
+      trim_vbits	      "Everywhere in SubSystem"
+      dbl_ovrd		      "According to Block Masks"
+      core_generation	      "According to Block Masks"
+      run_coregen	      off
+      deprecated_control      off
+      eval_field	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Concat"
+      Ports		      [6, 1]
+      Position		      [1230, 158, 1280, 537]
+      SourceBlock	      "xbsIndex_r3/Concat"
+      SourceType	      "Xilinx Bus Concatenator"
+      num_inputs	      "6"
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      Position		      [510, 20, 540, 50]
+      Value		      "2^32-1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant1"
+      Position		      [15, 315, 45, 345]
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant2"
+      Ports		      [0, 1]
+      Position		      [1530, 343, 1555, 357]
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Boolean"
+      n_bits		      "1"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant3"
+      Ports		      [0, 1]
+      Position		      [1440, 418, 1465, 432]
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "32"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "5"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant4"
+      Ports		      [0, 1]
+      Position		      [1390, 73, 1415, 87]
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "2^4"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "5"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Convert"
+      Ports		      [1, 1]
+      Position		      [840, 65, 855, 85]
+      SourceBlock	      "xbsIndex_r3/Convert"
+      SourceType	      "Xilinx Converter Block"
+      arith_type	      "Boolean"
+      n_bits		      "8"
+      bin_pt		      "6"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "0"
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+      show_param	      off
+      inserted_by_tool	      off
+      pipeline		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Counter1"
+      Ports		      [1, 1]
+      Position		      [1320, 50, 1370, 80]
+      SourceBlock	      "xbsIndex_r3/Counter"
+      SourceType	      "Xilinx Counter Block"
+      cnt_type		      "Free Running"
+      n_bits		      "5"
+      bin_pt		      "0"
+      arith_type	      "Unsigned"
+      start_count	      "0"
+      cnt_to		      "Inf"
+      cnt_by_val	      "1"
+      operation		      "Up"
+      explicit_period	      off
+      period		      "1"
+      load_pin		      off
+      rst		      on
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      use_rpm		      on
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Counter2"
+      Ports		      [1, 1]
+      Position		      [1415, 365, 1465, 395]
+      SourceBlock	      "xbsIndex_r3/Counter"
+      SourceType	      "Xilinx Counter Block"
+      cnt_type		      "Free Running"
+      n_bits		      "20"
+      bin_pt		      "0"
+      arith_type	      "Unsigned"
+      start_count	      "0"
+      cnt_to		      "Inf"
+      cnt_by_val	      "1"
+      operation		      "Up"
+      explicit_period	      off
+      period		      "1"
+      load_pin		      off
+      rst		      on
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      use_rpm		      on
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay"
+      Ports		      [1, 1]
+      Position		      [860, 121, 880, 139]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "4"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay1"
+      Ports		      [1, 1]
+      Position		      [860, 271, 880, 289]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "4"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay10"
+      Ports		      [1, 1]
+      Position		      [870, 545, 890, 565]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "6"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay11"
+      Ports		      [1, 1]
+      Position		      [870, 575, 890, 595]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "7"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay12"
+      Ports		      [1, 1]
+      Position		      [870, 635, 890, 655]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "4"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay13"
+      Ports		      [1, 1]
+      Position		      [870, 670, 890, 690]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "5"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay14"
+      Ports		      [1, 1]
+      Position		      [870, 700, 890, 720]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "6"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay15"
+      Ports		      [1, 1]
+      Position		      [870, 730, 890, 750]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "7"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay16"
+      Ports		      [1, 1]
+      Position		      [1060, 71, 1105, 109]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "9"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay2"
+      Ports		      [1, 1]
+      Position		      [870, 480, 890, 500]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "4"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay3"
+      Ports		      [1, 1]
+      Position		      [860, 155, 880, 175]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "5"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay4"
+      Ports		      [1, 1]
+      Position		      [860, 192, 880, 208]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "6"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay5"
+      Ports		      [1, 1]
+      Position		      [860, 222, 880, 238]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "7"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay6"
+      Ports		      [1, 1]
+      Position		      [860, 306, 880, 324]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "5"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay7"
+      Ports		      [1, 1]
+      Position		      [860, 336, 880, 354]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "6"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay8"
+      Ports		      [1, 1]
+      Position		      [860, 366, 880, 384]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "7"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay9"
+      Ports		      [1, 1]
+      Position		      [870, 515, 890, 535]
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "5"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out10"
+      Ports		      [1, 1]
+      Position		      [1155, 679, 1210, 701]
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out11"
+      Ports		      [1, 1]
+      Position		      [1155, 714, 1210, 736]
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out12"
+      Ports		      [1, 1]
+      Position		      [1155, 749, 1210, 771]
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out9"
+      Ports		      [1, 1]
+      Position		      [1155, 639, 1210, 661]
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mult"
+      Ports		      [2, 1]
+      Position		      [1130, 122, 1180, 173]
+      SourceBlock	      "xbsIndex_r3/Mult"
+      SourceType	      "Xilinx Multiplier"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "5"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mult_type		      "Parallel"
+      oversample	      "2"
+      use_embedded	      off
+      pipeline		      on
+      use_rpm		      on
+      placement_style	      "Rectangular Shape"
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mult1"
+      Ports		      [2, 1]
+      Position		      [1130, 212, 1180, 263]
+      SourceBlock	      "xbsIndex_r3/Mult"
+      SourceType	      "Xilinx Multiplier"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "5"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mult_type		      "Parallel"
+      oversample	      "2"
+      use_embedded	      off
+      pipeline		      on
+      use_rpm		      on
+      placement_style	      "Rectangular Shape"
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mult2"
+      Ports		      [2, 1]
+      Position		      [1130, 302, 1180, 353]
+      SourceBlock	      "xbsIndex_r3/Mult"
+      SourceType	      "Xilinx Multiplier"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "5"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mult_type		      "Parallel"
+      oversample	      "2"
+      use_embedded	      off
+      pipeline		      on
+      use_rpm		      on
+      placement_style	      "Rectangular Shape"
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mult3"
+      Ports		      [2, 1]
+      Position		      [1130, 377, 1180, 428]
+      SourceBlock	      "xbsIndex_r3/Mult"
+      SourceType	      "Xilinx Multiplier"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "5"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mult_type		      "Parallel"
+      oversample	      "2"
+      use_embedded	      off
+      pipeline		      on
+      use_rpm		      on
+      placement_style	      "Rectangular Shape"
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mult4"
+      Ports		      [2, 1]
+      Position		      [1130, 452, 1180, 503]
+      SourceBlock	      "xbsIndex_r3/Mult"
+      SourceType	      "Xilinx Multiplier"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "5"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mult_type		      "Parallel"
+      oversample	      "2"
+      use_embedded	      off
+      pipeline		      on
+      use_rpm		      on
+      placement_style	      "Rectangular Shape"
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mult5"
+      Ports		      [2, 1]
+      Position		      [1130, 537, 1180, 588]
+      SourceBlock	      "xbsIndex_r3/Mult"
+      SourceType	      "Xilinx Multiplier"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "5"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mult_type		      "Parallel"
+      oversample	      "2"
+      use_embedded	      off
+      pipeline		      on
+      use_rpm		      on
+      placement_style	      "Rectangular Shape"
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mux"
+      Ports		      [5, 1]
+      Position		      [970, 99, 995, 201]
+      SourceBlock	      "xbsIndex_r3/Mux"
+      SourceType	      "Xilinx Multiplexer Block"
+      inputs		      "4"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "0"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mux_type		      off
+      use_rpm		      off
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mux1"
+      Ports		      [5, 1]
+      Position		      [970, 264, 995, 366]
+      SourceBlock	      "xbsIndex_r3/Mux"
+      SourceType	      "Xilinx Multiplexer Block"
+      inputs		      "4"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "0"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mux_type		      off
+      use_rpm		      off
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mux2"
+      Ports		      [5, 1]
+      Position		      [975, 459, 1000, 561]
+      SourceBlock	      "xbsIndex_r3/Mux"
+      SourceType	      "Xilinx Multiplexer Block"
+      inputs		      "4"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "0"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mux_type		      off
+      use_rpm		      off
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mux3"
+      Ports		      [5, 1]
+      Position		      [980, 614, 1005, 716]
+      SourceBlock	      "xbsIndex_r3/Mux"
+      SourceType	      "Xilinx Multiplexer Block"
+      inputs		      "4"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "0"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mux_type		      off
+      use_rpm		      off
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Relational1"
+      Ports		      [2, 1]
+      Position		      [1455, 51, 1485, 84]
+      SourceBlock	      "xbsIndex_r3/Relational"
+      SourceType	      "Xilinx Relational Block"
+      mode		      "a<b"
+      latency		      "1"
+      explicit_period	      on
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Relational2"
+      Ports		      [2, 1]
+      Position		      [1495, 371, 1525, 404]
+      SourceBlock	      "xbsIndex_r3/Relational"
+      SourceType	      "Xilinx Relational Block"
+      mode		      "a<b"
+      latency		      "1"
+      explicit_period	      on
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope1"
+      Ports		      [6]
+      Position		      [1250, 605, 1310, 775]
+      Location		      [5, 49, 1021, 735]
+      Open		      off
+      NumInputPorts	      "6"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+	axes6			"%<SignalLabel>"
+      }
+      YMin		      "-5~-5~-5~-5~-5~-5"
+      YMax		      "5~5~5~5~5~5"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave"
+      Ports		      [0, 1]
+      Position		      [25, 175, 55, 205]
+      SineType		      "Time based"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave1"
+      Ports		      [0, 1]
+      Position		      [25, 240, 55, 270]
+      SineType		      "Time based"
+      Phase		      "pi"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave2"
+      Ports		      [0, 1]
+      Position		      [20, 490, 50, 520]
+      SineType		      "Time based"
+      Phase		      "pi/2"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave3"
+      Ports		      [0, 1]
+      Position		      [20, 545, 50, 575]
+      SineType		      "Time based"
+      Phase		      "3*pi/2"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Step"
+      Position		      [15, 375, 45, 405]
+      Time		      "10"
+      Before		      "1"
+      After		      "0"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XSG core config"
+      Tag		      "xps:xsg"
+      Ports		      []
+      Position		      [30, 14, 76, 57]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/XSG core config"
+      SourceType	      ""
+      ShowPortLabels	      on
+      hw_sys		      "iBOB"
+      clk_src		      "adc0_clk"
+      clk_rate		      "256"
+      sample_period	      "1"
+      probe_depth	      "512"
+      mpc_type		      "powerpc405"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "adc"
+      Tag		      "xps:adc"
+      Ports		      [4, 17]
+      Position		      [120, 159, 265, 421]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/adc"
+      SourceType	      ""
+      ShowPortLabels	      on
+      adc_brd		      "iBOB:adc0"
+      adc_clk_rate	      "1024"
+      adc_interleave	      off
+      sample_period	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "adc1"
+      Tag		      "xps:adc"
+      Ports		      [4, 17]
+      Position		      [120, 469, 265, 731]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/adc"
+      SourceType	      ""
+      ShowPortLabels	      on
+      adc_brd		      "iBOB:adc1"
+      adc_clk_rate	      "1024"
+      adc_interleave	      off
+      sample_period	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "fft"
+      Ports		      [6, 5]
+      Position		      [675, 105, 805, 225]
+      BackgroundColor	      "magenta"
+      LinkData {
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/delay_bra"
+"m1/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/C"
+"onstant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/delay_bra"
+"m1/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/C"
+"onstant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/Constant"
+	DialogParameters {
+	  const			  "1"
+	  equ			  "P=C"
+	  arith_type		  "Boolean"
+	  explicit_period	  "on"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+      }
+      SourceBlock	      "fft_library/fft"
+      SourceType	      ""
+      ShowPortLabels	      on
+      FFTSize		      "5"
+      BitWidth		      "18"
+      n_inputs		      "2"
+      quantization	      "Round  (unbiased: Even Values)"
+      overflow		      "Wrap"
+      add_latency	      "2"
+      mult_latency	      "3"
+      bram_latency	      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "fft1"
+      Ports		      [6, 5]
+      Position		      [675, 465, 805, 585]
+      BackgroundColor	      "magenta"
+      LinkData {
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/delay_bra"
+"m1/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/C"
+"onstant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/delay_bra"
+"m1/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/C"
+"onstant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	  const			  "1"
+	  arith_type		  "Boolean"
+	  explicit_period	  "on"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+      }
+      SourceBlock	      "fft_library/fft"
+      SourceType	      ""
+      ShowPortLabels	      on
+      FFTSize		      "5"
+      BitWidth		      "18"
+      n_inputs		      "2"
+      quantization	      "Round  (unbiased: Even Values)"
+      overflow		      "Wrap"
+      add_latency	      "2"
+      mult_latency	      "3"
+      bram_latency	      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "fft2"
+      Ports		      [6, 5]
+      Position		      [675, 260, 805, 380]
+      BackgroundColor	      "magenta"
+      LinkData {
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/delay_bra"
+"m1/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/C"
+"onstant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/delay_bra"
+"m1/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/C"
+"onstant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	  const			  "1"
+	  arith_type		  "Boolean"
+	  explicit_period	  "on"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+      }
+      SourceBlock	      "fft_library/fft"
+      SourceType	      ""
+      ShowPortLabels	      on
+      FFTSize		      "5"
+      BitWidth		      "18"
+      n_inputs		      "2"
+      quantization	      "Round  (unbiased: Even Values)"
+      overflow		      "Wrap"
+      add_latency	      "2"
+      mult_latency	      "3"
+      bram_latency	      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "fft3"
+      Ports		      [6, 5]
+      Position		      [680, 620, 810, 740]
+      BackgroundColor	      "magenta"
+      LinkData {
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/delay_bra"
+"m1/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/C"
+"onstant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex0/biplex_cplx_unscrambler/sync_dela"
+"y/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_1/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_2/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_3/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_4/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_5/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_6/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_core/fft_stage_7/sync_dela"
+"y_x/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/delay_bra"
+"m1/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/C"
+"onstant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder/s"
+"ync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/reorder1/"
+"sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_biplex1/biplex_cplx_unscrambler/sync_dela"
+"y/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	  const			  "1"
+	  arith_type		  "Boolean"
+	  explicit_period	  "on"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"fft_unscrambler/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+      }
+      SourceBlock	      "fft_library/fft"
+      SourceType	      ""
+      ShowPortLabels	      on
+      FFTSize		      "5"
+      BitWidth		      "18"
+      n_inputs		      "2"
+      quantization	      "Round  (unbiased: Even Values)"
+      overflow		      "Wrap"
+      add_latency	      "2"
+      mult_latency	      "3"
+      bram_latency	      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "fft_shift_reg"
+      Tag		      "xps:sw_reg"
+      Ports		      [1, 1]
+      Position		      [565, 20, 665, 50]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/software register"
+      SourceType	      ""
+      ShowPortLabels	      on
+      io_dir		      "From Processor"
+      arith_type	      "Unsigned"
+      bitwidth		      "32"
+      bin_pt		      "0"
+      sample_period	      "1"
+      gw_name		      "pocketcorr_fft_shift_reg_user_data_out"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "mux select"
+      Ports		      [1, 1]
+      Position		      [1155, 604, 1210, 626]
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "mux_sel"
+      Ports		      [1, 1]
+      Position		      [875, 50, 925, 100]
+      SourceBlock	      "xbsIndex_r3/Counter"
+      SourceType	      "Xilinx Counter Block"
+      cnt_type		      "Free Running"
+      n_bits		      "2"
+      bin_pt		      "0"
+      arith_type	      "Unsigned"
+      start_count	      "0"
+      cnt_to		      "3"
+      cnt_by_val	      "1"
+      operation		      "Up"
+      explicit_period	      off
+      period		      "1"
+      load_pin		      off
+      rst		      on
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      use_rpm		      on
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "pfb_fir"
+      Ports		      [5, 5]
+      Position		      [460, 100, 550, 230]
+      BackgroundColor	      "magenta"
+      LinkData {
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+      }
+      SourceBlock	      "pfb_library/pfb_fir"
+      SourceType	      ""
+      ShowPortLabels	      on
+      PFBSize		      "5"
+      TotalTaps		      "2"
+      WindowType	      "hamming"
+      n_inputs		      "2"
+      MakeBiplex	      off
+      BitWidthIn	      "8"
+      BitWidthOut	      "18"
+      CoeffBitWidth	      "8"
+      CoeffDistMem	      off
+      add_latency	      "2"
+      mult_latency	      "3"
+      bram_latency	      "2"
+      quantization	      "Round  (unbiased: +/- Inf)"
+      fwidth		      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "pfb_fir1"
+      Ports		      [5, 5]
+      Position		      [460, 465, 550, 595]
+      BackgroundColor	      "magenta"
+      LinkData {
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+      }
+      SourceBlock	      "pfb_library/pfb_fir"
+      SourceType	      ""
+      ShowPortLabels	      on
+      PFBSize		      "5"
+      TotalTaps		      "2"
+      WindowType	      "hamming"
+      n_inputs		      "2"
+      MakeBiplex	      off
+      BitWidthIn	      "8"
+      BitWidthOut	      "18"
+      CoeffBitWidth	      "8"
+      CoeffDistMem	      off
+      add_latency	      "2"
+      mult_latency	      "3"
+      bram_latency	      "2"
+      quantization	      "Round  (unbiased: +/- Inf)"
+      fwidth		      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "pfb_fir2"
+      Ports		      [5, 5]
+      Position		      [460, 255, 550, 385]
+      BackgroundColor	      "magenta"
+      LinkData {
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+      }
+      SourceBlock	      "pfb_library/pfb_fir"
+      SourceType	      ""
+      ShowPortLabels	      on
+      PFBSize		      "5"
+      TotalTaps		      "2"
+      WindowType	      "hamming"
+      n_inputs		      "2"
+      MakeBiplex	      off
+      BitWidthIn	      "8"
+      BitWidthOut	      "18"
+      CoeffBitWidth	      "8"
+      CoeffDistMem	      off
+      add_latency	      "2"
+      mult_latency	      "3"
+      bram_latency	      "2"
+      quantization	      "Round  (unbiased: +/- Inf)"
+      fwidth		      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "pfb_fir3"
+      Ports		      [5, 5]
+      Position		      [460, 615, 550, 745]
+      BackgroundColor	      "magenta"
+      LinkData {
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in1_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in2_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in3_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant2"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"pol1_in4_first_tap/sync_delay/Constant3"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+      }
+      SourceBlock	      "pfb_library/pfb_fir"
+      SourceType	      ""
+      ShowPortLabels	      on
+      PFBSize		      "5"
+      TotalTaps		      "2"
+      WindowType	      "hamming"
+      n_inputs		      "2"
+      MakeBiplex	      off
+      BitWidthIn	      "8"
+      BitWidthOut	      "18"
+      CoeffBitWidth	      "8"
+      CoeffDistMem	      off
+      add_latency	      "2"
+      mult_latency	      "3"
+      bram_latency	      "2"
+      quantization	      "Round  (unbiased: +/- Inf)"
+      fwidth		      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "sync"
+      Ports		      [1, 1]
+      Position		      [1155, 789, 1210, 811]
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "vacc"
+      Ports		      [4]
+      Position		      [1580, 288, 1635, 387]
+      BackgroundColor	      "magenta"
+      LinkData {
+	BlockName		"acc_core/const0"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"acc_core/const1"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+	BlockName		"acc_core/vacc_fifo1/constant"
+	DialogParameters {
+	  equ			  "P=C"
+	}
+      }
+      FontSize		      10
+      SourceBlock	      "correlator_library/vacc"
+      SourceType	      ""
+      ShowPortLabels	      on
+      vlen		      "32/2-6"
+      n_bits		      "32"
+      bin_pt		      "0"
+      add_latency	      "2"
+      arith_type	      "Unsigned"
+      BitWidthIn	      "36"
+      BinPtIn		      "35"
+      streams		      "6"
+    }
+    Line {
+      SrcBlock		      "adc"
+      SrcPort		      13
+      Points		      [90, 0; 0, -80]
+      Branch {
+	Points			[0, -155]
+	DstBlock		"pfb_fir"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"pfb_fir2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "pfb_fir"
+      SrcPort		      1
+      DstBlock		      "fft"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "pfb_fir"
+      SrcPort		      2
+      Points		      [50, 0; 0, 15]
+      DstBlock		      "fft"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "pfb_fir"
+      SrcPort		      3
+      Points		      [50, 0; 0, 10]
+      DstBlock		      "fft"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "fft_shift_reg"
+      SrcPort		      1
+      Points		      [0, 60; -15, 0; 0, 40]
+      Branch {
+	DstBlock		"fft"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 155]
+	Branch {
+	  DstBlock		  "fft2"
+	  DstPort		  2
+	}
+	Branch {
+	  Points		  [0, 205]
+	  Branch {
+	    DstBlock		    "fft1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 155]
+	    DstBlock		    "fft3"
+	    DstPort		    2
+	  }
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "fft_shift_reg"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "pfb_fir"
+      SrcPort		      4
+      Points		      [70, 0; 0, 5]
+      DstBlock		      "fft"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "pfb_fir"
+      SrcPort		      5
+      DstBlock		      "fft"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "adc"
+      SrcPort		      1
+      Points		      [155, 0; 0, -30]
+      DstBlock		      "pfb_fir"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "adc"
+      SrcPort		      2
+      Points		      [175, 0]
+      DstBlock		      "pfb_fir"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "adc"
+      SrcPort		      3
+      Points		      [175, 0]
+      DstBlock		      "pfb_fir"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "adc"
+      SrcPort		      4
+      Points		      [0, 0]
+      DstBlock		      "pfb_fir"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "pfb_fir1"
+      SrcPort		      1
+      Points		      [105, 0]
+      DstBlock		      "fft1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "pfb_fir1"
+      SrcPort		      2
+      Points		      [75, 0; 0, 10]
+      DstBlock		      "fft1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "pfb_fir1"
+      SrcPort		      3
+      Points		      [55, 0; 0, 5]
+      DstBlock		      "fft1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "pfb_fir1"
+      SrcPort		      4
+      DstBlock		      "fft1"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "pfb_fir1"
+      SrcPort		      5
+      Points		      [105, 0]
+      DstBlock		      "fft1"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "pfb_fir3"
+      SrcPort		      1
+      DstBlock		      "fft3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "pfb_fir3"
+      SrcPort		      2
+      Points		      [70, 0; 0, 15]
+      DstBlock		      "fft3"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "pfb_fir3"
+      SrcPort		      3
+      Points		      [60, 0; 0, 10]
+      DstBlock		      "fft3"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "pfb_fir3"
+      SrcPort		      4
+      Points		      [50, 0; 0, 5]
+      DstBlock		      "fft3"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "pfb_fir3"
+      SrcPort		      5
+      DstBlock		      "fft3"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "adc1"
+      SrcPort		      13
+      Points		      [85, 0; 0, -30]
+      Branch {
+	Points			[0, -150]
+	DstBlock		"pfb_fir1"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"pfb_fir3"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "adc1"
+      SrcPort		      1
+      Points		      [120, 0; 0, 25]
+      DstBlock		      "pfb_fir1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "adc1"
+      SrcPort		      2
+      Points		      [100, 0; 0, 35]
+      DstBlock		      "pfb_fir1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "adc1"
+      SrcPort		      3
+      Points		      [80, 0; 0, 45]
+      DstBlock		      "pfb_fir1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "adc1"
+      SrcPort		      4
+      Points		      [60, 0; 0, 55]
+      DstBlock		      "pfb_fir1"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "adc1"
+      SrcPort		      5
+      Points		      [120, 0; 0, 115]
+      DstBlock		      "pfb_fir3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "adc1"
+      SrcPort		      6
+      Points		      [100, 0; 0, 125]
+      DstBlock		      "pfb_fir3"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "adc1"
+      SrcPort		      7
+      Points		      [80, 0; 0, 135]
+      DstBlock		      "pfb_fir3"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "adc1"
+      SrcPort		      8
+      Points		      [60, 0; 0, 145]
+      DstBlock		      "pfb_fir3"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "pfb_fir2"
+      SrcPort		      1
+      DstBlock		      "fft2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "pfb_fir2"
+      SrcPort		      2
+      Points		      [65, 0; 0, 15]
+      DstBlock		      "fft2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "pfb_fir2"
+      SrcPort		      3
+      Points		      [55, 0; 0, 10]
+      DstBlock		      "fft2"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "pfb_fir2"
+      SrcPort		      4
+      Points		      [45, 0; 0, 5]
+      DstBlock		      "fft2"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "pfb_fir2"
+      SrcPort		      5
+      DstBlock		      "fft2"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "adc"
+      SrcPort		      5
+      Points		      [120, 0; 0, 65]
+      DstBlock		      "pfb_fir2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "adc"
+      SrcPort		      6
+      Points		      [100, 0; 0, 75]
+      DstBlock		      "pfb_fir2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "adc"
+      SrcPort		      7
+      Points		      [80, 0; 0, 85]
+      DstBlock		      "pfb_fir2"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "adc"
+      SrcPort		      8
+      Points		      [60, 0; 0, 95]
+      DstBlock		      "pfb_fir2"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      Points		      [25, 0; 0, 0]
+      Branch {
+	Points			[0, 60]
+	DstBlock		"adc"
+	DstPort			4
+      }
+      Branch {
+	Points			[0, 370]
+	DstBlock		"adc1"
+	DstPort			4
+      }
+    }
+    Line {
+      SrcBlock		      "fft"
+      SrcPort		      2
+      Points		      [35, 0]
+      DstBlock		      "Delay"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft2"
+      SrcPort		      2
+      Points		      [35, 0]
+      DstBlock		      "Delay1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft1"
+      SrcPort		      2
+      Points		      [45, 0]
+      DstBlock		      "Delay2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft3"
+      SrcPort		      2
+      Points		      [40, 0]
+      DstBlock		      "Delay12"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft"
+      SrcPort		      3
+      DstBlock		      "Delay3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft"
+      SrcPort		      4
+      Points		      [15, 0; 0, 10]
+      DstBlock		      "Delay4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft"
+      SrcPort		      5
+      Points		      [15, 0; 0, 15]
+      DstBlock		      "Delay5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      Points		      [0, -15; 105, 0]
+      Branch {
+	DstBlock		"Mult"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 515]
+	DstBlock		"Gateway Out9"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Delay"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Mux"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Delay3"
+      SrcPort		      1
+      Points		      [70, 0]
+      DstBlock		      "Mux"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Delay4"
+      SrcPort		      1
+      Points		      [40, 0; 0, -25; 30, 0]
+      DstBlock		      "Mux"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Delay5"
+      SrcPort		      1
+      Points		      [70, 0]
+      DstBlock		      "Mux"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "mux_sel"
+      SrcPort		      1
+      Points		      [10, 0; 0, 35]
+      Branch {
+	DstBlock		"Mux"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 165]
+	Branch {
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 195]
+	  Branch {
+	    DstBlock		    "Mux2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 145]
+	    Branch {
+	      Points		      [0, 10]
+	      DstBlock		      "Mux3"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "mux select"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Delay1"
+      SrcPort		      1
+      Points		      [0, 15]
+      DstBlock		      "Mux1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      Points		      [0, 0; 60, 0]
+      Branch {
+	Points			[0, -90]
+	Branch {
+	  Points		  [0, -65]
+	  DstBlock		  "Mult"
+	  DstPort		  2
+	}
+	Branch {
+	  DstBlock		  "Mult1"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[0, 75]
+	Branch {
+	  DstBlock		  "Mult3"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 75]
+	  DstBlock		  "Mult4"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[10, 0]
+	Branch {
+	  DstBlock		  "Mult2"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 375]
+	  DstBlock		  "Gateway Out10"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Delay6"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Mux1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Delay7"
+      SrcPort		      1
+      Points		      [35, 0; 0, -10]
+      DstBlock		      "Mux1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Delay8"
+      SrcPort		      1
+      Points		      [35, 0; 0, -20]
+      DstBlock		      "Mux1"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "fft2"
+      SrcPort		      3
+      Points		      [35, 0]
+      DstBlock		      "Delay6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft2"
+      SrcPort		      4
+      DstBlock		      "Delay7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft2"
+      SrcPort		      5
+      Points		      [15, 0; 0, 5]
+      DstBlock		      "Delay8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft3"
+      SrcPort		      3
+      DstBlock		      "Delay13"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft3"
+      SrcPort		      4
+      Points		      [20, 0; 0, 5]
+      DstBlock		      "Delay14"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft3"
+      SrcPort		      5
+      Points		      [20, 0; 0, 10]
+      DstBlock		      "Delay15"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      Points		      [0, 0; 45, 0]
+      Branch {
+	Points			[65, 0]
+	Branch {
+	  DstBlock		  "Mult5"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -95]
+	  Branch {
+	    DstBlock		    "Mult3"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Mult1"
+	    DstPort		    2
+	  }
+	}
+      }
+      Branch {
+	Points			[0, 215]
+	DstBlock		"Gateway Out11"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Delay12"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Mux3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Delay13"
+      SrcPort		      1
+      Points		      [35, 0; 0, -15]
+      DstBlock		      "Mux3"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Delay14"
+      SrcPort		      1
+      Points		      [35, 0; 0, -25]
+      DstBlock		      "Mux3"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Delay15"
+      SrcPort		      1
+      Points		      [70, 0]
+      DstBlock		      "Mux3"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Mux3"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	Points			[55, 0; 0, -90]
+	Branch {
+	  Points		  [0, -85]
+	  Branch {
+	    Points		    [0, -150]
+	    DstBlock		    "Mult2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Mult4"
+	    DstPort		    2
+	  }
+	}
+	Branch {
+	  DstBlock		  "Mult5"
+	  DstPort		  2
+	}
+      }
+      Branch {
+	Points			[0, 95]
+	DstBlock		"Gateway Out12"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Delay2"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Mux2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Delay9"
+      SrcPort		      1
+      Points		      [65, 0]
+      DstBlock		      "Mux2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Delay10"
+      SrcPort		      1
+      Points		      [55, 0; 0, -25]
+      DstBlock		      "Mux2"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Delay11"
+      SrcPort		      1
+      Points		      [65, 0]
+      DstBlock		      "Mux2"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "fft1"
+      SrcPort		      3
+      DstBlock		      "Delay9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft1"
+      SrcPort		      4
+      Points		      [0, 5]
+      DstBlock		      "Delay10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fft1"
+      SrcPort		      5
+      Points		      [20, 0; 0, 10]
+      DstBlock		      "Delay11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mult"
+      SrcPort		      1
+      Points		      [10, 0; 0, 35]
+      DstBlock		      "Concat"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mult1"
+      SrcPort		      1
+      Points		      [30, 0]
+      DstBlock		      "Concat"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Mult2"
+      SrcPort		      1
+      Points		      [30, 0]
+      DstBlock		      "Concat"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Mult3"
+      SrcPort		      1
+      Points		      [30, 0]
+      DstBlock		      "Concat"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Mult4"
+      SrcPort		      1
+      Points		      [30, 0]
+      DstBlock		      "Concat"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Mult5"
+      SrcPort		      1
+      Points		      [30, 0]
+      DstBlock		      "Concat"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Delay16"
+      SrcPort		      1
+      Points		      [130, 0; 0, -25; 55, 0]
+      Branch {
+	DstBlock		"Counter1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 315]
+	DstBlock		"Counter2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Convert"
+      SrcPort		      1
+      Points		      [0, 0]
+      Branch {
+	DstBlock		"mux_sel"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 15]
+	DstBlock		"Delay16"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "fft"
+      SrcPort		      1
+      Points		      [5, 0; 0, -40]
+      DstBlock		      "Convert"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "mux select"
+      SrcPort		      1
+      DstBlock		      "Scope1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gateway Out9"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Scope1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Gateway Out10"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Scope1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Gateway Out11"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Scope1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Gateway Out12"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Scope1"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "sync"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Scope1"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "fft3"
+      SrcPort		      1
+      Points		      [145, 0; 0, 170]
+      DstBlock		      "sync"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Step"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	Points			[40, 0; 0, -65]
+	DstBlock		"adc"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 245]
+	DstBlock		"adc1"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "Sine Wave2"
+      SrcPort		      1
+      DstBlock		      "adc1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sine Wave3"
+      SrcPort		      1
+      Points		      [50, 0]
+      DstBlock		      "adc1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Sine Wave"
+      SrcPort		      1
+      Points		      [20, 0; 0, 5]
+      DstBlock		      "adc"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sine Wave1"
+      SrcPort		      1
+      Points		      [20, 0; 0, 5]
+      DstBlock		      "adc"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Counter1"
+      SrcPort		      1
+      Points		      [15, 0; 0, -5]
+      DstBlock		      "Relational1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant4"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Relational1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Relational1"
+      SrcPort		      1
+      Points		      [75, 0]
+      DstBlock		      "vacc"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Concat"
+      SrcPort		      1
+      Points		      [140, 0; 0, -50]
+      DstBlock		      "vacc"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      DstBlock		      "vacc"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Relational2"
+      SrcPort		      1
+      Points		      [15, 0; 0, -15]
+      DstBlock		      "vacc"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Counter2"
+      SrcPort		      1
+      DstBlock		      "Relational2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      Points		      [5, 0; 0, -30]
+      DstBlock		      "Relational2"
+      DstPort		      2
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    F!H   8    (     @         %    "
+"\"     $    !     0         %  0 !@    $    ,    <V%V960 =V]R:P        X    @"
+"#0  !@    @    \"          4    (     0    $    !          4 !  ,     0   !@ "
+"  !S:&%R960       !C;VUP:6QA=&EO;@ .    \" 0   8    (     @         %    \"  "
+"   $    !     0         %  0 $P    $   \"%    8V]M<&EL871I;VX          &-O;7!"
+"I;&%T:6]N7VQU=     !S:6UU;&EN:U]P97)I;V0     :6YC<E]N971L:7-T         '1R:6U?"
+"=F)I=',           !D8FQ?;W9R9               9&5P<F5C871E9%]C;VYT<F]L      X  "
+"  X    !@    @    $          4    (     0    <    !         !     '    =&%R9V"
+"5T,@ .    N $   8    (     @         %    \"     $    !     0         %  0 !P"
+"    $    .    :V5Y<P   '9A;'5E<P    X   \"X    !@    @    !          4    (  "
+"   0    (    !          X   !     !@    @    $          4    (     0    L    "
+"!         !     +    2$1,($YE=&QI<W0       X   !     !@    @    $          4 "
+"   (     0    L    !         !     +    3D=#($YE=&QI<W0       X   \"H    !@  "
+"  @    !          4    (     0    (    !          X    X    !@    @    $     "
+"     4    (     0    <    !         !     '    =&%R9V5T,0 .    .     8    (  "
+"  !          %    \"     $    '     0         0    !P   '1A<F=E=#( #@   #    "
+" &    \"     0         !0    @    !     0    $         $  ! #$    .    ,     "
+"8    (    !          %    \"     $    #     0         0  , ;V9F  X   !(    !@"
+"    @    $          4    (     0   !<    !         !     7    179E<GEW:&5R92!"
+"I;B!3=6)3>7-T96T #@   $@    &    \"     0         !0    @    !    &     $    "
+"     $    !@   !!8V-O<F1I;F<@=&\\@0FQO8VL@36%S:W,.    ,     8    (    !      "
+"    %    \"     $    #     0         0  , ;V9F  X   \"X\"   !@    @    \"    "
+"      4    (     0    $    !          4 !  (     0   !    !T87)G970Q '1A<F=E="
+"#( #@   /@#   &    \"     (         !0    @    !     0    $         !0 $ !   "
+"  !    P    'AI;&EN>&9A;6EL>0    !P87)T                <W!E960              '"
+"!A8VMA9V4           !S>6YT:&5S:7-?=&]O;   9&ER96-T;W)Y         '1E<W1B96YC:  "
+"       !S>7-C;&M?<&5R:6]D    8V]R95]G96YE<F%T:6]N ')U;E]C;W)E9V5N      !E=F%L"
+"7V9I96QD        8VQO8VM?;&]C          X    X    !@    @    $          4    ( "
+"    0    @    !         !     (    5FER=&5X,E .    .     8    (    !         "
+" %    \"     $    '     0         0    !P   'AC,G9P-3  #@   #     &    \"    "
+" 0         !0    @    !     @    $         $  \" \"TW   .    .     8    (    "
+"!          %    \"     $    &     0         0    !@   &9F,3$U,@  #@   $     &"
+"    \"     0         !0    @    !    #     $         $     P   !3>6YP;&EF>2!0"
+"<F\\     #@   $@    &    \"     0         !0    @    !    $P    $         $  "
+"  !,    N+W!O8VME=&-O<G(O<WES9V5N       .    ,     8    (    !          %    "
+"\"     $    #     0         0  , ;V9F  X    X    !@    @    $          4    ("
+"     0    8    !         !     &    ,RXY,#8S   .    2     8    (    !        "
+"  %    \"     $    8     0         0    &    $%C8V]R9&EN9R!T;R!\";&]C:R!-87-K"
+"<PX    P    !@    @    $          4    (     0    ,    !         !   P!O9F8 #"
+"@   #     &    \"     0         !0    @    !     0    $         $  ! #     . "
+"   ,     8    (    !          %    \"                0         0          X  "
+" !H!   !@    @    \"          4    (     0    $    !          4 !  3     0   "
+"-$   !N9V-?8V]N9FEG            <WEN=&AE<VES7VQA;F=U86=E 'AI;&EN>&9A;6EL>0    "
+"    !P87)T                    <W!E960                  '1E<W1B96YC:          "
+"   !P86-K86=E                <WEN=&AE<VES7W1O;VP      &1I<F5C=&]R>0          "
+"  !S>7-C;&M?<&5R:6]D        8VQO8VM?;&]C                       .    Z     8  "
+"  (     @         %    \"     $    !     0         %  0 %0    $    J    :6YC;"
+"'5D95]C;&]C:W=R87!P97( :6YC;'5D95]C9@                      #@   #@    &    \""
+"     8         !0    @    !     0    $         \"0    @           #P/PX    X "
+"   !@    @    &          4    (     0    $    !          D    (              "
+" .    ,     8    (    !          %    \"     $    $     0         0  0 5DA$3 "
+"X    X    !@    @    $          4    (     0    @    !         !     (    5FE"
+"R=&5X,E .    .     8    (    !          %    \"     $    '     0         0   "
+" !P   'AC,G9P-3  #@   #     &    \"     0         !0    @    !     @    $    "
+"     $  \" \"TW   .    ,     8    (    !          %    \"     $    #     0   "
+"      0  , ;V9F  X    X    !@    @    $          4    (     0    8    !      "
+"   !     &    9F8Q,34R   .    ,     8    (    !          %    \"     $    #  "
+"   0         0  , 6%-4  X   !(    !@    @    $          4    (     0   !,    "
+"!         !     3    +B]P;V-K971C;W)R+W-Y<V=E;@      #@   #@    &    \"     0"
+"         !0    @    !    !@    $         $     8    S+CDP-C,   X    P    !@  "
+"  @    $          4    (               !         !          #@   \" -   &    "
+"\"     (         !0    @    !     0    $         !0 $  P    !    &    '-H87)E"
+"9        &-O;7!I;&%T:6]N  X    (!   !@    @    \"          4    (     0    $ "
+"   !          4 !  3     0   (4   !C;VUP:6QA=&EO;@          8V]M<&EL871I;VY?;"
+"'5T     '-I;75L:6YK7W!E<FEO9     !I;F-R7VYE=&QI<W0         =')I;5]V8FET<P    "
+"       &1B;%]O=G)D              !D97!R96-A=&5D7V-O;G1R;VP     #@   #@    &   "
+" \"     0         !0    @    !    !P    $         $     <   !T87)G970R  X   "
+"\"X 0  !@    @    \"          4    (     0    $    !          4 !  '     0   "
+" X   !K97ES    =F%L=65S    #@   +@    &    \"     $         !0    @    !     "
+"@    $         #@   $     &    \"     0         !0    @    !    \"P    $     "
+"    $     L   !(1$P@3F5T;&ES=       #@   $     &    \"     0         !0    @ "
+"   !    \"P    $         $     L   !.1T,@3F5T;&ES=       #@   *@    &    \"  "
+"   $         !0    @    !     @    $         #@   #@    &    \"     0        "
+" !0    @    !    !P    $         $     <   !T87)G970Q  X    X    !@    @    $"
+"          4    (     0    <    !         !     '    =&%R9V5T,@ .    ,     8  "
+"  (    !          %    \"     $    !     0         0  $ ,0    X    P    !@   "
+" @    $          4    (     0    ,    !         !   P!O9F8 #@   $@    &    \""
+"     0         !0    @    !    %P    $         $    !<   !%=F5R>7=H97)E(&EN(%"
+"-U8E-Y<W1E;0 .    2     8    (    !          %    \"     $    8     0        "
+" 0    &    $%C8V]R9&EN9R!T;R!\";&]C:R!-87-K<PX    P    !@    @    $          "
+"4    (     0    ,    !         !   P!O9F8 #@   +@(   &    \"     (         !0"
+"    @    !     0    $         !0 $  @    !    $    '1A<F=E=#$ =&%R9V5T,@ .   "
+" ^ ,   8    (     @         %    \"     $    !     0         %  0 $     $   #"
+"     >&EL:6YX9F%M:6QY     '!A<G0               !S<&5E9               <&%C:V%G"
+"90           '-Y;G1H97-I<U]T;V]L  !D:7)E8W1O<GD         =&5S=&)E;F-H         "
+"'-Y<V-L:U]P97)I;V0   !C;W)E7V=E;F5R871I;VX <G5N7V-O<F5G96X      &5V86Q?9FEE;&"
+"0       !C;&]C:U]L;V,         #@   #@    &    \"     0         !0    @    !  "
+"  \"     $         $     @   !6:7)T97@R4 X    X    !@    @    $          4   "
+" (     0    <    !         !     '    >&,R=G U,  .    ,     8    (    !      "
+"    %    \"     $    \"     0         0  ( +3<   X    X    !@    @    $      "
+"    4    (     0    8    !         !     &    9F8Q,34R   .    0     8    (   "
+" !          %    \"     $    ,     0         0    #    %-Y;G!L:69Y(%!R;P     "
+".    2     8    (    !          %    \"     $    3     0         0    $P   \""
+"XO<&]C:V5T8V]R<B]S>7-G96X       X    P    !@    @    $          4    (     0 "
+"   ,    !         !   P!O9F8 #@   #@    &    \"     0         !0    @    !   "
+" !@    $         $     8    S+CDP-C,   X   !(    !@    @    $          4    ("
+"     0   !@    !         !     8    06-C;W)D:6YG('1O($)L;V-K($UA<VMS#@   #   "
+"  &    \"     0         !0    @    !     P    $         $  # &]F9@ .    ,    "
+" 8    (    !          %    \"     $    !     0         0  $ ,     X    P    !"
+"@    @    $          4    (               !         !          #@   &@$   &  "
+"  \"     (         !0    @    !     0    $         !0 $ !,    !    T0   &YG8U"
+"]C;VYF:6<           !S>6YT:&5S:7-?;&%N9W5A9V4 >&EL:6YX9F%M:6QY         '!A<G0"
+"                   !S<&5E9                   =&5S=&)E;F-H             '!A8VMA"
+"9V4               !S>6YT:&5S:7-?=&]O;       9&ER96-T;W)Y             '-Y<V-L:"
+"U]P97)I;V0       !C;&]C:U]L;V,                       X   #H    !@    @    \" "
+"         4    (     0    $    !          4 !  5     0   \"H   !I;F-L=61E7V-L;"
+"V-K=W)A<'!E<@!I;F-L=61E7V-F                       .    .     8    (    !@    "
+"     %    \"     $    !     0         )    \"            / _#@   #@    &    "
+"\"     8         !0    @    !     0    $         \"0    @               X    "
+"P    !@    @    $          4    (     0    0    !         !  ! !62$1,#@   #@ "
+"   &    \"     0         !0    @    !    \"     $         $     @   !6:7)T97@"
+"R4 X    X    !@    @    $          4    (     0    <    !         !     '    "
+">&,R=G U,  .    ,     8    (    !          %    \"     $    \"     0         "
+"0  ( +3<   X    P    !@    @    $          4    (     0    ,    !         !  "
+" P!O9F8 #@   #@    &    \"     0         !0    @    !    !@    $         $   "
+"  8   !F9C$Q-3(   X    P    !@    @    $          4    (     0    ,    !     "
+"    !   P!84U0 #@   $@    &    \"     0         !0    @    !    $P    $      "
+"   $    !,    N+W!O8VME=&-O<G(O<WES9V5N       .    .     8    (    !         "
+" %    \"     $    &     0         0    !@   #,N.3 V,P  #@   #     &    \"    "
+" 0         !0    @               $         $          "
+  }
+}

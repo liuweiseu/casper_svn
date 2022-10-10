@@ -1,0 +1,29 @@
+#pragma ident "@(#)README.ocm	1.2 06/16/04 EDT"
+
+			OCM initial release notes.
+			      June 16, 2004
+
+
+After installing the board and the PCD driver package,
+run "ocm12_test" or "ocm3_test".  Both tests require
+loopback cables from the input to the output on both
+channels 0 and 1.
+
+You can run these tests without the external loopback
+cable by editing ocm12_test.pdb or ocm3_test.pdb
+and replace the initial nibble of registers 20 and
+30 (ch 0 and 1) to c instead of 8.  This enables 
+internal loopback of the signals.
+
+rd16.c and wr16.c are simple example programs using
+ring buffers for streaming data through a channel.
+Use the "-u <unit>" option with them to select a board,
+and use "-c <channel>" to select channel 0 or 1.
+Two of these programs can be run concurrently on separate
+channels.
+
+sslooptest runs chkprbs7.c, which opens and runs two channels
+with the "-n 2" option.  It can open and run up to 16 channels
+on boards that support that many.
+
+Contact:  tech@edt.com  503-690-1234

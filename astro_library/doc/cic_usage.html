@@ -1,0 +1,143 @@
+<html>
+<head><title>Cascaded integrator-comb filter usage</title>
+</head>
+<body>
+
+<h1>CIC filter usage</h1>
+<h2>Christina de Jesus, July 2006</h2>
+<hr>
+
+<h2>Introduction</h2>
+<p>Described by Eugene Hogenauer in his classic 1981 paper, the cascaded 
+integrator-comb filter, or CIC, is very useful as an 
+anti-aliasing filter as well as a high-rate decimating or interpolating
+ filter.  Composed of only adders and subtractors, it is an attractive 
+ candidate for implementation in FPGAs where multipliers are in short supply.
+CICs are linear-phase FIR filters with a sinc-like frequency response; compensation 
+via a FIR filter with an inverse sinc frequency response is often necessary to raise
+ their drooping passband to acceptable levels.</p>
+ 
+<h2>Construction</h2>
+<p>As its name suggests, the CIC is composed of integrators and comb filters in series, 
+ sometimes with a decimation or interpolation block between the integrators and combs 
+ or after the entire filter.  In his implementation, Hogenauer inserts a 
+ decimation/interpolation block between the integrators and comb filters; this arrangement 
+ allows one of the sections to operate at a lower clock frequency, therefore reducing 
+ power consumption.  It is not necessary to decimate or interpolate with the filter, though 
+ it is very common to do so.</p>
+ <p>In a CIC decimator, the integrator section precedes the comb filter section; an interpolator 
+ is the reverse.  An integrator is simply an adder whose output is delayed by 1 cycle and fed back 
+ to itself.
+</p>
+
+
+<pre>
+         __________
+in ---->|          |
+        |    +     |>---+-> out
+  +---->|__________|    |
+  |        ___          |
+  |       |   |         |
+  +------<|-1 |<--------+
+          |___|
+</pre>
+
+
+<p>A comb filter is much like an integrator, except that its input is delayed by a certain amount 
+called the differential delay D and then subtracted from its input.
+</p>
+
+
+<pre>
+                   __________               
+in --+----------->|          |
+     |    ___     |     _    |>-----> out
+     |   |   |    |          |    
+     +-->|-D |>-->|__________|
+         |___|
+</pre>
+
+
+<p>A single-stage CIC decimator is formed by cascading one integrator with one comb filter.  A
+N-stage CIC decimator is formed by cascading N integrators with N comb filters.</p>
+
+<p>This CIC block was modeled closely on that provided in the Xilinx LogiCORE library.  Key differences 
+include multiple inputs, arbitrary differential delay, and optional decimation.  This block does not 
+implement interpolation.</p>
+
+<h2>Parameters</h2>
+<p>CIC filters are completely defined by three parameters: 
+<ul>
+<li>differential delay D</li>
+<li>decimation/interpolation factor R</li>
+<li>number of stages N.</li>
+</ul></p>
+<p>Additional implementation parameters for this CIC block:
+<ul>
+<li>Number of inputs: This must be greater than or equal to 1.  Inputs are real-valued.</li>
+<li>Input bitwidth</li>
+<li>Input binary point: relative to LSB.</li>
+<li>Pipeline: this will add a delay of 1 after each integrator and comb.
+<li>Adder latency: Sets the latency of the adders in the adder tree (multiple inputs only).</li>
+<li>Integrator latency:  Sets the latency of the integrator adders.  
+This must be 1, otherwise the adders are no longer integrators!</li>
+<li>Comb latency:  Sets the latency of the comb subtractors.  Values beyond 1 merely pipeline the subtractors.</li>
+</ul>
+</p>
+
+<h2>Frequency response</h2>
+<p>The transfer function of a CIC filter is</p>
+<p>
+<pre>
+H(z) = (1 - z^-DR)^N
+       ------------- , (Hogenauer81)
+       (1 - z^-1)^N
+</pre>
+</p>
+<p>or simply the product of the integrator and comb filter's transfer functions.</p>
+
+<p>Its magnitude response as a function of f relative to fs, the sampling rate, is </p>
+<p>
+<pre>
+| (sin (pi * D * f)) |^N
+| ----------------   |    (Hogenauer 81)
+| (sin (pi * f / R)) | 
+
+</pre>
+</p>
+<p>and its DC gain is <pre>(RD)^N. (Donadio)</pre></p>
+
+<p>The bit growth at the output is <pre>Bout = N log2(RD) + Bin. (Donadio)</pre>  Overflow in the integrator stage 
+is fully compensated by the comb stage as long as two's complement arithmetic is used and the number system can fully represent 
+the largest value expected at the output of all the filters.</p>
+
+<p>Increasing N will increase output bitgrowth as well as passband attenuation and droop, 
+possibly requiring the use of a compensatory FIR filter with an inverse sinc response 
+after the CIC filter.  Increasing D will increase the number of nulls in the frequency 
+response (one occurs every f = fs/D, where fs is the sampling rate).  Increasing R 
+will increase DC gain.  Increasing both D and R will also increase bitgrowth at the output.</p>
+
+<p>A designer-determined passband cutoff frequency fc will also determine where aliasing bands occur.  
+They are centered around the nulls in the frequency response, and extend over the interval</p>
+<p>(i - fc) <= f <= (i + fc) for f <= fs/2 and i = 1, 2, ..., floor(R/2). (Donadio)</p>
+
+<hr>
+<h2>References</h2>
+<p>Hogenauer, E. B., "An Economical Class of Digital Filters for Decimation
+and Interpolation," IEEE Transactions on Acoustics, Speech, and Signal
+Processing, ASSP-29(2): pp. 155-162, 1981</p>
+
+<p>Frerking, Marvin E., Digital Signal Processing in Communications
+Systems, Kluwer Academic Publishers, 1994.</p>
+
+<p>Lyons, Richard G., Understanding Digital Signal Processing, Prentice
+Hall, 2004.</p>
+
+<p>Donadio, M. Cascaded Integrator-Comb (CIC) Filter Introduction
+<a href="http://www.dspguru.com/info/tutor/cic.htm">http://www.dspguru.com/info/tutor/cic.htm</a></p>
+
+<hr>
+<p>Note:  If images and lines are cut off in this display, right-clicking will enable you to view the page's HTML source.</p>
+
+</body>
+</html>

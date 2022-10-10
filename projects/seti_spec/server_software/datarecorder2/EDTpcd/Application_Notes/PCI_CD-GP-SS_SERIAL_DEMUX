@@ -1,0 +1,122 @@
+#pragma ident "@(#)PCI_CD-GP-SS_SERIAL_DEMUX	1.1 01/10/01 EDT"
+
+			SSD Demultiplexing Utilities
+				for PCI-SSD4
+				and SCD-SSD4
+
+				Mark Mason
+			   Engineering Design Team
+			     April 17, 2000
+
+The demultiplexing code that was shipped with the SCD-SSD4 has been
+moved out of the driver and into a program that runs as a daemon.  User
+applications still open /dev/ssd<unit>.<channel>, where <unit> is the
+PCD or SCD unit number starting at zero, and <channel> is the SSD4
+channel number from 1-4.  Some ioctl() calls have been replaced with
+library calls from libssd.so.  Source code includes demux.c (the
+daemon), libssd.c, ssd_bitrate.c, ssd_reset.c, ssd_overflow.c, and
+ssd_chanflush.c.
+
+Three different releases are available:
+
+	EDTssd_PCI_Solaris.tar.Z for all versions of Solaris using PCI,
+	EDTssd_SBus_Solaris.tar.Z for all versions of Solaris using SBus,
+and
+	EDTssd_PCI_Linux.tar.Z for Linux using PCI.
+
+These files are available at ftp.edt.com:/pub/ssd/*
+
+Extract the files by cding into /opt/EDTpcd or /opt/EDTpcd and running
+"zcat EDTssd_<BUS>_<OS>.tar.Z | tar xvf -".  On Linux go into /opt/EDTpcd/pcd.
+Then after running pcdrequest or scdrequest and selecting one of ssd, ssd2,
+or ssd4, add the following line to pcdload or scdload:
+
+	./demux >& /tmp/demux.log &
+
+Note that demux will set its own priority higher so that it can process
+incoming data properly.  Demux also accepts arguments to control the bit
+order and the number of bits per channel.  View demux.c in main() for details.
+
+If you have more than one SSD4 installed in your system then run
+"demux -u <unit>" for each board after bitload has run on that unit.
+
+Once demux is running, programs which used the "new ssd mode"
+under SCD-SSD4 should be compiled as follows:
+
+	1.  Include "libssd.h" and link with libssd.so.  See examples
+	    in makefile.pci (or makefile.sbus or makefile.linux) for
+	    other flags to use.
+
+	2.  Use "open("/dev/ssd0.1", O_RDWR);" to open unit 0 channel 1,
+	    the same as with the SCD-SSD4.
+
+	3.  Use "int ssd_reset(int unit)" from libssd.c instead of
+	    ioctl(ssd_fd, SCD_SSDFLUSH).  See the example in ssd_reset.c.
+
+	4.  Use "int ssd_chanflush(int unit, int channel)" from libssd.c
+	    instead of ioctl(ssd_fd, SSD_CHANFLUSH, &channel).  See the
+	    example in ssd_chanflush.c.
+
+	5.  Use "int ssd_read(int ssd_fd, char *buf, int size)" from libssd.c
+	    instead of read().  See example in xwin.c.
+
+	6.  Use "double ssd_bitrate(int unit, int channel)" from libssd.c
+	    instead of ioctl(ssd_fd, SSDG_BITRATE, &bitrate).  See the
+	    example in ssd_bitrate.c
+
+You should still make sure that your rate of consuming data is at least
+as fast as it is being produced on each channel.  Use
+ssd_overflow(unit, channel) to determine when there is overflow
+and then use ssd_chanflush(unit, channel) to clear the buffers.
+
+You can also adjust the buffer sizes by editing demux.c and changing
+the last two arguments to the call to:
+
+	ssd_setup_chanbufs(EdtDev *edt_p, int inbufsize, int chanbufsize)
+
+Here inbufsize is the size of the ring buffers and chanbufsize is the
+size of each channel buffer.   As data enters the ring buffers and each
+buffer completes, data is demultiplexed into each channel buffer.
+Adjusting chanbufsize is probably the most effective way to increase
+buffering, but make sure chanbufsize is at least four times as large
+as inbufsize.
+
+inbufsize is tied to how often data is available, so if you have a slow
+data rate you probably will want to shrink inbufsize so that data is
+available on a more frequent basis.
+
+makefile.pci, makefile.sbus, and makefile.linux are  included in the
+package.  To recompile the binaries run "make -f makefile.pci".  If you
+are running on an SBUS system, run "make -f makefile.sbus".  On linux
+use makefile.linux.
+
+On SBus systems do not use ssdinit (new ssd mode) in conjunction with this
+package.  The two systems are mutually exclusive.
+
+
+Testing:
+
+Attach data sources to each of the four input channels and load the
+four-channel .bit file ssd4.bit.  Then, after starting demux, run
+./runtest.  This script runs four copies of xwin, one for each channel.
+Data is displayed graphically in four video windows.
+NOTE:  xwin does not yet run on the Linux version of X-windows.
+
+For questions please contact Mark Mason at EDT:  mark@edt.com
+or call 503-690-1234.
+
+From CHANGES file:
+
+    Fri Oct  6 14:30:49 PDT 2000
+
+	demux.c
+
+	    Add support for gpssd16.  By default all 16 channels will be
+	    configured as inputs.  Using the -c option, you can specify
+	    4, 8, 12, or 16 channels, and the others should be left alone
+	    to be used for independent inputs or independent outputs.
+
+	    Care must be exercised when programming the CHEN, CHDIR, CHEDGE,
+	    and Direction register so as not to stomp on the demux configured
+	    bits in these registers.  Look at the code in demux.c in
+	    gp_setup_chanbufs() for sample code to do this.

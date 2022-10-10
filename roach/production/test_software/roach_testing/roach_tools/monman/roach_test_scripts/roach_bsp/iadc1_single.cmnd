@@ -1,0 +1,7 @@
+# dump the contents of the iadc fifo
+w a0014 ffff
+r a000a
+r a000c
+r a000e
+r a0010
+r a0012

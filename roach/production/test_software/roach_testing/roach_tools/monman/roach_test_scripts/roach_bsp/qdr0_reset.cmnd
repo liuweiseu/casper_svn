@@ -1,0 +1,4 @@
+# get qdr status bit
+w 60002 ffff
+s 100000
+r 60000

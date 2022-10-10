@@ -1,0 +1,1305 @@
+<HTML>
+<body>
+<h3> SETI@home II Data Recorder </h3>
+
+<h4> Program Requirements </h4>
+The program reads digital data from 1 or more EDT data acquisition
+cards as well as telescope pointing data from a observatory specific source
+(scramnet for AO).  It
+constructs records, each of which will contain a data portion 
+and a header of ancillary information (such as telescope
+pointing).  These records will be written to disk buffers.  
+
+Movement of the data from the disk buffers to tape or possibly a remote
+destination on the network will handled by a seperate process.
+<p>
+The start of data flow on the multiple cards are syncronized to
+within a microsecond.
+<p>
+The recorder is sensitive to user input and should gracefully
+stop when told to do so.  It should also stop gracefully upon reciept
+of SIGKILL or SIGTERM signals.
+<p>
+It keeps a log of it's activities and errors. 
+<p>
+The recorder should gracefully handle the following exceptions.
+	<ul>
+	<li> lack of radio data from one or more  EDT cards
+	<li> lack of (or unusual?) telescope data
+	<li> data buffer overrun 
+	<li> any IO difficulties such as a full disk
+	</ul>
+
+<h4> Data Rate </h4>
+The recorder is required to operate at at least 16 times the rate
+of the SETI@home I recorder (DR1), as we will be collecting data from
+16 sources.  This is (16 * 2500000samples/s * 2 bits/sample) =  80e6 b/s or 10e6 B/s.
+<p>
+This rate is achieved by acquireing data on 2 EDT cards simultaneously,
+each of which is acquiring at 8x the DR1 rate. 
+<p>
+The sample rate is always 1/2 that of the clock rate.  This is
+because the frontend HW divides the clockrate by 2 in order to
+insure that the clock waveform is square, rather than rectangular.
+<p>
+Note that our average data is <i>not</i> 10MBps.  We estimate that
+we will being taking data 1/3 of the the time allocated to astronomy and
+astronomy gets 1/2 of of the total time..  So our average data
+rate will be 10/6 = 1.7MBps.  Let's round this up to 2MBps for comfort.
+That will be 173GB per day or ~63TB in a year.
+<p>
+At 173GB per day, how will we get the data to SSL?
+    <ul>
+    <li> Over the Internet?  At 2MBps we could maybe, barely, do this.  According to
+        Arun, AO has an OC3 fiber to the University of Puerto Rico, which 
+        operates the "GigaPOP" on the island for the UPR system and funnels 
+        traffic (over another OC3 I believe) to Internet2 via AMPATH in Miami.  
+        Because of the gang up at UPR, Arun reports only getting sustained transfers
+        speeds of no more than around 3MBytes/s to mainland I2 sites. 
+    <li> Use tapes?  Fine, but the tapes are expensive.  We could use a small number
+         and rotate them if we have storage at SSL for the 63TB/year.  Matt reports 
+         being able to reuse a tape ~4x before problems start.  Note that the current
+         HW writes to SDT at 4MBps, good by a factor of 2.
+    <li> Use disks?  Maybe, but we would have to have storage at SSL for the 63TB/year.
+    </ul> 
+ 
+
+<h4> On Samples and Buffers </h4>
+Regarding DR1 as a reference point.  The front end HW packs 1 bit complex
+samples (ie, 2 bits/sample) into 16 bit words and transfers these words to 
+DR1 via a single EDT interface.  The sampling rate is 2.5e6 complex samples/s, 
+giving a bandwidth of 2.5 MHz (the usable bandwidth with complex sampling is
+samples/s x 1Hz).  At 2 bits/sample, that is 5e6 bps (625e3 Bps).  
+This fills a 1MB (1024^2) buffer in ~1.678s.  During subsequent analysis by the 
+S@H distributed computation the longest FFT is 128K (131072).  This covers
+a sampling period of ~13.42s.  This works out to 8 of those 1MB DR1 buffers.
+<p>
+Regarding DR2.  The front end HW packs 1 bit complex samples into 16 bit
+words, from 16 data sources at a sample rate of 2.5e6 samples/s (just like
+DR1 except 16x the data rate).  This data rate is borne by 2 EDT cards, each
+of which sees 8x the DR1 data rate.  So, instead of filling a 1MB buffer in
+~1.678s, that buffer is now filled in ~0.2098s.  This means that the 13.42s of 
+the 128K FFT takes 64 1MB DR2 buffers <i>on each of the 2 cards</i>.
+<p>
+These buffer counts become important in the frequency stepping logic.
+
+<h4> Blocks </h4>
+Each data block will consist of a header plus a data portion.  Headers will probably
+be 4 KB and the data portion 1 MB.  Blocks will be per card.  Thus data recorded from
+multiple cards at any given time will appear as distinct blocks.
+
+<h4> Data Portion </h4>
+Data will be recorded in the same format with which it was acquired.  No attempt will
+be made to coalate beamwise or bandwise words.
+<p>
+Here is a mapping of frontend inputs to bits in a 16 bit EDT word.  (Yes, N=1 and N=0
+are in the correct order.)
+
+<pre>
+                                    Bank N 
+                                    ------
+    
+    Input Channel         EDT bits          plotter beam file       VGC channel
+       N=1  N=0
+    -------------         --------          -----------------       -----------
+        1 or 9              4,5                     N_2                 N 0
+        2 or 10             6,7                     N_3                 N 1
+        3 or 11             12,13                   N_6                 N 2
+        4 or 12             14,15                   N_7                 N 3 
+        5 or 13             0,1                     N_0                 N 4
+        6 or 14             2,3                     N_1                 N 5
+        7 or 15             8,9                     N_4                 N 6
+        8 or 16             10,11                   N_5                 N 7
+
+Master : channels 1-8 (beamset 1)
+Slave  : channles 9-16 (beamset 0)
+           
+</pre>
+
+
+<h4> Headers </h4>
+Headers will fully describe conditions under
+which the data portion was recorded.  Some of this header data will be obtained in
+realtime.  Other header data will be global to the recording scenario and will be
+obtained from a configuration file at startup time. Both the header and the configuration
+file will be organized as keyword= value pairs with a newline delimiting each pair.  
+Arbitrary keyword= value pairs can be inserted via the configuration file.  Headers
+will at least contain:
+	<ul>
+	<li> Tape name.
+	<li> Record Type.
+	<li> Receiver ID.
+	<li> Card ID.
+	<li> Block sequence number.  This is a count of membufs commited to a diskbuf.
+	<li> Data sequence number.  The actual sequence number as obtained from the EDT
+		driver.
+	<li> Missed buffer flag. The appearance of this flag being true will indicate
+		a disconnect between the previous data portion and the current one.
+	<li> Time in UT.  This is the time that the data portion recording was <i>completed</i>.
+	<li> Telescope coordinates.  In a multibeam scenario, the coordinates will be 
+		those of the central beam.
+	<li> Center frequency.  In a multiband scenario, this will be the center frequency
+		of the entire superband.
+	<li> Number of membufs configured.
+	<li> Number of diskbufs configured.
+    <li> entire scramnet blocks?  Of which types?
+	</ul>
+
+The format of the header is lines delimited with \n\0.
+
+<h4> main() thread logic </h4>
+	<pre>
+	establish communication with EDT drivers
+	quiet the data source via EDT function bit 3 = 0
+	block signals of interest
+	init thread structures
+	start threads
+		threads will:
+		allocate buffers and associated objects
+		start EDT
+		set thread state to ready
+	install signal handler
+	unblock signals
+	wait for thread state to turn ready
+	start the data source via EDT function bit 3 = 1
+	wait for threads to join
+	exit
+	</pre>
+
+<h4> Coordinating Multiple Cards </h4>
+Multiple EDT cards within a system will be handled by multiple
+threads within a single datarecorder process.  There will be 
+1 membuf/diskbuf thread pair for each EDT card.  
+<p>
+<strike>
+Data from multiple cards will be coalated on tape.  The current
+disk buffer will be memory mapped to make this easy.  Each card's
+disk buffer thread will be given an initial offset for each 
+new disk buffer.  Data will be memcpy'ed from each card's
+membuf along with a header to that offset and and a new offset 
+obtained by advancing the current offset by the size of membuf+header. 
+<i> Exception to handle: one of the multiple cards stalls in an
+unexpected way - all cards should probably stop in this situation.</i>
+</strike>
+<p>
+Data from multiple cards will not be coalated on tape.   Data from
+each card will be recorded on separate tapes.
+
+
+<h4> Buffer Management </h4>
+The EDT driver provides a ring buffer in memory meeting the application's request
+as to segment size and number of segments.  The recorder will allocate
+another ring buffer equal in the number of segments.  This second ring
+buffer will hold the time that the corresponding EDT buffer segment was
+returned with new data.  Thus, TimeBuffer[n] will indicate the last time
+that DataBuffer[n] was returned with new data.  The DataBuffer is free
+running, ie, existing data will always be overwritten, regardless of whether
+or not is has been copied out.  The TimeBuffer is used to detect buffer 
+overruns.  There will also be an associated ring of mutexes.  The high 
+priority thread will:
+	<pre>
+	n = 0
+	lock MemBufMutex[n]
+	.
+	.
+	.
+        while(1) {
+		wait for MemBuf[n] to return
+		place time in TimeBuf[n]
+		unlock MembufMutex[n]
+		n = Max_n ? 0 : n + 1
+		lock MemBufMutex[n]
+	}
+        </pre>
+
+In the meantime, the lower priority diskbuf thread will copy data from 
+the membuf to a set of disk buffers.  It will check for 3 
+types of error conditions. 
+	<ul>
+	<li> 	The disk thread is ahead of the membuf thread.  In 
+		practice this should not happen, but if it
+		does, we idle on the current ring segment until the 
+		membuf thread is once again ahead of the disk thread.  
+		The data stream should remain contiguous under this 
+		condition.
+	<li> 	The membuf thread has gotten an entire ring ahead of the 
+		disk buffer, ie an overflow condition.  In this case 
+		we enter an indication of an overflow condition into
+		the data stream and continue normally with the current
+		ring buffer segment. 
+	<li>	The membuf thread has passed the diskbuf thread while the 
+		data were being copied and thus the copied data are 
+		corrupt.  In this case we back up the disk buffer 
+		write pointer to undo the corrupt write, enter an 
+		indication of an overflow condition into the data stream  
+		and continue with the next ring buffer segment.
+	</ul>
+
+	<pre> 
+The logic is:
+        while(1) {
+		lock MemBufrMutex[n]
+		ThisTimeBuffer = TimeBuffer[n]
+		unlock MemBufMutex[n]
+
+		if(ThisTimeBuffer == PriorTimeBuffer)
+			continue      // we have passed MemBuf
+		if(TimeBuffer[n] - PriorTimeBuffer > BufferAcquireTime)
+			indicate buffer overrun
+
+		DiskLocSave = current DiskBuffer location
+		format header
+		move header+data to DiskBuffer
+
+		lock MemBufMutex[n]
+		WriteTimeBuffer = TimeBuffer[n]
+		unlock MemBufMutex[n]
+
+		if(TimeBuffer[n] != ThisTimeBuffer)
+			back DiskBuf location to DiskLocSave 	
+		else
+			if(DiskBuff full)
+				AdvanceDiskBuf()
+
+		n = Max_n ? 0 : n + 1
+	}
+        </pre>
+
+AdvancceDiskBuf() will be called when the current memory mapped diskbuf is full. 
+It will:
+	<pre>
+	sync DiskBuf memmap
+	unmap DiskBuf
+	close DiskBuf file
+	mark DiskBuf file for tape processing
+	while(1) {
+		if(DiskBuf area is full) sleep 1
+	} 
+	open next DiskBuf file
+	memmap new DiskBuf
+	determine new DiskBuf offsets
+        </pre>
+
+<h4> Memory Mapping the Disk Buffers </h4>
+We memory map the disk buffers so that as much of a given buffer as possible
+is held in memory.  We do this on two levels.
+<p>
+First, the data recorder mmaps the portion of disk buffer that it is writting to.
+This portion is held in real memory via mlock()
+<p>
+Second, all disk buffer files are held in a ramdisk file system.  The ramdisk
+is set up via an entry such as the following in /etc/fstab:
+    <pre>
+    tmpfs                   /ramdisk                tmpfs   size=1280m      0 0
+    </pre>
+This sets up a 1280MB ramdisk.  Note that if we fill this up, processes writing
+to it will fail with a bus error.  If the total space occupied by the disk buffers
+does not come close to exceeding the real memory of the machine it is unlikely
+that any disk buffer data will go to disk.
+
+<h4> Pointing and Time Acquisition </h4>
+At AO, telescope pointing will be obtained from the ethernet broadcast
+of SCRAMnet data.
+<p>
+Current time will be obtained from ssystem time, which will be kept 
+accurate via NTP.
+
+<h4> SCRAMNET Fields </h4>
+<pre>
+Field                               Type    Meaning                                         Transforms
+--------------------------          ------  ---------------------------------
+agcData.st.cblkMCur.dat.posAz               uncorrected Az encoder reading                  *= * 0.0001 gives degrees  
+                                            (as much as 2 arcmin wrong, ie 1 beam)
+-----------------------------------------------------------------------------------------------------------------------
+agcData.st.cblkMCur.dat.posGr               uncorrected ZA encoder reading                  *= * 0.0001 gives degrees
+                                            (as much as 2 arcmin wrong, ie 1 beam)
+-----------------------------------------------------------------------------------------------------------------------
+agcData.st.cblkMCur.dat.timeMs              time (s past midnight) of encoder readings
+-----------------------------------------------------------------------------------------------------------------------
+alfa.first_bias                             alfa amp bias supply 1 : must be "on" for alfa
+                                            ** This may be an IDLE point - I need a range
+                                            of volatages from Phil.
+-----------------------------------------------------------------------------------------------------------------------
+alfa.second_bias                            alfa amp bias supply 2 : must be "on" for alfa
+                                            ** This may be an IDLE point - I need a range
+                                            of volatages from Phil.
+-----------------------------------------------------------------------------------------------------------------------
+alfa.motor_position                         TBD
+                                            Does this give the parallactic angle, ie
+                                            the rotation angle?
+-----------------------------------------------------------------------------------------------------------------------
+if1Data.st.synI.freqHz[0]                   first LO (normally set to mix the requested     += our LO gives recorder center freq
+                                            rf freq to 250 Mhz.
+                                            ** IDLE if there are no observable frequencies.
+-----------------------------------------------------------------------------------------------------------------------
+if1Data.st.synI.ampDb[0]                    ?
+-----------------------------------------------------------------------------------------------------------------------
+if1Data.st.rfFreq                           ?
+-----------------------------------------------------------------------------------------------------------------------
+if1Data.st.if1FrqMhz                        ?
+-----------------------------------------------------------------------------------------------------------------------
+if2Data.st.stat1.useAlfa            bool    input selector for the distribution 
+                                            amplifiers at 250Mhz.  Ie, ALFA is ON.
+                                            ** IDLE if 0.
+-----------------------------------------------------------------------------------------------------------------------
+ttData.st.slv[0].tickMsg.position           turret position (alfa's position is at          *= 1./ ( (4096. * 210. / 5.0) / (360.) )
+                                            26.64.. probably test +/- .1 degrees            gives degrees
+                                            ** IDLE if not in ALFA position - check
+                                            for off by more than 1 degree.
+-----------------------------------------------------------------------------------------------------------------------
+pntData.st.x.pl.curP.raJ                    last requested RA (DO NOT USE)
+-----------------------------------------------------------------------------------------------------------------------
+pntData.st.x.pl.curP.decJ                   last requested Dec (DO NOT USE)
+-----------------------------------------------------------------------------------------------------------------------
+pntData.st.x.pl.tm.mjd                      MJD of requested time?
+-----------------------------------------------------------------------------------------------------------------------
+pntData.st.x.pl.tm.ut1Frac                  MJD fractional of requested time
+-----------------------------------------------------------------------------------------------------------------------
+????????????????                            Bandpass filter.  
+                                            ** This is an IDLE point via observable
+                                            frequency check.
+-----------------------------------------------------------------------------------------------------------------------
+
+</pre>
+
+<h4> Frequency Stepping </h4>
+The host is connected to a synthesizer, the output frequency of which is 
+mixed with the signal from the receiver in order to step the recordered 
+bandpass <i>only if</i> the telescope's beam is stationary on the sky.  
+The pointing coordinates from the scramnet block are checked to determine
+this.
+<p>
+If stepping is indicated, we do so on a specific data boundries, those being
+the boundries between data points that will be in discrete FFTs at our 
+longest transform length.  The goal is that we do not change frequency band 
+during any FFT.  The logic is:     
+
+	<pre>
+	foreach(longest-FFT-discrete-chunk) {
+		sky_angle = telescope movement since last check
+	        obs_angle = telescope movement since we started stepping
+		if(sky_angle < 0.1*BeamRes && obs_angle  < 0.5*BeamRes)
+			if(! at max frequency step) {
+				step frequency(+/-)
+			} else {
+				go to zero step
+			}
+		}
+	}
+	</pre>
+		
+In reality, the check for stationary observation is done in a dedicated
+thread which is signaled via a condition variable by the data taking thread
+each time the latter has acquired a longest-FFT-discrete-chunk's worth of
+data.  This is done by counting buffers.  <i>Important note.</i>  Data
+taking continues while the frequency stepping thread is making it's
+decision and communicating with the synthesizer.  So in fact the frequency
+does change within an FFT, but very close to the start of it.  Dan says that
+we should not idle data taking during freq changing.  The tolerance
+for the time it takes the frequency step to happen once the check signal has
+been issued is ____________________.
+<p>
+Concerning the operation on the condition variable.  The condition in question
+is that we have acquired N buffers of data and thus should check for telescope
+tracking and perhaps program the synthesizer.  This condition is waitied on
+in the synthesizer thread and is signaled in the data acquisition thread.  During
+normal operations, the synthesizer thread will first obtain the associated 
+mutex and then wait on the condition variable, thus releasing the mutex.  
+Sometime later the data acquisition thread will see that the condition is
+met and will obtain the mutex, signal the variable, and release the mutiex
+(note that these three actions are discrete, ie not atomic).  Upon waking
+the synthesizer thread thus re-obtains the mutex (perhaps spinning for a 
+~microsecond until the data acquisition thread releases it).  The synthesizer 
+thread then maskes sure the the condition is indeed met (via a boolean) and 
+then does its thing.  It must do its thing quickly enough so that it can
+re-obtain the mutex and re-wait on the condition (releasing the mutex) before
+the data acquisition thread sees that the condition is once again met and
+signals accordingly.  If the synthesizer thread is late, it will miss the 
+signal.  Not good, but also not terrible.
+<p>
+The manual for controlling the synthesizer is <a href="file:///disks/setifiler1/home/jeffc/datarecorder2/PTS232_Guide_B05.html">here</a>.
+Of note is the difference in interpreting the 10 digit frequency command between
+synthesizer models.  On the PTS 500, the low order digit is 0.1Hz while on the 
+PTS 3200 the low order digit is 1Hz.  This is accounted for by a config option.
+Either PTS500 or PTS3200 must be specified as the synth_model in the config file.
+
+<h4> Data Acquisition Enabling</h4>
+On program startup, data acquisition is started in a coordinated way via the following
+logic: 
+    <ul>
+    <li> In MemBufInit for each data stream we initialize the EDT card
+         and immediately set the disarm bit in the EDT PCD_FUNCT register and flush the
+         EDT fifo.
+    <li> In main(), after returning from StartThreads(), we drop into a loop
+         that we do not leave until all threads have reported ready.  Upon 
+         leaving the loop, we set the arm bit in the EDT PCD_FUNCT register for all data
+         streams.  EDT begins to acquire data.  However...
+    <li> In DiskBufInit() for each data stream we set DiskBuf[i].Idle to true.  This 
+         means that even after enabling via EDT, we will be in an <i>idle</i> state
+         (see below) until the IdleWatch thread has a chance to evaluate the 
+         engineering and observatory values.  
+    </ul>
+ 
+
+<h4> Data Acquisition Idling</h4>
+There are states to which the data recorder is sensitive to that will result
+in the idling of data acquisition.
+These states are:
+    <ul>   
+    <li> VGC values too high
+    <li> ALFA not on (see below for the determination of this).
+    </ul>
+
+The ALFA receiver not being on is determined by.....
+<p>
+The logic of idling is as follows.  There is a dedicated "idle watch" thread.  Within
+it's control structure are the limit values used to determine whether or not idling is
+in order.  Every N seconds, the idle watch thread wakes up and compares these limits
+to the current data collected by other execution threads (serializing the latter).  If
+one or more values vioaltes the idling threshold for that value, data taking is idled
+if not already so.  If no thresholds are violated, data taking is re-enabled if 
+previously idled.  Data taking is idled and de-idled by toggling the boolean DiskBuf[].Idle.
+As implied by this reference, idling is a function of the diskbuf thread(s). When
+DiskBuf[].Idle == true, the local MissingBufs boolean is set to true and no data
+are written to disk.  Note that EDT and membuf[] continue to acquire data, as do the 
+engeneering routines.  But none of it is written to disk.
+
+<h4> QuickLook Data </h4>
+The data recorder periodically writes N quick look files, where N is the number
+of data streams.  The quick look files are time wise short (on the order 20 seconds)
+but otherwise the same format as tape data. 
+<p>
+The interval between quick looks is a parameter in the configuration file and is
+given in seconds.  In addition to this interval, a quick look is limited to a single 
+center frequency.  This frequency is also a parameter in the configuration file.  
+A third and final parameter in the configuration file is the length of a quick look
+file, given in a count of 1MB buffers.
+<p>
+The synth and diskbuf threads interact to produce quicklook files.  The synth thread
+turns the quick look flag on (== true) and  diskbuf thread 0 turns it off (== false).
+
+
+
+
+
+<h4> Serialization </h4>
+
+All necessary serialization is provided by the following mutexes.
+
+	<ul>
+	<li> <b>MemBuf_t.Mutex[]</b>. This ring of mutexes protect associated  metadata in the EDT managed
+	     ring buffers and gates access to the data itself.  Competitor threads
+	     for these mutexes are MemBufFunc() and DiskBufFunc(). 
+	     <br>
+	     MemBufFunc() acquires before calling edt_wait_for_buffers() and 
+	     releases after edt returns and the stamping of the metadata.
+	     <br>
+	     DiskBufFunc() acquires before reading the metadata associated with the first/next
+	     buffer and releases after copying out that metadata.  DiskBufFunc() then procedes
+	     to copy out the data itself.  Note that the data itself, while access gated, 
+	     is not protected (although we do check for overwrites).  
+	     <br>
+	     The initial acquisition is important and is done in MemBufInit(), on behalf of MemBufFunc().
+	<li> <b>Synth_t.DataMutex</b>.  This mutex protects the global copy of the current synthesizer
+	     frequency and the time at with that frequency was set.  Competitor threads are MemBufFunc()
+	     (reads) and SynthThread() (writes).  
+	     <br>
+	     The initial acquisition/release is done in SynthInit() in order to program the initial
+	     frequency.
+	<li> <b>Synth_t.CheckMutex</b>. This is the mutex associated with the synth step check
+	     condition variable <b>Synth_t.CheckNowCond</b>.  This condition variable is used 
+	     by MemBufFunc() to signal SynthThread() that it is time to check for telescope
+	     movement and possible frequency stepping.
+	<li> <b>Log_t.Mutex</b>.  This mutex protects the various log devices so that messages
+	     do not become garbled.  All threads are competitors for this mutex.
+	<li> <b>FrameHeader_t.Mutex</b>.  <i>Currently unused</i>.
+	</ul>
+
+
+<h4> Tape Recording </h4>
+If the ultimate destination for the data are tapes, some independent
+process will take care of copying them from disk buffers to
+tape. Entire tape images will be recorded as disk buffers.  As each
+disk buffer is finished, it will tagged via it's name as ready to
+commit to tape.  The tape recording process will delete the disk buffer
+upon commitment to tape.      
+
+<h4> Hardware and OS Considerations </h4>
+<p>
+A note on PCI.  
+<p>
+32 bit, 33 MHz PCI has a data throughput of 90MB/s (plus
+overhead makes the true throughput 133MB/s.  A 64 bit bus would double this
+and a 66 MHz bus would double it again.  On a single 32 bit, 33 MHz bus,
+our data would cross it once for the DMA to memory, again for the transfer
+from memory to disk, and a third and forth time if the data are then written 
+to tape.  So, 4 x 10MB/s = 40MB/s as the minimum bandwidth.
+<p>
+A note on SCSI.
+<p>
+Ultra SCSI is 20MHz and ultra2 SCSI is 40MHz.
+<p>
+A note on DLT.  
+<p>
+From the Quantum site:
+<p>
+        <table border>
+        <tr>
+	        <tr>
+                <td> Product
+                <td> Capacity
+                <td> xfer speed
+                <td> interface
+                <td> MTBF
+        </tr>
+        <tr>
+	        <tr>
+                <td> SDLT 320
+                <td> 160/320 GB
+                <td> 16/32 MB/s
+                <td> LVD ultra 2 SCSI or HVD ultra SCSI
+                <td> 250,000 hours
+        </tr>
+        <tr>
+	        <tr>
+                <td> SDLT 600
+                <td> 300/600 GB
+                <td> 36/72 MB/s
+                <td> ultra 160 SCSI or Gb fibre in enterprise libraries
+                <td> 250,000 hours
+        </tr>
+        </table>
+
+<p>
+The data will appear in the EDT ring buffer as a series of 16 bit words.
+Each word will have data from all 8 sources (nominally beams) that a single
+EDT card collects from.  Within each word, the data will appear as 8 contiguous
+pairs of bits. Each pair of bits is the real/imaginary complex sample from
+the source.
+
+<h4> EDT Issues </h4>
+	<ul>
+	<li> The 1GB/Linux issue.
+	<li> Q: Will  edt_wait_for_buffers() return only for the current buffer
+		or for all buffers not yet returned? 
+	</ul>
+
+The recorder will need to arm the acquisition HW once all threads are started.  This is
+done by putting a 1 on FUNC bit 3.  On program startup, we should put a 0 on FUNC bit 3,
+flush all EDT buffers and then arm the HW.
+
+<h4> Multithreading Under Linux </h4>
+A good intro to POSIX threads under linix can be found at the 
+<a href="http://www.yolinux.com/TUTORIALS/LinuxTutorialPosixThreads.html#BASICS"> YoLinux</a> site.
+Some things to keep in mind are:
+	<ul>
+	<li>	<b>Scheduling.</b> The driving reason behind making the 
+		datarecorder a threaded application is so that the code
+		that waits for the EDT buffers and timestamps them can
+		run unfettered by other activities.  Thus we need for 
+		this code to have a scheduling policy such that if is it
+		runable, it runs, pre-empting anything else that might
+		be on the CPU.
+		We will use pthreads scheduling attributes to achieve
+		this goal.
+		<p>
+		The datarecorder will set the scope, policy, and priority
+		attributes.  The scope will be PTHREAD_SCOPE_SYSTEM.  Thus,
+		the datarecorder threads are scheduled against all other
+		threads in the system, including the OS itself.  The policy
+		will be SCHED_FIFO.  This policy results in threads of a 
+		higher priority preempting threads of a lower priority
+		and threads of a given priority are placed at the end of
+		a FIFO when they block.  The thread that waits for and 
+		timestamps the EDT buffers will be given the highest possible
+		priority as given by a call to 
+		sched_get_priority_max(SCHED_FIFO).  Likewise, a call to
+		sched_get_priority_min(SCHED_FIFO) obtains the minimum
+		priority and this assigned to all other datarecorder threads.
+		Note that the fact that the policy of all datarecorder
+		threads is SCHED_FIFO means that they will trump most other
+		application threads in the system even though they have a low 
+		priority within this policy (<i>check this out and explain
+		why</i>).
+	<p>
+	<li> 	<b>Signals.</b> When a signal is generated, it will be 
+		sent to one
+		and only one thread within the process. 
+		The OS selects the thread to receive an asynchonous signal 
+		(like a SIGTERM) in an arbitrary manner.  Any thread not 
+		blocking the signal may receive it.
+  		If all threads are blocking the siganal, it will be 
+		pending and the the first thread to unblock the signal 
+		will receive it.  
+	     	<p>
+		A new thread inherits the signal mask of the thread
+	     	that created it.  That mask can then be changed and only
+	     	the thread that made the change will be affected.  Signal masks
+	     	are inherited and thread specific.  The action to take upon
+	     	receiving a signal, by contrast, is shared.  Any thread calling
+	     	sigaction() affects the action taken by all threads not blocking
+	     	the signal.
+	     	<p>
+		The datarecorder will need to handle the asynchronous signals
+		SIGINT and SIGTERM.  This is because the EDT driver remains
+		in an open state and is no longer usable if the process 
+		terminates without issueing an edt_close().  The simple way
+		to do this is to block these signals prior to thread creation
+		in the main() routine and then install the handler.  After
+		thread creation main() can then unblock these signals.  Thus
+		the main() thread will be selected to handle them.  The handler
+		will set the global trigger variables which tell the various
+		threads to gracefully shut down.  They will do so and then
+		join main().  The process will then exit cleanly.  Care must
+		be taken to check the trigger variable within all loops in the
+		non-main() threads.  Note that multiple threads in a process
+		show up in a ps listing as seperate processes.  When issuing
+		a SIGTERM via the kill command, the main() thread must be
+		specified.  This is generally the one with the lowest process
+		ID.
+	
+	</ul>
+	
+<h4> Usage Notes </h4>
+Running the data recorder is a 3 step process.
+	<ul>
+	<li> The device drivers for the cards must be loaded and the cards themselves
+		must be configured.  This usaually happens automatically upon bootup
+		via /etc/tc.2/S99EDT.  Occasionally, this must be done manually. The
+		most common reason for the need to manually load is that the recorder
+		process ends ungracefully, leaving the cards/drivers in an odd state.
+		To manually unload and then load:
+		<pre>
+		/etc/init.d/edt stop
+		/etc/init.d/edt start
+		</pre>
+	<li> If you are testing without an external clock, the clock rate on the cards must be set.  
+         Use "set_clock unit rate":
+		<pre>
+		set_clock 0 1000000
+		set_clock 1 1000000
+		</pre>
+	<li> Run dr2!
+	</ul>
+
+<h4> Testing </h4>
+Regression testing consists of the following.
+<p>
+Run dr2 in very verbose mode and check the output for:
+	<ul>
+        <li> Correct thread scheduing  
+        <li> Correct configuration
+        <li> Datastream initialization
+        <li> Config/disarming/arming of EDT cards
+        <li> Circular progression of ring buffers (check index and pointers)
+        <li> Synchronization memory buffer access between the MEM and DSK threads [last checked 5/31/05]
+        <li> Synthesiser stepping: rate and frequency
+        <li> Mmap advancement
+        <li> Disk file advancement
+        <li> Orderly shutdown (via trigger, SIGINT, SIGTERM, SIGALRM)
+	</ul>
+<p>
+Run strings on a disk file and check the header for:
+	<ul>
+        <li> Config info 
+        <li> Time
+        <li> Coordinates
+	</ul>
+<p>
+Inject a known signal into the data stream and od -x and dr2_reader
+to check the disk files.
+<p>
+Also test for:
+	<ul>
+        <li> Error handling  
+        <li> Synchronized data collection between EDT cards  
+        <li> Does data collection obey the external clock?  [last checked 5/31/05]
+        <li>  
+        <li>  
+        <li>  
+	</ul>
+<p>
+For testing at AO (say, with the -obs option):
+    <ul>
+    <li> Log onto serendip4.naic.edu.
+    <li> From serendip4, log onto aosun.
+    <li> From aosun, scp down any new SW.
+    <li> From aosun, log onto aolc{1,2,3,4}
+    <li> Run the tests.
+    </ul>
+
+
+<h4> Current Hardware Setup </h4>
+System is a Dell PowerEdge 2400 with 2x866MHz CPUs and 1.3GB RAM.
+<p>
+Storage: HW RAID with the following logical volumes:
+    <ul>
+    <li> vol 0 : 2 mirrowed 18GB drives
+    <li> vol 1 : 1 18GB drives
+    <li> vol 2 : 1 18GB drives
+    </ul>
+<p>
+Firmware revs:
+    <ul>
+    <li> BIOS A06
+    <li> embedded server management firmware: 5.22
+    <li> system backplane firmware: 5.35
+    <li> remote assistant card: 2.0
+    </ul>
+
+
+
+<h4> Bugs and Caveats </h4>
+Sometimes a signal, like a control-C or an alarm expiring, will leave the
+program only partially terminated.
+<p>
+If the disk buffer that dr2 is trying to open is never available (ie,
+marked as .done), dr2 will retry forever.  There is no timeout.
+<p>
+The ReadyTime[] associated with the membufs are not protected with a
+mutex.  Perhaps they should be but the thought is that if there were
+a read/write collision the value read would be garbage and an overrun
+detection would result.  These are only written to in one place so
+a write collision will never happen.
+<p>
+I should be using the function gettimeofday() rather than the depricated
+ftime().  This should not be a operational concern.
+<p>
+Sometimes, due to a slowdown in getting disk buffers to tape, we can have
+"adjacent" buffers that are offset in time.  You can see this in the log
+via different corrected diffs acros the disk buffers. Eg:
+Wed Apr 12 14:39:12 2006 : DSK[0] : FrameSeq is 947   DataSeq is 1530   IdleCount is 23   Corrected Diff is 560
+Wed Apr 12 14:39:12 2006 : DSK[1] : FrameSeq is 839   DataSeq is 1530   IdleCount is 23   Corrected Diff is 668
+<p>
+If the program is stopped very early with a control-C, the machine can hang.  Is this 
+because of closing an unopen edt device?
+<p>
+Sometimes DSK[1] starts 1 buffer behind DSK[2], as in :
+<pre>
+</pre>
+<p>
+If the script that puts disk buffers to tape (and then deletes those disk buffers) gets behind,
+the recorder can get into a situation where the next buffer to open is available for one
+data stream, but not the other.  In this case, consecutive blocks on tape do not follow
+the pattern of one data stream followed by the other, sync'ed in time.  This is norticed
+in log entries such as:
+<pre>
+DSK[1] : FrameSeq is 250623   DataSeq is 250670   IdleCount is 47   Corrected Diff is 0
+DSK[0] : FrameSeq is 250622   DataSeq is 250670   IdleCount is 48   Corrected Diff is 0
+
+DSK[1] : New disk buffer /ramdisk/diskbuf_ds1_2 is now open
+DSK[0] : Disk buffer /ramdisk/diskbuf_ds0_2.done is marked done but still exists
+
+DSK[1] : FrameSeq is 250633   DataSeq is 250680   IdleCount is 47   Corrected Diff is 0
+DSK[0] : Disk buffer /ramdisk/diskbuf_ds0_2.done is marked done but still exists
+
+DSK[1] : FrameSeq is 250643   DataSeq is 250690   IdleCount is 47   Corrected Diff is 0
+DSK[0] : Disk buffer /ramdisk/diskbuf_ds0_2.done is marked done but still exists
+
+DSK[1] : FrameSeq is 250653   DataSeq is 250700   IdleCount is 47   Corrected Diff is 0
+DSK[0] : New disk buffer /ramdisk/diskbuf_ds0_2 is now open
+
+DSK[0] : FrameSeq is 250634   DataSeq is 250710   IdleCount is 48   Corrected Diff is 28
+DSK[1] : FrameSeq is 250663   DataSeq is 250710   IdleCount is 47   Corrected Diff is 0
+
+</pre>
+<p>
+At mmap advancement time, the acquire time <i>can</i> be tagged as a little longer than
+normal.  When this happens, the next buffer's acquire time is a little shorter.  When
+this happens, the mean of the 2 times is always the expected acquire time.  Following
+the 2 odd times, the acquire time returns to normal until the next mmap advancement.
+When this happens, it happens at every mmap advancement.  It only happens with the buffers
+associated with data stream 1 (never ds 0).
+<p>
+On close examination, I find that the timestamps for ds 1 are always a bit behind ds 0.
+<i>Why?</i>  The lag stays consistent through the run of the program.  The lag seems
+to always be either ~0.014 seconds or ~0.043 seconds.  If the lag is the former, the odd
+acquires times occur.  If it's the latter, the odd acquire times do not occur.
+<p>
+Here's my guess as to what is happening.  The EDT drivers are running at the same
+priority as the diskbuf threads (which do the mmap).  Ds 0 sees the need for and
+triggers an mmap advancement before ds 1.  If the lag between ds 0 and ds 1 is 
+tiny, the mmap for ds 0 is in progress when EDT 1 wants to report that a buffer is
+ready.  So there is a slight delay in the report (ie a return from edt_wait_for_buffers()).
+But EDT has not stopped - it is acquiring the next buffer, which then gets reported
+"early".  So I don't not think that the actual data acquisition is being affected.
+<p>
+Here is some log output showing the odd acquire times.
+
+<pre>
+Sun May 14 13:49:02 2006 : DSK[0] : Advancing mmap...
+Sun May 14 13:49:02 2006 : MEM[1] : ringbuf num is 2 ringbuf pointer is 0xb02c4000 ringbuf time is 1147639742.344000 freq is 150000000 freqtime is 1147639
+734.559000
+Sun May 14 13:49:02 2006 : DSK[1] : ringbuf num is 2 ringbuf pointer is 0xb02c4000 ringbuf time is 1147639742.344000
+Sun May 14 13:49:02 2006 : DSK[1] : ThisReadySec is 1147639742.344000  LastReadySec is 1147639742.114000  Diff is 0.230000
+1147639741.904000 1147639742.114000 1147639742.344000 1147639741.694000 2
+Sun May 14 13:49:02 2006 : DSK[1] : FrameSeq is 8   DataSeq is 31   IdleCount is 23   Corrected Diff is 0
+Sun May 14 13:49:02 2006 : DSK[1] : Advancing mmap...
+Sun May 14 13:49:02 2006 : MEM[0] : ringbuf num is 3 ringbuf pointer is 0xb04c8000 ringbuf time is 1147639742.520000 freq is 150000000 freqtime is 1147639
+734.559000
+Sun May 14 13:49:02 2006 : DSK[0] : ringbuf num is 3 ringbuf pointer is 0xb04c8000 ringbuf time is 1147639742.520000
+Sun May 14 13:49:02 2006 : DSK[0] : ThisReadySec is 1147639742.520000  LastReadySec is 1147639742.310000  Diff is 0.210000
+1147639741.891000 1147639742.100000 1147639742.310000 1147639742.520000 3
+Sun May 14 13:49:02 2006 : DSK[0] : FrameSeq is 9   DataSeq is 32   IdleCount is 23   Corrected Diff is 0
+Sun May 14 13:49:02 2006 : MEM[1] : ringbuf num is 3 ringbuf pointer is 0xb01c2000 ringbuf time is 1147639742.533000 freq is 150000000 freqtime is 1147639
+734.559000
+Sun May 14 13:49:02 2006 : DSK[1] : ringbuf num is 3 ringbuf pointer is 0xb01c2000 ringbuf time is 1147639742.533000
+Sun May 14 13:49:02 2006 : DSK[1] : ThisReadySec is 1147639742.533000  LastReadySec is 1147639742.344000  Diff is 0.189000
+1147639741.904000 1147639742.114000 1147639742.344000 1147639742.533000 3
+Sun May 14 13:49:02 2006 : DSK[1] : FrameSeq is 9   DataSeq is 32   IdleCount is 23   Corrected Diff is 0
+Sun May 14 13:49:02 2006 : MEM[0] : ringbuf num is 0 ringbuf pointer is 0xb38d6000 ringbuf time is 1147639742.730000 freq is 150000000 freqtime is 1147639
+734.559000
+Sun May 14 13:49:02 2006 : DSK[0] : ringbuf num is 0 ringbuf pointer is 0xb38d6000 ringbuf time is 1147639742.730000
+Sun May 14 13:49:02 2006 : DSK[0] : ThisReadySec is 1147639742.730000  LastReadySec is 1147639742.520000  Diff is 0.210000
+1147639742.730000 1147639742.100000 1147639742.310000 1147639742.520000 0
+Sun May 14 13:49:02 2006 : DSK[0] : FrameSeq is 10   DataSeq is 33   IdleCount is 23   Corrected Diff is 0
+Sun May 14 13:49:02 2006 : MEM[1] : ringbuf num is 0 ringbuf pointer is 0xb10cd000 ringbuf time is 1147639742.743000 freq is 150000000 freqtime is 1147639
+734.559000
+Sun May 14 13:49:02 2006 : DSK[1] : ringbuf num is 0 ringbuf pointer is 0xb10cd000 ringbuf time is 1147639742.743000
+Sun May 14 13:49:02 2006 : DSK[1] : ThisReadySec is 1147639742.743000  LastReadySec is 1147639742.533000  Diff is 0.210000
+</pre>
+
+<p> 
+We do not check for required config items.
+<p> 
+stepping is done via the EDT "done counter", not the "frame counter".  This 
+means that we might step during an idle period.
+<p> 
+If we ever run the recorder such that it does not exit between tapes, the 
+cone and frame counters will overflow.
+<p> 
+The first LO as it appears in the header might not be in sync with the second LO
+and sky frequency, the latter being always in sync with the data (unless the first
+LO changes mid buffer).
+<p> 
+According to Phil P., pointing (uncorrected) can be off as much as 500 arcsec
+in Az along with 100 arcsec in Za.  But does this effect the stepping differential
+(typically 2.5 minutes for pulsar work)?
+<p> 
+<p> 
+<p> 
+<p> 
+<p> 
+
+<pre>
+                                TO DO
+M is ntp not correcting post boot? - it is correcting just takes a while
+M watch /home/online/vw/etc/Pnt/ for changed in ut2ut1.dat and maybe obsPosition.dat.
+M log rotation and retention
+M enable ntp over boot (iptables)
+M get quicklooks coming to SSL
+M scram monitor
+
+get pointing correction model - via scram?  see PNT block
+the MISSED bool is not making it inbto headers
+doc Dan's console notes
+do I have all code (new files?) CVS'ed
+am I always sending synth strings every 13s?
+
+
+segfault on no trigger on inital startup
+checkin my change to skip.c ?
+why is there often an idle count diff twixt DSI 0 and 1?
+why does dd not obtain the desired amount of data from a buffer or tape (blocksize?)
+are we getting bad azzaInit messages?
+idle.C - local string overwrite?
+we can go idle mid-quicklook - not good
+be less verbose
+write operating instructions
+console messages
+Mikial - best alfashm.h location?
+Arun - system backups?
+timestamps to recorder log
+sendmail security
+clean code
+doc monallsm and phil's screens
+close remaining crons
+is there a delay in 1st synth? see headers
+are statics handled by phil's code?
+stinit
+
+
+
+
+minidev
+------------------------
+re-init EDT on idel/de-idle ?                                                   DEFFERED or CANCELLED
+cannot kill if EDT not acquiring data                                           DEFFERED
+why does buf_1 sometines start 1 behind buf_0                                   DEFFERED
+is there a wrap issue when converting Ra to hours (and Dec to degrees?)         **
+is there a wrap issue with sky angle?                                           **
+touser+toconsole....                                                            DONE (but kind of a hack)
+static azzza init call?                                                         *
+better time func (gettimeofday) vs ftime())                                     *
+idle string commas                                                              *
+utils like synthcmd                                                             *
+reasonable defaults?                                                            *
+check data types                                                                *
+always_step to config
+is there a disk1 race condition?
+are there any bad data at SayToExit() time? (from out-of-sync mutexes?)
+"thread" vs "function"
+int vs long
+struct constructors?
+required configs
+clean up and make consistant all error checking (doc).  Poorly handled:
+    - not being able to open a disk buffer because the handler is not 
+    keeping up
+remove deprecated variables
+clean up make file
+all pthread_exit()'s in place
+proper data buffer flushing?
+EdtCntl() inline?
+edt_wait_buffers_timed() ?
+sleep between scram reads?
+i vs dsi
+ring vs mem
+no disk thread = no arming = panic!
+tape serial numbers?
+
+end to end tests
+------------------------
+figure out what beam is what  - plot all 16 beams                               **
+record tapes and analyse with seti@home and astropulse:                         **
+test with dispersed pulses in noise (astropulse)                                **
+test with gaussian                                                              **
+test with seti@home pulses                                                      **
+hydrogen plots
+data interleave on tape OK?                                                     **
+sq wave test (across buffers and across beamsets)                               **
+
+
+tune swap device priority
+map PCI slot to EDT unit number                                                 **
+
+
+
+remote control and monitoring
+------------------------
+monitoring:
+    - snapshots of data:                                                |
+        what are the engineering values?   RA and DEC?                  | All this is done via logging,
+        do we see the hydrogen line at the right place?                 | header data, and quicklook data.
+            get paul demorest hydrogen compare thing working (AO data   | 
+checker).
+        scram net data monitoring                                       | Done via log (idle reason) and headers.
+    - what mode is the data recorder in:
+        taking data?  not taking data?
+        waiting for tape change?  for how long?                         | DO, via tape recorder log
+        how full is the current tape?                                   | DO, via tape recorder log
+        buffer overflow?                                                | Done via the log and headers. 
+        when were we last taking data                                   | Done via the log and headers.?
+        why aren't we taking data                                       | Done via the log and headers.?
+        what is the name of the tape in the drive?                      | DO
+    - we need to be able to look at scram net data here in berkeley     | DEFERRED, although we will have quicklook
+        so we can diagnose why/why we aren't taking data.               | data.
+
+control:
+    - we need to be able to control our synthesizer from berkeley
+
+
+prep
+------------------------
+dev/test system with jig                                            DEFERRED
+back up setirec2 to CD                                              **
+final system dd                                                     **
+print code and design doc                                           **
+emails over to setirec2                                             **
+
+at AO
+------------------------
+headers from right place?
+do we need pointing corrections?
+play with dbuff len and dbuff num
+strip down procs
+    audit.d
+    whatis
+
+
+</pre>
+
+
+<h4> Links </h4>
+<a href="file:///disks/setifiler1/home/jeffc/datarecorder2/dr2_frontend.jpeg">Frontend Block Diagram</a>
+<br>
+<a href="file:///disks/setifiler1/home/jeffc/datarecorder2/dr2_diagram.gif">Software Diagram</a>
+<br>
+<a href="file:///disks/setifiler1/home/jeffc/datarecorder2/dr2_hardware.gif">Hardware Diagram</a>
+<br>
+<a href="file:///disks/setifiler1/home/jeffc/datarecorder2/PTS232_Guide_B05.html">PTS232 Guide</a>
+<br>
+<a href="file:///disks/setifiler1/home/jeffc/datarecorder2/quantum_sdlt600_linux.pdf">SDLT Guide</a>
+<br>
+<a href="http://www.edt.com//"> EDT</a>
+<br>
+<a href="http://www.naic.edu/"> Arecibo Observatory</a>
+<br>
+<a href="http://www.parkes.atnf.csiro.au/"> Parkes Observatory</a>
+
+<hr>
+<pre>
+Notes
+-----
+
+Our beam resolution with ALFA is 3 arcmin.
+
+-----------------------------------------------------------------------
+WU frequency boundry / subband number calculation:
+
+ min WU freq =
+
+         2.5 * (n - 1/16)
+         ----------------    +    (n < 128 ? 1420 : 1418.5)
+              256
+
+
+ max WU freq =
+
+         2.5 * (n + 15/16)
+         -----------------   +    (n < 128 ? 1420 : 1418.5)
+              256
+
+
+ where n is the sub_band number (ie, "WU number").
+
+-----------------------------------------------------------------------
+
+
+Which power spectrum bin will a signal show up in?
+
+lets say we have a 1KHz signal in a 1.25MHz band  and we run a 16K FFT on it.
+
+The power spectrum runs:
+    0-------------------max_pos|max_abs_neg----------------min_abs_neg
+
+so, if the freq turns up as a positive freq, it would be:
+
+    .1/1.25 x  8192             = bin 655
+    
+or as a negative freq:
+
+    16384 - (.1/1.25 x  8192)   = bin 15729
+
+
+-----
+Here is the scramnet map.  Note that not all block types are broadcast at all times
+(correct?).  For example, PNT blocks are sometimes not broadcast.  Why?
+
+The app executes read_scram() which returns a  struct SCRAMNET *.
+
+
+ra  = scram->pntData.st.x.pl.curP.raJ;
+dec = scram->pntData.st.x.pl.curP.decJ;
+mjd  = scram->pntData.st.x.pl.tm.mjd + scram->pntData.st.x.pl.tm.ut1Frac;
+
+struct SCRAMNET is defined in scram/aoui/scram.h  as:
+struct SCRAMNET {
+  int sock;                 /* multicast socket */
+  int lock;                 /* true if update blocked for reading */
+  struct sockaddr_in from;  /* read address */
+  struct BIGENOUGH in;      /* input buffer */
+  SCRM_B_AGC agcData;       /* data */
+  SCRM_B_TT ttData;
+  SCRM_B_PNT pntData;
+  SCRM_B_TIE tieData;
+  SCRM_B_IF1 if1Data;
+  SCRM_B_IF2 if2Data;
+  struct EXECSHM exec;
+  struct WAPPSHM wapp[4];
+  struct ALFASHM alfa;
+};
+
+scramread() reads a block from a socket into filed "in", a BIGENOUGH struct which
+is a union of all possible block types amd a filed called "magic" which indicates
+the type of block just read.  scramread then memcpy's "in" to the appropriate
+typed struct within SCRAMNET.
+
+Let's assume we are looking for pointing data.  We look for scram->in.magic == PNT.
+If this is so then we go to the SCRM_B_PNT struct.  We are now at :
+        scram->pntData
+
+In here we fine a field 
+        PNT_STATE       st; 
+We are now at
+        scram->pntData.st
+
+In here we find a field 
+        PNT_X_STATE      x;     /* for point xform*/
+We are now at
+        scram->pntData.st.x
+        
+In here we find a field 
+        PNT_X_PL        pl;  
+We are now at
+        scram->pntData.st.x.pl
+        
+In here we find a fields 
+        PNT_X_CUR_PNT   curP;           /* current point (64*int)*/
+and
+        PNT_X_TIME      tm;             /* for this pipelined point(14*int)*/
+We are now at
+        scram->pntData.st.x.curP
+and
+        scram->pntData.st.x.tm
+        
+In curP we find fields: 
+        double          raJ;             /* ra J2000 back converted from az,za*/
+        double          decJ;            /* dec J2000 back converted from az,za*/
+and in tm we find field:
+        int     mjd;                    /* modified julian day for ut1Frac*/
+So we have:
+        scram->pntData.st.x.pl.curP.raJ;
+and
+        scram->pntData.st.x.pl.curP.decJ;
+and
+        scram->pntData.st.x.pl.tm.mjd  
+and
+        scram->pntData.st.x.pl.tm.ut1Frac;
+        
+locations:
+    struct type         header file
+    -------------       -------------------------
+    SCRAMNET            scram/aoui/scram.h
+    BIGENOUGH           scram/aoui/scram.h
+    SCRM_B_PNT          scram/phil/scrmBlkPnt.h
+    PNT_STATE           scram/phil/pntProgState.h
+    PNT_X_STATE         scram/phil/pntProgState.h
+    PNT_X_PL            scram/phil/pntProgState.h
+    PNT_X_CUR_PNT       scram/phil/pntProgState.h
+    PNT_X_TIME          scram/phil/pntProgState.h
+
+
+More scramnet notes:
+
+datum we need       struct          header file                 commnets
+-------------       -----------     ---------------             -------------------
+az, za, time        PNT_STATE       scram/phil/pntProgState.h   RA/Dec are *pointing commands*.
+                                                                Az/Za are encoder readings.
+                                                                Time should be correct for
+                                                                these readings.
+turret position     TT   
+pointing model                                                  This is in a file that
+                                                                Phil updates 2x/yr or so.
+                                                                It's our reciever config.
+                                                                Auto-email on update?
+rotation angle      EXECSHM ?       ?
+LO setting          IF1 (IFLO?)     
+bandpass filter                                                 This is a boolean that
+                                                                Phil has to add to some
+                                                                bitmap(?).  Endian issues
+                                                                with bit maps?
+is alfa on?                                                     There are 2 pieces of data
+                                                                that together indicate this.
+                                                                Phil has to get back to us
+                                                                on this.
+
+
+
+All scramnet blocks are brodacast 1/s, right?  Cetainly true for PNT.
+
+/share/galfa/gsr2.0/phil/gen/pnt  is where to find alfabmpos.pro, an
+IDL routine that takes az, za, juldate, and (optionally) rotation
+angle of the center beam of alfa and computes the ra and dec of all
+7 beams.
+
+
+/share/galfa/gsr2.0/procs/init/hdr/ is where to find
+M1_HDR, which does time correction and calls ALFABMPOS
+
+
+path to file on block to read LO below, 
+
+soon phil will add a bit to read whether
+bandpass filter is in our out.   
+current bandpass filter is 1440/100 MHz.
+
+note:  better to read LO from this block, as the block that galfa uses
+only works when GUI is in use. 
+
+note2: best to use Az, El, 
+
+monitor programs:
+go to phil
+    64  16:49   cd ~phil
+    65  16:49   cd vw
+    66  16:49   cd h
+    67  16:49   ls
+    68  16:50   ls IF1*
+    69  16:50   ls if1*
+    70  16:51   more if1ProgState.h
+    
+    
+
+    /home/phil/vw/datatk/shm/Mon  contains
+
+.make.state      If/              Setups/          monProg.sh*
+ARTS/            Imakefile        Ter/             monProg.sh.old*
+Agc/             Makefile         Tie/             monProgNew.sh*
+Alfa/            Pnt/             Tur/             monProgTest.sh*
+
+/home/phil/vw/Solaris/bin    contains
+
+agcLogD*        getTm.h*        logif*          pntMonGet*      terMonGet*      
+tieMonSum1*
+agcMonGet*      if1MonGet*      mshmD*          pntMonGetN*     tieLogD*        
+tieMonSum1New*
+agcMonTest*     if2MonGet*      mshmDump*       rcvMonGet*      tieMonGet*      
+turLogD*
+alfmMonGet*     ifMonGet*       pntDbgGet*      tdtrkfilter*    tieMonSum*      
+turMonGet*
+
+
+http://www2.naic.edu/~phil/
+
+----------------------------------------------------------------
+
+Current disk layout of setirec2.
+
+Summary:    Disk sda contains the system and no swap space or free space.
+            Disk sdb contains 1GB of swap and 8GB of free space.
+            Disk sdc
+[root@setirec2 ~]# df
+Filesystem           1K-blocks      Used Available Use% Mounted on
+/dev/sda2              8483368   6229836   1822592  78% /
+/dev/sda1               256667     18461    224954   8% /boot
+none                    770768         0    770768   0% /dev/shm
+tmpfs                  1310720         0   1310720   0% /ramdisk
+
+
+[root@setirec2 ~]# cat /proc/swaps
+Filename                        Type            Size    Used    Priority
+/dev/sdc1                       partition       1052216 0       -1
+/dev/sdb1                       partition       1052216 0       -2
+
+
+[root@setirec2 ~]# fdisk -l
+Disk /dev/sda: 9105 MB, 9105023488 bytes
+255 heads, 63 sectors/track, 1106 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+
+   Device Boot    Start       End    Blocks   Id  System
+/dev/sda1   *         1        33    265041   83  Linux
+/dev/sda2            34      1106   8618872+  83  Linux
+
+Disk /dev/sdb: 9105 MB, 9105023488 bytes
+255 heads, 63 sectors/track, 1106 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+
+   Device Boot    Start       End    Blocks   Id  System
+/dev/sdb1   *         1       131   1052226   82  Linux swap
+
+Disk /dev/sdc: 18.2 GB, 18210036736 bytes
+255 heads, 63 sectors/track, 2213 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+
+   Device Boot    Start       End    Blocks   Id  System
+/dev/sdc1   *         1       131   1052226   82  Linux swap
+
+
+----------------------------------------------------------------
+</pre>
+
+<p>
+</body>
+</HTML>
+

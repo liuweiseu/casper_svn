@@ -1,0 +1,20 @@
+# configure iadc into a normalish mode
+# set mode
+w 90002 0
+s 10000
+w 90002 ffff
+#write address 0 
+w 90004 0
+#write data 0x7cbc
+w 90006 7cbc
+# commit it
+w 90008 ffff
+
+w 90004 7
+w 90006 4
+w 90008 ffff
+
+s 100000
+
+# reset adc
+w 90000 ffff

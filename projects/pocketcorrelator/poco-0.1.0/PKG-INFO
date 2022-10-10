@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: poco
+Version: 0.1.0
+Summary: Allows control of CASPER pocket correlators
+Home-page: casper.berkeley.edu
+Author: Griffin Foster
+Author-email: gfoster@berkeley.edu
+License: GPL
+Description: Allows control of CASPER pocket correlators. Requires AIPY-0.5.5 or greater, Grace Plotting Library
+Platform: *nix systems

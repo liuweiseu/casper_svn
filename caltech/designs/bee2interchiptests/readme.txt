@@ -1,0 +1,2 @@
+simple bit error rate test for bee2 interchip links. 
+To use, build these two designs and then program FPGAs 1 and 3 with the lfsr180 design and FPGAs 2 and 4 with the lfsr270 design, and then set all of the "count" registers to 1, you can then measure how many errors you get in each link in the nerr register. The ntotal register will increment when the test is running.

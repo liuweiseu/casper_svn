@@ -1,0 +1,13 @@
+# map e3 channel 0 -3 to dma 0-3 respecyively
+w 60 18
+w 61 19
+w 62 1a
+w 63 1b
+# set line interface to e3 mode
+w 49 0
+# enable output clock and data
+w 4a ff
+# set analog loopback on each line interface
+w 2e 11
+w 2f 11
+

@@ -1,0 +1,137 @@
+This is tcpborphserver2 
+-----------------------
+
+tcpborphserver2 is a daemon intended to run on a roach where it
+manages the borph process (programs fpga, writes to registers,
+etc), making the gateware registers available on the network. It
+is a much more complicated successor to the udp-based system server
+for the bee.
+
+Network communictions 
+---------------------
+
+tcpborphserver listens to a tcp port, default 7174. It speaks a
+protocol which tries to be human readable. Telnet to the port
+and type ?help to see what requests are available. Requests
+start with ?, replies have ! as first character. The protocol
+escapes a number of characters using backslashes, similar
+but not identical to C. There is a commandline utility which
+automates some of this.
+
+Command line options 
+--------------------
+
+tcpborphserver has a number of options, use -h to see them. The
+-b option is probably the most important, it is used to tell
+the server which directory to search when looking for bof files.
+
+Build time configuration 
+------------------------
+
+The makefile has a couple of lines at the top which can be
+edited, in particular the MODES variable can used to enable
+different modes in the server
+
+Modes 
+-----
+
+Tcpborphserver has a concept of modes. Different sets of
+commands (requests) are available in different modes.
+
+The raw mode is intended to be used with arbitrary bof files
+(gateware images), where one simply reads and writes named
+registers.
+
+For certain applications, where one wants to perform control
+operations directly on the roach, it is useful to generate a
+custom mode which contains gateware specific logic. Currently
+there is only one such mode, the poco mode.
+
+Raw Mode 
+--------
+
+Raw mode allows one to read and write registers. It also allows
+one to upload, list and delete bof files using the uploadbof,
+listbof and delbof commands. Uploadbof functions very similar
+to an FTP port command. When this command is run, a subprocess
+of the borphserver listens on the given socket and writes data
+received on this socket to a bof file - once the socket closes,
+the transfer is complete.
+
+Poco Mode 
+---------
+
+On entering the poco mode, a particular bof file is loaded
+(poco.bof). Registers are then initialised and clocks
+synchronised. When in the mode, commands exist to adjust gain,
+start data capture (stream out data via udp) on demand and
+perform various other operations.
+
+Source layout
+-------------
+
+Currently there are three modes implemented, core, raw and poco. Core
+is an essential infrastructure mode. Raw and poco can be disabled if desired. 
+
+core         - core tcpborphserver commands, fallback 
+raw          - raw mode for server - read and write arb registers, program bof files
+poco         - poco mode for server - requires pocket correlator poco.bof file
+holo         - holo mode for server - logic for a holography/narrowband holo.bof file
+
+katcp        - control protocol library, does most of the parsing/dispatch work
+include      - header files
+
+cmd          - utility to issue katcp commands (does a bit of escaping)
+sq           - status query utiltiy - will wait for a sensor to acquire a certain status
+collect      - utility to capture a poco datastream
+
+Hacking
+-------
+
+The server is poorly documented, and the API has gotten a bit intricate. 
+If you can overlook this, the server should be reasonably extensible.
+
+You will need a cross-compiler for the power pc if you want to run 
+it on a real roach.
+
+To setup your own mode, I suggest creating your own subdirectory, and arrange
+for the main function to call a setup routine in this directory. Use
+
+  store_full_mode_katcp 
+
+to register the mode (give it a name, a function to run when entering or leaving
+the mode, etc)
+
+Use 
+
+  register_mode_katcp
+
+to set up a request handler - a function which gets called when a user issues
+the matching request. Inside the request functions use the arg_*_katcp functions
+to access parameters (eg arg_string_katcp).
+
+Use 
+
+  read_pce and read_name_pce
+
+to read from borph registers, writes analogous functions.
+
+Future Work
+-----------
+
+The server is written in a way which attempts to isolate modes
+from each other. This could be extended so that the server
+loads up a .so file when programming a particular bit/bof
+file, so that the C control logic always matches the currently
+running gateware.
+
+This would involve a bit of work with dlopen and friends,
+instead of hardcoding calls to the setup functions in
+tcpborphserver2.c
+
+For extra credit one could some merge the .so files with .bof
+files - in theory this could all be packed into one elf file -
+elf has lots of features.
+
+Cleanups: In a lots of places, tcpborphserver functions have
+a _poco suffix, when they should not.

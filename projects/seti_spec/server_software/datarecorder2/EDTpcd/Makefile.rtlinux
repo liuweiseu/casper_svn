@@ -1,0 +1,7 @@
+all: edt_rtlinux.o
+
+include ../../rtl.mk
+clean:
+	rm -f *.o
+
+include $(RTL_DIR)/Rules.make

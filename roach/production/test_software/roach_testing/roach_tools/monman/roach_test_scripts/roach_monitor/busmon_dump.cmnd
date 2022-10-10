@@ -1,0 +1,5 @@
+#dump the bus monitor registers
+r 340
+r 341
+r 342
+r 343

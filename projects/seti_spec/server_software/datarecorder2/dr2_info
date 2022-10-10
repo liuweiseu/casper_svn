@@ -1,0 +1,58 @@
+
+This program reads data from a set of  data sources
+(nominally and EDT CD60's) and writes the data and associated 
+headers to a set of disk buffers.  Handling of the data after
+it hits the disk buffers (eg, writing it to tape or a network)
+is a job for some other, independent program.
+
+This program is multithreaded.  There is a pair of threads for
+each data source.  One of the pair receives data from the 
+source and writes it to a memory buffer.  The other of the pair
+reads from the memory buffer and writes to a disk buffer.
+The disk buffer can consist of an arbitrary number of disk
+files that are written to sequentially. 
+
+The memory buffer threads must be fast, so it does very little.
+It maintains 2 associated ring buffers.  One recieves the 
+data delivered by the source and the other holds time stamps
+of when that data arrives.  The time stamp is the system time
+obtained immediately after a given segment of the data buffer
+is full.  The data buffer is filled by the source and it is
+free running.  
+
+The disk buffer threads maintain memory mapped disk files.
+When one file is "full", a disk buffer thread will close
+it, rename it so as to indicate it's full state and open
+the next file in a series.  When the last of the series 
+is closed and renamed, it will reopen the first one and
+start over.  If some auxillary program has not renamed 
+a given file in the series to indicate a reusable state,
+the disk buffer thread will wait until this renaming happens.
+Serialization of disk files is done via file names.
+
+There a several helper threads:
+        - a thread to obtain observatory pointing data.
+        - a thread to watch for trigger files. 
+
+
+Notes:
+the sample rate is always 1/2 that of the clock rate.  This is
+because the frontend HW divides the clockrate by 2 in order to
+insure that the clock waveform is square, rather than rectangular.
+
+The time between synth changes during stare period is
+2 x maxfftlength_time = 2 x ~13.42.  This should be counted in
+buffers as it will always fall on a buffer boundry.
+
+
+----------------------------------------------------------------
+
+        Usage:
+        -v                      verbose
+        -noheaders              do not write headers to diskbuffer
+        -tf <file>              triggerfile
+        -disk <basename>        diskbuffer base file name
+        -ndb <n>                number of disk buffers
+        -prio                   use priority scheduling
+        -rbo                    using ring buffers only (no disk buffers)
+

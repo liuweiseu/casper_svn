@@ -1,0 +1,802 @@
+Library {
+  Name			  "coeff_gen_lib"
+  Version		  6.2
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Tue Jan 10 15:33:28 2006"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "aparsons"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Apr 20 16:59:14 2006"
+  ModelVersionFormat	  "1.%<AutoIncrement:29>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "coeff_gen_lib"
+    Location		    [412, 165, 992, 466]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "br_coeff_gen"
+      Ports		      [1, 1]
+      Position		      [45, 34, 90, 76]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Coefficients: (0 to 2^(FFTSize-1)-1)|Step Perio"
+"d: (2^?)|Bit Width:|Latency:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskToolTipString	      "on,on,on,on"
+      MaskVarAliasString      ",,,"
+      MaskVariables	      "Coeffs=@1;StepPeriod=@2;n_bits=@3;latency=@4;"
+      MaskInitialization      "cursys = gcb;\ndisp(cursys);\nvlen = length(Coe"
+"ffs);\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "[0 1 2 3]|0|18|4"
+      MaskTabNameString	      ",,,"
+      System {
+	Name			"br_coeff_gen"
+	Location		[404, 435, 919, 703]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "rst"
+	  Position		  [25, 48, 55, 62]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Counter"
+	  Ports			  [1, 1]
+	  Position		  [75, 29, 125, 81]
+	  SourceBlock		  "xbsIndex_r3/Counter"
+	  SourceType		  "Xilinx Counter Block"
+	  cnt_type		  "Free Running"
+	  n_bits		  "log2(vlen) + StepPeriod"
+	  bin_pt		  "0"
+	  arith_type		  "Unsigned"
+	  start_count		  "0"
+	  cnt_to		  "Inf"
+	  cnt_by_val		  "1"
+	  operation		  "Up"
+	  explicit_period	  off
+	  period		  "1"
+	  load_pin		  off
+	  rst			  on
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  use_rpm		  on
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ROM"
+	  Ports			  [1, 1]
+	  Position		  [210, 29, 260, 81]
+	  SourceBlock		  "xbsIndex_r3/ROM"
+	  SourceType		  "Xilinx Single Port Read-Only Memory"
+	  depth			  "vlen"
+	  initVector		  "round( real(Coeffs) * 2^(n_bits-1) ) / 2^(n"
+"_bits-1)"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "n_bits"
+	  bin_pt		  "n_bits-1"
+	  latency		  "latency"
+	  init_zero		  on
+	  explicit_period	  off
+	  period		  "1"
+	  rst			  off
+	  init_reg		  "0"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  on
+	  distributed_mem	  on
+	  use_rpm		  off
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ROM1"
+	  Ports			  [1, 1]
+	  Position		  [210, 94, 260, 146]
+	  SourceBlock		  "xbsIndex_r3/ROM"
+	  SourceType		  "Xilinx Single Port Read-Only Memory"
+	  depth			  "vlen"
+	  initVector		  "round( imag(Coeffs) * 2^(n_bits-1)  ) / 2^("
+"n_bits-1)"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "n_bits"
+	  bin_pt		  "n_bits-1"
+	  latency		  "latency"
+	  init_zero		  on
+	  explicit_period	  off
+	  period		  "1"
+	  rst			  off
+	  init_reg		  "0"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  on
+	  distributed_mem	  on
+	  use_rpm		  off
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice"
+	  Ports			  [1, 1]
+	  Position		  [145, 41, 190, 69]
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Upper Bit Location + Width"
+	  nbits			  "log2(vlen)"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  boolean_output	  off
+	  explicit_period	  off
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ri_to_c"
+	  Ports			  [2, 1]
+	  Position		  [300, 54, 340, 96]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ri_to_c"
+	    Location		    [512, 151, 787, 285]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "re"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "im"
+	      Position		      [25, 88, 55, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Concat"
+	      Ports		      [2, 1]
+	      Position		      [145, 40, 195, 95]
+	      SourceBlock	      "xbsIndex_r3/Concat"
+	      SourceType	      "Xilinx Bus Concatenator"
+	      num_inputs	      "2"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret"
+	      Ports		      [1, 1]
+	      Position		      [80, 29, 120, 61]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret1"
+	      Ports		      [1, 1]
+	      Position		      [80, 79, 120, 111]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "c"
+	      Position		      [220, 63, 250, 77]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "im"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Concat"
+	      SrcPort		      1
+	      DstBlock		      "c"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "re"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      Points		      [0, -15]
+	      DstBlock		      "Concat"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      Points		      [0, 10]
+	      DstBlock		      "Concat"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "w"
+	  Position		  [390, 68, 420, 82]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "ri_to_c"
+	  SrcPort		  1
+	  DstBlock		  "w"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ROM1"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -35]
+	  DstBlock		  "ri_to_c"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ROM"
+	  SrcPort		  1
+	  Points		  [0, 10]
+	  DstBlock		  "ri_to_c"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Slice"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "ROM1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "ROM"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "rst"
+	  SrcPort		  1
+	  DstBlock		  "Counter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Counter"
+	  SrcPort		  1
+	  DstBlock		  "Slice"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "coeff_gen"
+      Ports		      [1, 1]
+      Position		      [35, 192, 80, 238]
+      BlockChoice	      "br_coeff_gen"
+      TemplateBlock	      "self"
+      MemberBlocks	      "br_coeff_gen,static_coeff_gen"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      System {
+	Name			"coeff_gen"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "rst"
+	  Position		  [20, 40, 40, 60]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "br_coeff_gen"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "coeff_gen_lib/br_coeff_gen"
+	  SourceType		  "Unknown"
+	  ShowPortLabels	  "on"
+	  Coeffs		  "[0 1 2 3]"
+	  StepPeriod		  "0"
+	  n_bits		  "18"
+	  latency		  "4"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "w"
+	  Position		  [200, 40, 220, 60]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "rst"
+	  SrcPort		  1
+	  DstBlock		  "br_coeff_gen"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "br_coeff_gen"
+	  SrcPort		  1
+	  DstBlock		  "w"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "static_coeff_gen"
+      Ports		      [1, 1]
+      Position		      [45, 99, 90, 141]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Coefficients: (0 to 2^(FFTSize-1)-1)|Bit Width:"
+"|Latency:"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "Coeffs=@1;n_bits=@2;latency=@3;"
+      MaskInitialization      "cursys = gcb;\ndisp(cursys);\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|18|4"
+      MaskTabNameString	      ",,"
+      System {
+	Name			"static_coeff_gen"
+	Location		[328, 227, 843, 495]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "rst"
+	  Position		  [25, 48, 55, 62]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant"
+	  Ports			  [0, 1]
+	  Position		  [185, 34, 255, 66]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "round(real(Coeffs(1)) * 2^(n_bits-1)) / 2^("
+"n_bits-1)"
+	  equ			  "P=C"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "n_bits"
+	  bin_pt		  "n_bits - 1"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant1"
+	  Ports			  [0, 1]
+	  Position		  [185, 84, 255, 116]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "round(imag(Coeffs(1)) * 2^(n_bits-1)) / 2^("
+"n_bits-1)"
+	  equ			  "P=C"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "n_bits"
+	  bin_pt		  "n_bits - 1"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [75, 45, 95, 65]
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ri_to_c"
+	  Ports			  [2, 1]
+	  Position		  [300, 54, 340, 96]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ri_to_c"
+	    Location		    [512, 151, 787, 285]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "re"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "im"
+	      Position		      [25, 88, 55, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Concat"
+	      Ports		      [2, 1]
+	      Position		      [145, 40, 195, 95]
+	      SourceBlock	      "xbsIndex_r3/Concat"
+	      SourceType	      "Xilinx Bus Concatenator"
+	      num_inputs	      "2"
+	      explicit_period	      "off"
+	      period		      "1"
+	      dbl_ovrd		      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret"
+	      Ports		      [1, 1]
+	      Position		      [80, 29, 120, 61]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret1"
+	      Ports		      [1, 1]
+	      Position		      [80, 79, 120, 111]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      "on"
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      "on"
+	      bin_pt		      "0"
+	      force_valid	      "on"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "c"
+	      Position		      [220, 63, 250, 77]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "im"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Concat"
+	      SrcPort		      1
+	      DstBlock		      "c"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "re"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      Points		      [0, -15]
+	      DstBlock		      "Concat"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      Points		      [0, 10]
+	      DstBlock		      "Concat"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "w"
+	  Position		  [390, 68, 420, 82]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "rst"
+	  SrcPort		  1
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, 15]
+	  DstBlock		  "ri_to_c"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -15]
+	  DstBlock		  "ri_to_c"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ri_to_c"
+	  SrcPort		  1
+	  DstBlock		  "w"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}

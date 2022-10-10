@@ -1,0 +1,17 @@
+#!/bin/sh
+
+#pragma ident "@(#)t1chk	1.1 09/13/04 EDT"
+
+if [ "$1" = "-u" ] ; then
+unit=$2
+else
+unit=$1
+fi
+
+if [ "$unit" = "" ] ; then unit=0 ; fi
+
+echo "Setting unit to $unit"
+
+initpcd -u $unit -f t1in.cfg
+#  check prbs15 on all 16 differential channels
+chkprbs15 -u $unit -N -c 0 -n 16 -l 0

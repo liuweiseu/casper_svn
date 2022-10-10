@@ -1,0 +1,5 @@
+#!/bin/bash
+gnuplot_i_path=./gnuplot_i
+
+gcc -O -Wall -o ./pocketplot $gnuplot_i_path/gnuplot_i.c ./pocketplot.c -lm
+gcc -o ./setacc ./setacc.c -lm

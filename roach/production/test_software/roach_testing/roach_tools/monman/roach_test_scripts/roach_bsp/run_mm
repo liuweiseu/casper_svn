@@ -1,0 +1,11 @@
+#!/bin/bash
+#MONMAN_BIN=/home/dave/monman_safe/monman
+MONMAN_BIN=/home/dave/monman/monman
+TTYS=/dev/ttyS0
+
+if [ $1 ] ; then
+  $MONMAN_BIN -d 16 -a 32 -b 115200 -f $1 $TTYS 
+else 
+  $MONMAN_BIN -d 16 -a 32 -b 115200 $TTYS 
+fi
+

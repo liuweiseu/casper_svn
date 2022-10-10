@@ -1,0 +1,4 @@
+Dual500MHzPFB.mdl
+Glenn Jones jones_gl@caltech.edu
+May 27, 2008
+This is a reference design demonstrating a dual input, 512 MHz, 512 Channel PFB spectrometer using the vector accumulator from the GAVRT library. The design seems to be very stable after extensive testing. The design includes functionality for sending the data out over UDP so that every spectrum can be recorded with no dead time. To enable this feature, the main.c file must be copied into the Software directory of the XPS build, and then 'run init_bram' must be run from within XPS. The FPGA is still not nearly full, so it may be possible to add more channels, more PFB taps, more ADC capture depth, or rounding to improve performance.

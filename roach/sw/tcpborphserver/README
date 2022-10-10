@@ -1,0 +1,23 @@
+Set the variable CROSS_COMPILE to your cross compiler
+prefix to build for a different architecture. By default
+the apps are statically linked.
+
+tcpborphserver 
+
+ a simple control server which you can telnet into to 
+ issue commands. By default listens on port 7174. Use
+   ?help 
+ to see a list of supported commands. Reads and writes
+ take register name, offset and size arguments
+
+tbclient
+
+ a program making it easier to issue commands from scripts.
+ Unless you write complicated shell scripts, you are probably
+ going to use telnet or a plain socket under your
+ favourite language 
+
+
+
+
+

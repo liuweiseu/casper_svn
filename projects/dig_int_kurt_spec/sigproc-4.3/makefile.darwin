@@ -1,0 +1,19 @@
+# makefile.darwin - your system-specific makefile for SIGPROC
+BIN = /opt/local/bin/sigproc
+# edit this by hand if you want to change the C compiler options
+CCC = gcc-dp-3.4 -Wall -O2
+# The following optional libraries need to be edited by hand...
+LPGPLOT = -lpgplot -lcpgplot -L/usr/X11R6/lib -lX11 -L/opt/local/lib
+LFITS = -L/opt/local/lib -lcfitsio
+LFFTW = -L/opt/local/lib -lfftw3f -lfftw3 
+F77_LIBS = -lSystemStubs /Developer/SDKs/MacOSX10.3.9.sdk/usr/lib/gcc/darwin/2.95.2/libcc_dynamic.a
+SUNLM = 
+ifneq ($(origin LFITS), undefined)
+	DFITS = -DPSRFITS
+endif
+ifneq ($(origin LFFTW), undefined)
+	DFFTW = -DFFTW
+	FFTWF = fftwdata.o
+else
+	FFTWF = fftwdummy.o
+endif

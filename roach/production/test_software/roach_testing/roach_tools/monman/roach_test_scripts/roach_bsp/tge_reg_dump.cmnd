@@ -1,0 +1,19 @@
+# Fabric interface MAC
+r 13000
+r 13002
+r 13004
+# Fabric gateway
+r 13006
+# Fabric IP address
+r 13008
+r 1300a
+# TX size
+r 1300c
+# RX size
+r 1300e
+# Fabric IF enabled
+r 13010
+# Fabric UDP port
+r 13012
+# XAUI status
+r 13014

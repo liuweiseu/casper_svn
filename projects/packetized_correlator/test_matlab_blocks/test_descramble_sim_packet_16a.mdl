@@ -1,0 +1,6009 @@
+Model {
+  Name			  "test_descramble_sim_packet_16a"
+  Version		  6.2
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.161"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  on
+  ShowPortDataTypes	  on
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu Nov 08 10:22:02 2007"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "dsp"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Sat Sep 20 17:17:40 2008"
+  ModelVersionFormat	  "1.%<AutoIncrement:161>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "600000"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutDataTypeMode	      "Inherit via back propagation"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Ground
+    }
+    Block {
+      BlockType		      SignalConversion
+      OverrideOpt	      off
+    }
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Lookup
+      InputValues	      "[-4:5]"
+      OutputValues	      " rand(1,10)-0.5"
+      LookUpMeth	      "Interpolation-Extrapolation"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+      LUTDesignTableMode      "Redesign Table"
+      LUTDesignDataSource     "Block Dialog"
+      LUTDesignFunctionName   "sqrt(x)"
+      LUTDesignUseExistingBP  on
+      LUTDesignRelError	      "0.01"
+      LUTDesignAbsError	      "1e-6"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Scope
+      Floating		      off
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SignalSpecification
+      Dimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutDataTypeMode	      "Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "test_descramble_sim_packet_16a"
+    Location		    [2, 70, 1365, 744]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      " System Generator"
+      Tag		      "genX"
+      Ports		      []
+      Position		      [17, 70, 68, 120]
+      ShowName		      off
+      AttributesFormatString  "System\\nGenerator"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "xbsIndex_r3/ System Generator"
+      SourceType	      "Xilinx System Generator"
+      ShowPortLabels	      on
+      xilinxfamily	      "Virtex2"
+      part		      "xc2v1000"
+      speed		      "-4"
+      package		      "bg575"
+      synthesis_tool	      "XST"
+      directory		      "./netlist"
+      testbench		      off
+      simulink_period	      "1"
+      sysclk_period	      "100"
+      incr_netlist	      off
+      trim_vbits	      "Everywhere in SubSystem"
+      dbl_ovrd		      "According to Block Masks"
+      core_generation	      "According to Block Masks"
+      run_coregen	      off
+      deprecated_control      off
+      eval_field	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Concat1"
+      Ports		      [2, 1]
+      Position		      [1065, 490, 1095, 525]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Concat"
+      SourceType	      "Xilinx Bus Concatenator"
+      num_inputs	      "2"
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Concat2"
+      Ports		      [4, 1]
+      Position		      [1100, 412, 1130, 448]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Concat"
+      SourceType	      "Xilinx Bus Concatenator"
+      num_inputs	      "4"
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant1"
+      Ports		      [0, 1]
+      Position		      [555, 172, 575, 188]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "4"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant10"
+      Ports		      [0, 1]
+      Position		      [1095, 550, 1120, 560]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "1"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant12"
+      Ports		      [0, 1]
+      Position		      [785, 350, 815, 360]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant13"
+      Ports		      [0, 1]
+      Position		      [1020, 507, 1055, 523]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "2"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant14"
+      Ports		      [0, 1]
+      Position		      [785, 365, 815, 375]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant15"
+      Ports		      [0, 1]
+      Position		      [840, 472, 860, 488]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "3"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant16"
+      Ports		      [0, 1]
+      Position		      [785, 200, 815, 210]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant17"
+      Ports		      [0, 1]
+      Position		      [785, 215, 815, 225]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant18"
+      Ports		      [0, 1]
+      Position		      [785, 230, 815, 240]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant19"
+      Ports		      [0, 1]
+      Position		      [785, 380, 815, 390]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant2"
+      Ports		      [0, 1]
+      Position		      [785, 245, 815, 255]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant20"
+      Ports		      [0, 1]
+      Position		      [785, 395, 815, 405]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant21"
+      Ports		      [0, 1]
+      Position		      [785, 410, 815, 420]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant3"
+      Ports		      [0, 1]
+      Position		      [785, 260, 815, 270]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant4"
+      Ports		      [0, 1]
+      Position		      [785, 275, 815, 285]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant5"
+      Ports		      [0, 1]
+      Position		      [940, 340, 970, 350]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "1"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant6"
+      Ports		      [0, 1]
+      Position		      [785, 290, 815, 300]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant7"
+      Ports		      [0, 1]
+      Position		      [785, 305, 815, 315]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant8"
+      Ports		      [0, 1]
+      Position		      [785, 320, 815, 330]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant9"
+      Ports		      [0, 1]
+      Position		      [785, 335, 815, 345]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Constant"
+      SourceType	      "Xilinx Constant Block"
+      const		      "0"
+      equ		      "P=C"
+      arith_type	      "Unsigned"
+      n_bits		      "16"
+      bin_pt		      "0"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      iostate		      "0"
+      explicit_period	      on
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Counter1"
+      Ports		      [1, 1]
+      Position		      [715, 176, 765, 204]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Counter"
+      SourceType	      "Xilinx Counter Block"
+      cnt_type		      "Free Running"
+      n_bits		      "16"
+      bin_pt		      "0"
+      arith_type	      "Unsigned"
+      start_count	      "0"
+      cnt_to		      "Inf"
+      cnt_by_val	      "1"
+      operation		      "Up"
+      explicit_period	      off
+      period		      "1"
+      load_pin		      off
+      rst		      off
+      en		      on
+      dbl_ovrd		      off
+      show_param	      off
+      use_rpm		      on
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Counter4"
+      Ports		      [1, 1]
+      Position		      [240, 441, 290, 469]
+      SourceBlock	      "xbsIndex_r3/Counter"
+      SourceType	      "Xilinx Counter Block"
+      cnt_type		      "Free Running"
+      n_bits		      "32"
+      bin_pt		      "0"
+      arith_type	      "Unsigned"
+      start_count	      "0"
+      cnt_to		      "32"
+      cnt_by_val	      "1"
+      operation		      "Up"
+      explicit_period	      off
+      period		      "1"
+      load_pin		      off
+      rst		      off
+      en		      on
+      dbl_ovrd		      off
+      show_param	      off
+      use_rpm		      on
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Counter5"
+      Ports		      [1, 1]
+      Position		      [1000, 478, 1050, 502]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Counter"
+      SourceType	      "Xilinx Counter Block"
+      cnt_type		      "Free Running"
+      n_bits		      "48-2"
+      bin_pt		      "0"
+      arith_type	      "Unsigned"
+      start_count	      "0"
+      cnt_to		      "Inf"
+      cnt_by_val	      "1"
+      operation		      "Up"
+      explicit_period	      off
+      period		      "1"
+      load_pin		      off
+      rst		      off
+      en		      on
+      dbl_ovrd		      off
+      show_param	      off
+      use_rpm		      on
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Counter6"
+      Ports		      [1, 1]
+      Position		      [810, 516, 860, 544]
+      SourceBlock	      "xbsIndex_r3/Counter"
+      SourceType	      "Xilinx Counter Block"
+      cnt_type		      "Free Running"
+      n_bits		      "4"
+      bin_pt		      "0"
+      arith_type	      "Unsigned"
+      start_count	      "0"
+      cnt_to		      "Inf"
+      cnt_by_val	      "1"
+      operation		      "Up"
+      explicit_period	      off
+      period		      "1"
+      load_pin		      off
+      rst		      off
+      en		      on
+      dbl_ovrd		      off
+      show_param	      off
+      use_rpm		      on
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay19"
+      Ports		      [1, 1]
+      Position		      [195, 700, 215, 720]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Delay"
+      SourceType	      "Xilinx Delay Block"
+      latency		      "2"
+      reg_retiming	      off
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      accept_only_valid	      off
+      init_zero		      on
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway In3"
+      Ports		      [1, 1]
+      Position		      [80, 449, 135, 471]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway In"
+      SourceType	      "Xilinx Gateway In"
+      arith_type	      "Boolean"
+      n_bits		      "8"
+      bin_pt		      "6"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      period		      "1"
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway In4"
+      Ports		      [1, 1]
+      Position		      [80, 484, 135, 506]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway In"
+      SourceType	      "Xilinx Gateway In"
+      arith_type	      "Boolean"
+      n_bits		      "8"
+      bin_pt		      "6"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      period		      "1"
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway In6"
+      Ports		      [1, 1]
+      Position		      [70, 374, 125, 396]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway In"
+      SourceType	      "Xilinx Gateway In"
+      arith_type	      "Unsigned"
+      n_bits		      "1"
+      bin_pt		      "0"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      period		      "1"
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out10"
+      Ports		      [1, 1]
+      Position		      [1410, 323, 1465, 337]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out11"
+      Ports		      [1, 1]
+      Position		      [1410, 338, 1465, 352]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out48"
+      Ports		      [1, 1]
+      Position		      [1195, 293, 1250, 307]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out49"
+      Ports		      [1, 1]
+      Position		      [1195, 308, 1250, 322]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out50"
+      Ports		      [1, 1]
+      Position		      [1195, 323, 1250, 337]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out51"
+      Ports		      [1, 1]
+      Position		      [1195, 338, 1250, 352]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out52"
+      Ports		      [1, 1]
+      Position		      [190, 293, 245, 307]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out53"
+      Ports		      [1, 1]
+      Position		      [190, 318, 245, 332]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out54"
+      Ports		      [1, 1]
+      Position		      [190, 343, 245, 357]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out8"
+      Ports		      [1, 1]
+      Position		      [1410, 293, 1465, 307]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out9"
+      Ports		      [1, 1]
+      Position		      [1410, 308, 1465, 322]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Gateway Out"
+      SourceType	      "Xilinx Gateway Out"
+      output_type	      "Double"
+      nbits		      "8"
+      bin_pt		      "6"
+      arith_type	      "Boolean"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      needs_fixed_name	      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto"
+      Position		      [360, 700, 440, 720]
+      ShowName		      off
+      GotoTag		      "xaui_tvg_sel"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto1"
+      Position		      [360, 650, 440, 670]
+      ShowName		      off
+      GotoTag		      "x_tvg_sel"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto11"
+      Position		      [360, 600, 440, 620]
+      ShowName		      off
+      GotoTag		      "dram_tvg_sel"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto2"
+      Position		      [360, 675, 440, 695]
+      ShowName		      off
+      GotoTag		      "descr_tvg_sel"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto3"
+      Position		      [360, 625, 440, 645]
+      ShowName		      off
+      GotoTag		      "x_miss_rst"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mux3"
+      Ports		      [17, 1]
+      Position		      [880, 169, 910, 421]
+      SourceBlock	      "xbsIndex_r3/Mux"
+      SourceType	      "Xilinx Multiplexer Block"
+      inputs		      "16"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "0"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mux_type		      off
+      use_rpm		      off
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mux4"
+      Ports		      [3, 1]
+      Position		      [995, 334, 1015, 396]
+      SourceBlock	      "xbsIndex_r3/Mux"
+      SourceType	      "Xilinx Multiplexer Block"
+      inputs		      "2"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "0"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mux_type		      off
+      use_rpm		      off
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mux5"
+      Ports		      [3, 1]
+      Position		      [190, 400, 220, 510]
+      SourceBlock	      "xbsIndex_r3/Mux"
+      SourceType	      "Xilinx Multiplexer Block"
+      inputs		      "2"
+      precision		      "Full"
+      arith_type	      "Signed  (2's comp)"
+      n_bits		      "8"
+      bin_pt		      "2"
+      quantization	      "Truncate"
+      overflow		      "Wrap"
+      latency		      "0"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      mux_type		      off
+      use_rpm		      off
+      gen_core		      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator3"
+      Ports		      [0, 1]
+      Position		      [15, 478, 60, 512]
+      ShowName		      off
+      Period		      "4"
+      PulseWidth	      "2"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator4"
+      Ports		      [0, 1]
+      Position		      [15, 443, 60, 477]
+      ShowName		      off
+      PulseWidth	      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Relational1"
+      Ports		      [2, 1]
+      Position		      [885, 474, 930, 501]
+      SourceBlock	      "xbsIndex_r3/Relational"
+      SourceType	      "Xilinx Relational Block"
+      mode		      "a=b"
+      latency		      "1"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Relational2"
+      Ports		      [2, 1]
+      Position		      [595, 174, 640, 201]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Relational"
+      SourceType	      "Xilinx Relational Block"
+      mode		      "a=b"
+      latency		      "1"
+      explicit_period	      off
+      period		      "1"
+      en		      off
+      dbl_ovrd		      off
+      show_param	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      xl_use_area	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Repeating\nSequence\nInterpolated1"
+      Ports		      [0, 1]
+      Position		      [20, 370, 50, 400]
+      SourceBlock	      "simulink/Sources/Repeating\nSequence\nInterpola"
+"ted"
+      SourceType	      "Repeating Sequence Interpolated"
+      ShowPortLabels	      on
+      OutValues		      "[0 1].'"
+      TimeValues	      "[100000 300000].'"
+      LookUpMeth	      "Use Input Above"
+      tsamp		      "1"
+      OutputDataTypeScalingMode	"Specify via dialog"
+      OutDataType	      "float('double')"
+      OutScaling	      "2^-10"
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope17"
+      Ports		      [3]
+      Position		      [270, 289, 290, 361]
+      Location		      [87, 54, 1044, 872]
+      Open		      off
+      NumInputPorts	      "3"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"sel"
+	axes2			"0"
+	axes3			"1"
+      }
+      YMin		      "-1~0~0"
+      YMax		      "1~1~1"
+      SaveName		      "ScopeData9"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Slice1"
+      Ports		      [1, 1]
+      Position		      [250, 676, 280, 694]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Slice"
+      SourceType	      "Xilinx Slice Block"
+      mode		      "Lower Bit Location + Width"
+      nbits		      "2"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "1"
+      base0		      "LSB of Input"
+      boolean_output	      on
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Slice2"
+      Ports		      [1, 1]
+      Position		      [250, 601, 280, 619]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Slice"
+      SourceType	      "Xilinx Slice Block"
+      mode		      "Lower Bit Location + Width"
+      nbits		      "5"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "9"
+      base0		      "LSB of Input"
+      boolean_output	      off
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Slice3"
+      Ports		      [1, 1]
+      Position		      [945, 448, 975, 462]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Slice"
+      SourceType	      "Xilinx Slice Block"
+      mode		      "Lower Bit Location + Width"
+      nbits		      "1"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      boolean_output	      on
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Slice7"
+      Ports		      [1, 1]
+      Position		      [250, 626, 280, 644]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Slice"
+      SourceType	      "Xilinx Slice Block"
+      mode		      "Lower Bit Location + Width"
+      nbits		      "1"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "8"
+      base0		      "LSB of Input"
+      boolean_output	      on
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Slice8"
+      Ports		      [1, 1]
+      Position		      [945, 378, 975, 392]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Slice"
+      SourceType	      "Xilinx Slice Block"
+      mode		      "Lower Bit Location + Width"
+      nbits		      "16"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "1"
+      base0		      "LSB of Input"
+      boolean_output	      on
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Slice9"
+      Ports		      [1, 1]
+      Position		      [320, 458, 350, 472]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Slice"
+      SourceType	      "Xilinx Slice Block"
+      mode		      "Lower Bit Location + Width"
+      nbits		      "1"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "4"
+      base0		      "LSB of Input"
+      boolean_output	      on
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "descramble_window2"
+      Ports		      [6, 5]
+      Position		      [1195, 412, 1305, 573]
+      AttributesFormatString  "Sync period: 2^14"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Maximum Number of Antennas (2^?):|Number of Xen"
+"gines in the system (2^?)|Number of frequency channels in the system (2^?)|X "
+"Engine Integration Length (2^?):|Number of Windows to Buffer (2^?):"
+      MaskStyleString	      "edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "ant_bits=@1;xeng_bits=@2;chan_bits=@3;x_int_bit"
+"s=@4;window_bits=@5;"
+      MaskInitialization      "sync_bits=chan_bits+x_int_bits+ant_bits-xeng_bi"
+"ts\n\nfmtstr = sprintf('Sync period: 2^%d', sync_bits);\nset_param(gcb, 'Attr"
+"ibutesFormatString', fmtstr);\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "4|2|7|5|3"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"descramble_window2"
+	Location		[2, 74, 1373, 764]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din"
+	  Position		  [235, 133, 265, 147]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "we"
+	  Position		  [25, 153, 55, 167]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "eof"
+	  Position		  [25, 118, 55, 132]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "mcnt"
+	  Position		  [25, 48, 55, 62]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "ant"
+	  Position		  [25, 83, 55, 97]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "flag"
+	  Position		  [235, 103, 265, 117]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant"
+	  Ports			  [0, 1]
+	  Position		  [395, 84, 415, 96]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "0"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "18"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant1"
+	  Ports			  [0, 1]
+	  Position		  [550, 85, 595, 115]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "0"
+	  equ			  "P=C"
+	  arith_type		  "Unsigned"
+	  n_bits		  "1"
+	  bin_pt		  "0"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  off
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay1"
+	  Ports			  [1, 1]
+	  Position		  [485, 23, 510, 47]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "2"
+	  reg_retiming		  off
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  accept_only_valid	  off
+	  init_zero		  on
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay2"
+	  Ports			  [1, 1]
+	  Position		  [320, 131, 340, 149]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "4"
+	  reg_retiming		  off
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  accept_only_valid	  off
+	  init_zero		  on
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay3"
+	  Ports			  [1, 1]
+	  Position		  [485, 233, 510, 257]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "2"
+	  reg_retiming		  off
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  accept_only_valid	  off
+	  init_zero		  on
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay4"
+	  Ports			  [1, 1]
+	  Position		  [320, 106, 340, 124]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "4"
+	  reg_retiming		  off
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  accept_only_valid	  off
+	  init_zero		  on
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Dual Port RAM"
+	  Ports			  [6, 4]
+	  Position		  [445, 65, 520, 160]
+	  SourceBlock		  "xbsIndex_r3/Dual Port RAM"
+	  SourceType		  "Xilinx Dual Port Random Access Memory"
+	  depth			  "2^x_int_bits * 2^ant_bits * 2^window_bits"
+	  initVector		  "1"
+	  write_mode_A		  "Read Before Write"
+	  write_mode_B		  "Read Before Write"
+	  latency		  "2"
+	  mem_collision		  on
+	  init_zero		  on
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	  rst_a			  off
+	  init_a		  "0"
+	  rst_b			  off
+	  init_b		  "0"
+	  show_param		  off
+	  distributed_mem	  off
+	  use_rpm		  off
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out1"
+	  Ports			  [1, 1]
+	  Position		  [925, 393, 955, 407]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  off
+	  timing_constraint	  "None"
+	  locs_specified	  off
+	  LOCs			  "{}"
+	  needs_fixed_name	  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out2"
+	  Ports			  [1, 1]
+	  Position		  [925, 423, 955, 437]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  off
+	  timing_constraint	  "None"
+	  locs_specified	  off
+	  LOCs			  "{}"
+	  needs_fixed_name	  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out3"
+	  Ports			  [1, 1]
+	  Position		  [925, 333, 955, 347]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  off
+	  timing_constraint	  "None"
+	  locs_specified	  off
+	  LOCs			  "{}"
+	  needs_fixed_name	  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out4"
+	  Ports			  [1, 1]
+	  Position		  [925, 303, 955, 317]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  off
+	  timing_constraint	  "None"
+	  locs_specified	  off
+	  LOCs			  "{}"
+	  needs_fixed_name	  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gateway Out5"
+	  Ports			  [1, 1]
+	  Position		  [925, 363, 955, 377]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Gateway Out"
+	  SourceType		  "Xilinx Gateway Out"
+	  output_type		  "Double"
+	  nbits			  "8"
+	  bin_pt		  "6"
+	  arith_type		  "Boolean"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  hdl_port		  off
+	  timing_constraint	  "None"
+	  locs_specified	  off
+	  LOCs			  "{}"
+	  needs_fixed_name	  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux"
+	  Ports			  [3, 1]
+	  Position		  [650, 67, 675, 133]
+	  SourceBlock		  "xbsIndex_r3/Mux"
+	  SourceType		  "Xilinx Multiplexer Block"
+	  inputs		  "2"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "0"
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  mux_type		  off
+	  use_rpm		  off
+	  gen_core		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice3"
+	  Ports			  [1, 1]
+	  Position		  [210, 298, 240, 312]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r3/Slice"
+	  SourceType		  "Xilinx Slice Block"
+	  mode			  "Lower Bit Location + Width"
+	  nbits			  "32"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  boolean_output	  off
+	  explicit_period	  off
+	  period		  "1"
+	  dbl_ovrd		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "deflagger"
+	  Ports			  [1, 3]
+	  Position		  [695, 85, 750, 115]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "deflagger"
+	    Location		    [478, 445, 1167, 873]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "din"
+	      Position		      [25, 98, 55, 112]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice1"
+	      Ports		      [1, 1]
+	      Position		      [110, 98, 140, 112]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Lower Bit Location + Width"
+	      nbits		      "16"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      off
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice2"
+	      Ports		      [1, 1]
+	      Position		      [110, 58, 140, 72]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "1"
+	      bit1		      "-1"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      on
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice3"
+	      Ports		      [1, 1]
+	      Position		      [110, 18, 140, 32]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Upper Bit Location + Width"
+	      nbits		      "1"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      on
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "dout"
+	      Position		      [165, 98, 195, 112]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "flag"
+	      Position		      [165, 58, 195, 72]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "rcvd"
+	      Position		      [165, 18, 195, 32]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Slice1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "dout"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice3"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "rcvd"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice2"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "flag"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "din"
+	      SrcPort		      1
+	      Points		      [0, 0; 15, 0]
+	      Branch {
+		Points			[0, -40]
+		Branch {
+		  Points		  [0, -40]
+		  DstBlock		  "Slice3"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Slice2"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"Slice1"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "flagger"
+	  Ports			  [2, 1]
+	  Position		  [360, 119, 415, 146]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "flagger"
+	    Location		    [478, 445, 808, 704]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "flag"
+	      Position		      [45, 58, 75, 72]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "din"
+	      Position		      [25, 208, 55, 222]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Concat"
+	      Ports		      [12, 1]
+	      Position		      [155, 29, 250, 236]
+	      SourceBlock	      "xbsIndex_r3/Concat"
+	      SourceType	      "Xilinx Bus Concatenator"
+	      num_inputs	      "12"
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant1"
+	      Ports		      [0, 1]
+	      Position		      [115, 179, 135, 191]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Constant"
+	      SourceType	      "Xilinx Constant Block"
+	      const		      "1"
+	      equ		      "P=C"
+	      arith_type	      "Unsigned"
+	      n_bits		      "1"
+	      bin_pt		      "0"
+	      opselect		      "C"
+	      inp2		      "PCIN>>17"
+	      opr		      "+"
+	      inp1		      "P"
+	      carry		      "CIN"
+	      iostate		      "0"
+	      explicit_period	      on
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant2"
+	      Ports		      [0, 1]
+	      Position		      [115, 134, 135, 146]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Constant"
+	      SourceType	      "Xilinx Constant Block"
+	      const		      "1"
+	      equ		      "P=C"
+	      arith_type	      "Unsigned"
+	      n_bits		      "1"
+	      bin_pt		      "0"
+	      opselect		      "C"
+	      inp2		      "PCIN>>17"
+	      opr		      "+"
+	      inp1		      "P"
+	      carry		      "CIN"
+	      iostate		      "0"
+	      explicit_period	      on
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant3"
+	      Ports		      [0, 1]
+	      Position		      [115, 89, 135, 101]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Constant"
+	      SourceType	      "Xilinx Constant Block"
+	      const		      "1"
+	      equ		      "P=C"
+	      arith_type	      "Unsigned"
+	      n_bits		      "1"
+	      bin_pt		      "0"
+	      opselect		      "C"
+	      inp2		      "PCIN>>17"
+	      opr		      "+"
+	      inp1		      "P"
+	      carry		      "CIN"
+	      iostate		      "0"
+	      explicit_period	      on
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant4"
+	      Ports		      [0, 1]
+	      Position		      [115, 44, 135, 56]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Constant"
+	      SourceType	      "Xilinx Constant Block"
+	      const		      "1"
+	      equ		      "P=C"
+	      arith_type	      "Unsigned"
+	      n_bits		      "1"
+	      bin_pt		      "0"
+	      opselect		      "C"
+	      inp2		      "PCIN>>17"
+	      opr		      "+"
+	      inp1		      "P"
+	      carry		      "CIN"
+	      iostate		      "0"
+	      explicit_period	      on
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice1"
+	      Ports		      [1, 1]
+	      Position		      [105, 73, 135, 87]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Lower Bit Location + Width"
+	      nbits		      "16"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      off
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice2"
+	      Ports		      [1, 1]
+	      Position		      [105, 118, 135, 132]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Lower Bit Location + Width"
+	      nbits		      "16"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "16"
+	      base0		      "LSB of Input"
+	      boolean_output	      off
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice3"
+	      Ports		      [1, 1]
+	      Position		      [110, 163, 140, 177]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Lower Bit Location + Width"
+	      nbits		      "16"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "32"
+	      base0		      "LSB of Input"
+	      boolean_output	      off
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice4"
+	      Ports		      [1, 1]
+	      Position		      [110, 208, 140, 222]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Lower Bit Location + Width"
+	      nbits		      "16"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "48"
+	      base0		      "LSB of Input"
+	      boolean_output	      off
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "dout"
+	      Position		      [275, 128, 305, 142]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Concat"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "dout"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "din"
+	      SrcPort		      1
+	      Points		      [0, 0; 15, 0]
+	      Branch {
+		DstBlock		"Slice4"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -45]
+		Branch {
+		  DstBlock		  "Slice3"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, -45]
+		  Branch {
+		    DstBlock		    "Slice2"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -45]
+		    DstBlock		    "Slice1"
+		    DstPort		    1
+		  }
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "flag"
+	      SrcPort		      1
+	      Points		      [0, 0; 15, 0]
+	      Branch {
+		Points			[0, 45]
+		Branch {
+		  Points		  [0, 45]
+		  Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "Concat"
+		    DstPort		    11
+		  }
+		  Branch {
+		    DstBlock		    "Concat"
+		    DstPort		    8
+		  }
+		}
+		Branch {
+		  DstBlock		  "Concat"
+		  DstPort		  5
+		}
+	      }
+	      Branch {
+		DstBlock		"Concat"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Slice4"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      12
+	    }
+	    Line {
+	      SrcBlock		      "Slice3"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      9
+	    }
+	    Line {
+	      SrcBlock		      "Slice2"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Slice1"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      10
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "Constant3"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Constant4"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "internal_descr_Scope"
+	  Ports			  [5]
+	  Position		  [975, 295, 1010, 445]
+	  Location		  [-3, 41, 1380, 775]
+	  Open			  off
+	  NumInputPorts		  "5"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "mux'd data out"
+	    axes2		    "deflag_out"
+	    axes3		    "valid_rd_data"
+	    axes4		    "wr_data"
+	    axes5		    "wr_addr"
+	  }
+	  TimeRange		  "1"
+	  YMin			  "-1~-1~0.95~-5~-5"
+	  YMax			  "1~1~1.05~5~5"
+	  SaveName		  "ScopeData11"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "max_mcnt"
+	  Tag			  "xps:sw_reg"
+	  Ports			  [1, 1]
+	  Position		  [285, 290, 385, 320]
+	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
+	  SourceBlock		  "xps_library/software register"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  io_dir		  "To Processor"
+	  arith_type		  "Unsigned"
+	  bitwidth		  "32"
+	  bin_pt		  "0"
+	  sample_period		  "1"
+	  gw_name		  "test_descramble_sim_packet_16a_descramble_w"
+"indow2_max_mcnt_user_data_in"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "window_addr_gen"
+	  Ports			  [4, 6]
+	  Position		  [80, 39, 170, 171]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "window_addr_gen"
+	    Location		    [2, 70, 1365, 760]
+	    Open		    on
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "mcnt"
+	      Position		      [45, 578, 75, 592]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "ant"
+	      Position		      [45, 608, 75, 622]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "eof"
+	      Position		      [110, 643, 140, 657]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid"
+	      Position		      [110, 693, 140, 707]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "AddSub"
+	      Ports		      [2, 1]
+	      Position		      [300, 481, 330, 514]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/AddSub"
+	      SourceType	      "Xilinx Adder/Subtractor"
+	      mode		      "Addition"
+	      precision		      "User Defined"
+	      arith_type	      "Unsigned"
+	      n_bits		      "48 - ant_bits"
+	      bin_pt		      "0"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      latency		      "2"
+	      explicit_period	      off
+	      period		      "1"
+	      use_carryin	      off
+	      use_carryout	      off
+	      en		      off
+	      dbl_ovrd		      off
+	      show_param	      off
+	      use_core		      on
+	      pipeline		      off
+	      use_rpm		      on
+	      gen_core		      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Concat"
+	      Ports		      [3, 1]
+	      Position		      [305, 581, 355, 649]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Concat"
+	      SourceType	      "Xilinx Bus Concatenator"
+	      num_inputs	      "3"
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant"
+	      Ports		      [0, 1]
+	      Position		      [250, 497, 285, 513]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Constant"
+	      SourceType	      "Xilinx Constant Block"
+	      const		      "2^(window_bits - 1)"
+	      equ		      "P=C"
+	      arith_type	      "Unsigned"
+	      n_bits		      "48 - ant_bits"
+	      bin_pt		      "0"
+	      opselect		      "C"
+	      inp2		      "PCIN>>17"
+	      opr		      "+"
+	      inp1		      "P"
+	      carry		      "CIN"
+	      iostate		      "0"
+	      explicit_period	      on
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay1"
+	      Ports		      [1, 1]
+	      Position		      [395, 603, 420, 627]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Delay"
+	      SourceType	      "Xilinx Delay Block"
+	      latency		      "3"
+	      reg_retiming	      off
+	      explicit_period	      off
+	      period		      "1"
+	      en		      off
+	      accept_only_valid	      off
+	      init_zero		      on
+	      dbl_ovrd		      off
+	      show_param	      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay2"
+	      Ports		      [1, 1]
+	      Position		      [395, 688, 420, 712]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Delay"
+	      SourceType	      "Xilinx Delay Block"
+	      latency		      "3"
+	      reg_retiming	      off
+	      explicit_period	      off
+	      period		      "1"
+	      en		      off
+	      accept_only_valid	      off
+	      init_zero		      on
+	      dbl_ovrd		      off
+	      show_param	      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay3"
+	      Ports		      [1, 1]
+	      Position		      [310, 398, 335, 422]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Delay"
+	      SourceType	      "Xilinx Delay Block"
+	      latency		      "2"
+	      reg_retiming	      off
+	      explicit_period	      off
+	      period		      "1"
+	      en		      off
+	      accept_only_valid	      off
+	      init_zero		      on
+	      dbl_ovrd		      off
+	      show_param	      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay5"
+	      Ports		      [1, 1]
+	      Position		      [160, 638, 185, 662]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Delay"
+	      SourceType	      "Xilinx Delay Block"
+	      latency		      "1"
+	      reg_retiming	      off
+	      explicit_period	      off
+	      period		      "1"
+	      en		      off
+	      accept_only_valid	      off
+	      init_zero		      on
+	      dbl_ovrd		      off
+	      show_param	      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay8"
+	      Ports		      [1, 1]
+	      Position		      [160, 688, 185, 712]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Delay"
+	      SourceType	      "Xilinx Delay Block"
+	      latency		      "1"
+	      reg_retiming	      off
+	      explicit_period	      off
+	      period		      "1"
+	      en		      off
+	      accept_only_valid	      off
+	      init_zero		      on
+	      dbl_ovrd		      off
+	      show_param	      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Logical"
+	      Ports		      [3, 1]
+	      Position		      [515, 438, 560, 482]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Logical"
+	      SourceType	      "Xilinx Logical Block"
+	      logical_function	      "AND"
+	      inputs		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "8"
+	      bin_pt		      "2"
+	      align_bp		      on
+	      latency		      "0"
+	      explicit_period	      off
+	      period		      "1"
+	      en		      off
+	      dbl_ovrd		      off
+	      show_param	      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Relational"
+	      Ports		      [2, 1]
+	      Position		      [380, 438, 425, 482]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Relational"
+	      SourceType	      "Xilinx Relational Block"
+	      mode		      "a<b"
+	      latency		      "1"
+	      explicit_period	      off
+	      period		      "1"
+	      en		      off
+	      dbl_ovrd		      off
+	      show_param	      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Relational2"
+	      Ports		      [2, 1]
+	      Position		      [380, 378, 425, 422]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Relational"
+	      SourceType	      "Xilinx Relational Block"
+	      mode		      "a>=b"
+	      latency		      "1"
+	      explicit_period	      off
+	      period		      "1"
+	      en		      off
+	      dbl_ovrd		      off
+	      show_param	      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice"
+	      Ports		      [1, 1]
+	      Position		      [255, 588, 285, 602]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Lower Bit Location + Width"
+	      nbits		      "window_bits"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      off
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice1"
+	      Ports		      [1, 1]
+	      Position		      [155, 608, 185, 622]
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Lower Bit Location + Width"
+	      nbits		      "ant_bits"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "0"
+	      base0		      "LSB of Input"
+	      boolean_output	      off
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Slice14"
+	      Ports		      [1, 1]
+	      Position		      [155, 588, 185, 602]
+	      ShowName		      off
+	      SourceBlock	      "xbsIndex_r3/Slice"
+	      SourceType	      "Xilinx Slice Block"
+	      mode		      "Two Bit Locations"
+	      nbits		      "ant_bits"
+	      bit1		      "0"
+	      base1		      "MSB of Input"
+	      bit0		      "xeng_bits"
+	      base0		      "LSB of Input"
+	      boolean_output	      off
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "mcnt_thresh"
+	      Ports		      [1, 1]
+	      Position		      [265, 438, 335, 462]
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      System {
+		Name			"mcnt_thresh"
+		Location		[662, 287, 1352, 603]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "mcnt"
+		  Position		  [25, 58, 55, 72]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "AddSub"
+		  Ports			  [2, 1]
+		  Position		  [245, 121, 275, 154]
+		  SourceBlock		  "xbsIndex_r3/AddSub"
+		  SourceType		  "Xilinx Adder/Subtractor"
+		  mode			  "Addition"
+		  precision		  "User Defined"
+		  arith_type		  "Unsigned"
+		  n_bits		  "48 - ant_bits"
+		  bin_pt		  "0"
+		  quantization		  "Truncate"
+		  overflow		  "Wrap"
+		  latency		  "2"
+		  explicit_period	  off
+		  period		  "1"
+		  use_carryin		  off
+		  use_carryout		  off
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  use_core		  on
+		  pipeline		  off
+		  use_rpm		  on
+		  gen_core		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Constant"
+		  Ports			  [0, 1]
+		  Position		  [195, 137, 230, 153]
+		  SourceBlock		  "xbsIndex_r3/Constant"
+		  SourceType		  "Xilinx Constant Block"
+		  const			  "2^(window_bits - 2)"
+		  equ			  "P=C"
+		  arith_type		  "Unsigned"
+		  n_bits		  "48 - ant_bits"
+		  bin_pt		  "0"
+		  opselect		  "C"
+		  inp2			  "PCIN>>17"
+		  opr			  "+"
+		  inp1			  "P"
+		  carry			  "CIN"
+		  iostate		  "0"
+		  explicit_period	  on
+		  period		  "1"
+		  dbl_ovrd		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Counter"
+		  Ports			  [1, 1]
+		  Position		  [510, 44, 560, 96]
+		  SourceBlock		  "xbsIndex_r3/Counter"
+		  SourceType		  "Xilinx Counter Block"
+		  cnt_type		  "Free Running"
+		  n_bits		  "21"
+		  bin_pt		  "0"
+		  arith_type		  "Unsigned"
+		  start_count		  "0"
+		  cnt_to		  "Inf"
+		  cnt_by_val		  "1"
+		  operation		  "Up"
+		  explicit_period	  on
+		  period		  "1"
+		  load_pin		  off
+		  rst			  on
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  use_rpm		  on
+		  gen_core		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Delay"
+		  Ports			  [1, 1]
+		  Position		  [250, 68, 275, 92]
+		  SourceBlock		  "xbsIndex_r3/Delay"
+		  SourceType		  "Xilinx Delay Block"
+		  latency		  "2"
+		  reg_retiming		  off
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  accept_only_valid	  off
+		  init_zero		  on
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Delay1"
+		  Ports			  [1, 1]
+		  Position		  [85, 53, 110, 77]
+		  SourceBlock		  "xbsIndex_r3/Delay"
+		  SourceType		  "Xilinx Delay Block"
+		  latency		  "1"
+		  reg_retiming		  off
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  accept_only_valid	  off
+		  init_zero		  on
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Logical"
+		  Ports			  [2, 1]
+		  Position		  [375, 58, 420, 102]
+		  SourceBlock		  "xbsIndex_r3/Logical"
+		  SourceType		  "Xilinx Logical Block"
+		  logical_function	  "AND"
+		  inputs		  "2"
+		  precision		  "Full"
+		  arith_type		  "Unsigned"
+		  n_bits		  "8"
+		  bin_pt		  "2"
+		  align_bp		  on
+		  latency		  "0"
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Logical1"
+		  Ports			  [2, 1]
+		  Position		  [440, 48, 485, 92]
+		  SourceBlock		  "xbsIndex_r3/Logical"
+		  SourceType		  "Xilinx Logical Block"
+		  logical_function	  "OR"
+		  inputs		  "2"
+		  precision		  "Full"
+		  arith_type		  "Unsigned"
+		  n_bits		  "8"
+		  bin_pt		  "2"
+		  align_bp		  on
+		  latency		  "0"
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Register"
+		  Ports			  [2, 1]
+		  Position		  [130, 52, 175, 103]
+		  SourceBlock		  "xbsIndex_r3/Register"
+		  SourceType		  "Xilinx Register Block"
+		  init			  "0"
+		  reg_only_valid	  off
+		  explicit_period	  on
+		  period		  "1"
+		  rst			  off
+		  en			  on
+		  out_en		  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Relational"
+		  Ports			  [2, 1]
+		  Position		  [300, 48, 345, 92]
+		  SourceBlock		  "xbsIndex_r3/Relational"
+		  SourceType		  "Xilinx Relational Block"
+		  mode			  "a>b"
+		  latency		  "1"
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Relational1"
+		  Ports			  [2, 1]
+		  Position		  [300, 108, 345, 152]
+		  SourceBlock		  "xbsIndex_r3/Relational"
+		  SourceType		  "Xilinx Relational Block"
+		  mode			  "a<b"
+		  latency		  "1"
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Slice"
+		  Ports			  [1, 1]
+		  Position		  [575, 63, 605, 77]
+		  SourceBlock		  "xbsIndex_r3/Slice"
+		  SourceType		  "Xilinx Slice Block"
+		  mode			  "Upper Bit Location + Width"
+		  nbits			  "1"
+		  bit1			  "0"
+		  base1			  "MSB of Input"
+		  bit0			  "0"
+		  base0			  "LSB of Input"
+		  boolean_output	  on
+		  explicit_period	  off
+		  period		  "1"
+		  dbl_ovrd		  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "maxcnt"
+		  Position		  [215, 43, 245, 57]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  DstBlock		  "AddSub"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Register"
+		  SrcPort		  1
+		  Points		  [0, 0; 20, 0]
+		  Branch {
+		    Points		    [0, 50]
+		    DstBlock		    "AddSub"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Delay"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "maxcnt"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "AddSub"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Relational1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Relational"
+		  SrcPort		  1
+		  DstBlock		  "Logical"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Counter"
+		  SrcPort		  1
+		  DstBlock		  "Slice"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Logical"
+		  SrcPort		  1
+		  DstBlock		  "Logical1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Logical1"
+		  SrcPort		  1
+		  Points		  [0, 0; 5, 0]
+		  Branch {
+		    DstBlock		    "Counter"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 200; -380, 0]
+		    DstBlock		    "Register"
+		    DstPort		    2
+		  }
+		}
+		Line {
+		  SrcBlock		  "Slice"
+		  SrcPort		  1
+		  Points		  [0, -40; -185, 0]
+		  DstBlock		  "Logical1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Delay"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Relational"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "mcnt"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    Points		    [0, -45; 215, 0; 0, 40]
+		    Branch {
+		    DstBlock		    "Relational"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Relational1"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "Delay1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Relational1"
+		  SrcPort		  1
+		  Points		  [5, 0; 0, -40]
+		  DstBlock		  "Logical"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Delay1"
+		  SrcPort		  1
+		  DstBlock		  "Register"
+		  DstPort		  1
+		}
+		Annotation {
+		  Name			  "timeout of a bad\nmaster count\nin "
+"~2^20 clocks"
+		  Position		  [568, 140]
+		}
+		Annotation {
+		  Name			  "capture any new mcnts\nwhich are wi"
+"thin 1/4 buffer\nof the previous mcnt.\nThis prevents locking onto\nbad mcnts"
+		  Position		  [233, 212]
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "output_control"
+	      Ports		      [1, 4]
+	      Position		      [360, 187, 500, 263]
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      System {
+		Name			"output_control"
+		Location		[2, 74, 1373, 764]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "maxcnt"
+		  Position		  [680, 253, 710, 267]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "AddSub1"
+		  Ports			  [2, 1]
+		  Position		  [225, 123, 265, 167]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/AddSub"
+		  SourceType		  "Xilinx Adder/Subtractor"
+		  mode			  "Subtraction"
+		  precision		  "User Defined"
+		  arith_type		  "Unsigned"
+		  n_bits		  "window_bits"
+		  bin_pt		  "0"
+		  quantization		  "Truncate"
+		  overflow		  "Wrap"
+		  latency		  "2"
+		  explicit_period	  off
+		  period		  "1"
+		  use_carryin		  off
+		  use_carryout		  off
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  use_core		  on
+		  pipeline		  off
+		  use_rpm		  on
+		  gen_core		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Concat1"
+		  Ports			  [2, 1]
+		  Position		  [325, 511, 360, 549]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Concat"
+		  SourceType		  "Xilinx Bus Concatenator"
+		  num_inputs		  "2"
+		  explicit_period	  off
+		  period		  "1"
+		  dbl_ovrd		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Constant1"
+		  Ports			  [0, 1]
+		  Position		  [240, 177, 275, 193]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Constant"
+		  SourceType		  "Xilinx Constant Block"
+		  const			  "2^(window_bits - 1)"
+		  equ			  "P=C"
+		  arith_type		  "Unsigned"
+		  n_bits		  "window_bits"
+		  bin_pt		  "0"
+		  opselect		  "C"
+		  inp2			  "PCIN>>17"
+		  opr			  "+"
+		  inp1			  "P"
+		  carry			  "CIN"
+		  iostate		  "0"
+		  explicit_period	  on
+		  period		  "1"
+		  dbl_ovrd		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Constant3"
+		  Ports			  [0, 1]
+		  Position		  [775, 232, 810, 248]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Constant"
+		  SourceType		  "Xilinx Constant Block"
+		  const			  "0"
+		  equ			  "P=C"
+		  arith_type		  "Unsigned"
+		  n_bits		  "sync_bits - x_int_bits - ant_bits -"
+" window_bits"
+		  bin_pt		  "0"
+		  opselect		  "C"
+		  inp2			  "PCIN>>17"
+		  opr			  "+"
+		  inp1			  "P"
+		  carry			  "CIN"
+		  iostate		  "0"
+		  explicit_period	  on
+		  period		  "1"
+		  dbl_ovrd		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Delay4"
+		  Ports			  [1, 1]
+		  Position		  [390, 518, 415, 542]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Delay"
+		  SourceType		  "Xilinx Delay Block"
+		  latency		  "1"
+		  reg_retiming		  off
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  accept_only_valid	  off
+		  init_zero		  on
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Delay6"
+		  Ports			  [1, 1]
+		  Position		  [390, 398, 415, 422]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Delay"
+		  SourceType		  "Xilinx Delay Block"
+		  latency		  "1"
+		  reg_retiming		  off
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  accept_only_valid	  off
+		  init_zero		  on
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Delay7"
+		  Ports			  [1, 1]
+		  Position		  [225, 528, 250, 552]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Delay"
+		  SourceType		  "Xilinx Delay Block"
+		  latency		  "1"
+		  reg_retiming		  off
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  accept_only_valid	  off
+		  init_zero		  on
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From"
+		  Position		  [100, 162, 190, 178]
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "current_window"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From1"
+		  Position		  [100, 127, 165, 143]
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "maxcnt"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From2"
+		  Position		  [110, 427, 200, 443]
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "ship_next_window"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From3"
+		  Position		  [220, 512, 310, 528]
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "current_window"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From4"
+		  Position		  [575, 122, 665, 138]
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "ship_window_now"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From5"
+		  Position		  [960, 357, 1025, 373]
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "maxcnt"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From6"
+		  Position		  [960, 387, 1050, 403]
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "current_window"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From7"
+		  Position		  [960, 417, 1050, 433]
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "ship_next_window"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Gateway Out1"
+		  Ports			  [1, 1]
+		  Position		  [1075, 448, 1105, 462]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Gateway Out"
+		  SourceType		  "Xilinx Gateway Out"
+		  output_type		  "Double"
+		  nbits			  "8"
+		  bin_pt		  "6"
+		  arith_type		  "Boolean"
+		  quantization		  "Truncate"
+		  overflow		  "Wrap"
+		  hdl_port		  off
+		  timing_constraint	  "None"
+		  locs_specified	  off
+		  LOCs			  "{}"
+		  needs_fixed_name	  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Gateway Out2"
+		  Ports			  [1, 1]
+		  Position		  [1075, 478, 1105, 492]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Gateway Out"
+		  SourceType		  "Xilinx Gateway Out"
+		  output_type		  "Double"
+		  nbits			  "8"
+		  bin_pt		  "6"
+		  arith_type		  "Boolean"
+		  quantization		  "Truncate"
+		  overflow		  "Wrap"
+		  hdl_port		  off
+		  timing_constraint	  "None"
+		  locs_specified	  off
+		  LOCs			  "{}"
+		  needs_fixed_name	  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Gateway Out3"
+		  Ports			  [1, 1]
+		  Position		  [1075, 388, 1105, 402]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Gateway Out"
+		  SourceType		  "Xilinx Gateway Out"
+		  output_type		  "Double"
+		  nbits			  "8"
+		  bin_pt		  "6"
+		  arith_type		  "Boolean"
+		  quantization		  "Truncate"
+		  overflow		  "Wrap"
+		  hdl_port		  off
+		  timing_constraint	  "None"
+		  locs_specified	  off
+		  LOCs			  "{}"
+		  needs_fixed_name	  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Gateway Out4"
+		  Ports			  [1, 1]
+		  Position		  [1075, 358, 1105, 372]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Gateway Out"
+		  SourceType		  "Xilinx Gateway Out"
+		  output_type		  "Double"
+		  nbits			  "8"
+		  bin_pt		  "6"
+		  arith_type		  "Boolean"
+		  quantization		  "Truncate"
+		  overflow		  "Wrap"
+		  hdl_port		  off
+		  timing_constraint	  "None"
+		  locs_specified	  off
+		  LOCs			  "{}"
+		  needs_fixed_name	  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Gateway Out5"
+		  Ports			  [1, 1]
+		  Position		  [1075, 418, 1105, 432]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Gateway Out"
+		  SourceType		  "Xilinx Gateway Out"
+		  output_type		  "Double"
+		  nbits			  "8"
+		  bin_pt		  "6"
+		  arith_type		  "Boolean"
+		  quantization		  "Truncate"
+		  overflow		  "Wrap"
+		  hdl_port		  off
+		  timing_constraint	  "None"
+		  locs_specified	  off
+		  LOCs			  "{}"
+		  needs_fixed_name	  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto"
+		  Position		  [810, 166, 915, 184]
+		  ShowName		  off
+		  GotoTag		  "current_window"
+		  TagVisibility		  "local"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto1"
+		  Position		  [745, 272, 810, 288]
+		  ShowName		  off
+		  GotoTag		  "maxcnt"
+		  TagVisibility		  "local"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto2"
+		  Position		  [375, 166, 480, 184]
+		  ShowName		  off
+		  GotoTag		  "ship_next_window"
+		  TagVisibility		  "local"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto3"
+		  Position		  [285, 366, 390, 384]
+		  ShowName		  off
+		  GotoTag		  "ship_window_now"
+		  TagVisibility		  "local"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Logical1"
+		  Ports			  [2, 1]
+		  Position		  [220, 392, 250, 423]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Logical"
+		  SourceType		  "Xilinx Logical Block"
+		  logical_function	  "AND"
+		  inputs		  "2"
+		  precision		  "Full"
+		  arith_type		  "Unsigned"
+		  n_bits		  "8"
+		  bin_pt		  "2"
+		  align_bp		  on
+		  latency		  "0"
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Logical2"
+		  Ports			  [2, 1]
+		  Position		  [985, 163, 1030, 207]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Logical"
+		  SourceType		  "Xilinx Logical Block"
+		  logical_function	  "AND"
+		  inputs		  "2"
+		  precision		  "Full"
+		  arith_type		  "Unsigned"
+		  n_bits		  "8"
+		  bin_pt		  "2"
+		  align_bp		  on
+		  latency		  "0"
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Relational1"
+		  Ports			  [2, 1]
+		  Position		  [290, 153, 335, 197]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Relational"
+		  SourceType		  "Xilinx Relational Block"
+		  mode			  "a>=b"
+		  latency		  "1"
+		  explicit_period	  on
+		  period		  "1"
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Relational4"
+		  Ports			  [2, 1]
+		  Position		  [825, 228, 870, 272]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Relational"
+		  SourceType		  "Xilinx Relational Block"
+		  mode			  "a=b"
+		  latency		  "1"
+		  explicit_period	  off
+		  period		  "1"
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Slice1"
+		  Ports			  [1, 1]
+		  Position		  [740, 123, 765, 137]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Slice"
+		  SourceType		  "Xilinx Slice Block"
+		  mode			  "Lower Bit Location + Width"
+		  nbits			  "window_bits"
+		  bit1			  "0"
+		  base1			  "MSB of Input"
+		  bit0			  "0"
+		  base0			  "LSB of Input"
+		  boolean_output	  off
+		  explicit_period	  off
+		  period		  "1"
+		  dbl_ovrd		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Slice2"
+		  Ports			  [1, 1]
+		  Position		  [740, 103, 765, 117]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Slice"
+		  SourceType		  "Xilinx Slice Block"
+		  mode			  "Upper Bit Location + Width"
+		  nbits			  "1"
+		  bit1			  "0"
+		  base1			  "MSB of Input"
+		  bit0			  "0"
+		  base0			  "LSB of Input"
+		  boolean_output	  on
+		  explicit_period	  off
+		  period		  "1"
+		  dbl_ovrd		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Slice3"
+		  Ports			  [1, 1]
+		  Position		  [180, 128, 210, 142]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Slice"
+		  SourceType		  "Xilinx Slice Block"
+		  mode			  "Lower Bit Location + Width"
+		  nbits			  "window_bits"
+		  bit1			  "0"
+		  base1			  "MSB of Input"
+		  bit0			  "0"
+		  base0			  "LSB of Input"
+		  boolean_output	  off
+		  explicit_period	  off
+		  period		  "1"
+		  dbl_ovrd		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Slice4"
+		  Ports			  [1, 1]
+		  Position		  [130, 533, 160, 547]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Slice"
+		  SourceType		  "Xilinx Slice Block"
+		  mode			  "Lower Bit Location + Width"
+		  nbits			  "x_int_bits + ant_bits"
+		  bit1			  "0"
+		  base1			  "MSB of Input"
+		  bit0			  "0"
+		  base0			  "LSB of Input"
+		  boolean_output	  off
+		  explicit_period	  off
+		  period		  "1"
+		  dbl_ovrd		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Slice5"
+		  Ports			  [1, 1]
+		  Position		  [780, 253, 810, 267]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Slice"
+		  SourceType		  "Xilinx Slice Block"
+		  mode			  "Two Bit Locations"
+		  nbits			  "window_bits"
+		  bit1			  "sync_bits - x_int_bits - ant_bits -"
+" 1"
+		  base1			  "LSB of Input"
+		  bit0			  "window_bits"
+		  base0			  "LSB of Input"
+		  boolean_output	  off
+		  explicit_period	  off
+		  period		  "1"
+		  dbl_ovrd		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Slice6"
+		  Ports			  [1, 1]
+		  Position		  [120, 391, 150, 409]
+		  ShowName		  off
+		  SourceBlock		  "xbsIndex_r3/Slice"
+		  SourceType		  "Xilinx Slice Block"
+		  mode			  "Upper Bit Location + Width"
+		  nbits			  "1"
+		  bit1			  "0"
+		  base1			  "MSB of Input"
+		  bit0			  "0"
+		  base0			  "LSB of Input"
+		  boolean_output	  on
+		  explicit_period	  off
+		  period		  "1"
+		  dbl_ovrd		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "edge"
+		  Ports			  [1, 1]
+		  Position		  [165, 391, 200, 409]
+		  SourceBlock		  "casper_library/Misc/edge"
+		  SourceType		  "edge"
+		  ShowPortLabels	  on
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "edge1"
+		  Ports			  [1, 1]
+		  Position		  [820, 101, 855, 119]
+		  SourceBlock		  "casper_library/Misc/edge"
+		  SourceType		  "edge"
+		  ShowPortLabels	  on
+		}
+		Block {
+		  BlockType		  Scope
+		  Name			  "internal_descr_Scope"
+		  Ports			  [5]
+		  Position		  [1125, 350, 1160, 500]
+		  Location		  [5, 49, 1388, 783]
+		  Open			  off
+		  NumInputPorts		  "5"
+		  ZoomMode		  "xonly"
+		  List {
+		    ListType		    AxesTitles
+		    axes1		    "maxcnt"
+		    axes2		    "current_window"
+		    axes3		    "ship_next_window"
+		    axes4		    "rd_en"
+		    axes5		    "rd_addr"
+		  }
+		  TimeRange		  "1"
+		  YMin			  "-1~-1~0.95~-5~-5"
+		  YMax			  "1~1~1.05~5~5"
+		  SaveName		  "ScopeData2"
+		  DataFormat		  "StructureWithTime"
+		  LimitDataPoints	  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "pulse_ext"
+		  Ports			  [1, 1]
+		  Position		  [300, 401, 335, 419]
+		  SourceBlock		  "casper_library/Misc/pulse_ext"
+		  SourceType		  "pulse_ext"
+		  ShowPortLabels	  on
+		  pulse_len		  "2^(x_int_bits + ant_bits)"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "win_addr_cnt"
+		  Ports			  [0, 1]
+		  Position		  [60, 382, 95, 418]
+		  SourceBlock		  "xbsIndex_r3/Counter"
+		  SourceType		  "Xilinx Counter Block"
+		  cnt_type		  "Free Running"
+		  n_bits		  "x_int_bits + ant_bits + 1"
+		  bin_pt		  "0"
+		  arith_type		  "Unsigned"
+		  start_count		  "0"
+		  cnt_to		  "Inf"
+		  cnt_by_val		  "1"
+		  operation		  "Up"
+		  explicit_period	  off
+		  period		  "1"
+		  load_pin		  off
+		  rst			  off
+		  en			  off
+		  dbl_ovrd		  off
+		  show_param		  off
+		  use_rpm		  on
+		  gen_core		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "win_cnt"
+		  Ports			  [1, 1]
+		  Position		  [685, 112, 720, 148]
+		  SourceBlock		  "xbsIndex_r3/Counter"
+		  SourceType		  "Xilinx Counter Block"
+		  cnt_type		  "Free Running"
+		  n_bits		  "window_bits + 1"
+		  bin_pt		  "0"
+		  arith_type		  "Unsigned"
+		  start_count		  "0"
+		  cnt_to		  "Inf"
+		  cnt_by_val		  "1"
+		  operation		  "Up"
+		  explicit_period	  off
+		  period		  "1"
+		  load_pin		  off
+		  rst			  off
+		  en			  on
+		  dbl_ovrd		  off
+		  show_param		  off
+		  use_rpm		  on
+		  gen_core		  off
+		  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+		  xl_use_area		  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "gen_sync"
+		  Position		  [1055, 178, 1085, 192]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "rd_en"
+		  Position		  [440, 403, 470, 417]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "rd_addr"
+		  Position		  [440, 523, 470, 537]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "current_rd_window"
+		  Position		  [840, 133, 870, 147]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "pulse_ext"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Delay6"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Concat1"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Delay4"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Delay7"
+		  SrcPort		  1
+		  DstBlock		  "Concat1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Slice2"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "edge1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Slice1"
+		  SrcPort		  1
+		  Points		  [15, 0; 0, 10]
+		  Branch {
+		    DstBlock		    "current_rd_window"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Goto"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Slice4"
+		  SrcPort		  1
+		  DstBlock		  "Delay7"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "edge"
+		  SrcPort		  1
+		  DstBlock		  "Logical1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Slice6"
+		  SrcPort		  1
+		  DstBlock		  "edge"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "win_addr_cnt"
+		  SrcPort		  1
+		  Points		  [0, 0; 5, 0]
+		  Branch {
+		    Points		    [0, 140]
+		    DstBlock		    "Slice4"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Slice6"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Slice5"
+		  SrcPort		  1
+		  Points		  [-5, 0]
+		  DstBlock		  "Relational4"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant3"
+		  SrcPort		  1
+		  DstBlock		  "Relational4"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "edge1"
+		  SrcPort		  1
+		  Points		  [110, 0]
+		  DstBlock		  "Logical2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Logical1"
+		  SrcPort		  1
+		  Points		  [0, 0; 5, 0]
+		  Branch {
+		    DstBlock		    "pulse_ext"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Goto3"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "win_cnt"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  Branch {
+		    DstBlock		    "Slice2"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Slice1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "maxcnt"
+		  SrcPort		  1
+		  Points		  [0, 0; 5, 0]
+		  Branch {
+		    DstBlock		    "Slice5"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 20]
+		    DstBlock		    "Goto1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Logical2"
+		  SrcPort		  1
+		  DstBlock		  "gen_sync"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Delay6"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  Branch {
+		    DstBlock		    "rd_en"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "Gateway Out1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "From2"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Logical1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Delay4"
+		  SrcPort		  1
+		  Points		  [0, 0; 5, 0]
+		  Branch {
+		    DstBlock		    "rd_addr"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -45]
+		    DstBlock		    "Gateway Out2"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Slice3"
+		  SrcPort		  1
+		  DstBlock		  "AddSub1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "AddSub1"
+		  SrcPort		  1
+		  Points		  [0, 20]
+		  DstBlock		  "Relational1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Relational1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "From"
+		  SrcPort		  1
+		  Points		  [0, -15]
+		  DstBlock		  "AddSub1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "From1"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Slice3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Relational1"
+		  SrcPort		  1
+		  DstBlock		  "Goto2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "From3"
+		  SrcPort		  1
+		  DstBlock		  "Concat1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "From4"
+		  SrcPort		  1
+		  DstBlock		  "win_cnt"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Relational4"
+		  SrcPort		  1
+		  Points		  [95, 0]
+		  DstBlock		  "Logical2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Gateway Out3"
+		  SrcPort		  1
+		  DstBlock		  "internal_descr_Scope"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Gateway Out4"
+		  SrcPort		  1
+		  DstBlock		  "internal_descr_Scope"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gateway Out5"
+		  SrcPort		  1
+		  DstBlock		  "internal_descr_Scope"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Gateway Out1"
+		  SrcPort		  1
+		  DstBlock		  "internal_descr_Scope"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "Gateway Out2"
+		  SrcPort		  1
+		  DstBlock		  "internal_descr_Scope"
+		  DstPort		  5
+		}
+		Line {
+		  SrcBlock		  "From5"
+		  SrcPort		  1
+		  DstBlock		  "Gateway Out4"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "From6"
+		  SrcPort		  1
+		  DstBlock		  "Gateway Out3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "From7"
+		  SrcPort		  1
+		  DstBlock		  "Gateway Out5"
+		  DstPort		  1
+		}
+		Annotation {
+		  Name			  "one extra delay\nhere to align sync"
+		  Position		  [411, 565]
+		}
+		Annotation {
+		  Name			  "rd_addr is counting for \n16 bit wo"
+"rds output to\nX engines"
+		  Position		  [145, 572]
+		}
+		Annotation {
+		  Name			  "If the read window is 1/2\nthe tota"
+"l buffer size (or more)\nbehind the write window,\nit is time to ship it out."
+		  Position		  [131, 94]
+		}
+		Annotation {
+		  Name			  "one extra delay\nhere to align sync"
+		  Position		  [406, 450]
+		}
+		Annotation {
+		  Name			  "Decide whether to ship\na window or"
+" not:"
+		  Position		  [186, 35]
+		}
+		Annotation {
+		  Name			  "If we need to ship a window,\nsend "
+"the data on a window edge"
+		  Position		  [169, 346]
+		}
+		Annotation {
+		  Name			  "If reading from addr 0 (correspondi"
+"ng to f=0,nant,2nant,...)\nand max_mcnt (skipping window_bits for the differe"
+"nce\nbetween max_mcnt and rd_mcnt) is 0 for sync_bits, then\nissue a sync."
+		  Position		  [784, 61]
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "wr_addr_cnt"
+	      Ports		      [2, 1]
+	      Position		      [245, 642, 280, 678]
+	      SourceBlock	      "xbsIndex_r3/Counter"
+	      SourceType	      "Xilinx Counter Block"
+	      cnt_type		      "Free Running"
+	      n_bits		      "x_int_bits - 2"
+	      bin_pt		      "0"
+	      arith_type	      "Unsigned"
+	      start_count	      "0"
+	      cnt_to		      "Inf"
+	      cnt_by_val	      "1"
+	      operation		      "Up"
+	      explicit_period	      off
+	      period		      "1"
+	      load_pin		      off
+	      rst		      on
+	      en		      on
+	      dbl_ovrd		      off
+	      show_param	      off
+	      use_rpm		      on
+	      gen_core		      off
+	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+	      xl_use_area	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "rd_addr"
+	      Position		      [615, 238, 645, 252]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "re"
+	      Position		      [615, 208, 645, 222]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "wr_addr"
+	      Position		      [445, 608, 475, 622]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "we"
+	      Position		      [590, 453, 620, 467]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sync_out"
+	      Position		      [615, 178, 645, 192]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "maxcnt"
+	      Position		      [555, 333, 585, 347]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Slice14"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      Branch {
+		Points			[0, -105]
+		Branch {
+		  Points		  [0, -40; 0, 0]
+		  Branch {
+		    Points		    [0, -40]
+		    DstBlock		    "Delay3"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "mcnt_thresh"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  DstBlock		  "AddSub"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"Slice"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "output_control"
+	      SrcPort		      2
+	      Points		      [0, 0]
+	      DstBlock		      "re"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "output_control"
+	      SrcPort		      3
+	      Points		      [95, 0]
+	      DstBlock		      "rd_addr"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "output_control"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -10]
+	      DstBlock		      "sync_out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay3"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Relational2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Relational2"
+	      SrcPort		      1
+	      Points		      [70, 0]
+	      DstBlock		      "Logical"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "mcnt_thresh"
+	      SrcPort		      1
+	      Points		      [0, 0; 5, 0]
+	      Branch {
+		Points			[0, -60]
+		Branch {
+		  DstBlock		  "Relational2"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, -50]
+		  Branch {
+		    DstBlock		    "maxcnt"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "output_control"
+		    DstPort		    1
+		  }
+		}
+	      }
+	      Branch {
+		DstBlock		"Relational"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [-5, 0]
+	      DstBlock		      "AddSub"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "AddSub"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -30]
+	      DstBlock		      "Relational"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Slice"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice1"
+	      SrcPort		      1
+	      DstBlock		      "Concat"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Concat"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Delay1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "wr_addr"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "wr_addr_cnt"
+	      SrcPort		      1
+	      Points		      [0, -25]
+	      DstBlock		      "Concat"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "valid"
+	      SrcPort		      1
+	      DstBlock		      "Delay8"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "eof"
+	      SrcPort		      1
+	      DstBlock		      "Delay5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Relational"
+	      SrcPort		      1
+	      Points		      [70, 0]
+	      DstBlock		      "Logical"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Logical"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "we"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay2"
+	      SrcPort		      1
+	      Points		      [75, 0]
+	      DstBlock		      "Logical"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Delay5"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "wr_addr_cnt"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay8"
+	      SrcPort		      1
+	      Points		      [0, 0; 25, 0]
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"wr_addr_cnt"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Delay2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "mcnt"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 10]
+	      DstBlock		      "Slice14"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ant"
+	      SrcPort		      1
+	      DstBlock		      "Slice1"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "Allow writing to windows\nup to 1/2 the"
+" total buffer size\n behind the current maximum mcnt"
+	      Position		      [414, 516]
+	    }
+	    Annotation {
+	      Name		      "Count off spectra\nwithin a freq,baseli"
+"ne \npacket.  Counting for\n64 bit word = 4 x 16bit samples"
+	      Position		      [296, 734]
+	    }
+	    Annotation {
+	      Name		      "Disallow writing to high addresses\nnot"
+" accepted by mcnt_thresh"
+	      Position		      [435, 358]
+	    }
+	    Annotation {
+	      Name		      "This block ignores\nMCNTs destined for "
+"other X engines"
+	      Position		      [108, 556]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dout"
+	  Position		  [795, 83, 825, 97]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "valid"
+	  Position		  [535, 28, 565, 42]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "flag_out"
+	  Position		  [795, 113, 825, 127]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "rcvd"
+	  Position		  [795, 143, 825, 157]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  Position		  [530, 238, 560, 252]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "window_addr_gen"
+	  SrcPort		  4
+	  Points		  [40, 0; 0, 50; 215, 0]
+	  DstBlock		  "Dual Port RAM"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "window_addr_gen"
+	  SrcPort		  3
+	  Points		  [5, 0]
+	  Branch {
+	    Points		    [195, 0; 0, 25]
+	    DstBlock		    "Dual Port RAM"
+	    DstPort		    4
+	  }
+	  Branch {
+	    Points		    [0, 335]
+	    DstBlock		    "Gateway Out2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "window_addr_gen"
+	  SrcPort		  2
+	  Points		  [205, 0]
+	  Branch {
+	    Points		    [0, -40]
+	    DstBlock		    "Delay1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 30]
+	    DstBlock		    "Dual Port RAM"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "window_addr_gen"
+	  SrcPort		  1
+	  Points		  [255, 0]
+	  DstBlock		  "Dual Port RAM"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "flagger"
+	  SrcPort		  1
+	  DstBlock		  "Dual Port RAM"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Dual Port RAM"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "deflagger"
+	  SrcPort		  3
+	  Points		  [15, 0; 0, 40]
+	  DstBlock		  "rcvd"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "deflagger"
+	  SrcPort		  2
+	  Points		  [25, 0]
+	  DstBlock		  "flag_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "deflagger"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    DstBlock		    "dout"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 250]
+	    DstBlock		    "Gateway Out3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Delay1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "valid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "we"
+	  SrcPort		  1
+	  DstBlock		  "window_addr_gen"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "eof"
+	  SrcPort		  1
+	  DstBlock		  "window_addr_gen"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "ant"
+	  SrcPort		  1
+	  DstBlock		  "window_addr_gen"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "mcnt"
+	  SrcPort		  1
+	  DstBlock		  "window_addr_gen"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay3"
+	  SrcPort		  1
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "window_addr_gen"
+	  SrcPort		  5
+	  Points		  [25, 0; 0, 110]
+	  DstBlock		  "Delay3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "flag"
+	  SrcPort		  1
+	  Points		  [0, 5]
+	  DstBlock		  "Delay4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay4"
+	  SrcPort		  1
+	  DstBlock		  "flagger"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "din"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "Delay2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 260]
+	    DstBlock		    "Gateway Out1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Delay2"
+	  SrcPort		  1
+	  DstBlock		  "flagger"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Slice3"
+	  SrcPort		  1
+	  DstBlock		  "max_mcnt"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "window_addr_gen"
+	  SrcPort		  6
+	  Points		  [10, 0; 0, 150]
+	  DstBlock		  "Slice3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Dual Port RAM"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 45; 95, 0]
+	  Branch {
+	    DstBlock		    "Mux"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 190]
+	    DstBlock		    "Gateway Out4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "deflagger"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Dual Port RAM"
+	  SrcPort		  2
+	  Points		  [20, 0; 0, -20; 70, 0]
+	  Branch {
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 290]
+	    DstBlock		    "Gateway Out5"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Gateway Out3"
+	  SrcPort		  1
+	  DstBlock		  "internal_descr_Scope"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Gateway Out4"
+	  SrcPort		  1
+	  DstBlock		  "internal_descr_Scope"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gateway Out5"
+	  SrcPort		  1
+	  DstBlock		  "internal_descr_Scope"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Gateway Out1"
+	  SrcPort		  1
+	  DstBlock		  "internal_descr_Scope"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Gateway Out2"
+	  SrcPort		  1
+	  DstBlock		  "internal_descr_Scope"
+	  DstPort		  5
+	}
+	Annotation {
+	  Name			  "BRAM depth is\nX int length * # antennas * "
+"# windows"
+	  Position		  [471, 198]
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "dev_sel1"
+      Ports		      [1, 1]
+      Position		      [250, 702, 280, 718]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Slice"
+      SourceType	      "Xilinx Slice Block"
+      mode		      "Lower Bit Location + Width"
+      nbits		      "1"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      boolean_output	      off
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "dev_sel4"
+      Ports		      [1, 1]
+      Position		      [250, 652, 280, 668]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r3/Slice"
+      SourceType	      "Xilinx Slice Block"
+      mode		      "Lower Bit Location + Width"
+      nbits		      "2"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "3"
+      base0		      "LSB of Input"
+      boolean_output	      off
+      explicit_period	      off
+      period		      "1"
+      dbl_ovrd		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "err_clear_sim5"
+      Position		      [20, 695, 50, 725]
+      ShowName		      off
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "input_descr_scope"
+      Ports		      [4]
+      Position		      [1265, 287, 1320, 358]
+      Location		      [5, 49, 1392, 840]
+      Open		      off
+      NumInputPorts	      "4"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"din"
+	axes2			"valid"
+	axes3			"mcnt"
+	axes4			"ant"
+      }
+      YMin		      "0~0~28~0"
+      YMax		      "1~1~40~3"
+      SaveName		      "ScopeData14"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "output_descr_scope"
+      Ports		      [4]
+      Position		      [1480, 288, 1535, 357]
+      Location		      [1, 45, 1376, 771]
+      Open		      off
+      NumInputPorts	      "4"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"dout"
+	axes2			"valid"
+	axes3			"rcvd"
+	axes4			"sync"
+      }
+      YMin		      "0~1~1~-1"
+      YMax		      "175~1~1~1"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "posedge1"
+      Tag		      "Rising Edge Detector"
+      Ports		      [1, 1]
+      Position		      [1020, 446, 1055, 464]
+      SourceBlock	      "casper_library/Misc/posedge"
+      SourceType	      "posedge"
+      ShowPortLabels	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "posedge3"
+      Tag		      "Rising Edge Detector"
+      Ports		      [1, 1]
+      Position		      [370, 456, 405, 474]
+      SourceBlock	      "casper_library/Misc/posedge"
+      SourceType	      "posedge"
+      ShowPortLabels	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "posedge4"
+      Tag		      "Rising Edge Detector"
+      Ports		      [1, 1]
+      Position		      [950, 481, 985, 499]
+      SourceBlock	      "casper_library/Misc/posedge"
+      SourceType	      "posedge"
+      ShowPortLabels	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "posedge5"
+      Tag		      "Rising Edge Detector"
+      Ports		      [1, 1]
+      Position		      [660, 181, 695, 199]
+      ShowName		      off
+      SourceBlock	      "casper_library/Misc/posedge"
+      SourceType	      "posedge"
+      ShowPortLabels	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "tvg_sel"
+      Tag		      "xps:sw_reg"
+      Ports		      [1, 1]
+      Position		      [70, 695, 170, 725]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      SourceBlock	      "xps_library/software register"
+      SourceType	      ""
+      ShowPortLabels	      on
+      io_dir		      "From Processor"
+      arith_type	      "Unsigned"
+      bitwidth		      "32"
+      bin_pt		      "0"
+      sample_period	      "1"
+      gw_name		      "test_descramble_sim_packet_16a_tvg_sel_user_dat"
+"a_out"
+    }
+    Line {
+      SrcBlock		      "Gateway Out8"
+      SrcPort		      1
+      DstBlock		      "output_descr_scope"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gateway Out9"
+      SrcPort		      1
+      DstBlock		      "output_descr_scope"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Gateway Out10"
+      SrcPort		      1
+      DstBlock		      "output_descr_scope"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Gateway Out11"
+      SrcPort		      1
+      DstBlock		      "output_descr_scope"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "descramble_window2"
+      SrcPort		      1
+      Points		      [40, 0; 0, -135]
+      DstBlock		      "Gateway Out8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "descramble_window2"
+      SrcPort		      2
+      Points		      [50, 0; 0, -150]
+      DstBlock		      "Gateway Out9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "descramble_window2"
+      SrcPort		      4
+      Points		      [60, 0; 0, -195]
+      DstBlock		      "Gateway Out10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "descramble_window2"
+      SrcPort		      5
+      Points		      [75, 0; 0, -210]
+      DstBlock		      "Gateway Out11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "err_clear_sim5"
+      SrcPort		      1
+      DstBlock		      "tvg_sel"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "tvg_sel"
+      SrcPort		      1
+      Points		      [5, 0]
+      DstBlock		      "Delay19"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay19"
+      SrcPort		      1
+      Points		      [0, 0; 10, 0]
+      Branch {
+	DstBlock		"dev_sel1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -25]
+	Branch {
+	  DstBlock		  "Slice1"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -25]
+	  Branch {
+	    DstBlock		    "dev_sel4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -25]
+	    Branch {
+	      Points		      [0, -25]
+	      DstBlock		      "Slice2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Slice7"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "dev_sel1"
+      SrcPort		      1
+      Points		      [60, 0]
+      DstBlock		      "Goto"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Slice1"
+      SrcPort		      1
+      Points		      [60, 0]
+      DstBlock		      "Goto2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "dev_sel4"
+      SrcPort		      1
+      Points		      [60, 0]
+      DstBlock		      "Goto1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Slice7"
+      SrcPort		      1
+      Points		      [60, 0]
+      DstBlock		      "Goto3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Slice2"
+      SrcPort		      1
+      Points		      [60, 0]
+      DstBlock		      "Goto11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant10"
+      SrcPort		      1
+      DstBlock		      "descramble_window2"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Gateway Out48"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "input_descr_scope"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gateway Out49"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "input_descr_scope"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Gateway Out50"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "input_descr_scope"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Gateway Out51"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "input_descr_scope"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Constant13"
+      SrcPort		      1
+      DstBlock		      "Concat1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Concat1"
+      SrcPort		      1
+      Points		      [0, -5; 50, 0]
+      Branch {
+	Points			[0, -175]
+	DstBlock		"Gateway Out50"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"descramble_window2"
+	DstPort			4
+      }
+    }
+    Line {
+      SrcBlock		      "Counter5"
+      SrcPort		      1
+      Points		      [-5, 0]
+      DstBlock		      "Concat1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Counter6"
+      SrcPort		      1
+      Points		      [0, 0; 5, 0]
+      Branch {
+	DstBlock		"Relational1"
+	DstPort			2
+      }
+      Branch {
+	Points			[90, 0]
+	Branch {
+	  Points		  [0, -380; -95, 0]
+	  Branch {
+	    DstBlock		    "Mux3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [-330, 0; 0, 45]
+	    DstBlock		    "Relational2"
+	    DstPort		    2
+	  }
+	}
+	Branch {
+	  Points		  [200, 0]
+	  Branch {
+	    Points		    [0, -185]
+	    DstBlock		    "Gateway Out51"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "descramble_window2"
+	    DstPort		    5
+	  }
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Concat2"
+      SrcPort		      1
+      DstBlock		      "descramble_window2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Relational1"
+      SrcPort		      1
+      DstBlock		      "posedge4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant15"
+      SrcPort		      1
+      DstBlock		      "Relational1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Slice3"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "posedge1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Counter4"
+      SrcPort		      1
+      Points		      [0, 0; 10, 0]
+      Branch {
+	DstBlock		"Slice9"
+	DstPort			1
+      }
+      Branch {
+	Points			[615, 0]
+	Branch {
+	  DstBlock		  "Slice3"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -70]
+	  DstBlock		  "Slice8"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Mux4"
+      SrcPort		      1
+      Points		      [0, 50; 20, 0]
+      Branch {
+	Points			[20, 0]
+	Branch {
+	  Points		  [0, 30]
+	  DstBlock		  "Concat2"
+	  DstPort		  4
+	}
+	Branch {
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "Concat2"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [15, 0]
+	    Branch {
+	      DstBlock		      "Concat2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Concat2"
+	      DstPort		      2
+	    }
+	  }
+	}
+      }
+      Branch {
+	Points			[0, -115]
+	DstBlock		"Gateway Out48"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Slice9"
+      SrcPort		      1
+      DstBlock		      "posedge3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "posedge3"
+      SrcPort		      1
+      Points		      [0, 0; 380, 0]
+      Branch {
+	Points			[0, 65]
+	DstBlock		"Counter6"
+	DstPort			1
+      }
+      Branch {
+	Points			[345, 0; 0, 15]
+	DstBlock		"descramble_window2"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "posedge4"
+      SrcPort		      1
+      DstBlock		      "Counter5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Pulse\nGenerator3"
+      SrcPort		      1
+      DstBlock		      "Gateway In4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Counter1"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constant16"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Constant17"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Constant18"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Mux3"
+      SrcPort		      1
+      Points		      [0, 70]
+      DstBlock		      "Mux4"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Slice8"
+      SrcPort		      1
+      DstBlock		      "Mux4"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Constant5"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Mux4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Pulse\nGenerator4"
+      SrcPort		      1
+      DstBlock		      "Gateway In3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux5"
+      SrcPort		      1
+      DstBlock		      "Counter4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gateway In3"
+      SrcPort		      1
+      Points		      [10, 0; 0, -5]
+      Branch {
+	Points			[0, -130]
+	DstBlock		"Gateway Out53"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Mux5"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Gateway In4"
+      SrcPort		      1
+      Points		      [15, 0; 0, -5]
+      Branch {
+	Points			[0, -140]
+	DstBlock		"Gateway Out54"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Mux5"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "Gateway In6"
+      SrcPort		      1
+      Points		      [0, 0; 5, 0]
+      Branch {
+	Points			[40, 0]
+	DstBlock		"Mux5"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -85]
+	DstBlock		"Gateway Out52"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Repeating\nSequence\nInterpolated1"
+      SrcPort		      1
+      DstBlock		      "Gateway In6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gateway Out52"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Scope17"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gateway Out53"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Scope17"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Gateway Out54"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Scope17"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "posedge1"
+      SrcPort		      1
+      Points		      [0, 0; 80, 0]
+      Branch {
+	Points			[0, -140]
+	DstBlock		"Gateway Out49"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"descramble_window2"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Constant4"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Constant6"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "Constant7"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      10
+    }
+    Line {
+      SrcBlock		      "Constant8"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      11
+    }
+    Line {
+      SrcBlock		      "Constant9"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      12
+    }
+    Line {
+      SrcBlock		      "Constant12"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      13
+    }
+    Line {
+      SrcBlock		      "Constant14"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      14
+    }
+    Line {
+      SrcBlock		      "Constant19"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      15
+    }
+    Line {
+      SrcBlock		      "Constant20"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      16
+    }
+    Line {
+      SrcBlock		      "Constant21"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      17
+    }
+    Line {
+      SrcBlock		      "Relational2"
+      SrcPort		      1
+      DstBlock		      "posedge5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      DstBlock		      "Relational2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "posedge5"
+      SrcPort		      1
+      DstBlock		      "Counter1"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "2/4 input rate for 4 x engines full-blast\n2/8 "
+"input rate for 4 x engines half rate"
+      Position		      [110, 562]
+    }
+    Annotation {
+      Name		      "4 antennas"
+      Position		      [832, 565]
+    }
+    Annotation {
+      Name		      "skip mcnts not destined\nfor this x engine"
+      Position		      [1052, 545]
+    }
+    Annotation {
+      Name		      "payload len \nfor x_int = 32,\n8 words of 64 bi"
+"t data"
+      Position		      [328, 504]
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    2 @   8    (     @         %    "
+"\"     $    !     0         %  0 !@    $    &    <V%V960    .      @   8    ("
+"     @         %    \"     $    !     0         %  0 #     $    8    <VAA<F5D"
+"        8V]M<&EL871I;VX #@   ( #   &    \"     (         !0    @    !     0  "
+"  $         !0 $ !,    !    A0   &-O;7!I;&%T:6]N          !C;VUP:6QA=&EO;E]L="
+"70     <VEM=6QI;FM?<&5R:6]D     &EN8W)?;F5T;&ES=         !T<FEM7W9B:71S      "
+"      9&)L7V]V<F0              &1E<')E8V%T961?8V]N=')O;      .    .     8    "
+"(    !          %    \"     $    '     0         0    !P   '1A<F=E=#$ #@   # "
+"!   &    \"     (         !0    @    !     0    $         !0 $  <    !    #@ "
+"  &ME>7,   !V86QU97,    .    <     8    (     0         %    \"     $    !   "
+"  0         .    0     8    (    !          %    \"     $    +     0         "
+"0    \"P   $A$3\"!.971L:7-T       .    :     8    (     0         %    \"    "
+" $    !     0         .    .     8    (    !          %    \"     $    '     "
+"0         0    !P   '1A<F=E=#$ #@   #     &    \"     0         !0    @    ! "
+"    0    $         $  ! #$    .    ,     8    (    !          %    \"     $  "
+"  #     0         0  , ;V9F  X   !(    !@    @    $          4    (     0   !"
+"<    !         !     7    179E<GEW:&5R92!I;B!3=6)3>7-T96T #@   $@    &    \" "
+"    0         !0    @    !    &     $         $    !@   !!8V-O<F1I;F<@=&\\@0F"
+"QO8VL@36%S:W,.    ,     8    (    !          %    \"     $    #     0        "
+" 0  , ;V9F  X    @!   !@    @    \"          4    (     0    $    !          "
+"4 !  (     0    @   !T87)G970Q  X   #8 P  !@    @    \"          4    (     0"
+"    $    !          4 !  0     0   ,    !X:6QI;GAF86UI;'D     <&%R=          "
+"      '-P965D              !P86-K86=E            <WEN=&AE<VES7W1O;VP  &1I<F5C"
+"=&]R>0        !T97-T8F5N8V@         <WES8VQK7W!E<FEO9    &-O<F5?9V5N97)A=&EO;"
+"@!R=6Y?8V]R96=E;@      979A;%]F:65L9        &-L;V-K7VQO8P         .    .     "
+"8    (    !          %    \"     $    '     0         0    !P   %9I<G1E>#( #@"
+"   #@    &    \"     0         !0    @    !    \"     $         $     @   !X8"
+"S)V,3 P, X    P    !@    @    $          4    (     0    (    !         !   @"
+" M-   #@   #@    &    \"     0         !0    @    !    !0    $         $     "
+"4   !B9S4W-0    X    P    !@    @    $          4    (     0    ,    !       "
+"  !   P!84U0 #@   $     &    \"     0         !0    @    !    \"0    $       "
+"  $     D    N+VYE=&QI<W0         #@   #     &    \"     0         !0    @   "
+" !     P    $         $  # &]F9@ .    ,     8    (    !          %    \"     "
+"$    #     0         0  , ,3 P  X   !(    !@    @    $          4    (     0 "
+"  !@    !         !     8    06-C;W)D:6YG('1O($)L;V-K($UA<VMS#@   #     &    "
+"\"     0         !0    @    !     P    $         $  # &]F9@ .    ,     8    ("
+"    !          %    \"     $    !     0         0  $ ,     X    P    !@    @ "
+"   $          4    (               !         !          "
+  }
+}

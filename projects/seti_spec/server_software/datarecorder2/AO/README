@@ -1,0 +1,53 @@
+Other than ./lib, the directories in this directory
+contain production code that has been copied here from
+the AO NFS.  The directory names are such that replacing
+"_" with "/" will yield the pathname on the AO NFS. 
+
+Diffs can be checked by copying the directories from the
+AO NFS to ~/AO and running:
+
+    check_ao_code_sync  
+
+./lib needs to contain:
+
+    flip.o  jtest.o  scram.o  swapdata.o libazzatoradec.a 
+
+To build the .o files, run make in:
+
+    _home_cima_Wapp_Bin_Sources_Lib_linux
+
+Note that you may have to:
+     yum install tk-devel.i386
+     yum install tk.i386
+to get tk.h and related files.
+
+To build libazzatoradec.a, run make in:
+
+    _home_phil_vw_pnt_exportCode
+
+The location of the header files included in ../dr2.h are 
+as follows:
+
+    _home_phil_vw_h/mshmLib.h
+    _home_phil_vw_h/vtxLib.h
+    _home_cima_Wapp_Bin_Sources_Includes/execshm.h
+    _home_cima_Wapp_Bin_Sources_Includes/wappshm.h
+    _home_cima_Wapp_Bin_Sources_Includes/wapplib.h
+    _home_cima_Wapp_Bin_Sources_Includes/alfashm.h
+    _home_cima_Wapp_Bin_Sources_Includes/scram.h
+
+These are the sole locations for these header files.  If this
+fact is ever found to have changed, the situation should be
+studied with the help of AO engineers, in particular Phil Perillat
+and Mikael Lerner.
+
+Note that _home_phil_vw_pnt_exportCode is a collection of
+files that Phil Perillat put together just for us.  If there
+is a discrepancy between any file in that directory and another
+version of the file located elsewhere, the file elsewhere should
+be considered canonical.  As an example, the .dat files can
+undergo changes in the AO production directories but not get
+updated in "exportCode".  In fact, this is common enough that
+the .dat files in exportCode have been made into symlinks to
+their cononical locations elsewhere.  Other such symlinks may
+appear as well.

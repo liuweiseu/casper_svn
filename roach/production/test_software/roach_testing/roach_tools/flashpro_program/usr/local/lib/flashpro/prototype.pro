@@ -1,0 +1,57 @@
+<project name="roach_mon_test" version="1.0">
+    <ProjectDirectory>
+        PROJFOLDER
+    </ProjectDirectory>
+    <View>
+        SingleSTAPLView
+    </View>
+    <LogFile>
+        LOGFILE
+    </LogFile>
+    <programmer status="enable" type="FlashPro3" revision="UndefRev" connection="usb2.0">
+        <name>
+            05700
+        </name>
+        <id>
+            05700
+        </id>
+    </programmer>
+    <configuration>
+        <Hardware>
+            <FlashPro>
+                <TCK>
+                    0
+                </TCK>
+                <Vpp/>
+                <Vpn/>
+                <Vddl/>
+                <Vdd>
+2500                </Vdd>
+            </FlashPro>
+            <FlashProLite>
+                <TCK>
+                    0
+                </TCK>
+                <Vpp/>
+                <Vpn/>
+            </FlashProLite>
+            <FlashPro3>
+                <TCK>
+                    0
+                </TCK>
+                <Vpump/>
+            </FlashPro3>
+        </Hardware>
+        <Algo type="STAPL">
+            <filename>
+                FILE
+            </filename>
+            <local>
+                FILE
+            </local>
+            <SelectedAction>
+                PROGRAM
+            </SelectedAction>
+        </Algo>
+    </configuration>
+</project>

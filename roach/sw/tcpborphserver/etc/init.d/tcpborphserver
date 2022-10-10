@@ -1,0 +1,29 @@
+#!/bin/bash
+
+export PATH=/usr/local/sbin:$PATH
+
+PIDFILE=/var/run/tcpborphserver.pid
+
+case "$1" in
+  start)
+        echo -n "tcpborphserver: "
+	#(tcpborphserver | logger -t tcpborphserver -i) 2>  /dev/null &
+	tcpborphserver -f 0 -p 7147 2> /dev/null &
+        echo "starting fpga 0 on port 7147"
+	tcpborphserver -f 1 -p 7148 2> /dev/null &
+        echo "starting fpga 1 on port 7148"
+	tcpborphserver -f 2 -p 7149 2> /dev/null &
+        echo "starting fpga 0 on port 7148"
+	tcpborphserver -f 3 -p 7150 2> /dev/null &
+        echo "starting fpga 3 on port 7148"
+	;;
+  stop)
+        echo -n "tcpborphserver: "
+        killall tcpborphserver > /dev/null
+        echo "terminating"
+	;;
+  *)
+	echo "Usage: $0 {start|stop}"
+	exit 1
+	;;
+esac

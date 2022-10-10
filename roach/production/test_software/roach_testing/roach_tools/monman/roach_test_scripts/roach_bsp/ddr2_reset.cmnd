@@ -1,0 +1,5 @@
+#get the ddr2 status bits
+r 50000
+w 50004 ffff
+s 100000
+r 50000

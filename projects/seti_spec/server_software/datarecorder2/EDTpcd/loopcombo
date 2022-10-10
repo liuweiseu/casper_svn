@@ -1,0 +1,44 @@
+#!/bin/csh -f
+
+set unit = 0
+
+# This script tests the PCI-SS combo without requiring any loopback 
+# connectors.
+
+if ( $#argv == 2 ) then
+    if ( "$argv[1]" == "-u" ) then
+	set unit=$argv[2]
+    endif
+endif
+
+echo Using unit $unit
+
+
+# load bitfile, set clock 2 to e3 rate, clock 0 and 3 to e2 and clock 1 10MHz
+echo ""
+echo ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo "		Configure SSCombo for loopcombo test."
+echo ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+initpcd -u $unit -f loopcombo_setup.cfg
+# set up the combo board for e3 loopback
+echo ""
+echo ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo "		Run E3 loopback test (4 channels)."
+echo ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+initpcd -u $unit -f loopcombo_e3.cfg 
+# DMA and check data from DMA 0-3 1000 buffers each
+chkprbs15 -u $unit -N -c 0 -n 4 -l 1000
+echo ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo "		Run E1 loopback test (16 channels)."
+echo ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# test e1 next
+initpcd -u $unit -f loopcombo_e1.cfg
+# DMA and check data from DMA 0-15 50 buffers each
+chkprbs15 -u $unit -N -c 0 -n 16 -l 50
+echo ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo "		Run differential loopback test (8 channels)."
+echo ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# set up differential loopback
+initpcd -u $unit -f loopcombo_diff.cfg
+# DMA and check data from DMA 0-7 250 buffers each
+chkprbs15 -u $unit -N -c 0 -n 8 -l 250

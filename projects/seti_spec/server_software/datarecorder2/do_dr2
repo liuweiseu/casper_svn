@@ -1,0 +1,361 @@
+#! /usr/bin/env perl
+
+# Data recorder automation script - jeffc/mattl Nov 2006 - version 0.1
+
+# Configuration Variables
+
+$send_email = 1;
+$send_audio = 0;
+# $operator_request_interval = 300;  # seconds
+$alert_email_recipients = 'operators@naic.edu operator@naic.edu jeffc@ssl.berkeley.edu serendip@naic.edu mattl@ssl.berkeley.edu';
+# $alert_email_recipients = 'jeffc@ssl.berkeley.edu mattl@ssl.berkeley.edu';
+$audio_file = "files/message.au";
+$audio_access = "src/audio_dev_access";
+$notification_host = "teton";
+$tmp_operator_mail_msg = "/tmp/operator_mail_msg";
+$sent_warning_file = "/home/seti/files/already_sent_drive_warning";
+
+$recording = 1;
+$disabled = 0;
+$dr2_config = "/home/seti/files/dr2_config";
+$file_name_list = "/home/seti/files/filenamelist";
+$current_disk_state_file = "/home/seti/files/current_disk";
+$file_writer_exit_trigger = "/home/seti/files/file_writer_should_exit";
+$record_disk_buffers_log = "/tmp/record_disk_buffers_log";
+$dr2_exec = "/home/seti/bin/dr2";
+$dr2_run_trigger = "/home/seti/files/dr2_run_trigger";
+
+$available_needed = 52633600; # in K; the amount of disk space that must be available or "disk full"
+$file_limit = 52633600; # in K; file limit before new file is started
+$mount_point = "/mnt/seti_data";
+$drive_number_file = $mount_point . "/.AO_DATA";
+@drive_array = ("/dev/sde1","/dev/sdf1");
+@drive_locales = ("top","bottom");
+
+$time_before_kill = 60; # number of seconds before killing -9 dr2 outright
+
+@let_month_array = ("ja","fe","mr","ap","my","jn","jl","au","se","oc","no","dc");
+
+# Environmental Variables:
+
+$ENV{'LD_LIBRARY_PATH'} = "/opt/EDTpcd:/usr/local/lib:/usr/local/ssl/lib:/lib:/usr/ucblib:/usr/lib:/usr/openwin/lib:/usr/ccs/lib:/usr/local/gcc/lib:/usr/local/lib:/usr/dt/lib";
+$ENV{'TAPE'} = "/dev/nst0";
+umask 000;
+$|++;  # set no output buffering
+
+# Executables:
+
+$awk = "/bin/awk";
+$cat = "/bin/cat";
+$date = "/bin/date";
+$df = "/bin/df";
+$grep = "/bin/grep";
+$ls = "/bin/ls";
+$mount = "/bin/mount";
+$ps = "/bin/ps";
+$rm = "/bin/rm";
+$rsh = "/usr/kerberos/bin/rsh";
+$tail = "/usr/bin/tail";
+$touch = "/bin/touch";
+$umount = "/bin/umount";
+
+# Modules:
+
+use POSIX ":sys_wait_h"; # for waitpid flags
+
+# Functions:
+
+sub do_mount {
+  my $disknumber = $_[0];
+  # check to see if already mounted - if so, return
+  # unmount current disk (if necessary)
+  # mount right disk
+  # retval = 0 - fail, 1 - success
+  $mountcheck = `$mount | $grep $mount_point | $awk '{print \$1}'`;
+  chomp $mountcheck;
+  if ($mountcheck eq $drive_array[$disknumber]) { return 1; } # already mounted
+  if ($mountcheck ne "") {
+    $retval = system ("$umount -fl $mount_point");
+    if ($retval) { return 0; } 
+    }
+  $retval = system ("$mount " . $drive_array[$disknumber] . " $mount_point");
+  if ($retval) { return 0; }
+  return 1;
+  }
+
+sub disk_full {
+  # check to see if above limit
+  # retval = 0 - not full, 1 - full
+  $dfavail = `$df -P | $grep $mount_point | $awk '{print \$4}'`;
+  chomp $dfavail;
+  print "checking disk full: $dfavail K < $available_needed K - ";
+  if ($dfavail < $available_needed) { print "yes (disk full)\n"; return 1; }
+  print "no (room available on disk)\n";
+  return 0;
+  }
+
+sub file_full {
+  my $thisfile = $_[0];
+  my $counter = $_[1]; # check counter is even 
+  # check to see if above limit
+  # retval = 0 - not full, 1 - full
+  if (! -f $thisfile) { return 0; }
+  my $size = (stat $thisfile)[7];
+  print "checking file size: $size > " . ($file_limit * 1024) . " - ";
+  if ($size >= ($file_limit * 1024) && ($counter % 2 == 0)) { print "yes (file above limit)\n"; return 1; }
+  print "no (file below limit)\n";
+  return 0;
+  }
+
+sub get_initial_current_disk {
+  if (-f $current_disk_state_file) {
+    my $tmp = `$cat $current_disk_state_file`;
+    chomp $tmp;
+    return $tmp;
+    }
+  return 0;
+  }
+
+sub find_next_free_disk {
+  my $current = $_[0];
+  my $try_this = $current_disk;
+  my $first_test = 1; # flag so we can try out current disk first (in case not full yet)
+  while ($try_this != $current_disk || $first_test) {
+    $first_test = 0;
+    if (do_mount($try_this)) { # successful mount
+      if (disk_full) {
+        # console message
+        
+        print "\n\n\n";
+        print `date`;
+        open (TMP,"$tmp_operator_mail_msg");
+        $msg = "Berkeley ".'SETI@home'." Data Recorder:\nPlease insert a new " . $drive_array[$try_this] . " (" . $drive_locales[$try_this] . ") drive\n";
+        if (-f $drive_number_file) {
+          $drive_number = `$cat $drive_number_file`;
+          chomp $drive_number;
+          $msg = "Berkeley ".'SETI@home'." Data Recorder:\nThe drive numbered \"" . $drive_number . "\" is full - please replace with a new drive\n";
+          }
+        print $msg;
+        print TMP $msg . "\nThank you!\n";
+        close (TMP);
+        # email operator
+        if ($send_email && ! -f $sent_warning_file) {
+          #open (SENDMAIL,"|/usr/ucb/mail -s \"".'SETI@home'." needs a new drive\" $alert_email_recipients");
+          open (SENDMAIL,"|/bin/mail -s \"".'SETI@home'." needs a new drive\" $alert_email_recipients");
+          print SENDMAIL "$msg\n";
+          close (SENDMAIL);
+          }
+        # audio request
+        if ($send_audio) {
+          system ("$rsh $notification_host -l serendip $audio_access $audio_file");
+          }
+        } # end if disk full
+      else {
+        # if not full, return $try_this
+        open (OUTFILE,">$current_disk_state_file");
+        print OUTFILE "${try_this}\n";
+        close (OUTFILE);
+        if (-f $sent_warning_file) { unlink $sent_warning_file; } # clean up
+        return $try_this;
+        }
+      }
+    else { 
+      # unable to mount disk - send warning?
+      }
+    $try_this = (($try_this + 1) % scalar(@drive_array));
+    }
+  # No empty/mountable disks 
+  # email operator
+  if (! -f $sent_warning_file) { 
+    if ($send_email) {
+      #open (SENDMAIL,"|/usr/ucb/mail -s \"".'SETI@home'." has no free drives - do_dr2 exiting.\" $alert_email_recipients");
+      open (SENDMAIL,"|/bin/mail -s \"".'SETI@home'." has no free drives - do_dr2 exiting.\" $alert_email_recipients");
+      print SENDMAIL "SETI@home has no free drives - do_dr2 exiting.\n";
+      close (SENDMAIL);
+      system ("$touch $sent_warning_file"); # don't send them a zillion e-mails!
+      }
+    }
+  print "no free drives - do_dr2 exiting...\n";
+  exit 0;
+  return -1;
+  } 
+
+sub get_output_file_name {
+  my $this_name = $_[0];
+  # simply get full path of file to write to and return that value 
+  return $mount_point . "/" . $this_name;
+  }
+
+sub get_new_file_name {
+  my $this_name = $_[0];
+  if ($this_name eq "") { 
+    if (-f $file_name_list) {
+      $this_name = `$tail -1 $file_name_list | $awk '{print \$1}'`;
+      chomp $this_name;
+      }
+    }
+  $lastdmy = substr($this_name,0,6);
+  $lastletters = substr($this_name,6,2);
+  $nowday = `date '+%d'`; chomp $nowday;
+  $nowmonth = `date '+%m'`; chomp $nowmonth;
+  $nowyear = `date '+%y'`; chomp $nowyear;
+  $nowletmonth = $let_month_array[$nowmonth-1];
+  $nowdmy = "$nowday$nowletmonth$nowyear";
+  if ($nowdmy eq $lastdmy) { # date the same, so aa->ab->ac...
+    $newletters = $lastletters;
+    $newletters++;
+    }
+  else {
+    $newletters="aa";
+    }
+  $this_name = "$nowdmy$newletters";
+  open (NAMELIST,">>$file_name_list");
+  $now = `date`;
+  print NAMELIST "$this_name $now";
+  close (NAMELIST);
+  return $this_name;
+  }
+
+sub wait_on_dr2_run_trigger {
+  # don't do anything yet if the run trigger file is missing...
+  if (! -f $dr2_run_trigger) { print "sleeping due to missing trigger file: $dr2_run_trigger\n"; }
+  while (! -f $dr2_run_trigger) { sleep 10; }
+  return 0;
+  }
+
+sub get_dr2_pid {
+  my $dr2_pid = `$ps -ef | $grep $dr2_exec | $grep -v grep | awk '{print \$2}'`;
+  chomp $dr2_pid;
+  return $dr2_pid; 
+  }
+
+# MAIN:
+
+# is dr2 already running?
+if (($pid = get_dr2_pid()) ne "") {
+  print $dr2_exec . " is already running (pid: $pid) - exiting...\n";
+  exit(1);
+  }
+
+system("$rm /ramdisk/diskbuf_* > /dev/null 2>&1");
+
+
+$this_name = "";    # i.e. no name selected yet
+$current_disk = get_initial_current_disk();
+$failure = 0;
+
+while (!$disabled) {
+  if ($recording) {
+    print "finding/mounting first available disk (starting with: " . $drive_array[$current_disk] . ")\n";
+    while (($current_disk = find_next_free_disk($current_disk)) != -1) {
+      if ($failure == 0) { $this_name = get_new_file_name($this_name); } # don't assign new name if failed last loop
+      $output_file = get_output_file_name($this_name);
+      $now = `$date`;
+      print "starting datarecorder/filewriter process: $now";
+      print "output filename: $this_name\n";
+      print "mounted drive: ". $drive_array[$current_disk] . "\n";
+      $failure = 0;
+      
+      wait_on_dr2_run_trigger();
+      if (-f $file_writer_exit_trigger) { unlink $file_writer_exit_trigger; }
+
+      # fork off dr2 process
+      if (!($dr2pid = fork)) {
+        $retval = system ("$dr2_exec -config $dr2_config -name $this_name");
+        print "$dr2_exec exited (retval=$retval)...\n";
+        system ("$touch $file_writer_exit_trigger");
+        exit 0;
+        }
+      if (!defined($dr2pid)) { # couldn't fork dr2, prevent filewriter from starting
+        $now = `$date`;
+        print "dr2 failed (and touching trigger: $file_writer_exit_trigger) because couldn't fork dr2\n";
+        system ("$touch $file_writer_exit_trigger");
+        $failure = 1;
+        }
+      while (($real_dr2pid = get_dr2_pid()) eq "") {
+        print "sleeping 5 seconds waiting for $dr2_exec to start...\n";
+        sleep 5;
+        }
+      print "parent script forked with pid $dr2pid (note: this is parent process)\n"; 
+      print "$dr2_exec forked with pid ${real_dr2pid}\n";
+
+      # fork off filewriter process
+      if (!($fwpid = fork)) {
+        if (-f $file_writer_exit_trigger) { 
+          print "filewriter immediately exiting due to trigger file\n"; 
+          exit 0;
+          }
+        open (RECLOG,">>$record_disk_buffers_log");
+        $now = `$date`; 
+        print RECLOG "starting: $now";
+        $disk_buff_count = 0;
+        while (1) {
+          print "filewriter: about to try disk buffer $disk_buff_count\n";
+          if (-f $file_writer_exit_trigger) { 
+            kill INT, $real_dr2pid;
+            $now = `$date`;
+            $msg = "exiting (and killing dr2 pid: $real_dr2pid) due to trigger file: $now";
+            print RECLOG $msg; print $msg;
+            close (RECLOG);
+            exit 0;
+            }
+          if (disk_full($current_disk) || file_full($output_file,$disk_buff_count)) {
+            kill INT, $real_dr2pid;
+            $now = `$date`;
+            $msg = "exiting (and killing dr2 pid: $real_dr2pid) because file or disk full: $now";
+            print RECLOG $msg; print $msg;
+            close (RECLOG);
+            exit 0;
+            }
+          $next_one_to_write = `$ls -1t /ramdisk/*.done | $tail -1`;
+          chomp $next_one_to_write;
+          if ($next_one_to_write ne "") {
+            system("$cat $next_one_to_write >> $output_file");
+            $disk_buff_count++;
+            print RECLOG "recorded $disk_buff_count disk buffers (file: $next_one_to_write)\n";
+  	    unlink $next_one_to_write;
+            }
+	  sleep 5;
+          }
+        }
+      if (!defined($fwpid)) { # couldn't fork filewriter - kill dr2
+        $now = `$date`;
+        print "filewriter failed (and killing dr2 pid: $real_dr2pid) because couldn't fork filewriter process: $now";
+        kill INT, $real_dr2pid;
+        $failure = 1;
+        } 
+      print "filewriter forked with pid $fwpid\n"; 
+
+      # wait for both children to exit
+      while(waitpid($fwpid, &WNOHANG) == 0) { sleep 1; }
+      print "filewriter exited..\n";
+      unlink $file_writer_exit_trigger;
+      $numsecs = 0;
+      while(waitpid($dr2pid, &WNOHANG) == 0) { 
+        sleep 1; 
+        $numsecs++;
+        if ($numsecs >= $time_before_kill) {
+          print "waited $numsecs seconds on dr2 to exit, sending KILL...\n";
+          kill KILL, $real_dr2pid;
+          $numsecs = 0;
+          } 
+        }
+      print "dr2 exited..\n";
+
+      # save off log for archiving
+      rename "/tmp/dr2_log", "/tmp/dr2_log.$this_name";
+
+      wait_on_dr2_run_trigger();
+
+      print "sleeping briefly before restarting main loop...\n"; sleep 10;
+
+      } # end while find_next_free_disk - go back up and find another
+        # (or reuse current disk if not full)
+
+    } # end if ($recording)
+
+  sleep 60;
+
+  } # end while (!$disabled)
+
+exit 0;

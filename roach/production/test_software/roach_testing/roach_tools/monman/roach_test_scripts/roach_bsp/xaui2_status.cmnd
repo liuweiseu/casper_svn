@@ -1,0 +1,15 @@
+#the link status
+r 30018
+# powerdown enabled
+r 3001a
+# loopback enabled
+r 3001c
+# tx enabled
+r 3001e
+#the tx status
+r 3000a
+#the rx status
+r 30016
+# moo
+r 30026
+r 30028

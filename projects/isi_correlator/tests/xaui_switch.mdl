@@ -1,0 +1,4215 @@
+Model {
+  Name			  "xaui_switch"
+  Version		  7.4
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.8"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "windows-1252"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  MaxMDLFileLineLength	  120
+  Created		  "Wed Oct 21 19:56:35 2009"
+  Creator		  "wjm"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "wjm"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Apr 28 00:47:46 2010"
+  RTWModifiedTimeStamp	  194302631
+  ModelVersionFormat	  "1.%<AutoIncrement:8>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  on
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.6.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.6.0"
+	  StartTime		  "0.0"
+	  StopTime		  "100"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.6.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    4
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "OptimizeModelRefInitCode"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.6.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  StrictBusMsg		  "Warning"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.6.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.6.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.6.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    2
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 520, 285, 1400, 915 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  System {
+    Name		    "xaui_switch"
+    Location		    [389, 77, 1385, 789]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    402
+    Block {
+      BlockType		      Reference
+      Name		      " System Generator"
+      SID		      1
+      Tag		      "genX"
+      Ports		      []
+      Position		      [16, 12, 62, 55]
+      ShowName		      off
+      AttributesFormatString  "System\\nGenerator"
+      LibraryVersion	      "1.2"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "xbsIndex_r4/ System Generator"
+      SourceType	      "Xilinx System Generator Block"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      infoedit		      " System Generator"
+      xilinxfamily	      "virtex5"
+      part		      "xc5vsx95t"
+      speed		      "-1"
+      package		      "ff1136"
+      synthesis_tool	      "XST"
+      clock_wrapper	      "Clock Enables"
+      directory		      "./xaui_loop/sysgen"
+      testbench		      off
+      simulink_period	      "1"
+      sysclk_period	      "5"
+      dcm_input_clock_period  "100"
+      incr_netlist	      off
+      trim_vbits	      "Everywhere in SubSystem"
+      dbl_ovrd		      "According to Block Masks"
+      core_generation	      "According to Block Masks"
+      run_coregen	      off
+      deprecated_control      off
+      eval_field	      "0"
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "sysgen"
+      block_version	      "10.1.1"
+      sg_icon_stat	      "46,43,-1,-1,red,beige,0,07734,right"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 46 46 0 ],[0 0 43 43 ],[0.93 0.92 0"
+      ".86]);\npatch([11 4 14 4 11 22 25 28 40 30 21 14 23 14 21 30 40 28 25 22 11 ],[5 12 22 32 39 39 36 39 39 29 38 3"
+      "1 22 13 6 15 5 5 8 5 5 ],[0.6 0.2 0.25]);\nplot([0 46 46 0 0 ],[0 0 43 43 0 ]);\nfprintf('','COMMENT: end icon g"
+      "raphics');\nfprintf('','COMMENT: begin icon text');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant15"
+      SID		      4
+      Ports		      [0, 1]
+      Position		      [595, 143, 645, 157]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Boolean"
+      const		      "1"
+      n_bits		      "1"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,400,346"
+      block_type	      "constant"
+      block_version	      "10.1.1"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,1c72b5be,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant2"
+      SID		      5
+      Ports		      [0, 1]
+      Position		      [595, 383, 645, 397]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Boolean"
+      const		      "1"
+      n_bits		      "1"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,400,346"
+      block_type	      "constant"
+      block_version	      "10.1.1"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,1c72b5be,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant4"
+      SID		      7
+      Ports		      [0, 1]
+      Position		      [595, 263, 645, 277]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Boolean"
+      const		      "1"
+      n_bits		      "1"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,400,346"
+      block_type	      "constant"
+      block_version	      "10.1.1"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,1c72b5be,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant6"
+      SID		      9
+      Ports		      [0, 1]
+      Position		      [595, 503, 645, 517]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Boolean"
+      const		      "1"
+      n_bits		      "1"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,400,346"
+      block_type	      "constant"
+      block_version	      "10.1.1"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,1c72b5be,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      SID		      39
+      Position		      [870, 168, 890, 182]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator10"
+      SID		      40
+      Position		      [870, 333, 890, 347]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator11"
+      SID		      41
+      Position		      [870, 348, 890, 362]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator12"
+      SID		      42
+      Position		      [870, 453, 890, 467]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator13"
+      SID		      43
+      Position		      [870, 468, 890, 482]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator15"
+      SID		      45
+      Position		      [870, 408, 890, 422]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator17"
+      SID		      47
+      Position		      [870, 438, 890, 452]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator18"
+      SID		      48
+      Position		      [870, 573, 890, 587]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator19"
+      SID		      49
+      Position		      [870, 588, 890, 602]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator21"
+      SID		      52
+      Position		      [870, 528, 890, 542]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator23"
+      SID		      54
+      Position		      [870, 558, 890, 572]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      SID		      55
+      Position		      [870, 198, 890, 212]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator4"
+      SID		      56
+      Position		      [870, 213, 890, 227]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator5"
+      SID		      57
+      Position		      [870, 228, 890, 242]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator7"
+      SID		      59
+      Position		      [870, 288, 890, 302]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator9"
+      SID		      61
+      Position		      [870, 318, 890, 332]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XSG Core Config"
+      SID		      62
+      Tag		      "xps:xsg"
+      Ports		      []
+      Position		      [15, 89, 61, 132]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      LibraryVersion	      "1.419"
+      SourceBlock	      "xps_library/XSG core config"
+      SourceType	      "xsg core config"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      hw_sys		      "ROACH:sx95t"
+      ibob_linux	      off
+      clk_src		      "sys_clk2x"
+      iBOB_clk_src	      "sys_clk2x"
+      BEE2_ctrl_clk_src	      "sys_clk"
+      BEE2_usr_clk_src	      "sys_clk2x"
+      ROACH_clk_src	      "sys_clk2x"
+      CORR_clk_src	      "sys_clk"
+      gpio_clk_io_group	      "iBOB:sma"
+      gpio_clk_bit_index      "0"
+      clk_rate		      "200"
+      sample_period	      "1"
+      synthesis_tool	      "XST"
+      mpc_type		      "powerpc440_ext"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "control17"
+      SID		      63
+      Ports		      [1, 1]
+      Position		      [315, 13, 365, 27]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Slice"
+      SourceType	      "Xilinx Bit Slice Extractor Block"
+      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
+      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P"
+      ">Hardware notes: In hardware this block costs nothing."
+      nbits		      "1"
+      boolean_output	      on
+      mode		      "Lower Bit Location + Width"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,449,376"
+      block_type	      "slice"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,1fd851a7,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "default_rx_reset"
+      SID		      64
+      Position		      [115, 13, 165, 27]
+      Value		      "0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "default_select0"
+      SID		      270
+      Position		      [115, 48, 165, 62]
+      Value		      "0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "default_select1"
+      SID		      272
+      Position		      [115, 83, 165, 97]
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "default_select2"
+      SID		      275
+      Position		      [115, 118, 165, 132]
+      Value		      "2"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "default_select3"
+      SID		      276
+      Position		      [115, 153, 165, 167]
+      Value		      "3"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "rx_reset"
+      SID		      69
+      Tag		      "xps:sw_reg"
+      Ports		      [1, 1]
+      Position		      [190, 13, 290, 27]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      LibraryVersion	      "1.419"
+      SourceBlock	      "xps_library/software register"
+      SourceType	      ""
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      io_dir		      "From Processor"
+      arith_type	      "Unsigned"
+      bitwidth		      "32"
+      bin_pt		      "0"
+      sample_period	      "1"
+      gw_name		      "xaui_switch_rx_reset_user_data_out"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "select0"
+      SID		      271
+      Tag		      "xps:sw_reg"
+      Ports		      [1, 1]
+      Position		      [190, 48, 290, 62]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      LibraryVersion	      "1.419"
+      SourceBlock	      "xps_library/software register"
+      SourceType	      ""
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      io_dir		      "From Processor"
+      arith_type	      "Unsigned"
+      bitwidth		      "32"
+      bin_pt		      "0"
+      sample_period	      "1"
+      gw_name		      "xaui_switch_rx_reset_user_data_out"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "select1"
+      SID		      273
+      Tag		      "xps:sw_reg"
+      Ports		      [1, 1]
+      Position		      [190, 83, 290, 97]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      LibraryVersion	      "1.419"
+      SourceBlock	      "xps_library/software register"
+      SourceType	      ""
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      io_dir		      "From Processor"
+      arith_type	      "Unsigned"
+      bitwidth		      "32"
+      bin_pt		      "0"
+      sample_period	      "1"
+      gw_name		      "xaui_switch_rx_reset_user_data_out"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "select2"
+      SID		      277
+      Tag		      "xps:sw_reg"
+      Ports		      [1, 1]
+      Position		      [190, 118, 290, 132]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      LibraryVersion	      "1.419"
+      SourceBlock	      "xps_library/software register"
+      SourceType	      ""
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      io_dir		      "From Processor"
+      arith_type	      "Unsigned"
+      bitwidth		      "32"
+      bin_pt		      "0"
+      sample_period	      "1"
+      gw_name		      "xaui_switch_rx_reset_user_data_out"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "select3"
+      SID		      278
+      Tag		      "xps:sw_reg"
+      Ports		      [1, 1]
+      Position		      [190, 153, 290, 167]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      LibraryVersion	      "1.419"
+      SourceBlock	      "xps_library/software register"
+      SourceType	      ""
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      io_dir		      "From Processor"
+      arith_type	      "Unsigned"
+      bitwidth		      "32"
+      bin_pt		      "0"
+      sample_period	      "1"
+      gw_name		      "xaui_switch_rx_reset_user_data_out"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "slice_select0"
+      SID		      269
+      Ports		      [1, 1]
+      Position		      [315, 48, 365, 62]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Slice"
+      SourceType	      "Xilinx Bit Slice Extractor Block"
+      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
+      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><"
+      "br>Hardware notes: In hardware this block costs nothing."
+      nbits		      "2"
+      boolean_output	      off
+      mode		      "Lower Bit Location + Width"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,449,376"
+      block_type	      "slice"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,1fd851a7,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "slice_select1"
+      SID		      274
+      Ports		      [1, 1]
+      Position		      [315, 83, 365, 97]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Slice"
+      SourceType	      "Xilinx Bit Slice Extractor Block"
+      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
+      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><"
+      "br>Hardware notes: In hardware this block costs nothing."
+      nbits		      "2"
+      boolean_output	      off
+      mode		      "Lower Bit Location + Width"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,449,376"
+      block_type	      "slice"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,1fd851a7,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "slice_select2"
+      SID		      279
+      Ports		      [1, 1]
+      Position		      [315, 118, 365, 132]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Slice"
+      SourceType	      "Xilinx Bit Slice Extractor Block"
+      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
+      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><"
+      "br>Hardware notes: In hardware this block costs nothing."
+      nbits		      "2"
+      boolean_output	      off
+      mode		      "Lower Bit Location + Width"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,449,376"
+      block_type	      "slice"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,1fd851a7,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "slice_select3"
+      SID		      280
+      Ports		      [1, 1]
+      Position		      [315, 153, 365, 167]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Slice"
+      SourceType	      "Xilinx Bit Slice Extractor Block"
+      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
+      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><"
+      "br>Hardware notes: In hardware this block costs nothing."
+      nbits		      "2"
+      boolean_output	      off
+      mode		      "Lower Bit Location + Width"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,449,376"
+      block_type	      "slice"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,1fd851a7,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "xaui0"
+      SID		      70
+      Tag		      "xps:xaui"
+      Ports		      [5, 7]
+      Position		      [670, 141, 820, 239]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      LibraryVersion	      "1.419"
+      SourceBlock	      "xps_library/XAUI"
+      SourceType	      "xaui"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      demux		      "1"
+      port		      "ROACH:0"
+      open_phy		      on
+      show_param	      off
+      pre_emph		      "3"
+      swing		      "800"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "xaui1"
+      SID		      71
+      Tag		      "xps:xaui"
+      Ports		      [5, 7]
+      Position		      [670, 261, 820, 359]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      LibraryVersion	      "1.419"
+      SourceBlock	      "xps_library/XAUI"
+      SourceType	      "xaui"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      demux		      "1"
+      port		      "ROACH:1"
+      open_phy		      on
+      show_param	      off
+      pre_emph		      "3"
+      swing		      "800"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "xaui2"
+      SID		      72
+      Tag		      "xps:xaui"
+      Ports		      [5, 7]
+      Position		      [670, 381, 820, 479]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      LibraryVersion	      "1.419"
+      SourceBlock	      "xps_library/XAUI"
+      SourceType	      "xaui"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      demux		      "1"
+      port		      "ROACH:2"
+      open_phy		      on
+      show_param	      off
+      pre_emph		      "3"
+      swing		      "800"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "xaui3"
+      SID		      73
+      Tag		      "xps:xaui"
+      Ports		      [5, 7]
+      Position		      [670, 501, 820, 599]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      LibraryVersion	      "1.419"
+      SourceBlock	      "xps_library/XAUI"
+      SourceType	      "xaui"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      demux		      "1"
+      port		      "ROACH:3"
+      open_phy		      on
+      show_param	      off
+      pre_emph		      "3"
+      swing		      "800"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "xaui_switch"
+      SID		      282
+      Ports		      [16, 12]
+      Position		      [415, 177, 515, 418]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"xaui_switch"
+	Location		[770, 71, 1100, 1039]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "select0"
+	  SID			  283
+	  Position		  [15, 13, 45, 27]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "select1"
+	  SID			  284
+	  Position		  [15, 28, 45, 42]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "select2"
+	  SID			  285
+	  Position		  [15, 43, 45, 57]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "select3"
+	  SID			  286
+	  Position		  [15, 58, 45, 72]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "data0"
+	  SID			  391
+	  Position		  [15, 98, 45, 112]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "oob0"
+	  SID			  392
+	  Position		  [15, 158, 45, 172]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "valid0"
+	  SID			  393
+	  Position		  [15, 218, 45, 232]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "data1"
+	  SID			  394
+	  Position		  [15, 113, 45, 127]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "oob1"
+	  SID			  395
+	  Position		  [15, 173, 45, 187]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "valid1"
+	  SID			  396
+	  Position		  [15, 233, 45, 247]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "data2"
+	  SID			  397
+	  Position		  [15, 128, 45, 142]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "oob2"
+	  SID			  398
+	  Position		  [15, 188, 45, 202]
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "valid2"
+	  SID			  399
+	  Position		  [15, 248, 45, 262]
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "data3"
+	  SID			  400
+	  Position		  [15, 143, 45, 157]
+	  Port			  "14"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "oob3"
+	  SID			  401
+	  Position		  [15, 203, 45, 217]
+	  Port			  "15"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "valid3"
+	  SID			  402
+	  Position		  [15, 263, 45, 277]
+	  Port			  "16"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "xaui_mux0"
+	  SID			  299
+	  Ports			  [13, 3]
+	  Position		  [195, 82, 245, 278]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "xaui_mux0"
+	    Location		    [866, 197, 1092, 546]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "select"
+	      SID		      300
+	      Position		      [15, 13, 45, 27]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data0"
+	      SID		      301
+	      Position		      [15, 53, 45, 67]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data1"
+	      SID		      302
+	      Position		      [15, 68, 45, 82]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data2"
+	      SID		      303
+	      Position		      [15, 83, 45, 97]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data3"
+	      SID		      304
+	      Position		      [15, 98, 45, 112]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob0"
+	      SID		      305
+	      Position		      [15, 153, 45, 167]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob1"
+	      SID		      306
+	      Position		      [15, 168, 45, 182]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob2"
+	      SID		      307
+	      Position		      [15, 183, 45, 197]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob3"
+	      SID		      308
+	      Position		      [15, 198, 45, 212]
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid0"
+	      SID		      309
+	      Position		      [15, 253, 45, 267]
+	      Port		      "10"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid1"
+	      SID		      310
+	      Position		      [15, 268, 45, 282]
+	      Port		      "11"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid2"
+	      SID		      311
+	      Position		      [15, 283, 45, 297]
+	      Port		      "12"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid3"
+	      SID		      312
+	      Position		      [15, 298, 45, 312]
+	      Port		      "13"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_data"
+	      SID		      313
+	      Ports		      [5, 1]
+	      Position		      [95, 35, 145, 115]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_oob"
+	      SID		      314
+	      Ports		      [5, 1]
+	      Position		      [95, 135, 145, 215]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_valid"
+	      SID		      315
+	      Ports		      [5, 1]
+	      Position		      [95, 235, 145, 315]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "data"
+	      SID		      316
+	      Position		      [170, 68, 200, 82]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "oob"
+	      SID		      317
+	      Position		      [170, 168, 200, 182]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "valid"
+	      SID		      318
+	      Position		      [170, 268, 200, 282]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "data0"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "data1"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "mux_data"
+	      SrcPort		      1
+	      DstBlock		      "data"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "data2"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "data3"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "oob0"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "oob1"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "mux_oob"
+	      SrcPort		      1
+	      DstBlock		      "oob"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "oob2"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "oob3"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "valid0"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "valid1"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "valid2"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "valid3"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "mux_valid"
+	      SrcPort		      1
+	      DstBlock		      "valid"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "select"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 25]
+	      Branch {
+		DstBlock		"mux_data"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 100]
+		Branch {
+		  Points		  [0, 100]
+		  DstBlock		  "mux_valid"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "mux_oob"
+		  DstPort		  1
+		}
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "xaui_mux1"
+	  SID			  319
+	  Ports			  [13, 3]
+	  Position		  [195, 302, 245, 498]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "xaui_mux1"
+	    Location		    [866, 197, 1092, 546]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "select"
+	      SID		      320
+	      Position		      [15, 13, 45, 27]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data0"
+	      SID		      321
+	      Position		      [15, 53, 45, 67]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data1"
+	      SID		      322
+	      Position		      [15, 68, 45, 82]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data2"
+	      SID		      323
+	      Position		      [15, 83, 45, 97]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data3"
+	      SID		      324
+	      Position		      [15, 98, 45, 112]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob0"
+	      SID		      325
+	      Position		      [15, 153, 45, 167]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob1"
+	      SID		      326
+	      Position		      [15, 168, 45, 182]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob2"
+	      SID		      327
+	      Position		      [15, 183, 45, 197]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob3"
+	      SID		      328
+	      Position		      [15, 198, 45, 212]
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid0"
+	      SID		      329
+	      Position		      [15, 253, 45, 267]
+	      Port		      "10"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid1"
+	      SID		      330
+	      Position		      [15, 268, 45, 282]
+	      Port		      "11"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid2"
+	      SID		      331
+	      Position		      [15, 283, 45, 297]
+	      Port		      "12"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid3"
+	      SID		      332
+	      Position		      [15, 298, 45, 312]
+	      Port		      "13"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_data"
+	      SID		      333
+	      Ports		      [5, 1]
+	      Position		      [95, 35, 145, 115]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_oob"
+	      SID		      334
+	      Ports		      [5, 1]
+	      Position		      [95, 135, 145, 215]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_valid"
+	      SID		      335
+	      Ports		      [5, 1]
+	      Position		      [95, 235, 145, 315]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "data"
+	      SID		      336
+	      Position		      [170, 68, 200, 82]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "oob"
+	      SID		      337
+	      Position		      [170, 168, 200, 182]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "valid"
+	      SID		      338
+	      Position		      [170, 268, 200, 282]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "select"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 25]
+	      Branch {
+		Points			[0, 100]
+		Branch {
+		  DstBlock		  "mux_oob"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 100]
+		  DstBlock		  "mux_valid"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"mux_data"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "mux_valid"
+	      SrcPort		      1
+	      DstBlock		      "valid"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "valid3"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "valid2"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "valid1"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "valid0"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "oob3"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "oob2"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "mux_oob"
+	      SrcPort		      1
+	      DstBlock		      "oob"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "oob1"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "oob0"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "data3"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "data2"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "mux_data"
+	      SrcPort		      1
+	      DstBlock		      "data"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "data1"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "data0"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "xaui_mux2"
+	  SID			  339
+	  Ports			  [13, 3]
+	  Position		  [195, 522, 245, 718]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "xaui_mux2"
+	    Location		    [866, 197, 1092, 546]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "select"
+	      SID		      340
+	      Position		      [15, 13, 45, 27]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data0"
+	      SID		      341
+	      Position		      [15, 53, 45, 67]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data1"
+	      SID		      342
+	      Position		      [15, 68, 45, 82]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data2"
+	      SID		      343
+	      Position		      [15, 83, 45, 97]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data3"
+	      SID		      344
+	      Position		      [15, 98, 45, 112]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob0"
+	      SID		      345
+	      Position		      [15, 153, 45, 167]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob1"
+	      SID		      346
+	      Position		      [15, 168, 45, 182]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob2"
+	      SID		      347
+	      Position		      [15, 183, 45, 197]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob3"
+	      SID		      348
+	      Position		      [15, 198, 45, 212]
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid0"
+	      SID		      349
+	      Position		      [15, 253, 45, 267]
+	      Port		      "10"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid1"
+	      SID		      350
+	      Position		      [15, 268, 45, 282]
+	      Port		      "11"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid2"
+	      SID		      351
+	      Position		      [15, 283, 45, 297]
+	      Port		      "12"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid3"
+	      SID		      352
+	      Position		      [15, 298, 45, 312]
+	      Port		      "13"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_data"
+	      SID		      353
+	      Ports		      [5, 1]
+	      Position		      [95, 35, 145, 115]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_oob"
+	      SID		      354
+	      Ports		      [5, 1]
+	      Position		      [95, 135, 145, 215]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_valid"
+	      SID		      355
+	      Ports		      [5, 1]
+	      Position		      [95, 235, 145, 315]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "data"
+	      SID		      356
+	      Position		      [170, 68, 200, 82]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "oob"
+	      SID		      357
+	      Position		      [170, 168, 200, 182]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "valid"
+	      SID		      358
+	      Position		      [170, 268, 200, 282]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "data0"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "data1"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "mux_data"
+	      SrcPort		      1
+	      DstBlock		      "data"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "data2"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "data3"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "oob0"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "oob1"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "mux_oob"
+	      SrcPort		      1
+	      DstBlock		      "oob"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "oob2"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "oob3"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "valid0"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "valid1"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "valid2"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "valid3"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "mux_valid"
+	      SrcPort		      1
+	      DstBlock		      "valid"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "select"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 25]
+	      Branch {
+		DstBlock		"mux_data"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 100]
+		Branch {
+		  Points		  [0, 100]
+		  DstBlock		  "mux_valid"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "mux_oob"
+		  DstPort		  1
+		}
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "xaui_mux3"
+	  SID			  359
+	  Ports			  [13, 3]
+	  Position		  [195, 742, 245, 938]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "xaui_mux3"
+	    Location		    [866, 197, 1092, 546]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "select"
+	      SID		      360
+	      Position		      [15, 13, 45, 27]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data0"
+	      SID		      361
+	      Position		      [15, 53, 45, 67]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data1"
+	      SID		      362
+	      Position		      [15, 68, 45, 82]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data2"
+	      SID		      363
+	      Position		      [15, 83, 45, 97]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data3"
+	      SID		      364
+	      Position		      [15, 98, 45, 112]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob0"
+	      SID		      365
+	      Position		      [15, 153, 45, 167]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob1"
+	      SID		      366
+	      Position		      [15, 168, 45, 182]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob2"
+	      SID		      367
+	      Position		      [15, 183, 45, 197]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "oob3"
+	      SID		      368
+	      Position		      [15, 198, 45, 212]
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid0"
+	      SID		      369
+	      Position		      [15, 253, 45, 267]
+	      Port		      "10"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid1"
+	      SID		      370
+	      Position		      [15, 268, 45, 282]
+	      Port		      "11"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid2"
+	      SID		      371
+	      Position		      [15, 283, 45, 297]
+	      Port		      "12"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "valid3"
+	      SID		      372
+	      Position		      [15, 298, 45, 312]
+	      Port		      "13"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_data"
+	      SID		      373
+	      Ports		      [5, 1]
+	      Position		      [95, 35, 145, 115]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_oob"
+	      SID		      374
+	      Ports		      [5, 1]
+	      Position		      [95, 135, 145, 215]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "mux_valid"
+	      SID		      375
+	      Ports		      [5, 1]
+	      Position		      [95, 235, 145, 315]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "xbsIndex_r4/Mux"
+	      SourceType	      "Xilinx Bus Multiplexer Block"
+	      inputs		      "4"
+	      en		      off
+	      latency		      "3"
+	      precision		      "Full"
+	      arith_type	      "Unsigned"
+	      n_bits		      "16"
+	      bin_pt		      "14"
+	      quantization	      "Truncate"
+	      overflow		      "Wrap"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
+	      xl_area		      "[0,0,0,0,0,0,0]"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "mux"
+	      block_version	      "11.4"
+	      sg_icon_stat	      "50,80,5,1,white,blue,3,641f70b6,right,"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],["
+	      "0.77 0.82 0.91]);\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.6"
+	      "4 0.56 0.48 0.22 ],[0.25 0.35 0.5 0.65 0.75 0.75 0.7 0.75 0.75 0.6125 0.75 0.65 0.5 0.35 0.25 0.3875 0.25 0.25 "
+	      "0.3 0.25 0.25 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end ic"
+	      "on graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('bl"
+	      "ack');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input"
+	      "',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-3}}','texmode','on');\n"
+	      "fprintf('','COMMENT: end icon text');\n"
+	      sg_list_contents	      "{'table'=>{'inputs'=>'popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2"
+	      "4|25|26|27|28|29|30|31|32)','userSelections'=>{'inputs'=>'4'}}}"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "data"
+	      SID		      376
+	      Position		      [170, 68, 200, 82]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "oob"
+	      SID		      377
+	      Position		      [170, 168, 200, 182]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "valid"
+	      SID		      378
+	      Position		      [170, 268, 200, 282]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "select"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 25]
+	      Branch {
+		Points			[0, 100]
+		Branch {
+		  DstBlock		  "mux_oob"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 100]
+		  DstBlock		  "mux_valid"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"mux_data"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "mux_valid"
+	      SrcPort		      1
+	      DstBlock		      "valid"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "valid3"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "valid2"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "valid1"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "valid0"
+	      SrcPort		      1
+	      DstBlock		      "mux_valid"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "oob3"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "oob2"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "mux_oob"
+	      SrcPort		      1
+	      DstBlock		      "oob"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "oob1"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "oob0"
+	      SrcPort		      1
+	      DstBlock		      "mux_oob"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "data3"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "data2"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "mux_data"
+	      SrcPort		      1
+	      DstBlock		      "data"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "data1"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "data0"
+	      SrcPort		      1
+	      DstBlock		      "mux_data"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "d0"
+	  SID			  379
+	  Position		  [270, 108, 300, 122]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o0"
+	  SID			  380
+	  Position		  [270, 173, 300, 187]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "v0"
+	  SID			  381
+	  Position		  [270, 238, 300, 252]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "d1"
+	  SID			  382
+	  Position		  [270, 328, 300, 342]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o1"
+	  SID			  383
+	  Position		  [270, 393, 300, 407]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "v1"
+	  SID			  384
+	  Position		  [270, 458, 300, 472]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "d2"
+	  SID			  385
+	  Position		  [270, 548, 300, 562]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o2"
+	  SID			  386
+	  Position		  [270, 613, 300, 627]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "v2"
+	  SID			  387
+	  Position		  [270, 678, 300, 692]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "d3"
+	  SID			  388
+	  Position		  [270, 768, 300, 782]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o3"
+	  SID			  389
+	  Position		  [270, 833, 300, 847]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "v3"
+	  SID			  390
+	  Position		  [270, 898, 300, 912]
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "xaui_mux0"
+	  SrcPort		  1
+	  DstBlock		  "d0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "xaui_mux0"
+	  SrcPort		  2
+	  DstBlock		  "o0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "xaui_mux0"
+	  SrcPort		  3
+	  DstBlock		  "v0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "xaui_mux1"
+	  SrcPort		  1
+	  DstBlock		  "d1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "xaui_mux1"
+	  SrcPort		  2
+	  DstBlock		  "o1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "xaui_mux1"
+	  SrcPort		  3
+	  DstBlock		  "v1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "xaui_mux2"
+	  SrcPort		  1
+	  DstBlock		  "d2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "xaui_mux2"
+	  SrcPort		  2
+	  DstBlock		  "o2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "xaui_mux2"
+	  SrcPort		  3
+	  DstBlock		  "v2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "xaui_mux3"
+	  SrcPort		  1
+	  DstBlock		  "d3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "xaui_mux3"
+	  SrcPort		  2
+	  DstBlock		  "o3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "xaui_mux3"
+	  SrcPort		  3
+	  DstBlock		  "v3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "select0"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, 70]
+	  DstBlock		  "xaui_mux0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "data0"
+	  SrcPort		  1
+	  Points		  [120, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "data1"
+	  SrcPort		  1
+	  Points		  [115, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      3
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			3
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			3
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "data2"
+	  SrcPort		  1
+	  Points		  [110, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    4
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      4
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			4
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			4
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "data3"
+	  SrcPort		  1
+	  Points		  [105, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    5
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      5
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			5
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			5
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "oob0"
+	  SrcPort		  1
+	  Points		  [100, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    6
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      6
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			6
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			6
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "oob1"
+	  SrcPort		  1
+	  Points		  [95, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    7
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      7
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			7
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			7
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "oob2"
+	  SrcPort		  1
+	  Points		  [90, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    8
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      8
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			8
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			8
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "oob3"
+	  SrcPort		  1
+	  Points		  [85, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    9
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      9
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			9
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			9
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "valid0"
+	  SrcPort		  1
+	  Points		  [80, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    10
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      10
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			10
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			10
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "valid1"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    11
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      11
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			11
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			11
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "valid2"
+	  SrcPort		  1
+	  Points		  [70, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    12
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      12
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			12
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			12
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "valid3"
+	  SrcPort		  1
+	  Points		  [65, 0]
+	  Branch {
+	    DstBlock		    "xaui_mux0"
+	    DstPort		    13
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    Branch {
+	      DstBlock		      "xaui_mux1"
+	      DstPort		      13
+	    }
+	    Branch {
+	      Points		      [0, 220]
+	      Branch {
+		Points			[0, 220]
+		DstBlock		"xaui_mux3"
+		DstPort			13
+	      }
+	      Branch {
+		DstBlock		"xaui_mux2"
+		DstPort			13
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "select1"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 275]
+	  DstBlock		  "xaui_mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "select2"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 480]
+	  DstBlock		  "xaui_mux2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "select3"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 685]
+	  DstBlock		  "xaui_mux3"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Constant15"
+      SrcPort		      1
+      DstBlock		      "xaui0"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant4"
+      SrcPort		      1
+      DstBlock		      "xaui1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "default_rx_reset"
+      SrcPort		      1
+      DstBlock		      "rx_reset"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "rx_reset"
+      SrcPort		      1
+      DstBlock		      "control17"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "control17"
+      SrcPort		      1
+      Points		      [285, 0; 0, 150]
+      Branch {
+	DstBlock		"xaui0"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 120]
+	Branch {
+	  DstBlock		  "xaui1"
+	  DstPort		  2
+	}
+	Branch {
+	  Points		  [0, 120]
+	  Branch {
+	    DstBlock		    "xaui2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "xaui3"
+	    DstPort		    2
+	  }
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      DstBlock		      "xaui2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant6"
+      SrcPort		      1
+      DstBlock		      "xaui3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      3
+      DstBlock		      "Terminator21"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      5
+      DstBlock		      "Terminator23"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      6
+      DstBlock		      "Terminator18"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      7
+      DstBlock		      "Terminator19"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui2"
+      SrcPort		      3
+      DstBlock		      "Terminator15"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui2"
+      SrcPort		      5
+      DstBlock		      "Terminator17"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui2"
+      SrcPort		      6
+      DstBlock		      "Terminator12"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui2"
+      SrcPort		      7
+      DstBlock		      "Terminator13"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      3
+      DstBlock		      "Terminator7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      5
+      DstBlock		      "Terminator9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      6
+      DstBlock		      "Terminator10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      7
+      DstBlock		      "Terminator11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      3
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      5
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      6
+      DstBlock		      "Terminator4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      7
+      DstBlock		      "Terminator5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "default_select0"
+      SrcPort		      1
+      DstBlock		      "select0"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "select0"
+      SrcPort		      1
+      DstBlock		      "slice_select0"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "default_select1"
+      SrcPort		      1
+      DstBlock		      "select1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "select1"
+      SrcPort		      1
+      DstBlock		      "slice_select1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "default_select2"
+      SrcPort		      1
+      DstBlock		      "select2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "select2"
+      SrcPort		      1
+      DstBlock		      "slice_select2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "default_select3"
+      SrcPort		      1
+      DstBlock		      "select3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "select3"
+      SrcPort		      1
+      DstBlock		      "slice_select3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "slice_select0"
+      SrcPort		      1
+      Points		      [25, 0; 0, 130]
+      DstBlock		      "xaui_switch"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "slice_select1"
+      SrcPort		      1
+      Points		      [20, 0; 0, 110]
+      DstBlock		      "xaui_switch"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "slice_select2"
+      SrcPort		      1
+      Points		      [15, 0; 0, 90]
+      DstBlock		      "xaui_switch"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "slice_select3"
+      SrcPort		      1
+      Points		      [10, 0; 0, 70]
+      DstBlock		      "xaui_switch"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      1
+      DstBlock		      "xaui0"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      2
+      DstBlock		      "xaui0"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      3
+      DstBlock		      "xaui0"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      4
+      Points		      [55, 0; 0, 60]
+      DstBlock		      "xaui1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      5
+      Points		      [50, 0; 0, 60]
+      DstBlock		      "xaui1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      6
+      Points		      [45, 0; 0, 60]
+      DstBlock		      "xaui1"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      7
+      Points		      [40, 0; 0, 120]
+      DstBlock		      "xaui2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      8
+      Points		      [35, 0; 0, 120]
+      DstBlock		      "xaui2"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      9
+      Points		      [30, 0; 0, 120]
+      DstBlock		      "xaui2"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      10
+      Points		      [25, 0; 0, 180]
+      DstBlock		      "xaui3"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      11
+      Points		      [20, 0; 0, 180]
+      DstBlock		      "xaui3"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "xaui_switch"
+      SrcPort		      12
+      Points		      [15, 0; 0, 180]
+      DstBlock		      "xaui3"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      1
+      Points		      [140, 0; 0, 535; -625, 0; 0, -435]
+      DstBlock		      "xaui_switch"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      2
+      Points		      [135, 0; 0, 515; -615, 0; 0, -415]
+      DstBlock		      "xaui_switch"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      4
+      Points		      [130, 0; 0, 480; -605, 0; 0, -395]
+      DstBlock		      "xaui_switch"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      1
+      Points		      [125, 0; 0, 400; -595, 0; 0, -375]
+      DstBlock		      "xaui_switch"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      2
+      Points		      [120, 0; 0, 380; -585, 0; 0, -355]
+      DstBlock		      "xaui_switch"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      4
+      Points		      [115, 0; 0, 345; -575, 0; 0, -335]
+      DstBlock		      "xaui_switch"
+      DstPort		      10
+    }
+    Line {
+      SrcBlock		      "xaui2"
+      SrcPort		      1
+      Points		      [110, 0; 0, 265; -565, 0; 0, -315]
+      DstBlock		      "xaui_switch"
+      DstPort		      11
+    }
+    Line {
+      SrcBlock		      "xaui2"
+      SrcPort		      2
+      Points		      [105, 0; 0, 245; -555, 0; 0, -295]
+      DstBlock		      "xaui_switch"
+      DstPort		      12
+    }
+    Line {
+      SrcBlock		      "xaui2"
+      SrcPort		      4
+      Points		      [100, 0; 0, 210; -545, 0; 0, -275]
+      DstBlock		      "xaui_switch"
+      DstPort		      13
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      1
+      Points		      [95, 0; 0, 130; -535, 0; 0, -255]
+      DstBlock		      "xaui_switch"
+      DstPort		      14
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      2
+      Points		      [90, 0; 0, 110; -525, 0; 0, -235]
+      DstBlock		      "xaui_switch"
+      DstPort		      15
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      4
+      Points		      [85, 0; 0, 75; -515, 0; 0, -215]
+      DstBlock		      "xaui_switch"
+      DstPort		      16
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    &#,   8    (     @         %    \"     $    !     0         %  0 !@    $    ,    <V%V96"
+    "0 =V]R:P        X   !@&0  !@    @    \"          4    (     0    $    !          4 !  ,     0   !@   !S:&%R960    "
+    "   !C;VUP:6QA=&EO;@ .    6 0   8    (     @         %    \"     $    !     0         %  0 $P    $   \"8    8V]M<&E"
+    "L871I;VX          &-O;7!I;&%T:6]N7VQU=     !S:6UU;&EN:U]P97)I;V0     :6YC<E]N971L:7-T         '1R:6U?=F)I=',      "
+    "     !D8FQ?;W9R9               9&5P<F5C871E9%]C;VYT<F]L &)L;V-K7VEC;VY?9&ES<&QA>0 .    .     8    (    !          "
+    "%    \"     $    '     0         0    !P   '1A<F=E=#( #@   +@!   &    \"     (         !0    @    !     0    $    "
+    "     !0 $  <    !    #@   &ME>7,   !V86QU97,    .    N     8    (     0         %    \"     $    \"     0         "
+    ".    0     8    (    !          %    \"     $    +     0         0    \"P   $A$3\"!.971L:7-T       .    0     8   "
+    " (    !          %    \"     $    +     0         0    \"P   $Y'0R!.971L:7-T       .    J     8    (     0        "
+    " %    \"     $    \"     0         .    .     8    (    !          %    \"     $    '     0         0    !P   '1A<"
+    "F=E=#$ #@   #@    &    \"     0         !0    @    !    !P    $         $     <   !T87)G970R  X    P    !@    @   "
+    " $          4    (     0    $    !         !   0 Q    #@   #     &    \"     0         !0    @    !     P    $    "
+    "     $  # &]F9@ .    2     8    (    !          %    \"     $    7     0         0    %P   $5V97)Y=VAE<F4@:6X@4W5B"
+    "4WES=&5M  X   !(    !@    @    $          4    (     0   !@    !         !     8    06-C;W)D:6YG('1O($)L;V-K($UA<V"
+    "MS#@   #     &    \"     0         !0    @    !     P    $         $  # &]F9@ .    .     8    (    !          %   "
+    " \"     $    '     0         0    !P   $1E9F%U;'0 #@   *@4   &    \"     (         !0    @    !     0    $        "
+    " !0 $  @    !    $    '1A<F=E=#$ =&%R9V5T,@ .    8 X   8    (     @         %    \"     $    !     0         %  0 "
+    "'@    $    :!   :6YF;V5D:70                             >&EL:6YX9F%M:6QY                        <&%R=             "
+    "                      <W!E960                                 <&%C:V%G90                              <WEN=&AE<VES"
+    "7W1O;VQ?<V=A9'9A;F-E9       <WEN=&AE<VES7W1O;VP                     8VQO8VM?=W)A<'!E<E]S9V%D=F%N8V5D        8VQO8V"
+    "M?=W)A<'!E<@                      9&ER96-T;W)Y                            =&5S=&)E;F-H7W-G861V86YC960             "
+    "=&5S=&)E;F-H                            <WES8VQK7W!E<FEO9                       9&-M7VEN<'5T7V-L;V-K7W!E<FEO9     "
+    "      :6YC<E]N971L:7-T7W-G861V86YC960         =')I;5]V8FET<U]S9V%D=F%N8V5D            9&)L7V]V<F1?<V=A9'9A;F-E9   "
+    "            8V]R95]G96YE<F%T:6]N7W-G861V86YC960     8V]R95]G96YE<F%T:6]N                    <G5N7V-O<F5G96Y?<V=A9'"
+    "9A;F-E9           <G5N7V-O<F5G96X                         9&5P<F5C871E9%]C;VYT<F]L7W-G861V86YC960 979A;%]F:65L9   "
+    "                        :&%S7V%D=F%N8V5D7V-O;G1R;VP             <V=G=6E?<&]S                            8FQO8VM?='"
+    "EP90                          8FQO8VM?=F5R<VEO;@                      <V=?:6-O;E]S=&%T                        <V=?"
+    ";6%S:U]D:7-P;&%Y                    <V=?;&ES=%]C;VYT96YT<P                  <V=?8FQO8VMG=6E?>&UL                  "
+    "  8VQO8VM?;&]C                            <WEN=&AE<VES7VQA;F=U86=E                8V5?8VQR                        "
+    "        <')E<V5R=F5?:&EE<F%R8VAY                        #@   $@    &    \"     0         !0    @    !    $0    $  "
+    "       $    !$    @4WES=&5M($=E;F5R871O<@         .    .     8    (    !          %    \"     $    (     0        "
+    " 0    \"    %9I<G1E>#)0#@   #@    &    \"     0         !0    @    !    !P    $         $     <   !X8S)V<#4P  X   "
+    " P    !@    @    $          4    (     0    (    !         !   @ M-P  #@   #@    &    \"     0         !0    @    "
+    "!    !@    $         $     8   !F9C$Q-3(   X    P    !@    @    $          4    (               !         !       "
+    "   #@   #     &    \"     0         !0    @    !     P    $         $  # %A35  .    ,     8    (    !          %  "
+    "  \"                0         0          X   !     !@    @    $          4    (     0    T    !         !     -   "
+    " 0VQO8VL@16YA8FQE<P    X   !(    !@    @    $          4    (     0   !<    !         !     7    +B]C;W)R7S-G:'I?,"
+    "3!?,2]S>7-G96X #@   #     &    \"     0         !0    @               $         $          .    ,     8    (    ! "
+    "         %    \"     $    #     0         0  , ;V9F  X    P    !@    @    $          4    (     0    (    !       "
+    "  !   @ Q,   #@   #     &    \"     0         !0    @    !     P    $         $  # #$P,  .    ,     8    (    !   "
+    "       %    \"                0         0          X    P    !@    @    $          4    (               !         "
+    "!          #@   #     &    \"     0         !0    @               $         $          .    ,     8    (    !     "
+    "     %    \"                0         0          X   !(    !@    @    $          4    (     0   !@    !         ! "
+    "    8    06-C;W)D:6YG('1O($)L;V-K($UA<VMS#@   #     &    \"     0         !0    @               $         $       "
+    "   .    ,     8    (    !          %    \"     $    #     0         0  , ;V9F  X    P    !@    @    $          4  "
+    "  (               !         !          #@   #     &    \"     0         !0    @    !     0    $         $  ! #    "
+    " .    ,     8    (    !          %    \"     $    !     0         0  $ ,     X   !     !@    @    $          4    "
+    "(     0    L    !         !     +    +3$L+3$L+3$L+3$       X    X    !@    @    $          4    (     0    8    ! "
+    "        !     &    <WES9V5N   .    .     8    (    !          %    \"     $    &     0         0    !@   #$P+C$N,0"
+    "  #@   %@    &    \"     0         !0    @    !    (P    $         $    \",    U,2PU,\"PM,2PM,2QR960L8F5I9V4L,\"PP"
+    "-S<S-\"QR:6=H=       #@   , !   &    \"     0         !0    @    !    C@$   $         $    (X!  !F<')I;G1F*\"<G+\""
+    "=#3TU-14Y4.B!B96=I;B!I8V]N(&=R87!H:6-S)RD[\"G!A=&-H*%LP(#4Q(#4Q(# @72Q;,\" P(#4P(#4P(%TL6S N.3,@,\"XY,B P+C@V72D[\""
+    "G!A=&-H*%LQ,B T(#$V(#0@,3(@,C4@,CD@,S,@-#<@,S8@,C4@,3<@,CD@,3<@,C4@,S8@-#<@,S,@,CD@,C4@,3(@72Q;-2 Q,R R-2 S-R T-2 "
+    "T-2 T,2 T-2 T-2 S-\" T-2 S-R R-2 Q,R U(#$V(#4@-2 Y(#4@-2!=+%LP+C8@,\"XR(# N,C5=*3L*<&QO=\"A;,\" U,2 U,2 P(# @72Q;,"
+    "\" P(#4P(#4P(# @72D[\"F9P<FEN=&8H)R<L)T-/34U%3E0Z(&5N9\"!I8V]N(&=R87!H:6-S)RD[\"F9P<FEN=&8H)R<L)T-/34U%3E0Z(&)E9VE"
+    "N(&EC;VX@=&5X=\"<I.PIF<')I;G1F*\"<G+\"=#3TU-14Y4.B!E;F0@:6-O;B!T97AT)RD[\"@  #@   #     &    \"     0         !0  "
+    "  @               $         $          .    ,     8    (    !          %    \"                0         0         "
+    " X    P    !@    @    $          4    (               !         !          #@   #@    &    \"     0         !0    "
+    "@    !    !P    $         $     <   !697)I;&]G  X    X    !@    @    &          4    (     0    $    !          D "
+    "   (               .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   / %"
+    "   &    \"     (         !0    @    !     0    $         !0 $ !<    !    60$  &YG8U]C;VYF:6<                 <WEN="
+    "&AE<VES7VQA;F=U86=E      !S>6YT:&5S:7-?=&]O;            'AI;&EN>&9A;6EL>0              <&%R=                      "
+    "   !S<&5E9                        '1E<W1B96YC:                   <&%C:V%G90                    !D:7)E8W1O<GD      "
+    "            '-Y<V-L:U]P97)I;V0             8VQO8VM?=W)A<'!E<@            !D8VU?:6YP=71?8VQO8VM?<&5R:6]D &-E7V-L<@ "
+    "                     <')E<V5R=F5?:&EE<F%R8VAY      !C;&]C:U]L;V,                            .    Z     8    (     "
+    "@         %    \"     $    !     0         %  0 %0    $    J    :6YC;'5D95]C;&]C:W=R87!P97( :6YC;'5D95]C9@        "
+    "              #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    X    !@"
+    "    @    &          4    (     0    $    !          D    (               .    ,     8    (    !          %    \"  "
+    "   $    $     0         0  0 5DA$3 X    P    !@    @    $          4    (     0    ,    !         !   P!84U0 #@   "
+    "#@    &    \"     0         !0    @    !    !P    $         $     <   !6:7)T97@U  X   !     !@    @    $          "
+    "4    (     0    D    !         !     )    >&,U=G-X.35T          X    P    !@    @    $          4    (     0    ( "
+    "   !         !   @ M,0  #@   #     &    \"     0         !0    @    !     P    $         $  # &]F9@ .    .     8  "
+    "  (    !          %    \"     $    &     0         0    !@   &9F,3$S-@  #@   $@    &    \"     0         !0    @  "
+    "  !    %     $         $    !0    N+WAA=6E?<W=I=&-H+W-Y<V=E;@     .    ,     8    (    !          %    \"     $   "
+    " !     0         0  $ -0    X   !     !@    @    $          4    (     0    T    !         !     -    0VQO8VL@16YA"
+    "8FQE<P    X    P    !@    @    $          4    (     0    ,    !         !   P Q,#  #@   #@    &    \"     8      "
+    "   !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $    !  "
+    "        D    (               .    ,     8    (    !          %    \"                0         0          X   !@&0 "
+    " !@    @    \"          4    (     0    $    !          4 !  ,     0   !@   !S:&%R960       !C;VUP:6QA=&EO;@ .    "
+    "6 0   8    (     @         %    \"     $    !     0         %  0 $P    $   \"8    8V]M<&EL871I;VX          &-O;7!I"
+    ";&%T:6]N7VQU=     !S:6UU;&EN:U]P97)I;V0     :6YC<E]N971L:7-T         '1R:6U?=F)I=',           !D8FQ?;W9R9         "
+    "      9&5P<F5C871E9%]C;VYT<F]L &)L;V-K7VEC;VY?9&ES<&QA>0 .    .     8    (    !          %    \"     $    '     0 "
+    "        0    !P   '1A<F=E=#( #@   +@!   &    \"     (         !0    @    !     0    $         !0 $  <    !    #@  "
+    " &ME>7,   !V86QU97,    .    N     8    (     0         %    \"     $    \"     0         .    0     8    (    !   "
+    "       %    \"     $    +     0         0    \"P   $A$3\"!.971L:7-T       .    0     8    (    !          %    \" "
+    "    $    +     0         0    \"P   $Y'0R!.971L:7-T       .    J     8    (     0         %    \"     $    \"     "
+    "0         .    .     8    (    !          %    \"     $    '     0         0    !P   '1A<F=E=#$ #@   #@    &    \""
+    "     0         !0    @    !    !P    $         $     <   !T87)G970R  X    P    !@    @    $          4    (     0 "
+    "   $    !         !   0 Q    #@   #     &    \"     0         !0    @    !     P    $         $  # &]F9@ .    2   "
+    "  8    (    !          %    \"     $    7     0         0    %P   $5V97)Y=VAE<F4@:6X@4W5B4WES=&5M  X   !(    !@   "
+    " @    $          4    (     0   !@    !         !     8    06-C;W)D:6YG('1O($)L;V-K($UA<VMS#@   #     &    \"     "
+    "0         !0    @    !     P    $         $  # &]F9@ .    .     8    (    !          %    \"     $    '     0     "
+    "    0    !P   $1E9F%U;'0 #@   *@4   &    \"     (         !0    @    !     0    $         !0 $  @    !    $    '1A"
+    "<F=E=#$ =&%R9V5T,@ .    8 X   8    (     @         %    \"     $    !     0         %  0 '@    $    :!   :6YF;V5D:"
+    "70                             >&EL:6YX9F%M:6QY                        <&%R=                                   <W!"
+    "E960                                 <&%C:V%G90                              <WEN=&AE<VES7W1O;VQ?<V=A9'9A;F-E9    "
+    "   <WEN=&AE<VES7W1O;VP                     8VQO8VM?=W)A<'!E<E]S9V%D=F%N8V5D        8VQO8VM?=W)A<'!E<@             "
+    "         9&ER96-T;W)Y                            =&5S=&)E;F-H7W-G861V86YC960             =&5S=&)E;F-H             "
+    "               <WES8VQK7W!E<FEO9                       9&-M7VEN<'5T7V-L;V-K7W!E<FEO9           :6YC<E]N971L:7-T7W-"
+    "G861V86YC960         =')I;5]V8FET<U]S9V%D=F%N8V5D            9&)L7V]V<F1?<V=A9'9A;F-E9               8V]R95]G96YE<"
+    "F%T:6]N7W-G861V86YC960     8V]R95]G96YE<F%T:6]N                    <G5N7V-O<F5G96Y?<V=A9'9A;F-E9           <G5N7V-"
+    "O<F5G96X                         9&5P<F5C871E9%]C;VYT<F]L7W-G861V86YC960 979A;%]F:65L9                           :"
+    "&%S7V%D=F%N8V5D7V-O;G1R;VP             <V=G=6E?<&]S                            8FQO8VM?='EP90                     "
+    "     8FQO8VM?=F5R<VEO;@                      <V=?:6-O;E]S=&%T                        <V=?;6%S:U]D:7-P;&%Y         "
+    "           <V=?;&ES=%]C;VYT96YT<P                  <V=?8FQO8VMG=6E?>&UL                    8VQO8VM?;&]C           "
+    "                 <WEN=&AE<VES7VQA;F=U86=E                8V5?8VQR                                <')E<V5R=F5?:&EE<"
+    "F%R8VAY                        #@   $@    &    \"     0         !0    @    !    $0    $         $    !$    @4WES=&"
+    "5M($=E;F5R871O<@         .    .     8    (    !          %    \"     $    (     0         0    \"    %9I<G1E>#)0#@"
+    "   #@    &    \"     0         !0    @    !    !P    $         $     <   !X8S)V<#4P  X    P    !@    @    $       "
+    "   4    (     0    (    !         !   @ M-P  #@   #@    &    \"     0         !0    @    !    !@    $         $   "
+    "  8   !F9C$Q-3(   X    P    !@    @    $          4    (               !         !          #@   #     &    \"    "
+    " 0         !0    @    !     P    $         $  # %A35  .    ,     8    (    !          %    \"                0    "
+    "     0          X   !     !@    @    $          4    (     0    T    !         !     -    0VQO8VL@16YA8FQE<P    X "
+    "  !(    !@    @    $          4    (     0   !<    !         !     7    +B]C;W)R7S-G:'I?,3!?,2]S>7-G96X #@   #    "
+    " &    \"     0         !0    @               $         $          .    ,     8    (    !          %    \"     $   "
+    " #     0         0  , ;V9F  X    P    !@    @    $          4    (     0    (    !         !   @ Q,   #@   #     &"
+    "    \"     0         !0    @    !     P    $         $  # #$P,  .    ,     8    (    !          %    \"           "
+    "     0         0          X    P    !@    @    $          4    (               !         !          #@   #     &  "
+    "  \"     0         !0    @               $         $          .    ,     8    (    !          %    \"             "
+    "   0         0          X   !(    !@    @    $          4    (     0   !@    !         !     8    06-C;W)D:6YG('1O"
+    "($)L;V-K($UA<VMS#@   #     &    \"     0         !0    @               $         $          .    ,     8    (    !"
+    "          %    \"     $    #     0         0  , ;V9F  X    P    !@    @    $          4    (               !      "
+    "   !          #@   #     &    \"     0         !0    @    !     0    $         $  ! #     .    ,     8    (    !  "
+    "        %    \"     $    !     0         0  $ ,     X   !     !@    @    $          4    (     0    L    !        "
+    " !     +    +3$L+3$L+3$L+3$       X    X    !@    @    $          4    (     0    8    !         !     &    <WES9V"
+    "5N   .    .     8    (    !          %    \"     $    &     0         0    !@   #$P+C$N,0  #@   %@    &    \"     "
+    "0         !0    @    !    (P    $         $    \",    U,2PU,\"PM,2PM,2QR960L8F5I9V4L,\"PP-S<S-\"QR:6=H=       #@  "
+    " , !   &    \"     0         !0    @    !    C@$   $         $    (X!  !F<')I;G1F*\"<G+\"=#3TU-14Y4.B!B96=I;B!I8V]"
+    "N(&=R87!H:6-S)RD[\"G!A=&-H*%LP(#4Q(#4Q(# @72Q;,\" P(#4P(#4P(%TL6S N.3,@,\"XY,B P+C@V72D[\"G!A=&-H*%LQ,B T(#$V(#0@,"
+    "3(@,C4@,CD@,S,@-#<@,S8@,C4@,3<@,CD@,3<@,C4@,S8@-#<@,S,@,CD@,C4@,3(@72Q;-2 Q,R R-2 S-R T-2 T-2 T,2 T-2 T-2 S-\" T-2"
+    " S-R R-2 Q,R U(#$V(#4@-2 Y(#4@-2!=+%LP+C8@,\"XR(# N,C5=*3L*<&QO=\"A;,\" U,2 U,2 P(# @72Q;,\" P(#4P(#4P(# @72D[\"F9"
+    "P<FEN=&8H)R<L)T-/34U%3E0Z(&5N9\"!I8V]N(&=R87!H:6-S)RD[\"F9P<FEN=&8H)R<L)T-/34U%3E0Z(&)E9VEN(&EC;VX@=&5X=\"<I.PIF<'"
+    ")I;G1F*\"<G+\"=#3TU-14Y4.B!E;F0@:6-O;B!T97AT)RD[\"@  #@   #     &    \"     0         !0    @               $     "
+    "    $          .    ,     8    (    !          %    \"                0         0          X    P    !@    @    $ "
+    "         4    (               !         !          #@   #@    &    \"     0         !0    @    !    !P    $       "
+    "  $     <   !697)I;&]G  X    X    !@    @    &          4    (     0    $    !          D    (               .    "
+    ".     8    (    !@         %    \"     $    !     0         )    \"               #@   / %   &    \"     (        "
+    " !0    @    !     0    $         !0 $ !<    !    60$  &YG8U]C;VYF:6<                 <WEN=&AE<VES7VQA;F=U86=E     "
+    " !S>6YT:&5S:7-?=&]O;            'AI;&EN>&9A;6EL>0              <&%R=                         !S<&5E9              "
+    "          '1E<W1B96YC:                   <&%C:V%G90                    !D:7)E8W1O<GD                  '-Y<V-L:U]P9"
+    "7)I;V0             8VQO8VM?=W)A<'!E<@            !D8VU?:6YP=71?8VQO8VM?<&5R:6]D &-E7V-L<@                      <')"
+    "E<V5R=F5?:&EE<F%R8VAY      !C;&]C:U]L;V,                            .    Z     8    (     @         %    \"     $ "
+    "   !     0         %  0 %0    $    J    :6YC;'5D95]C;&]C:W=R87!P97( :6YC;'5D95]C9@                      #@   #@   "
+    " &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    X    !@    @    &          4   "
+    " (     0    $    !          D    (               .    ,     8    (    !          %    \"     $    $     0         "
+    "0  0 5DA$3 X    P    !@    @    $          4    (     0    ,    !         !   P!84U0 #@   #@    &    \"     0     "
+    "    !0    @    !    !P    $         $     <   !V:7)T97@U  X   !     !@    @    $          4    (     0    D    !  "
+    "       !     )    >&,U=G-X.35T          X    P    !@    @    $          4    (     0    (    !         !   @ M,0  "
+    "#@   #     &    \"     0         !0    @    !     P    $         $  # &]F9@ .    .     8    (    !          %    \""
+    "     $    &     0         0    !@   &9F,3$S-@  #@   $@    &    \"     0         !0    @    !    $@    $         $ "
+    "   !(    N+WAA=6E?;&]O<\"]S>7-G96X        .    ,     8    (    !          %    \"     $    !     0         0  $ -0"
+    "    X   !     !@    @    $          4    (     0    T    !         !     -    0VQO8VL@16YA8FQE<P    X    P    !@  "
+    "  @    $          4    (     0    ,    !         !   P Q,#  #@   #@    &    \"     8         !0    @    !     0   "
+    " $         \"0    @               X    X    !@    @    &          4    (     0    $    !          D    (          "
+    "     .    ,     8    (    !          %    \"                0         0          "
+  }
+}

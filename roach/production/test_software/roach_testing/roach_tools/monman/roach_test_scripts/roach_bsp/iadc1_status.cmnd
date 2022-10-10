@@ -1,0 +1,4 @@
+# get iadc fifo status full-almost full-almost empty-empty
+r a0016
+# fifo control -> 1 is enabled
+r a0018

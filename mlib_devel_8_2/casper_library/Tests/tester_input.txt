@@ -1,0 +1,8 @@
+% Test cases for Delay blocks
+delay_bram Delays/delay_bram delay_bram_test DelayLen 8 bram_latency 2
+%
+%
+% Tests cases for Misc blocks
+adder_tree Misc/adder_tree adder_tree_test n_inputs 3 latency 3
+% bit_reverse Misc/bit_reverse bit_reverse_test n_bits 5
+c_to_ri Misc/c_to_ri c_to_ri_test n_bits 8 bin_pt 0

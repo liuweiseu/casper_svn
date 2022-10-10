@@ -1,0 +1,46 @@
+Programming uboot
+-----------------
+
+boards should be already programmed, but uboot
+can program a new version of itself. Use the 
+
+=> run newuboot 
+
+macro and ymodem. You shouldn't need to do it
+normally though ...
+
+Programming a kernel 
+--------------------
+
+Uboot should understand the macro newkernel, Use it
+to program a new uImage to flash. Type
+
+=> run newkernel
+
+then upload the kernel image using ymodem. The
+kernel gets written to the start of flash. Use
+bootm to load it.
+
+Filesystems
+-----------
+
+You can install a filesystem into flash (the
+partitions are set on the commandline) or mount
+it via nfs.
+
+tcpborphserver
+--------------
+
+Cross compile it for the power PC, make it 
+part of the filesystem. If you run it, you can
+telnet to port 7147 to control borph processes.
+
+tcpborphserver2
+---------------
+
+New shiny replacement for tcpborphserver. Same
+syntax, but now has modes. A raw mode provides
+conventional read and write commands, the poco
+mode provides a personality for a particular
+image (poco.bof) to contorl Andrew's pocket 
+correlator

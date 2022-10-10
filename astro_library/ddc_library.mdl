@@ -1,0 +1,4684 @@
+Library {
+  Name			  "ddc_library"
+  Version		  6.2
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu Feb 24 16:44:09 2005"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "hchen05"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Nov 13 11:26:15 2006"
+  ModelVersionFormat	  "1.%<AutoIncrement:169>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "ddc_library"
+    Location		    [131, 160, 1011, 826]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "DDC"
+      Ports		      [5, 2]
+      Position		      [480, 13, 580, 167]
+      BackgroundColor	      "magenta"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "DDC"
+      MaskDescription	      "Decimating digital downconverter with parameter"
+"ized LO and LPF coefficients."
+      MaskHelp		      "eval('xlWeb([getenv(''MLIB_ROOT''), ''\\astro_l"
+"ibrary\\doc\\ddc_usage.html''])')"
+      MaskPromptString	      "Frequency Divisions (M)|LO Frequency (1/M*2pi)|"
+"Inputs|LO BitWidth|FIR coefficients|Bit Width Out|Quantization Behavior|Add L"
+"atency|Mult Latency"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit,popup(Truncate|Ro"
+"und  (unbiased: +/- Inf)|Round  (unbiased: Even Values)),edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on,on"
+      MaskCallbackString      "||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,,,"
+      MaskVariables	      "freq_div=@1;lo_freq=@2;num_inputs=@3;lo_bitwidt"
+"h=@4;lpfir_coeff=@5;BitWidthOut=@6;quantization=&7;add_latency=@8;mult_latenc"
+"y=@9;"
+      MaskInitialization      "ddc_mask;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "16|3|4|18|[1,zeros(1,15)]|8|Round  (unbiased: +"
+"/- Inf)|2|3"
+      MaskTabNameString	      ",,,,,,,,"
+      System {
+	Name			"DDC"
+	Location		[22, 77, 1002, 731]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din1"
+	  Position		  [130, 72, 160, 88]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din2"
+	  Position		  [130, 152, 160, 168]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din3"
+	  Position		  [130, 232, 160, 248]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din4"
+	  Position		  [130, 312, 160, 328]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync_in"
+	  Position		  [20, 420, 50, 440]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Shift"
+	  Ports			  [1, 1]
+	  Position		  [1280, 310, 1320, 350]
+	  SourceBlock		  "xbsIndex_r3/Shift"
+	  SourceType		  "Xilinx Shift Block"
+	  shift_dir		  "Left"
+	  shift_bits		  "1"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "0"
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Shift1"
+	  Ports			  [1, 1]
+	  Position		  [1280, 440, 1320, 480]
+	  SourceBlock		  "xbsIndex_r3/Shift"
+	  SourceType		  "Xilinx Shift Block"
+	  shift_dir		  "Left"
+	  shift_bits		  "1"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "0"
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "convert1"
+	  Ports			  [1, 1]
+	  Position		  [1340, 310, 1380, 350]
+	  SourceBlock		  "xbsIndex_r3/Convert"
+	  SourceType		  "Xilinx Converter Block"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "BitWidthOut"
+	  bin_pt		  "BitWidthOut - 1"
+	  quantization		  "Round  (unbiased: +/- Inf)"
+	  overflow		  "Saturate"
+	  latency		  "add_latency"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	  show_param		  on
+	  inserted_by_tool	  off
+	  pipeline		  on
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "convert2"
+	  Ports			  [1, 1]
+	  Position		  [1340, 440, 1380, 480]
+	  SourceBlock		  "xbsIndex_r3/Convert"
+	  SourceType		  "Xilinx Converter Block"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "BitWidthOut"
+	  bin_pt		  "BitWidthOut - 1"
+	  quantization		  "Round  (unbiased: +/- Inf)"
+	  overflow		  "Saturate"
+	  latency		  "add_latency"
+	  explicit_period	  on
+	  period		  "1"
+	  dbl_ovrd		  off
+	  show_param		  on
+	  inserted_by_tool	  off
+	  pipeline		  on
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "dds"
+	  Ports			  [0, 8]
+	  Position		  [20, 101, 80, 244]
+	  LinkData {
+	    BlockName		    "ddc_lo0/ddc_lo_const/const1"
+	    DialogParameters {
+	      equ		      "P=C"
+	    }
+	  }
+	  SourceBlock		  "ddc_library/DDS"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  freq_div		  "freq_div"
+	  freq			  "lo_freq"
+	  num_lo		  "num_inputs"
+	  BitWidth		  "lo_bitwidth"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "delay"
+	  Ports			  [1, 1]
+	  Position		  [110, 410, 150, 450]
+	  SourceBlock		  "xbsIndex_r3/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  latency		  "mult_latency*2+ceil(log2(num_inputs))*add_l"
+"atency+ceil(log2(num_fir_col))*add_latency+add_latency"
+	  reg_retiming		  off
+	  explicit_period	  off
+	  period		  "1"
+	  en			  off
+	  accept_only_valid	  off
+	  init_zero		  on
+	  dbl_ovrd		  off
+	  show_param		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_column1"
+	  Ports			  [8, 10]
+	  Position		  [400, 53, 500, 267]
+	  SourceBlock		  "ddc_library/fir_column"
+	  SourceType		  "fir_column"
+	  ShowPortLabels	  on
+	  num_inputs		  "num_inputs"
+	  coeff			  "lpfir_coeff(4:-1:1)"
+	  mult_latency		  "mult_latency"
+	  add_latency		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_column2"
+	  Ports			  [8, 10]
+	  Position		  [600, 53, 700, 267]
+	  SourceBlock		  "ddc_library/fir_column"
+	  SourceType		  "fir_column"
+	  ShowPortLabels	  on
+	  num_inputs		  "num_inputs"
+	  coeff			  "lpfir_coeff(8:-1:5)"
+	  mult_latency		  "mult_latency"
+	  add_latency		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_column3"
+	  Ports			  [8, 10]
+	  Position		  [800, 53, 900, 267]
+	  SourceBlock		  "ddc_library/fir_column"
+	  SourceType		  "fir_column"
+	  ShowPortLabels	  on
+	  num_inputs		  "num_inputs"
+	  coeff			  "lpfir_coeff(12:-1:9)"
+	  mult_latency		  "mult_latency"
+	  add_latency		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_column4"
+	  Ports			  [8, 10]
+	  Position		  [1000, 53, 1100, 267]
+	  SourceBlock		  "ddc_library/fir_column"
+	  SourceType		  "fir_column"
+	  ShowPortLabels	  on
+	  num_inputs		  "num_inputs"
+	  coeff			  "lpfir_coeff(16:-1:13)"
+	  mult_latency		  "mult_latency"
+	  add_latency		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "imag_sum"
+	  Ports			  [4, 1]
+	  Position		  [1200, 440, 1260, 520]
+	  SourceBlock		  "ddc_library/adder_tree"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  num_inputs		  "4"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "mixer1"
+	  Ports			  [3, 2]
+	  Position		  [230, 70, 280, 130]
+	  SourceBlock		  "ddc_library/mixer"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  BitWidth		  "lo_bitwidth"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "mixer2"
+	  Ports			  [3, 2]
+	  Position		  [230, 150, 280, 210]
+	  SourceBlock		  "ddc_library/mixer"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  BitWidth		  "lo_bitwidth"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "mixer3"
+	  Ports			  [3, 2]
+	  Position		  [230, 230, 280, 290]
+	  SourceBlock		  "ddc_library/mixer"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  BitWidth		  "lo_bitwidth"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "mixer4"
+	  Ports			  [3, 2]
+	  Position		  [230, 310, 280, 370]
+	  SourceBlock		  "ddc_library/mixer"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  BitWidth		  "lo_bitwidth"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "real_sum"
+	  Ports			  [4, 1]
+	  Position		  [1200, 310, 1260, 390]
+	  SourceBlock		  "ddc_library/adder_tree"
+	  SourceType		  ""
+	  ShowPortLabels	  on
+	  num_inputs		  "4"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ri_to_c"
+	  Ports			  [2, 1]
+	  Position		  [1400, 310, 1430, 350]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ri_to_c"
+	    Location		    [512, 151, 787, 285]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "re"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "im"
+	      Position		      [25, 88, 55, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Concat"
+	      Ports		      [2, 1]
+	      Position		      [145, 40, 195, 95]
+	      SourceBlock	      "xbsIndex_r3/Concat"
+	      SourceType	      "Xilinx Bus Concatenator"
+	      num_inputs	      "2"
+	      explicit_period	      off
+	      period		      "1"
+	      dbl_ovrd		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret"
+	      Ports		      [1, 1]
+	      Position		      [80, 29, 120, 61]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      on
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      on
+	      bin_pt		      "0"
+	      force_valid	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reinterpret1"
+	      Ports		      [1, 1]
+	      Position		      [80, 79, 120, 111]
+	      SourceBlock	      "xbsIndex_r3/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreting Block"
+	      force_arith_type	      on
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      on
+	      bin_pt		      "0"
+	      force_valid	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "c"
+	      Position		      [220, 63, 250, 77]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "im"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Concat"
+	      SrcPort		      1
+	      DstBlock		      "c"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "re"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      Points		      [0, -15]
+	      DstBlock		      "Concat"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      Points		      [0, 10]
+	      DstBlock		      "Concat"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "t1"
+	  Position		  [1150, 50, 1170, 70]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "t2"
+	  Position		  [1150, 70, 1170, 90]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "t3"
+	  Position		  [1150, 90, 1170, 110]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "t4"
+	  Position		  [1150, 110, 1170, 130]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "t5"
+	  Position		  [1150, 130, 1170, 150]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "t6"
+	  Position		  [1150, 150, 1170, 170]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "t7"
+	  Position		  [1150, 170, 1170, 190]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "t8"
+	  Position		  [1150, 190, 1170, 210]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dout"
+	  Position		  [1440, 340, 1455, 350]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  Position		  [220, 420, 250, 440]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "real_sum"
+	  SrcPort		  1
+	  DstBlock		  "Shift"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag_sum"
+	  SrcPort		  1
+	  DstBlock		  "Shift1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift"
+	  SrcPort		  1
+	  DstBlock		  "convert1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift1"
+	  SrcPort		  1
+	  DstBlock		  "convert2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "convert1"
+	  SrcPort		  1
+	  DstBlock		  "ri_to_c"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "convert2"
+	  SrcPort		  1
+	  DstBlock		  "ri_to_c"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ri_to_c"
+	  SrcPort		  1
+	  DstBlock		  "dout"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sync_in"
+	  SrcPort		  1
+	  DstBlock		  "delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "delay"
+	  SrcPort		  1
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "din1"
+	  SrcPort		  1
+	  DstBlock		  "mixer1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "dds"
+	  SrcPort		  1
+	  DstBlock		  "mixer1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "dds"
+	  SrcPort		  2
+	  DstBlock		  "mixer1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "din2"
+	  SrcPort		  1
+	  DstBlock		  "mixer2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "dds"
+	  SrcPort		  3
+	  DstBlock		  "mixer2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "dds"
+	  SrcPort		  4
+	  DstBlock		  "mixer2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "din3"
+	  SrcPort		  1
+	  DstBlock		  "mixer3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "dds"
+	  SrcPort		  5
+	  DstBlock		  "mixer3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "dds"
+	  SrcPort		  6
+	  DstBlock		  "mixer3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "din4"
+	  SrcPort		  1
+	  DstBlock		  "mixer4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "dds"
+	  SrcPort		  7
+	  DstBlock		  "mixer4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "dds"
+	  SrcPort		  8
+	  DstBlock		  "mixer4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "mixer1"
+	  SrcPort		  1
+	  DstBlock		  "fir_column1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "mixer1"
+	  SrcPort		  2
+	  DstBlock		  "fir_column1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "mixer2"
+	  SrcPort		  1
+	  DstBlock		  "fir_column1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "mixer2"
+	  SrcPort		  2
+	  DstBlock		  "fir_column1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "mixer3"
+	  SrcPort		  1
+	  DstBlock		  "fir_column1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "mixer3"
+	  SrcPort		  2
+	  DstBlock		  "fir_column1"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "mixer4"
+	  SrcPort		  1
+	  DstBlock		  "fir_column1"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "mixer4"
+	  SrcPort		  2
+	  DstBlock		  "fir_column1"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "fir_column1"
+	  SrcPort		  9
+	  DstBlock		  "real_sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column1"
+	  SrcPort		  10
+	  DstBlock		  "imag_sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column1"
+	  SrcPort		  1
+	  DstBlock		  "fir_column2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column1"
+	  SrcPort		  2
+	  DstBlock		  "fir_column2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_column1"
+	  SrcPort		  3
+	  DstBlock		  "fir_column2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "fir_column1"
+	  SrcPort		  4
+	  DstBlock		  "fir_column2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "fir_column1"
+	  SrcPort		  5
+	  DstBlock		  "fir_column2"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "fir_column1"
+	  SrcPort		  6
+	  DstBlock		  "fir_column2"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "fir_column1"
+	  SrcPort		  7
+	  DstBlock		  "fir_column2"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "fir_column1"
+	  SrcPort		  8
+	  DstBlock		  "fir_column2"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "fir_column2"
+	  SrcPort		  9
+	  DstBlock		  "real_sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_column2"
+	  SrcPort		  10
+	  DstBlock		  "imag_sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_column2"
+	  SrcPort		  1
+	  DstBlock		  "fir_column3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column2"
+	  SrcPort		  2
+	  DstBlock		  "fir_column3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_column2"
+	  SrcPort		  3
+	  DstBlock		  "fir_column3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "fir_column2"
+	  SrcPort		  4
+	  DstBlock		  "fir_column3"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "fir_column2"
+	  SrcPort		  5
+	  DstBlock		  "fir_column3"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "fir_column2"
+	  SrcPort		  6
+	  DstBlock		  "fir_column3"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "fir_column2"
+	  SrcPort		  7
+	  DstBlock		  "fir_column3"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "fir_column2"
+	  SrcPort		  8
+	  DstBlock		  "fir_column3"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "fir_column3"
+	  SrcPort		  9
+	  DstBlock		  "real_sum"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "fir_column3"
+	  SrcPort		  10
+	  DstBlock		  "imag_sum"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "fir_column3"
+	  SrcPort		  1
+	  DstBlock		  "fir_column4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column3"
+	  SrcPort		  2
+	  DstBlock		  "fir_column4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_column3"
+	  SrcPort		  3
+	  DstBlock		  "fir_column4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "fir_column3"
+	  SrcPort		  4
+	  DstBlock		  "fir_column4"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "fir_column3"
+	  SrcPort		  5
+	  DstBlock		  "fir_column4"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "fir_column3"
+	  SrcPort		  6
+	  DstBlock		  "fir_column4"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "fir_column3"
+	  SrcPort		  7
+	  DstBlock		  "fir_column4"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "fir_column3"
+	  SrcPort		  8
+	  DstBlock		  "fir_column4"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "fir_column4"
+	  SrcPort		  9
+	  DstBlock		  "real_sum"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "fir_column4"
+	  SrcPort		  10
+	  DstBlock		  "imag_sum"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "fir_column4"
+	  SrcPort		  1
+	  DstBlock		  "t1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column4"
+	  SrcPort		  2
+	  DstBlock		  "t2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column4"
+	  SrcPort		  3
+	  DstBlock		  "t3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column4"
+	  SrcPort		  4
+	  DstBlock		  "t4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column4"
+	  SrcPort		  5
+	  DstBlock		  "t5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column4"
+	  SrcPort		  6
+	  DstBlock		  "t6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column4"
+	  SrcPort		  7
+	  DstBlock		  "t7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_column4"
+	  SrcPort		  8
+	  DstBlock		  "t8"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "DDS"
+      Ports		      [0, 16]
+      Position		      [20, 332, 80, 498]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Frequency divisions (M)|Frequency (1/M*2pi)|Par"
+"allel LOs (N)|BitWidth|Latency"
+      MaskStyleString	      "edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "freq_div=@1;freq=@2;num_lo=@3;BitWidth=@4;laten"
+"cy=@5;"
+      MaskInitialization      "dds_mask;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "8|2|8|18|2"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"DDS"
+	Location		[295, 121, 926, 791]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ddc_lo0"
+	  Ports			  [0, 2]
+	  Position		  [30, 30, 70, 90]
+	  AttributesFormatString  "%<BlockChoice>"
+	  LinkData {
+	    BlockName		    "ddc_lo_const"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      Phase		      "0"
+	    }
+	    BlockName		    "ddc_lo_const/const1"
+	    DialogParameters {
+	      equ		      "P=C"
+	    }
+	    BlockName		    "ddc_lo_osc"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      counter_step	      "counter_step"
+	      counter_start	      "0"
+	      counter_width	      "counter_width"
+	      latency		      "latency"
+	    }
+	  }
+	  BlockChoice		  "ddc_lo_const"
+	  TemplateBlock		  "ddc_lo_lib/ddc_lo"
+	  MemberBlocks		  "ddc_lo_const,ddc_lo_osc"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ddc_lo0"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ddc_lo_const"
+	      Ports		      [0, 2]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "ddc_lo_lib/ddc_lo_const"
+	      SourceType	      "ddc_lo_const"
+	      ShowPortLabels	      "on"
+	      BitWidth		      "BitWidth"
+	      Phase		      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sin"
+	      Position		      [200, 40, 220, 60]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cos"
+	      Position		      [200, 80, 220, 100]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      1
+	      DstBlock		      "sin"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      2
+	      DstBlock		      "cos"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ddc_lo1"
+	  Ports			  [0, 2]
+	  Position		  [30, 130, 70, 190]
+	  AttributesFormatString  "%<BlockChoice>"
+	  LinkData {
+	    BlockName		    "ddc_lo_const"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      Phase		      "1.5708"
+	    }
+	    BlockName		    "ddc_lo_osc"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      counter_step	      "counter_step"
+	      counter_start	      "1"
+	      counter_width	      "counter_width"
+	      latency		      "latency"
+	    }
+	  }
+	  BlockChoice		  "ddc_lo_const"
+	  TemplateBlock		  "ddc_lo_lib/ddc_lo"
+	  MemberBlocks		  "ddc_lo_const,ddc_lo_osc"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ddc_lo1"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ddc_lo_const"
+	      Ports		      [0, 2]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "ddc_lo_lib/ddc_lo_const"
+	      SourceType	      "ddc_lo_const"
+	      ShowPortLabels	      "on"
+	      BitWidth		      "BitWidth"
+	      Phase		      "1.5708"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sin"
+	      Position		      [200, 40, 220, 60]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cos"
+	      Position		      [200, 80, 220, 100]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      1
+	      DstBlock		      "sin"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      2
+	      DstBlock		      "cos"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ddc_lo2"
+	  Ports			  [0, 2]
+	  Position		  [30, 230, 70, 290]
+	  AttributesFormatString  "%<BlockChoice>"
+	  LinkData {
+	    BlockName		    "ddc_lo_const"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      Phase		      "3.1416"
+	    }
+	    BlockName		    "ddc_lo_osc"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      counter_step	      "counter_step"
+	      counter_start	      "2"
+	      counter_width	      "counter_width"
+	      latency		      "latency"
+	    }
+	  }
+	  BlockChoice		  "ddc_lo_const"
+	  TemplateBlock		  "ddc_lo_lib/ddc_lo"
+	  MemberBlocks		  "ddc_lo_const,ddc_lo_osc"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ddc_lo2"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ddc_lo_const"
+	      Ports		      [0, 2]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "ddc_lo_lib/ddc_lo_const"
+	      SourceType	      "ddc_lo_const"
+	      ShowPortLabels	      "on"
+	      BitWidth		      "BitWidth"
+	      Phase		      "3.1416"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sin"
+	      Position		      [200, 40, 220, 60]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cos"
+	      Position		      [200, 80, 220, 100]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      1
+	      DstBlock		      "sin"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      2
+	      DstBlock		      "cos"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ddc_lo3"
+	  Ports			  [0, 2]
+	  Position		  [30, 330, 70, 390]
+	  AttributesFormatString  "%<BlockChoice>"
+	  LinkData {
+	    BlockName		    "ddc_lo_const"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      Phase		      "4.7124"
+	    }
+	    BlockName		    "ddc_lo_osc"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      counter_step	      "counter_step"
+	      counter_start	      "3"
+	      counter_width	      "counter_width"
+	      latency		      "latency"
+	    }
+	  }
+	  BlockChoice		  "ddc_lo_const"
+	  TemplateBlock		  "ddc_lo_lib/ddc_lo"
+	  MemberBlocks		  "ddc_lo_const,ddc_lo_osc"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ddc_lo3"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ddc_lo_const"
+	      Ports		      [0, 2]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "ddc_lo_lib/ddc_lo_const"
+	      SourceType	      "ddc_lo_const"
+	      ShowPortLabels	      "on"
+	      BitWidth		      "BitWidth"
+	      Phase		      "4.7124"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sin"
+	      Position		      [200, 40, 220, 60]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cos"
+	      Position		      [200, 80, 220, 100]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      1
+	      DstBlock		      "sin"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      2
+	      DstBlock		      "cos"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ddc_lo4"
+	  Ports			  [0, 2]
+	  Position		  [30, 430, 70, 490]
+	  AttributesFormatString  "%<BlockChoice>"
+	  LinkData {
+	    BlockName		    "ddc_lo_const"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      Phase		      "6.2832"
+	    }
+	  }
+	  BlockChoice		  "ddc_lo_const"
+	  TemplateBlock		  "ddc_lo_lib/ddc_lo"
+	  MemberBlocks		  "ddc_lo_const,ddc_lo_osc"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ddc_lo4"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ddc_lo_const"
+	      Ports		      [0, 2]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "ddc_lo_lib/ddc_lo_const"
+	      SourceType	      "ddc_lo_const"
+	      ShowPortLabels	      "on"
+	      BitWidth		      "BitWidth"
+	      Phase		      "6.2832"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sin"
+	      Position		      [200, 40, 220, 60]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cos"
+	      Position		      [200, 80, 220, 100]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      1
+	      DstBlock		      "sin"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      2
+	      DstBlock		      "cos"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ddc_lo5"
+	  Ports			  [0, 2]
+	  Position		  [30, 530, 70, 590]
+	  AttributesFormatString  "%<BlockChoice>"
+	  LinkData {
+	    BlockName		    "ddc_lo_const"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      Phase		      "7.854"
+	    }
+	  }
+	  BlockChoice		  "ddc_lo_const"
+	  TemplateBlock		  "ddc_lo_lib/ddc_lo"
+	  MemberBlocks		  "ddc_lo_const,ddc_lo_osc"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ddc_lo5"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ddc_lo_const"
+	      Ports		      [0, 2]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "ddc_lo_lib/ddc_lo_const"
+	      SourceType	      "ddc_lo_const"
+	      ShowPortLabels	      "on"
+	      BitWidth		      "BitWidth"
+	      Phase		      "7.854"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sin"
+	      Position		      [200, 40, 220, 60]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cos"
+	      Position		      [200, 80, 220, 100]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      1
+	      DstBlock		      "sin"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      2
+	      DstBlock		      "cos"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ddc_lo6"
+	  Ports			  [0, 2]
+	  Position		  [30, 630, 70, 690]
+	  AttributesFormatString  "%<BlockChoice>"
+	  LinkData {
+	    BlockName		    "ddc_lo_const"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      Phase		      "9.4248"
+	    }
+	  }
+	  BlockChoice		  "ddc_lo_const"
+	  TemplateBlock		  "ddc_lo_lib/ddc_lo"
+	  MemberBlocks		  "ddc_lo_const,ddc_lo_osc"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ddc_lo6"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ddc_lo_const"
+	      Ports		      [0, 2]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "ddc_lo_lib/ddc_lo_const"
+	      SourceType	      "ddc_lo_const"
+	      ShowPortLabels	      "on"
+	      BitWidth		      "BitWidth"
+	      Phase		      "9.4248"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sin"
+	      Position		      [200, 40, 220, 60]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cos"
+	      Position		      [200, 80, 220, 100]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      1
+	      DstBlock		      "sin"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      2
+	      DstBlock		      "cos"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ddc_lo7"
+	  Ports			  [0, 2]
+	  Position		  [30, 730, 70, 790]
+	  AttributesFormatString  "%<BlockChoice>"
+	  LinkData {
+	    BlockName		    "ddc_lo_const"
+	    DialogParameters {
+	      BitWidth		      "BitWidth"
+	      Phase		      "10.9956"
+	    }
+	  }
+	  BlockChoice		  "ddc_lo_const"
+	  TemplateBlock		  "ddc_lo_lib/ddc_lo"
+	  MemberBlocks		  "ddc_lo_const,ddc_lo_osc"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "ddc_lo7"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ddc_lo_const"
+	      Ports		      [0, 2]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "ddc_lo_lib/ddc_lo_const"
+	      SourceType	      "ddc_lo_const"
+	      ShowPortLabels	      "on"
+	      BitWidth		      "BitWidth"
+	      Phase		      "10.9956"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sin"
+	      Position		      [200, 40, 220, 60]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cos"
+	      Position		      [200, 80, 220, 100]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      1
+	      DstBlock		      "sin"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ddc_lo_const"
+	      SrcPort		      2
+	      DstBlock		      "cos"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sin0"
+	  Position		  [135, 35, 175, 55]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cos0"
+	  Position		  [135, 65, 175, 85]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sin1"
+	  Position		  [135, 135, 175, 155]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cos1"
+	  Position		  [135, 165, 175, 185]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sin2"
+	  Position		  [135, 235, 175, 255]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cos2"
+	  Position		  [135, 265, 175, 285]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sin3"
+	  Position		  [135, 335, 175, 355]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cos3"
+	  Position		  [135, 365, 175, 385]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sin4"
+	  Position		  [135, 435, 175, 455]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cos4"
+	  Position		  [135, 465, 175, 485]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sin5"
+	  Position		  [135, 535, 175, 555]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cos5"
+	  Position		  [135, 565, 175, 585]
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sin6"
+	  Position		  [135, 635, 175, 655]
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cos6"
+	  Position		  [135, 665, 175, 685]
+	  Port			  "14"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sin7"
+	  Position		  [135, 735, 175, 755]
+	  Port			  "15"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cos7"
+	  Position		  [135, 765, 175, 785]
+	  Port			  "16"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "ddc_lo0"
+	  SrcPort		  1
+	  DstBlock		  "sin0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo0"
+	  SrcPort		  2
+	  DstBlock		  "cos0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo1"
+	  SrcPort		  1
+	  DstBlock		  "sin1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo1"
+	  SrcPort		  2
+	  DstBlock		  "cos1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo2"
+	  SrcPort		  1
+	  DstBlock		  "sin2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo2"
+	  SrcPort		  2
+	  DstBlock		  "cos2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo3"
+	  SrcPort		  1
+	  DstBlock		  "sin3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo3"
+	  SrcPort		  2
+	  DstBlock		  "cos3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo4"
+	  SrcPort		  1
+	  DstBlock		  "sin4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo4"
+	  SrcPort		  2
+	  DstBlock		  "cos4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo5"
+	  SrcPort		  1
+	  DstBlock		  "sin5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo5"
+	  SrcPort		  2
+	  DstBlock		  "cos5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo6"
+	  SrcPort		  1
+	  DstBlock		  "sin6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo6"
+	  SrcPort		  2
+	  DstBlock		  "cos6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo7"
+	  SrcPort		  1
+	  DstBlock		  "sin7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ddc_lo7"
+	  SrcPort		  2
+	  DstBlock		  "cos7"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "adder_tree"
+      Ports		      [8, 1]
+      Position		      [100, 330, 160, 490]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "Inputs|Latency per adder tree"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "num_inputs=@1;latency=@2;"
+      MaskInitialization      "adder_tree_mask;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "8|2"
+      MaskTabNameString	      ","
+      System {
+	Name			"adder_tree"
+	Location		[101, 74, 1010, 744]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din1"
+	  Position		  [30, 42, 60, 58]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din2"
+	  Position		  [30, 82, 60, 98]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din3"
+	  Position		  [30, 122, 60, 138]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din4"
+	  Position		  [30, 162, 60, 178]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din5"
+	  Position		  [30, 202, 60, 218]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din6"
+	  Position		  [30, 242, 60, 258]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din7"
+	  Position		  [30, 282, 60, 298]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "din8"
+	  Position		  [30, 322, 60, 338]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder1_1"
+	  Ports			  [2, 1]
+	  Position		  [130, 40, 170, 100]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Addition"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder1_2"
+	  Ports			  [2, 1]
+	  Position		  [130, 120, 170, 180]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Addition"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder1_3"
+	  Ports			  [2, 1]
+	  Position		  [130, 200, 170, 260]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Addition"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder1_4"
+	  Ports			  [2, 1]
+	  Position		  [130, 280, 170, 340]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Addition"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder2_1"
+	  Ports			  [2, 1]
+	  Position		  [230, 40, 270, 100]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Addition"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder2_2"
+	  Ports			  [2, 1]
+	  Position		  [230, 120, 270, 180]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Addition"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder3_1"
+	  Ports			  [2, 1]
+	  Position		  [330, 40, 370, 100]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Addition"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dout"
+	  Position		  [430, 42, 460, 58]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "din1"
+	  SrcPort		  1
+	  DstBlock		  "adder1_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "din2"
+	  SrcPort		  1
+	  DstBlock		  "adder1_1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "din3"
+	  SrcPort		  1
+	  DstBlock		  "adder1_2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "din4"
+	  SrcPort		  1
+	  DstBlock		  "adder1_2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "din5"
+	  SrcPort		  1
+	  DstBlock		  "adder1_3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "din6"
+	  SrcPort		  1
+	  DstBlock		  "adder1_3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "din7"
+	  SrcPort		  1
+	  DstBlock		  "adder1_4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "din8"
+	  SrcPort		  1
+	  DstBlock		  "adder1_4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "adder1_1"
+	  SrcPort		  1
+	  DstBlock		  "adder2_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "adder1_2"
+	  SrcPort		  1
+	  DstBlock		  "adder2_1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "adder1_3"
+	  SrcPort		  1
+	  DstBlock		  "adder2_2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "adder1_4"
+	  SrcPort		  1
+	  DstBlock		  "adder2_2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "adder2_1"
+	  SrcPort		  1
+	  DstBlock		  "adder3_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "adder2_2"
+	  SrcPort		  1
+	  DstBlock		  "adder3_1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "adder3_1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -20]
+	  DstBlock		  "dout"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fir_column"
+      Ports		      [16, 18]
+      Position		      [260, 222, 390, 598]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "fir_column"
+      MaskPromptString	      "Inputs|Coefficients|Mult Latency|Add latency"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskToolTipString	      "on,on,on,on"
+      MaskVarAliasString      ",,,"
+      MaskVariables	      "num_inputs=@1;coeff=@2;mult_latency=@3;add_late"
+"ncy=@4;"
+      MaskInitialization      "fir_column_mask;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "8|rand(128)|2|1"
+      MaskTabNameString	      ",,,"
+      System {
+	Name			"fir_column"
+	Location		[150, 116, 894, 778]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "real1"
+	  Position		  [30, 82, 60, 98]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag1"
+	  Position		  [30, 112, 60, 128]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real2"
+	  Position		  [30, 162, 60, 178]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag2"
+	  Position		  [30, 192, 60, 208]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real3"
+	  Position		  [30, 242, 60, 258]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag3"
+	  Position		  [30, 272, 60, 288]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real4"
+	  Position		  [30, 322, 60, 338]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag4"
+	  Position		  [30, 352, 60, 368]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real5"
+	  Position		  [30, 402, 60, 418]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag5"
+	  Position		  [30, 432, 60, 448]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real6"
+	  Position		  [30, 482, 60, 498]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag6"
+	  Position		  [30, 512, 60, 528]
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real7"
+	  Position		  [30, 562, 60, 578]
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag7"
+	  Position		  [30, 592, 60, 608]
+	  Port			  "14"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real8"
+	  Position		  [30, 642, 60, 658]
+	  Port			  "15"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag8"
+	  Position		  [30, 672, 60, 688]
+	  Port			  "16"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder_tree1"
+	  Ports			  [8, 1]
+	  Position		  [500, 104, 550, 266]
+	  SourceBlock		  "ddc_library/adder_tree"
+	  SourceType		  "Unknown"
+	  ShowPortLabels	  "on"
+	  num_inputs		  "num_inputs"
+	  latency		  "add_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder_tree2"
+	  Ports			  [8, 1]
+	  Position		  [500, 364, 550, 526]
+	  SourceBlock		  "ddc_library/adder_tree"
+	  SourceType		  "Unknown"
+	  ShowPortLabels	  "on"
+	  num_inputs		  "num_inputs"
+	  latency		  "add_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_tap1"
+	  Ports			  [2, 4]
+	  Position		  [130, 72, 180, 133]
+	  SourceBlock		  "ddc_library/fir_tap"
+	  SourceType		  "fir_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(1)"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_tap2"
+	  Ports			  [2, 4]
+	  Position		  [130, 152, 180, 213]
+	  SourceBlock		  "ddc_library/fir_tap"
+	  SourceType		  "fir_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(2)"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_tap3"
+	  Ports			  [2, 4]
+	  Position		  [130, 232, 180, 293]
+	  SourceBlock		  "ddc_library/fir_tap"
+	  SourceType		  "fir_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(3)"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_tap4"
+	  Ports			  [2, 4]
+	  Position		  [130, 312, 180, 373]
+	  SourceBlock		  "ddc_library/fir_tap"
+	  SourceType		  "fir_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(4)"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_tap5"
+	  Ports			  [2, 4]
+	  Position		  [130, 392, 180, 453]
+	  SourceBlock		  "ddc_library/fir_tap"
+	  SourceType		  "fir_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(5)"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_tap6"
+	  Ports			  [2, 4]
+	  Position		  [130, 472, 180, 533]
+	  SourceBlock		  "ddc_library/fir_tap"
+	  SourceType		  "fir_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(6)"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_tap7"
+	  Ports			  [2, 4]
+	  Position		  [130, 552, 180, 613]
+	  SourceBlock		  "ddc_library/fir_tap"
+	  SourceType		  "fir_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(7)"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_tap8"
+	  Ports			  [2, 4]
+	  Position		  [130, 632, 180, 693]
+	  SourceBlock		  "ddc_library/fir_tap"
+	  SourceType		  "fir_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(8)"
+	  latency		  "mult_latency"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out1"
+	  Position		  [250, 75, 280, 85]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out1"
+	  Position		  [320, 85, 350, 95]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out2"
+	  Position		  [250, 155, 280, 165]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out2"
+	  Position		  [320, 165, 350, 175]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out3"
+	  Position		  [250, 235, 280, 245]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out3"
+	  Position		  [320, 245, 350, 255]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out4"
+	  Position		  [250, 315, 280, 325]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out4"
+	  Position		  [320, 325, 350, 335]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out5"
+	  Position		  [250, 395, 280, 405]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out5"
+	  Position		  [320, 405, 350, 415]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out6"
+	  Position		  [250, 475, 280, 485]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out6"
+	  Position		  [320, 485, 350, 495]
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out7"
+	  Position		  [250, 555, 280, 565]
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out7"
+	  Position		  [320, 565, 350, 575]
+	  Port			  "14"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out8"
+	  Position		  [250, 635, 280, 645]
+	  Port			  "15"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out8"
+	  Position		  [320, 645, 350, 655]
+	  Port			  "16"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_sum"
+	  Position		  [600, 170, 630, 190]
+	  Port			  "17"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_sum"
+	  Position		  [600, 270, 630, 290]
+	  Port			  "18"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "adder_tree1"
+	  SrcPort		  1
+	  DstBlock		  "real_sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "adder_tree2"
+	  SrcPort		  1
+	  DstBlock		  "imag_sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "real1"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag1"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_tap1"
+	  SrcPort		  1
+	  DstBlock		  "real_out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap1"
+	  SrcPort		  2
+	  DstBlock		  "imag_out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap1"
+	  SrcPort		  3
+	  DstBlock		  "adder_tree1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap1"
+	  SrcPort		  4
+	  DstBlock		  "adder_tree2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "real2"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag2"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_tap2"
+	  SrcPort		  1
+	  DstBlock		  "real_out2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap2"
+	  SrcPort		  2
+	  DstBlock		  "imag_out2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap2"
+	  SrcPort		  3
+	  DstBlock		  "adder_tree1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_tap2"
+	  SrcPort		  4
+	  DstBlock		  "adder_tree2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "real3"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag3"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_tap3"
+	  SrcPort		  1
+	  DstBlock		  "real_out3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap3"
+	  SrcPort		  2
+	  DstBlock		  "imag_out3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap3"
+	  SrcPort		  3
+	  DstBlock		  "adder_tree1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "fir_tap3"
+	  SrcPort		  4
+	  DstBlock		  "adder_tree2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "real4"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag4"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_tap4"
+	  SrcPort		  1
+	  DstBlock		  "real_out4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap4"
+	  SrcPort		  2
+	  DstBlock		  "imag_out4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap4"
+	  SrcPort		  3
+	  DstBlock		  "adder_tree1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "fir_tap4"
+	  SrcPort		  4
+	  DstBlock		  "adder_tree2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "real5"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag5"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_tap5"
+	  SrcPort		  1
+	  DstBlock		  "real_out5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap5"
+	  SrcPort		  2
+	  DstBlock		  "imag_out5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap5"
+	  SrcPort		  3
+	  DstBlock		  "adder_tree1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "fir_tap5"
+	  SrcPort		  4
+	  DstBlock		  "adder_tree2"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "real6"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag6"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap6"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_tap6"
+	  SrcPort		  1
+	  DstBlock		  "real_out6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap6"
+	  SrcPort		  2
+	  DstBlock		  "imag_out6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap6"
+	  SrcPort		  3
+	  DstBlock		  "adder_tree1"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "fir_tap6"
+	  SrcPort		  4
+	  DstBlock		  "adder_tree2"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "real7"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag7"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap7"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_tap7"
+	  SrcPort		  1
+	  DstBlock		  "real_out7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap7"
+	  SrcPort		  2
+	  DstBlock		  "imag_out7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap7"
+	  SrcPort		  3
+	  DstBlock		  "adder_tree1"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "fir_tap7"
+	  SrcPort		  4
+	  DstBlock		  "adder_tree2"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "real8"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag8"
+	  SrcPort		  1
+	  DstBlock		  "fir_tap8"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_tap8"
+	  SrcPort		  1
+	  DstBlock		  "real_out8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap8"
+	  SrcPort		  2
+	  DstBlock		  "imag_out8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_tap8"
+	  SrcPort		  3
+	  DstBlock		  "adder_tree1"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "fir_tap8"
+	  SrcPort		  4
+	  DstBlock		  "adder_tree2"
+	  DstPort		  8
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fir_double_column"
+      Ports		      [16, 18]
+      Position		      [430, 223, 580, 627]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "fir_double_column"
+      MaskPromptString	      "Inputs|Coefficients|Mult Latency|Add latency"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskToolTipString	      "on,on,on,on"
+      MaskVarAliasString      ",,,"
+      MaskVariables	      "num_inputs=@1;coeff=@2;mult_latency=@3;add_late"
+"ncy=@4;"
+      MaskInitialization      "fir_double_column_mask;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "4|rand(8)|3|2"
+      MaskTabNameString	      ",,,"
+      System {
+	Name			"fir_double_column"
+	Location		[230, 75, 974, 737]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "real1"
+	  Position		  [30, 82, 60, 98]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag1"
+	  Position		  [30, 112, 60, 128]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real2"
+	  Position		  [30, 162, 60, 178]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag2"
+	  Position		  [30, 192, 60, 208]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real3"
+	  Position		  [30, 242, 60, 258]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag3"
+	  Position		  [30, 272, 60, 288]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real4"
+	  Position		  [30, 322, 60, 338]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag4"
+	  Position		  [30, 352, 60, 368]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real_back1"
+	  Position		  [30, 402, 60, 418]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag_back1"
+	  Position		  [30, 432, 60, 448]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real_back2"
+	  Position		  [30, 482, 60, 498]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag_back2"
+	  Position		  [30, 512, 60, 528]
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real_back3"
+	  Position		  [30, 562, 60, 578]
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag_back3"
+	  Position		  [30, 592, 60, 608]
+	  Port			  "14"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "real_back4"
+	  Position		  [30, 642, 60, 658]
+	  Port			  "15"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "imag_back4"
+	  Position		  [30, 672, 60, 688]
+	  Port			  "16"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder_tree1"
+	  Ports			  [4, 1]
+	  Position		  [500, 104, 550, 186]
+	  SourceBlock		  "ddc_library/adder_tree"
+	  SourceType		  "Unknown"
+	  ShowPortLabels	  "on"
+	  num_inputs		  "num_inputs"
+	  latency		  "add_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "adder_tree2"
+	  Ports			  [4, 1]
+	  Position		  [500, 284, 550, 366]
+	  SourceBlock		  "ddc_library/adder_tree"
+	  SourceType		  "Unknown"
+	  ShowPortLabels	  "on"
+	  num_inputs		  "num_inputs"
+	  latency		  "add_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_double_tap1"
+	  Ports			  [4, 6]
+	  Position		  [180, 90, 230, 210]
+	  SourceBlock		  "ddc_library/fir_double_tap"
+	  SourceType		  "fir_double_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(1)"
+	  mult_latency		  "mult_latency"
+	  add_latency		  "add_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_double_tap2"
+	  Ports			  [4, 6]
+	  Position		  [180, 250, 230, 370]
+	  SourceBlock		  "ddc_library/fir_double_tap"
+	  SourceType		  "fir_double_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(2)"
+	  mult_latency		  "mult_latency"
+	  add_latency		  "add_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_double_tap3"
+	  Ports			  [4, 6]
+	  Position		  [180, 410, 230, 530]
+	  SourceBlock		  "ddc_library/fir_double_tap"
+	  SourceType		  "fir_double_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(3)"
+	  mult_latency		  "mult_latency"
+	  add_latency		  "add_latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fir_double_tap4"
+	  Ports			  [4, 6]
+	  Position		  [180, 570, 230, 690]
+	  SourceBlock		  "ddc_library/fir_double_tap"
+	  SourceType		  "fir_double_tap"
+	  ShowPortLabels	  "on"
+	  factor		  "coeff(4)"
+	  mult_latency		  "mult_latency"
+	  add_latency		  "add_latency"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out1"
+	  Position		  [350, 82, 380, 98]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out1"
+	  Position		  [350, 112, 380, 128]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out2"
+	  Position		  [350, 162, 380, 178]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out2"
+	  Position		  [350, 192, 380, 208]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out3"
+	  Position		  [350, 242, 380, 258]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out3"
+	  Position		  [350, 272, 380, 288]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_out4"
+	  Position		  [350, 322, 380, 338]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_out4"
+	  Position		  [350, 352, 380, 368]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_back_out1"
+	  Position		  [350, 402, 380, 418]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_back_out1"
+	  Position		  [350, 432, 380, 448]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_back_out2"
+	  Position		  [350, 482, 380, 498]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_back_out2"
+	  Position		  [350, 512, 380, 528]
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_back_out3"
+	  Position		  [350, 562, 380, 578]
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_back_out3"
+	  Position		  [350, 592, 380, 608]
+	  Port			  "14"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_back_out4"
+	  Position		  [350, 642, 380, 658]
+	  Port			  "15"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_back_out4"
+	  Position		  [350, 672, 380, 688]
+	  Port			  "16"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real_sum"
+	  Position		  [600, 90, 630, 110]
+	  Port			  "17"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag_sum"
+	  Position		  [600, 190, 630, 210]
+	  Port			  "18"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "adder_tree1"
+	  SrcPort		  1
+	  DstBlock		  "real_sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "adder_tree2"
+	  SrcPort		  1
+	  DstBlock		  "imag_sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "real1"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag1"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "real_back4"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "imag_back4"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap1"
+	  SrcPort		  1
+	  DstBlock		  "real_out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap1"
+	  SrcPort		  2
+	  DstBlock		  "imag_out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap1"
+	  SrcPort		  3
+	  DstBlock		  "real_back_out4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap1"
+	  SrcPort		  4
+	  DstBlock		  "imag_back_out4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap1"
+	  SrcPort		  5
+	  DstBlock		  "adder_tree1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap1"
+	  SrcPort		  6
+	  DstBlock		  "adder_tree2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "real2"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag2"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "real_back3"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "imag_back3"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap2"
+	  SrcPort		  1
+	  DstBlock		  "real_out2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap2"
+	  SrcPort		  2
+	  DstBlock		  "imag_out2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap2"
+	  SrcPort		  3
+	  DstBlock		  "real_back_out3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap2"
+	  SrcPort		  4
+	  DstBlock		  "imag_back_out3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap2"
+	  SrcPort		  5
+	  DstBlock		  "adder_tree1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap2"
+	  SrcPort		  6
+	  DstBlock		  "adder_tree2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "real3"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag3"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "real_back2"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "imag_back2"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap3"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap3"
+	  SrcPort		  1
+	  DstBlock		  "real_out3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap3"
+	  SrcPort		  2
+	  DstBlock		  "imag_out3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap3"
+	  SrcPort		  3
+	  DstBlock		  "real_back_out2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap3"
+	  SrcPort		  4
+	  DstBlock		  "imag_back_out2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap3"
+	  SrcPort		  5
+	  DstBlock		  "adder_tree1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap3"
+	  SrcPort		  6
+	  DstBlock		  "adder_tree2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "real4"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "imag4"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "real_back1"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "imag_back1"
+	  SrcPort		  1
+	  DstBlock		  "fir_double_tap4"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap4"
+	  SrcPort		  1
+	  DstBlock		  "real_out4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap4"
+	  SrcPort		  2
+	  DstBlock		  "imag_out4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap4"
+	  SrcPort		  3
+	  DstBlock		  "real_back_out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap4"
+	  SrcPort		  4
+	  DstBlock		  "imag_back_out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap4"
+	  SrcPort		  5
+	  DstBlock		  "adder_tree1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "fir_double_tap4"
+	  SrcPort		  6
+	  DstBlock		  "adder_tree2"
+	  DstPort		  4
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fir_double_tap"
+      Ports		      [4, 6]
+      Position		      [175, 217, 225, 308]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "fir_double_tap"
+      MaskPromptString	      "factor|Mult latency|Add latency"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "factor=@1;mult_latency=@2;add_latency=@3;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0.073384|3|2"
+      MaskTabNameString	      ",,"
+      System {
+	Name			"fir_double_tap"
+	Location		[260, 83, 881, 745]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "a"
+	  Position		  [25, 33, 55, 47]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "b"
+	  Position		  [25, 123, 55, 137]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c"
+	  Position		  [30, 213, 60, 227]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "d"
+	  Position		  [30, 303, 60, 317]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AddSub"
+	  Ports			  [2, 1]
+	  Position		  [180, 412, 230, 463]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Addition"
+	  precision		  "User Defined"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "18"
+	  bin_pt		  "16"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "add_latency"
+	  explicit_period	  "on"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "off"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AddSub1"
+	  Ports			  [2, 1]
+	  Position		  [180, 497, 230, 548]
+	  SourceBlock		  "xbsIndex_r3/AddSub"
+	  SourceType		  "Xilinx Adder/Subtractor"
+	  mode			  "Addition"
+	  precision		  "User Defined"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "18"
+	  bin_pt		  "16"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "add_latency"
+	  explicit_period	  "on"
+	  period		  "1"
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  use_core		  "on"
+	  pipeline		  "off"
+	  use_rpm		  "on"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant"
+	  Ports			  [0, 1]
+	  Position		  [165, 364, 285, 396]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "factor"
+	  equ			  "P=C"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "18"
+	  bin_pt		  "17"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult"
+	  Ports			  [2, 1]
+	  Position		  [315, 487, 365, 538]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "18"
+	  bin_pt		  "17"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mult_latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "off"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult1"
+	  Ports			  [2, 1]
+	  Position		  [315, 402, 365, 453]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "18"
+	  bin_pt		  "17"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "mult_latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "off"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Register"
+	  Ports			  [1, 1]
+	  Position		  [310, 16, 355, 64]
+	  SourceBlock		  "xbsIndex_r3/Register"
+	  SourceType		  "Xilinx Register Block"
+	  init			  "0"
+	  reg_only_valid	  "off"
+	  explicit_period	  "on"
+	  period		  "1"
+	  rst			  "off"
+	  en			  "off"
+	  out_en		  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Register1"
+	  Ports			  [1, 1]
+	  Position		  [315, 106, 360, 154]
+	  SourceBlock		  "xbsIndex_r3/Register"
+	  SourceType		  "Xilinx Register Block"
+	  init			  "0"
+	  reg_only_valid	  "off"
+	  explicit_period	  "on"
+	  period		  "1"
+	  rst			  "off"
+	  en			  "off"
+	  out_en		  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Register2"
+	  Ports			  [1, 1]
+	  Position		  [315, 196, 360, 244]
+	  SourceBlock		  "xbsIndex_r3/Register"
+	  SourceType		  "Xilinx Register Block"
+	  init			  "0"
+	  reg_only_valid	  "off"
+	  explicit_period	  "on"
+	  period		  "1"
+	  rst			  "off"
+	  en			  "off"
+	  out_en		  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Register3"
+	  Ports			  [1, 1]
+	  Position		  [320, 286, 365, 334]
+	  SourceBlock		  "xbsIndex_r3/Register"
+	  SourceType		  "Xilinx Register Block"
+	  init			  "0"
+	  reg_only_valid	  "off"
+	  explicit_period	  "on"
+	  period		  "1"
+	  rst			  "off"
+	  en			  "off"
+	  out_en		  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "a_out"
+	  Position		  [395, 33, 425, 47]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "b_out"
+	  Position		  [395, 123, 425, 137]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "c_out"
+	  Position		  [400, 213, 430, 227]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "d_out"
+	  Position		  [400, 303, 430, 317]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real"
+	  Position		  [390, 423, 420, 437]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag"
+	  Position		  [390, 508, 420, 522]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Register1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "b_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Register"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "a_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, 35]
+	  Branch {
+	    Points		    [0, 85]
+	    DstBlock		    "Mult"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Mult1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  DstBlock		  "imag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "real"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Register3"
+	  SrcPort		  1
+	  DstBlock		  "d_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Register2"
+	  SrcPort		  1
+	  DstBlock		  "c_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "a"
+	  SrcPort		  1
+	  Points		  [100, 0]
+	  Branch {
+	    DstBlock		    "Register"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 385]
+	    DstBlock		    "AddSub"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "b"
+	  SrcPort		  1
+	  Points		  [80, 0]
+	  Branch {
+	    DstBlock		    "Register1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 380]
+	    DstBlock		    "AddSub1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "c"
+	  SrcPort		  1
+	  Points		  [85, 0]
+	  Branch {
+	    DstBlock		    "Register2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 230]
+	    DstBlock		    "AddSub"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "d"
+	  SrcPort		  1
+	  Points		  [65, 0]
+	  Branch {
+	    DstBlock		    "Register3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 225]
+	    DstBlock		    "AddSub1"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "AddSub"
+	  SrcPort		  1
+	  DstBlock		  "Mult1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "AddSub1"
+	  SrcPort		  1
+	  DstBlock		  "Mult"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fir_tap"
+      Ports		      [2, 4]
+      Position		      [100, 217, 150, 278]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "fir_tap"
+      MaskPromptString	      "factor|mult_latency"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "factor=@1;latency=@2;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|3"
+      MaskTabNameString	      ","
+      System {
+	Name			"fir_tap"
+	Location		[397, 106, 908, 486]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "a"
+	  Position		  [105, 143, 135, 157]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "b"
+	  Position		  [105, 228, 135, 242]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant"
+	  Ports			  [0, 1]
+	  Position		  [20, 76, 145, 104]
+	  SourceBlock		  "xbsIndex_r3/Constant"
+	  SourceType		  "Xilinx Constant Block"
+	  const			  "factor"
+	  equ			  "P=C"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "18"
+	  bin_pt		  "17"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  iostate		  "0"
+	  explicit_period	  "on"
+	  period		  "1"
+	  dbl_ovrd		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult"
+	  Ports			  [2, 1]
+	  Position		  [180, 197, 230, 248]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "18"
+	  bin_pt		  "17"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "on"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "off"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult1"
+	  Ports			  [2, 1]
+	  Position		  [180, 112, 230, 163]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "18"
+	  bin_pt		  "17"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "on"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "off"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Register"
+	  Ports			  [1, 1]
+	  Position		  [355, 151, 400, 199]
+	  SourceBlock		  "xbsIndex_r3/Register"
+	  SourceType		  "Xilinx Register Block"
+	  init			  "0"
+	  reg_only_valid	  "off"
+	  explicit_period	  "on"
+	  period		  "1"
+	  rst			  "off"
+	  en			  "off"
+	  out_en		  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Register1"
+	  Ports			  [1, 1]
+	  Position		  [360, 241, 405, 289]
+	  SourceBlock		  "xbsIndex_r3/Register"
+	  SourceType		  "Xilinx Register Block"
+	  init			  "0"
+	  reg_only_valid	  "off"
+	  explicit_period	  "on"
+	  period		  "1"
+	  rst			  "off"
+	  en			  "off"
+	  out_en		  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "a_out"
+	  Position		  [440, 168, 470, 182]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "b_out"
+	  Position		  [440, 258, 470, 272]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real"
+	  Position		  [255, 133, 285, 147]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag"
+	  Position		  [250, 218, 280, 232]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Mult1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "real"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "b"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    DstBlock		    "Mult"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 30]
+	    DstBlock		    "Register1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  DstBlock		  "imag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "a"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    DstBlock		    "Mult1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 25]
+	    DstBlock		    "Register"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 35]
+	  Branch {
+	    DstBlock		    "Mult1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 85]
+	    DstBlock		    "Mult"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Register"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "a_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Register1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "b_out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "mixer"
+      Ports		      [3, 2]
+      Position		      [25, 215, 75, 265]
+      FontSize		      10
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskPromptString	      "BitWidth|Latency"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "BitWidth=@1;latency=@2;"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "18|2"
+      MaskTabNameString	      ","
+      System {
+	Name			"mixer"
+	Location		[211, 164, 672, 530]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "d"
+	  Position		  [15, 33, 45, 47]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "sin"
+	  Position		  [20, 138, 50, 152]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "cos"
+	  Position		  [15, 73, 45, 87]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult"
+	  Ports			  [2, 1]
+	  Position		  [260, 27, 310, 78]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "BitWidth-1"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "off"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mult1"
+	  Ports			  [2, 1]
+	  Position		  [260, 107, 310, 158]
+	  SourceBlock		  "xbsIndex_r3/Mult"
+	  SourceType		  "Xilinx Multiplier"
+	  precision		  "Full"
+	  arith_type		  "Signed  (2's comp)"
+	  n_bits		  "BitWidth"
+	  bin_pt		  "BitWidth-1"
+	  quantization		  "Truncate"
+	  overflow		  "Wrap"
+	  latency		  "latency"
+	  explicit_period	  "off"
+	  period		  "1"
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  show_param		  "on"
+	  mult_type		  "Parallel"
+	  oversample		  "2"
+	  use_embedded		  "on"
+	  pipeline		  "on"
+	  use_rpm		  "off"
+	  placement_style	  "Rectangular Shape"
+	  gen_core		  "off"
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  xl_use_area		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "real"
+	  Position		  [335, 48, 365, 62]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "imag"
+	  Position		  [335, 128, 365, 142]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "d"
+	  SrcPort		  1
+	  Points		  [190, 0]
+	  Branch {
+	    DstBlock		    "Mult"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 80]
+	    DstBlock		    "Mult1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  DstBlock		  "real"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "cos"
+	  SrcPort		  1
+	  Points		  [75, 0; 0, -15]
+	  DstBlock		  "Mult"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mult1"
+	  SrcPort		  1
+	  DstBlock		  "imag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sin"
+	  SrcPort		  1
+	  DstBlock		  "Mult1"
+	  DstPort		  2
+	}
+      }
+    }
+    Annotation {
+      Name		      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%                                          "
+"                                   %\n%   Center for Astronomy Signal Process"
+"ing and Electronics Research           %\n%   http://seti.ssl.berkeley.edu/ca"
+"sper/                                      %\n%   Copyright (C) 2006 Universi"
+"ty of California, Berkeley                     %\n%                          "
+"                                                   %\n%   This program is fre"
+"e software; you can redistribute it and/or modify      %\n%   it under the te"
+"rms of the GNU General Public License as published by      %\n%   the Free So"
+"ftware Foundation; either version 2 of the License, or         %\n%   (at you"
+"r option) any later version.                                       %\n%      "
+"                                                                       %\n%  "
+" This program is distributed in the hope that it will be useful,           %"
+"\n%   but WITHOUT ANY WARRANTY; without even the implied warranty of         "
+"   %\n%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the      "
+"       %\n%   GNU General Public License for more details.                   "
+"           %\n%                                                              "
+"               %\n%   You should have received a copy of the GNU General Publ"
+"ic License along   %\n%   with this program; if not, write to the Free Softwa"
+"re Foundation, Inc.,   %\n%   51 Franklin Street, Fifth Floor, Boston, MA 021"
+"10-1301 USA.               %\n%                                              "
+"                               %\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      Position		      [21, 105]
+      HorizontalAlignment     "left"
+      FontName		      "Lucida Console"
+      FontSize		      9
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    H (   8    (     0         %    "
+"\"     $    &     0         .    .     8    (    !@         %    \"     $    "
+"!     0         )    \"             A #@   #@    &    \"     8         !0    "
+"@    !     0    $         \"0    @            00 X    X    !@    @    &      "
+"    4    (     0    $    !          D    (            ,D .    , $   8    (   "
+" !@         %    \"     $    @     0         )      $  &6FD#.H<HV_EC8V1%J'=;]"
+"4A;L4=)N /^W*4S5JP)0_OF >&3K;F3\\09!50_YV3/UQC65RFEF(_\\-PP'&FLE+]\\-QE[H ZDO"
+"WH\"&[H/VJ:_\\QF#M)/,G;^)#Y6($<J\"/R(<>;]*E[ _54 &CZ(GP#\\)()Z5^-_&/Z:>I,U&OL"
+"H_IIZDS4:^RC\\)()Z5^-_&/U5 !H^B)\\ _(AQYOTJ7L#^)#Y6($<J\"/_,9@[23S)V_>@(;N@_:"
+"IK]\\-QE[H ZDO_#<,!QIK)2_7&-97*:68C\\09!50_YV3/[Y@'ADZVYD_[<I3-6K E#]4A;L4=)N"
+" /Y8V-D1:AW6_9::0,ZARC;\\.    .     8    (    !@         %    \"     $    !  "
+"   0         )    \"             A #@   #@    &    \"     8         !0    @  "
+"  !     0    $         \"0    @             0 "
+  }
+}

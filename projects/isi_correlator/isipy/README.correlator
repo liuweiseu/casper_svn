@@ -1,0 +1,59 @@
+Program and configure:
+
+$ ./any_roach_ctrl.py
+roach> add_board isiroach1
+Connected to isiroach1.
+roach> add_board isiroach2
+Connected to isiroach2.
+roach> add_board isiroach3
+Connected to isiroach3.
+roach> program isi_correlator.bof
+[0] Programming ...
+[0] Success!
+[1] Programming ...
+[1] Success!
+[2] Programming ...
+[2] Success!
+roach> write_int 0 corr_id 0
+ [0] corr_id = 0
+roach> write_int 1 corr_id 1
+ [1] corr_id = 1
+roach> write_int 2 corr_id 2
+ [2] corr_id = 2
+roach> write_int sync_gen2_period 400000
+ [0] sync_gen2_period = 400000
+ [1] sync_gen2_period = 400000
+ [2] sync_gen2_period = 400000
+roach> write_int eq_coeff 32
+ [0] eq_coeff = 32
+ [1] eq_coeff = 32
+ [2] eq_coeff = 32
+roach> write_int fft_shift 0x7f
+ [0] fft_shift = 127
+ [1] fft_shift = 127
+ [2] fft_shift = 127
+
+Arm boards:
+
+./isi_corr_arm.py
+
+Receive:
+
+$ ./isi_corr_recv.py isidig.isinet 8880
+
+Start PowerPC streams:
+
+ssh into each board, and run:
+./isi_push isidig.isinet 8880
+
+Dump (in isi_corr_recv.py window):
+
+dump quux.dump
+Dumpfile opened.
+stop
+Dumpfile closed.
+
+Translate binary:
+
+$ ./isi_corr_translate.py quux.dump quux.data
+

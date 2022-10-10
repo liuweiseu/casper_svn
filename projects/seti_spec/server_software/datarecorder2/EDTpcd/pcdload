@@ -1,0 +1,16 @@
+#! /bin/csh -f
+
+#
+# See /opt/EDTpcd/pcd_bitfiles for flash and bitfile information.
+#
+
+#
+# PCD unit 0 PCI Xilinx 29F010 flash pcd60.bit:
+#
+./bitload -u 0 pcd_src.bit
+
+#
+# PCD unit 1 PCI Xilinx 29F010 flash pcd60.bit:
+#
+./bitload -u 1 pcd_src.bit
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+if ! [ $MONMAN_BIN ] ; then
+  MONMAN_BIN=monman
+fi
+
+TTYS=/tmp/tty_rmon
+
+if [ $1 ] ; then
+  $MONMAN_BIN -r -c -d 16 -a 16 -b 115200 -f $1 $TTYS 
+else 
+  $MONMAN_BIN -r -c -d 16 -a 16 -b 115200 $TTYS 
+fi
+

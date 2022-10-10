@@ -1,0 +1,2 @@
+# reset the fifos and the TX/RX mgt bits
+w 40020 ffff

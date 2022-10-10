@@ -1,0 +1,2 @@
+compiling under mingw:
+make CC=i586-mingw32msvc-gcc INC="-I mingw_libs/" DEF="-DWINDOWS" EXT=".exe"

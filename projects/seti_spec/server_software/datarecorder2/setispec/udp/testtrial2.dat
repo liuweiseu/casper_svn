@@ -1,0 +1,904 @@
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40330859 fftexp: 40265312 deltafft: 65547
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40322668 fftexp: 40265312 deltafft: 57356
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40322668 fftexp: 40265312 deltafft: 57356
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40330859 fftexp: 40265312 deltafft: 65547
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298094 fftexp: 40265312 deltafft: 32782
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298090 fftexp: 40265312 deltafft: 32778
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40330860 fftexp: 40265312 deltafft: 65548
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40322669 fftexp: 40265312 deltafft: 57357
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298094 fftexp: 40265312 deltafft: 32782
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40322668 fftexp: 40265312 deltafft: 57356
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40322668 fftexp: 40265312 deltafft: 57356
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298090 fftexp: 40265312 deltafft: 32778
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298090 fftexp: 40265312 deltafft: 32778
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40330859 fftexp: 40265312 deltafft: 65547
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40330859 fftexp: 40265312 deltafft: 65547
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40330859 fftexp: 40265312 deltafft: 65547
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40330859 fftexp: 40265312 deltafft: 65547
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40330859 fftexp: 40265312 deltafft: 65547
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298093 fftexp: 40265312 deltafft: 32781
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298090 fftexp: 40265312 deltafft: 32778
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298090 fftexp: 40265312 deltafft: 32778
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298090 fftexp: 40265312 deltafft: 32778
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298092 fftexp: 40265312 deltafft: 32780
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298091 fftexp: 40265312 deltafft: 32779
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting thr...
+160.000000 exp: 1228 pfb: 1229 thr: 1229 fft: 40298090 fftexp: 40265312 deltafft: 32778
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1229 1228 
+restarting ct...
+160.000000 exp: 1228 pfb: 1229 thr: 1376 fft: 1376 fftexp: 40265312 deltafft: -40263936
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1376 1228 
+restarting fft...
+160.000000 exp: 1228 pfb: 1229 thr: 1345 fft: 1345 fftexp: 40265312 deltafft: -40263967
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 1345 1228 
+restarting pfb...
+160.000000 exp: 1228 pfb: 1229 thr: 833 fft: 833 fftexp: 40265312 deltafft: -40264479
+pfb exp bin mismatch 160.000000 1228 1229 1228 
+thr exp bin mismatch 160.000000 1228 833 1228 
+restarting thr...

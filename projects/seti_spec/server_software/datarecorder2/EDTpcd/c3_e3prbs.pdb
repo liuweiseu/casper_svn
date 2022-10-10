@@ -1,0 +1,8 @@
+# map e3 channel 0 -3 to dma 0-3 respecyively
+w 60 18
+w 61 19
+w 62 1a
+w 63 1b
+# turn outputs on leaving tdk reset high
+w 4c 1f
+

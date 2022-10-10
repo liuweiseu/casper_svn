@@ -1,0 +1,25 @@
+The EDT PCI-CD driver is built as a loadable module from object files
+supplied in the "driverlib" directory. These files don't make any direct
+reference to the Linux kernel structures or functions. All references
+to the kernel are through the file "edt_lnx_kernel.c", which is compiled
+when you run "make driver".
+
+To install the EDT PCI-CD driver, first link the objects supplied to
+your current kernel by running "make driver". After that, to load the
+driver run "edt_load"
+
+The driver objects supplied are for kernels in the 2.2 and 2.4 series
+(2.0 is no longer supported) , both SMP and non-SMP. We have attempted
+to allow you to use any kernel in those series by including the final
+link step. As long as the kernel APIs don't change this should work. If
+you run into problems linking or loading the driver please let us know.
+
+In order for this to work, it's necessary to have the kernel source
+files which match the kernel that's running. The kernel name is returned
+by `uname -r`. This is used to find the kernel include files under
+"/lib/modules/<kernel name>/build", which is normally a soft link to the
+kernel source which built this kernel. If the link doesn't go anywhere,
+or the name at the top of the Makefile in that kernel source directory
+doesn't match the current kernel, the EDT module will not be able to
+build and load correctly.
+

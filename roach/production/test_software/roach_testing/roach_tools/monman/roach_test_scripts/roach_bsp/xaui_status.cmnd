@@ -1,0 +1,12 @@
+#the link status
+r 10018
+# powerdown enabled
+r 1001a
+# loopback enabled
+r 1001c
+# tx enabled
+r 1001e
+#the tx status
+r 1000a
+#the rx status
+r 10016

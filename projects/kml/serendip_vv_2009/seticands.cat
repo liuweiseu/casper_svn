@@ -1,0 +1,56 @@
+ET-05.20390_04.41400   051214.04  +042450.40 j 0 T zo # score: NA star: 24205 (G0) gaussians: 0 pulses: 0 triplets: 0 spikes: 0 comment: "planetary system qpix:  no signals or not observed"
+ET-05.62607_20.73662   053733.85  +204411.83 j 0 T zo # score: NA star: 26381 (G4IV-V) gaussians: 0 pulses: 0 triplets: 0 spikes: 0 comment: "planetary system qpix:  no signals or not observed"
+ET-05.67496_06.06537   054029.86  +060355.33 j 0 T zo # score: NA star: 26664 (K0) gaussians: 0 pulses: 0 triplets: 0 spikes: 0 comment: "planetary system qpix:  no signals or not observed"
+ET-05.78392_01.17134   054702.11  +011016.82 j 0 T zo # score: NA star: 27253 (G4V) gaussians: 0 pulses: 0 triplets: 0 spikes: 0 comment: "planetary system qpix:  no signals or not observed"
+ET-05.45510_27.00710   052718.36  +270025.56 j 0 T zo # score: -7201 star: 25450 (F8) gaussians: 7 pulses: 3 triplets: 19 spikes: "95 comment:  6 qpix:  26"
+ET-05.48291_27.06996   052901.52  +270411.86 j 0 T zo # score: -803124 star: none gaussians: 325 pulses: 296 triplets: 52 spikes: "2060 comment:  476 qpix:  458"
+ET-05.64110_22.50800   053827.96  +223028.80 j 0 T zo # score: -986 star: 26484 (A0) gaussians: 0 pulses: 2 triplets: 19 spikes: "18 comment:  0 qpix:  4"
+ET-05.70260_19.39210   054209.36  +192331.56 j 0 T zo # score: -12675 star: 26826 (A0) gaussians: 26 pulses: 28 triplets: "648 spikes:  0 comment:  77" qpix: "132
+ET-05.50050_27.11190   053001.80  +270642.84 j 0 T zo # score: -3720 star: none gaussians: 9 pulses: 5 triplets: "170 spikes:  1 comment:  13" qpix: "37
+ET-05.50780_27.13280   053028.08  +270801.92 j 0 T zo # score: -56269 star: none gaussians: 14 pulses: 14 triplets: "385 spikes:  1 comment:  75" qpix: "424
+ET-05.51660_27.13280   053100.24  +270801.92 j 0 T zo # score: -77142 star: none gaussians: 9 pulses: 21 triplets: "379 spikes:  1 comment:  84" qpix: "498
+ET-05.70260_19.43170   054209.36  +192554.12 j 0 T zo # score: -17099 star: none gaussians: 38 pulses: 46 triplets: "992 spikes:  1 comment:  115" qpix: "156
+ET-05.70410_19.41190   054214.76  +192442.84 j 0 T zo # score: -18559 star: none gaussians: 45 pulses: 52 triplets: "1043 spikes:  1 comment:  120" qpix: "162
+ET-05.90186_17.27001   055406.70  +171612.04 j 0 T zo # score: -133448 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  58" comment: "0 qpix:  99"
+ET-05.90332_17.25047   055411.95  +171501.69 j 0 T zo # score: -116230 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  53" comment: "0 qpix:  93"
+ET-05.65869_17.30907   053931.28  +171832.65 j 0 T zo # score: -95382 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  46" comment: "0 qpix:  63"
+ET-06.01611_17.30907   060102.00  +171832.65 j 0 T zo # score: -95054 star:  gaussians: "0 pulses:  0" triplets: "1 spikes:  36" comment: "0 qpix:  76"
+ET-06.01465_17.28954   060052.74  +171722.34 j 0 T zo # score: -91739 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  31" comment: "0 qpix:  72"
+ET-05.54443_17.27001   053239.95  +171612.04 j 0 T zo # score: -87613 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  36" comment: "0 qpix:  77"
+ET-05.54590_17.28954   053245.24  +171722.34 j 0 T zo # score: -81969 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  34" comment: "0 qpix:  82"
+ET-05.51660_27.13282   053100.24  +270801.85 j 0 T zo # score: -77142 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  4" comment: "1 qpix:  84"
+ET-05.90039_17.28954   055401.40  +171722.34 j 0 T zo # score: -75793 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  44" comment: "0 qpix:  63"
+ET-05.54297_17.25047   053234.69  +171501.69 j 0 T zo # score: -73923 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  38" comment: "0 qpix:  55"
+ET-05.65723_17.32861   053926.03  +171943.00 j 0 T zo # score: -67560 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  37" comment: "0 qpix:  30"
+ET-05.90479_17.27001   055417.24  +171612.04 j 0 T zo # score: -66013 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  33" comment: "0 qpix:  66"
+ET-05.50781_27.13282   053028.12  +270801.85 j 0 T zo # score: -56270 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  2" comment: "1 qpix:  75"
+ET-05.85791_17.27001   055128.48  +171612.04 j 0 T zo # score: -54804 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  10" comment: "0 qpix:  52"
+ET-05.65576_17.30907   053920.74  +171832.65 j 0 T zo # score: -52940 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  23" comment: "0 qpix:  22"
+ET-06.01611_17.27001   060102.00  +171612.04 j 0 T zo # score: -41395 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  15" comment: "0 qpix:  27"
+ET-05.51807_27.11186   053105.05  +270642.70 j 0 T zo # score: -39460 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  2" comment: "0 qpix:  64"
+ET-06.01172_17.28954   060042.19  +171722.34 j 0 T zo # score: -34934 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  12" comment: "0 qpix:  33"
+ET-05.54883_17.28954   053255.79  +171722.34 j 0 T zo # score: -34507 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  16" comment: "0 qpix:  30"
+ET-05.85938_17.25047   055133.77  +171501.69 j 0 T zo # score: -34036 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  2" comment: "0 qpix:  31"
+ET-05.85645_17.28954   055123.22  +171722.34 j 0 T zo # score: -33676 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  11" comment: "0 qpix:  45"
+ET-05.87695_17.25047   055237.02  +171501.69 j 0 T zo # score: -33259 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  11"
+ET-06.01758_17.32861   060103.29  +171943.00 j 0 T zo # score: -33243 star:  gaussians: "0 pulses:  0" triplets: "1 spikes:  24" comment: "0 qpix:  44"
+ET-05.55029_17.27001   053301.04  +171612.04 j 0 T zo # score: -31778 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  7" comment: "0 qpix:  24"
+ET-05.53418_27.13282   053203.05  +270801.85 j 0 T zo # score: -30544 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  5" comment: "0 qpix:  55"
+ET-05.53565_27.11186   053208.34  +270642.70 j 0 T zo # score: -27450 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  2" comment: "0 qpix:  32"
+ET-05.85791_17.30907   055128.48  +171832.65 j 0 T zo # score: -26238 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  21"
+ET-05.99268_17.30907   055933.65  +171832.65 j 0 T zo # score: -26203 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  0"
+ET-05.54297_27.13282   053234.69  +270801.85 j 0 T zo # score: -25132 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  43"
+ET-05.86084_17.27001   055139.02  +171612.04 j 0 T zo # score: -24119 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  8"
+ET-05.52539_27.13282   053131.40  +270801.85 j 0 T zo # score: -23025 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  50"
+ET-05.90186_17.30907   055406.70  +171832.65 j 0 T zo # score: -22540 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  14" comment: "0 qpix:  25"
+ET-06.01025_17.30907   060036.90  +171832.65 j 0 T zo # score: -21560 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  7" comment: "0 qpix:  27"
+ET-06.01904_17.30907   060108.54  +171832.65 j 0 T zo # score: -21251 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  18" comment: "0 qpix:  26"
+ET-05.86670_16.95776   055200.12  +165727.94 j 0 T zo # score: -20812 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  3" comment: "0 qpix:  11"
+ET-05.63672_17.28954   053812.19  +171722.34 j 0 T zo # score: -20477 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  3" comment: "0 qpix:  0"
+ET-05.70264_19.51079   054209.50  +193038.84 j 0 T zo # score: -19964 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  7" comment: "0 qpix:  109"
+ET-05.63818_17.30907   053817.45  +171832.65 j 0 T zo # score: -18683 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  1" comment: "0 qpix:  0"
+ET-05.59424_17.97450   053539.26  +175828.20 j 0 T zo # score: -18645 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  9" comment: "0 qpix:  2"
+ET-05.70410_19.41188   054214.76  +192442.77 j 0 T zo # score: -18559 star:  gaussians: "0 pulses:  0" triplets: "0 spikes:  12" comment: "1 qpix:  120"
+</Document>
+</kml>
+

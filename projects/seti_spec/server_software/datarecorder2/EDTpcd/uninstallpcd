@@ -1,0 +1,47 @@
+#!/bin/bash
+
+echo "Uninstalling `pwd`"
+
+echo 
+
+make uninstall
+
+for f in `cat .uninstall_list` ; do
+
+	echo "Deleting $f"
+	rm $f
+
+done
+
+if [ -f /etc/sysconfig/edt/pcd ] ; then
+
+	rm /etc/sysconfig/edt/pcd
+
+fi
+
+if [ "`ls /etc/sysconfig/edt`" == "" ] ; then
+	
+	# For SuSE, links are removed before script.
+	if [ -f /etc/SuSE-release ] ; then
+		/usr/lib/lsb/remove_initd /etc/init.d/edtinit 
+	fi
+
+	rm /etc/init.d/edtinit #Cross Distribution method of removing script.
+
+	# Other distros remove links after script.
+
+	if [ -f /etc/debian_version ] ; then
+		update-rc.d edtinit remove
+	else #Deal with RH/Mandrake/etc.
+		rm /etc/rc3.d/S99edtinit
+		rm /etc/rc5.d/S99edtinit
+	fi
+	
+rmdir /etc/sysconfig/edt
+fi
+
+echo "Deleting empty directories" 
+
+
+find . -depth -mindepth 1 -type d -empty -print -exec rmdir {} \;
+

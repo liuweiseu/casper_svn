@@ -1,0 +1,130 @@
+CASPER Pocket Correlator User Guide
+-------------------------------------------------------------------------------
+Version: 1.2
+Author: Griffin Foster(gfoster@berkeley.edu)
+Date: 28.09.09
+
+The most recent version of the PoCo Software is avalible on the CASPER SVN repo at
+http://casper.berkeley.edu/svn/trunk/projects/pocketcorrelator/poco-0.1.1/
+
+Contents:
+-------------------------------------------------------------------------------
+0: Introduction
+1: Simulink Model
+2: PowerPC Code
+3: Programming and Setup
+4: Telnet Access
+5: Receive Code
+	a. Python
+	b. C
+6: Data Analysis Packages
+
+-------------------------------------------------------------------------------
+0: Introduction
+-------------------------------------------------------------------------------
+This is a guide for the general class of CASPER pocket correlator designs. A number of off
+shoot pocket correlator designs have been started since the original pocket correlator which
+will have their own unqiue set of software and setup steps.
+
+-------------------------------------------------------------------------------
+1: Simulink Model
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+2: PowerPC Code
+-------------------------------------------------------------------------------
+The embedded PowerPC C code which interacts with LWIP needs to be modified for a specific
+design in order to automate the transmission of the shared BRAM. In the src/ directory
+are a number of main_iX_cY.c files which are example of such file.
+
+A main_iX_cY.c file is setup for a particular model with X inputs and Y channels.
+
+The main differences between the main.c files are the predefined constants:
+
+/* Globals for the udp dump server */
+/* ------------------------------- */
+#define NCHAN_PER_BRAM 64
+#define PKTS_PER_BRAM 1
+#define BRAMS_PER_PKT 4
+#define NBRAMS 32
+#define DESIGN_NAME I_POCO8_32CH_V002
+#define DESIGN_NAME_STR "I_POCO8_32CH_V002"
+#define COMPILED_ON "06-Aug-2009 17:57:04"
+
+Once you have updated your main.c file for your specific design, insert the new code as
+main.c in the Software/ directory of the model and rerun XPS on the system.xmp file
+
+> xps -nw system.xmp
+> run init_bram
+
+-------------------------------------------------------------------------------
+3: Programming and Setup
+-------------------------------------------------------------------------------
+Required Hardware:
+	1. iBOB with ADC boards, programmed with a PoCo bitstream
+	2. Clock source (usually with 3 dBm ampiltude)
+	3. control computer with an open ethernet port
+
+-------------------------------------------------------------------------------
+4: Telnet Access
+-------------------------------------------------------------------------------
+To directly access the iBOB we can use a telnet port over LWIP:
+
+> telnet 169.254.128.1 (iBOB IP set by switches on board)
+
+listdev : lists the current devices/blocks
+regread <register> : read the value of a register
+bramdump <bram> : dump the contents of a BRAM
+? : help
+
+-------------------------------------------------------------------------------
+5: Initialization and Receive Code
+-------------------------------------------------------------------------------
+There are two sets of code which can be used to initialize and record data. The Python
+code is setup to be the main code and will write MIRIAD data files. The C code writes the
+data to raw files and is ment for debugging and is not necessary.
+
+a. Configuration Scripts ------------------------------------------------------
+
+There are two types of configuration scripts, though only a .config file is needed if 
+using the Python code. A *.config file is similar to the correlator configuration file
+and is relatively self documented. A *.conf file is used with the poco_conf binary and
+is a list of commands sent to configure the iBOB. In the config_scripts/ directory there
+are a number of example files.
+
+b. Python ---------------------------------------------------------------------
+
+Setup:
+	0. the Python code requires the AIPY package
+	1. In the main directory run python setup.py install
+	2. the poco/ directory is the main python code and scripts/ directory is the main Python
+	scripts
+
+Scripts:
+	init_poco.py: initialize the equaliztions and the UDP transmitter on the PoCo
+	gen_config_file.py: generate a PoCo config script, this is not necessary for init_poco.py
+	poco_rx_iX_cY.py: receive script for a poco design with X inputs and Y channels
+
+c. C --------------------------------------------------------------------------
+
+Setup:
+	0: the C code requires the GRACE plotting tools development library
+		(http://plasma-gate.weizmann.ac.il/Grace/)
+	1: in the main directory run make all
+	2: binaries will be in the bin/ directory
+
+Binaries:
+	gen_config_file: generates a config file(similar to gen_config_file.py) to be used with 
+		poco_conf
+	poco_conf: initialize the equaliztions and the UDP transmitter on the PoCo with a gonfig file
+		ex. ./poco_conf config52000.txt 169.254.128.1
+	udprec: capture the udp packets from the iBOB and write to raw format
+	corrplot: real time plot of the data being recorded by udprec
+	
+
+-------------------------------------------------------------------------------
+6: Data Analysis Packages
+-------------------------------------------------------------------------------
+The poco-0.1.x receive code has been written to record data to MIRIAD data files similar
+to the CASPER correlator data files. These files work very well with Aaron Parsons' AIPY
+package (http://setiathome.ssl.berkeley.edu/~aparsons/aipy/aipy.cgi)

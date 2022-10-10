@@ -1,0 +1,106 @@
+convert az za to ra dec J2000 for arecibo.
+-------------------------------------------------------------------------
+The important things in this directory are:
+
+0. this Readme
+1. azzaToRaDec.c() the subroutine that does the work converting az,za to
+                   Ra dec
+2. azzaToRaDec.h   the include file that you'll have to edit (see below)
+3. testazzatoradec.c A test program to see if things work and how to
+                   use them.
+4. Makefile        to compile the subroutines into a library
+                   and the test program.
+
+-------------------------------------------------------------------------
+Things to edit so it will compile/work
+
+1. place the files in a directory of your own.
+3. edit azzaToRaDec.h
+   -
+   #define FILES_DIR         "/home/phil/vw/pnt/exportCode"
+	change FILES_DIR to the location where you are going to keep the
+    two .dat files. These are needed at run time.
+
+4. edit the Makefile
+
+SRCDIR = /home/phil/vw/pnt/exportCode
+  .. set to wherever you put the source code
+
+LIBDIR = $(SRCDIR)
+  .. where you want the library to end up..
+
+LIBNM=azzatoradec
+  .. whatever you want to call the library. without lib or .a (for -l) 
+
+then:
+
+make 
+
+You should end up with
+1. the executable test program testazzatoradec
+2. the library...default name libazzatoradec.a
+3. I left the time input at mjd and utcFraction. You could change
+   it to whatever is more convenient...seconds from 1970,
+   ast day,mon,year, hour,min,sec...etc
+-------------------------------------------------------------------------
+
+
+To test if it is working, log into ao and run
+   /home/phil/vw/Solaris/bin/pntMonGet 
+   It will output to standard out once a second the current
+pointing state:
+
+start
+trk :  onSrc      master:Gr      wrap:0
+ast :  20:35:10.0 dut1Ms:  287   secM:74110
+lmst:  11:26:45.7    mjd:53867   tolA:   10
+
+Pos :    254.7400      5.8538 Cs:F Tm:imd
+Off :
+Rat :
+Rslt:  11:50:25.7  19:50:02.0 Cs:J
+ha  :  00:00:00.0
+          az deg       za deg     totErr
+cor :     -0.6551      -0.0041
+reqP:    254.0849       5.8497
+curP:    254.0848       5.8497
+errP:      0.0001       0.0000        0.0"
+
+vHel:    -24.4873 vGeo: 0.0433    km/sec
+pend:   none
+stat:/  OK
+cumO:  0.00000  0.00000 deg
+end
+
+Grab the Rslt line:   
+        Ra          Dec
+Rslt:  11:50:25.7  19:50:02.0 Cs:J
+
+This is the radec j2000 for the reqP az,za values:
+         azdeg         zaDeg
+reqP:    254.0849       5.8497
+
+Also grab the time info that goes with it..
+
+
+The difference will be the model correction (which is printed
+in the line:
+           azDeg       zaDeg
+cor :     -0.6551      -0.0041
+
+These values are added to the computed az,za to get the encoder az,za.
+
+
+If you don't wanna log in, just see if you can duplicate the above
+values..
+
+-------------------------------------------------------------------------
+GOTCHA'S:
+
+The utcToUt1 uses the data file utcToUt1.dat
+
+this file gets updated every time a leap second is inserted. It is
+also updated when the linear approximation to the utc to ut1 fit
+gets large (usually around 100 ms..).  Look in the file for 
+how often it is updated...
+

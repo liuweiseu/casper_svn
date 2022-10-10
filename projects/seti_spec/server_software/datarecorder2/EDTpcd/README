@@ -1,0 +1,98 @@
+                          Readme for the
+                         PCI CD DMA Interface
+                           2003-03-27
+
+GENERAL NOTES
+
+This software was built using the Redhat 7.3 release, with kernel 2.4.18. The 
+driver is built as a loadable module. The driver should load during the boot
+process; if it doesn't, it can be manually loaded by running 
+
+make load
+
+from the EDTpcd/ directory.
+
+
+
+GETTING STARTED
+
+Once the package is installed, you can run a test with self-generating 
+data on the interface xilinx by running "xtest 4096".
+
+To configure the PCI CD for normal operation, run "pcdrequest" and choose
+the applicable bit file.
+
+
+
+UPGRADING THE FIRMWARE
+
+Field upgrades to the PCI interface PROM may occasonally be necessary when
+upgrading to a new device driver. This involves downloading firmware to the
+board's PCI interface Xilinx using the pciload program. (Note that this is
+is NOT the same as running  "pcdload" or "bitload", which load the interface-
+specific bitfile.) If you are running on a board that was shipped prior to
+November 1997, you MUST upgrade the firmware as follows in order to run with
+this version of the device driver:
+
+To reload a bit file for field upgrade, run
+
+    pciload -u unit_no flash/<file.bit>
+
+Where <file.bit> is the appropriate file for the device. For example,
+if you have a PCI CD-60, run pciload -u 0 pcd60.bit
+ 
+The board only reloads this from flash when being powered up,  so after
+running pciload, the new bit file will not be in the xilinx until the
+system has power cycled.  Note, this requires cycling power, not just
+rebooting.
+
+
+
+PROGRAMMING WITH THE EDT LIBRARIES
+
+This subject is covered by the EDT manuals.  The latest versions of the 
+EDT manuals can be obtained at http://www.edt.com/Manuals.html in PDF format.  
+
+Along with the information provided by the manual, you may be interested in the 
+sample programs which come with the EDT software: 
+
+  continuous transfers using ring buffers:
+  	simple_getdata.c, simple_putdata.c
+
+  multiple channel I/O:
+    rdwr16.c
+
+There may be more than this - feel free to look at any of the .c files 
+included with the EDT software.
+
+
+
+UPGRADING THE EDT SOFTWARE
+
+To upgrade the EDT software, just uninstall the current software and 
+install the latest version which is available from the EDT website or 
+ftp server.  To determine the current version of your software, look 
+at the included "version" file.
+
+
+
+UNINSTALLING EDT SOFTWARE
+
+To remove the EDT software completely, it is now necessary to run the 
+uninstallpcd script from within the directory in which the software is 
+installed (usually /opt/EDTpcd).
+
+
+
+QUESTIONS OR PROBLEMS?
+
+Contact
+
+Engineering Design Team, Inc.
+1100 NW Compton, Ste 306
+Beaverton, OR 97006
+(503) 690-1234
+(503) 690-1243 FAX
+Internet: www.edt.com
+Email: tech@edt.com
+

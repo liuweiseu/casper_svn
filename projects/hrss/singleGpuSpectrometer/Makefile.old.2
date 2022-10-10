@@ -1,0 +1,2 @@
+singleGpuSpectrometer : singleGpuSpectrometer.cu
+	nvcc -o singleGpuSpectrometer singleGpuSpectrometer.cu -I /home/mwagner/NVIDIA_GPU_Computing_SDK/C/common/inc /home/mwagner/NVIDIA_GPU_Computing_SDK/C/lib/libcutil_x86_64.a -L /home/mwagner/lib -l cufft

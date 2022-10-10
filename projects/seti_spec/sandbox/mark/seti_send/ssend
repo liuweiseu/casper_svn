@@ -1,0 +1,2 @@
+./seti_send /proc/342/hw/ioreg rec_rec_fifo1 
+#./seti_send /proc/342/hw/ioreg FIFO

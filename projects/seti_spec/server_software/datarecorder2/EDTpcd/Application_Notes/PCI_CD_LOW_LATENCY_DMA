@@ -1,0 +1,104 @@
+
+
+	Fast Programmed Output DMA for the PCD Board Family
+
+Background:
+
+    Certain application require low latency DMA, DMA abort, and fifo flush
+    operations.  A sample program comprising libpdma.c, libpdma.h and
+    pdma.c provide Solaris users with low latency output DMA start,
+    DMA abort, and flush fifo operations.
+
+    A single ring buffer is utilized to preallocate kernel DMA resources.
+    Memory mapped PCD device registers are used to start DMA,
+    abort DMA in progress, and to flush output fifos using only
+    a few microseconds per operation.  This can significantly speed
+    up DMA output where the output data is not known ahead of when
+    DMA should be started.
+
+
+Building and Running pdma.c:
+
+	To build:  cd to /opt/EDTpcd and run "make pdma".
+
+	To run:    run "pdma" with no arguments hit return when prompted.
+
+
+Subroutines in libpdma.c:
+
+
+  PDMA_MAX_SIZE
+
+    The size of the output ring buffer is currently limited to
+    PDMA_MAX_SIZE bytes:
+
+	#define PDMA_MAX_SIZE ((4*1024*1024) - (256 * 1024))
+
+    This is expected to increase to about 32Mbytes in the near future.
+
+
+  int pdma_init(EdtDev *edt_p, int bufsize, int numbufs, u_char **bufs) ;
+
+    pdma_init() is used after edt_open() to configure pdma mode.  This
+    includes configuring a single ring buffer of bufsize.  numbufs
+    should always be 1 until further notice.  If bufs is NULL, the
+    buffer will be allocated by libedt, otherwise a page-aligned
+    buffer should be allocated and its address assigned to bufs[0].
+
+    After pdma_init() and before pdma_close(), only the following
+    subroutines should be used to perform DMA, abort DMA, and flush
+    the output fifos.
+
+
+  void  pdma_close(EdtDev *edt_p) ;
+
+    pdma_close() returns edt_p to normal operation.  This should always
+    be called before exiting the calling program or unexpected behaviour
+    may result.
+
+
+  int  pdma_set_size(EdtDev *edt_p, int size) ;
+
+    Set the size in bytes of the next DMA output where
+    (0 < size <= bufsize set in pdma_init()) and (size % 4 == 0).
+
+
+  int pdma_write_databuf(EdtDev *edt_p, int bufnum, void *buf, int size) ;
+
+    Copy data into the output ring buffer prior to DMA.  size should
+    be equal to the value passed into pdma_set_size().
+
+
+  void pdma_start_dma(EdtDev *edt_p) ;
+
+    Start the output DMA using programmed I/O.  Applications will typically
+    monitor the OF_NOT_EMP flag in the DATA_PATH_STATUS register to determine
+    when output has completed.
+
+
+  void pdma_abort_dma(EdtDev * edt_p) ;
+
+    Abort DMA in progress.  Output fifos should be flushed if the OF_NOT_EMP
+    in the DATA_PATH_STATUS register is not clear.
+
+
+  void pdma_flush_fifo(EdtDev *edt_p) ;
+
+    Flush the output fifos using fast programmed I/O.
+
+
+  void pdma_dmaint_enable(EdtDev * edt_p, int enable) ;
+
+    This routine can be used to prevent the DMA interrupt bit from
+    being set in the SG_NXT_CNT_CTRL register.  During PDMA this may
+    speed things up because DMA interrupts may not be needed.
+
+
+Contacts:
+
+Author:  Mark Mason at Engineering Design Team
+	 mark@edt.com
+
+Support: mark@edt.com or tech@edt.com  Phone:  (503) 690-1234
+
+Copyright C 2002 Engineering Design Team

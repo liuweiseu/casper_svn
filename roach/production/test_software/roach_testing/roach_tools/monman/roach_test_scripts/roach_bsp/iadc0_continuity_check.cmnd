@@ -1,0 +1,256 @@
+#Use the fixed Built-In-Test function to verify connectivity
+# set mode
+w 90002 0
+s 10000
+w 90002 ffff
+#write address 0 
+w 90004 0
+w 90006 0
+w 90006 7c2c
+w 90008 ffff
+w 90008 ffff
+w 90004 7
+w 90006 4
+w 90008 ffff
+w 90008 ffff
+# test word: 0x80
+w 90004 6
+w 90006 0201
+w 90008 ffff
+w 90008 ffff
+# reset adc
+w 90000 ffff
+w 90018 0
+w 90018 ffff
+w 90018 0
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+# test word: 0x40
+w 90004 6
+w 90006 0101
+w 90008 ffff
+w 90018 0
+w 90018 ffff
+w 90018 0
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+# test word: 0x20
+w 90004 6
+w 90006 0081
+w 90008 ffff
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0x10
+w 90004 6
+w 90006 0041
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0x08
+w 90004 6
+w 90006 0021
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0x04
+w 90004 6
+w 90006 0011
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0x02
+w 90004 6
+w 90006 0009
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0x01
+w 90004 6
+w 90006 0005
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+
+#round 2
+
+
+# test word: 0x7f
+w 90004 6
+w 90006 01fd
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0xbf
+w 90004 6
+w 90006 2fd
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0xdf
+w 90004 6
+w 90006 37d
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0xef
+w 90004 6
+w 90006 03bd
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0xf7
+w 90004 6
+w 90006 03dd
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0xfb
+w 90004 6
+w 90006 03ed
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0xfd
+w 90004 6
+w 90006 03f5
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012
+
+# test word: 0xfe
+w 90004 6
+w 90006 03f9
+w 90008 ffff
+
+w 90018 0
+w 90018 ffff
+w 90018 0
+
+w 90014 ffff
+w 90014 ffff
+r 9000c
+r 9000e
+r 90010
+r 90012

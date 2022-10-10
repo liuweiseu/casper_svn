@@ -1,0 +1,5 @@
+# this is a comment
+cEnter_freq		12345.6789
+num_data_streams	2
+# this is a comment
+this is a note that should show up in the header.

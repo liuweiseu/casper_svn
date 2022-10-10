@@ -1,0 +1,12 @@
+To run the model file:
+You will need Suraj's tree of the casper repository, which you can clone 
+via git:
+
+git clone git://casper.berkeley.edu/~sgowda/mlib_devel.git
+
+Also, since this model file uses an older copy of Suraj's library, try to
+avoid library versions which modify the butterfly_direct block
+
+To compile the model file:
+PlanAhead was used to get this model to meet timing.  Constraints file/PlanAhead
+project coming soon.

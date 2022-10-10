@@ -1,0 +1,16 @@
+CC = gcc
+NCC = nvcc 
+CFLAG = -g -Wall -O2 -I/usr/local/cuda/include -L/usr/local/cuda/lib64
+CUDA_INCLUDE_LIB = -lcufft
+
+all: singleGpuSpectrometer.o testlib.o
+	$(CC) -o runme singleGpuSpectrometer.o testlib.o
+
+singleGpuSpectrometer.o : singleGpuSpectrometer.cu 
+	$(NCC) -o singleGpuSpectrometer.o -c singleGpuSpectrometer.cu -I /home/mwagner/NVIDIA_GPU_Computing_SDK/C/common/inc /home/mwagner/NVIDIA_GPU_Computing_SDK/C/lib/libcutil_x86_64.a -L /home/mwagner/lib -l cufft
+
+testlib.o: testlib.c
+	$(CC) -c testlib.c -o testlib.o
+
+clean: 
+	@rm -vf *.o

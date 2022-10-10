@@ -1,0 +1,694 @@
+EDT PCI GP-SSE  (Synchronous Serial ECL)	 August 6, 2004
+
+
+
+Changes since old firmware prior to July of 2004:
+
+  No change in the hardware
+
+  Application code written for older versions of PCD-GPSSE firmware
+  should work fine, only required change is that DMA writes for
+  output mode must select DMA channel 1 using edt_open_channel()
+  Must use the new ssepdb.c debugger for loading the daughterboard Xilinx.
+
+  Now support two simultaneous DMA channels, though PCI bandwidth
+  will limit the maximum speed attainable.
+  Can have two channels in, or one in and one out.
+
+  No need to update flash when switching between input and output modes.
+
+  Uses the current pcdssd PCI Xilinx firmware in flash, dated 2002/12/31.
+  Run pciload with no arguments to verify which firmware you have.
+
+  Fixed an output mode firmware bug causing data corruption at 100-140 MHz
+
+  Now have larger FIFO's (using block RAM in the daughterboard FPGA),
+  so DMA performance of the PCI host chipset is no longer such an issue.
+
+  Loading FPGA firmware on the daughterboard is now much faster.
+
+  The VHDL source for the XC2S100 FPGA on the daughterboard is now available
+  for reference.  Support from EDT for problems encountered by those
+  modifying this firmware may be negotiated on a case by case basis.
+  Contact EDT to obtain the PCD-GPSSE VHDL kit.
+  Requires the free Xilinx ISE WebPACK to build a downloadable bitfile.
+  I have found the VHDL simulators from www.symphonyeda.com most useful.
+
+
+Recent changes to this README:
+  
+  Added section on stopping the output clock
+
+  Cleaned up notes on achieving proper bit alignment from unknown source
+
+  Firmware now sends user defined 8 bit pattern when output fifo empty
+
+  Added notes on how to restore PCIGP-SSE flash to use old firmware again
+
+
+##############################################################################
+DESCRIPTION:
+
+Occupies one slot of your PCI bus.
+Has two independent serial channels of one bit each and works at
+speeds in excess of 400 MHz, may be limited by available PCI bus bandwidth.
+Drivers for Windows NT/2K/XP, Solaris, and Linux are provided,
+along with sample application programs
+
+The board has two 9 pin D connectors, one for each channel.
+Each channel accepts a differential data signal (two wires) and a differential 
+clock (two more wires) at standard ECL signal levels.  
+All incoming signals are terminated through 50 ohms to -2 volts.
+
+Incoming serial data can be aligned to the appropriate byte or word boundary,
+it is up to the user to determine when the data is properly aligned.
+
+Channel B can be turned around for use as an output.  The output clock
+can come from either an on-board clock generator (50 Hz to 800 MHz,
+maximum guaranteed operation of the board is 400 MHz), or from whatever 
+clock is present on channel A.
+The output data can be either from counters internal to the board or
+from an outgoing DMA data stream from host memory.
+
+In dual input mode, the channels are independent.  Data arriving 
+at each channel is stored into different regions of host computer memory 
+over the PCI bus by our DMA engine.
+
+Likewise, in full duplex IO mode, data is sent out from one region of 
+host computer memory, incomming data is written into a seperate region
+of host computer memory.
+
+
+
+##############################################################################
+Scripts are provided to demonstrate three modes of operation:
+
+  Generate outgoing 8 bit binary count in firmware, read back via DMA channel
+  For this mode, execute the script sse_loopcount.sh  (or sse_loopcount.bat).
+  The easiest to get going, and a starting point for single channel input.
+  
+  Send out the data via one DMA channel, read it back via a second DMA channel
+  Since this has two DMA channels active, this will not run as fast 
+  as sse_loopcount.  For this mode, execute the script sse_loopback.
+  A starting point for those doing input and output, or output only.
+  Maximum speed per channel reduced if (and only if) both DMA channels active.
+
+  Read two independent streams of data via two different DMA channels,
+  acquired data is deposited into two different regions of host memory.
+  For this mode, execute the script sse_dualin.
+  Maximum speed per channel reduced if (and only if) both DMA channels active.
+  No output is available, data and clock must be sourced from somewhere else.
+
+
+
+Boards are tested to 400 MHz.
+With two DMA channels running, maximum speed is typically halved.
+
+
+
+##############################################################################
+SOFTWARE INSTALLATION
+
+Power up the machine without the board installed.
+(MSWin2K will get confused if a driver is installed while a board
+is in place.)
+
+Install the standard EDT PCI-CD driver software from the CD-ROM 
+or from www.edt.com.  Reboot the machine with the board installed.
+It may be necessary to run some of the stuff as root.
+Make sure your path includes the current directory.
+
+##############################################################################
+HARDWARE INSTALLATION
+
+Insert the PCD-GPSSE board into one of your PCI slots
+Install a loopback cable between the two DB9 connectors on the SSE board.
+
+Both DB9 connectors on the PCD-GPSSE board are pinned out as follows:
+  1:Reserved 2:GND 3:Reserved 4:GND 5:Reserved 6:DAT- 7:DAT+ 8:CLK- 9:CLK+
+  (on rev 00 boards, pins 1 and 5 were GND, not Reserved)
+
+A loopback cable consists of five wires with male DB9 connectors on each end,
+wired mostly straight through (mostly, pins 8 and 9 swapped for rev 01) 
+on pins 2,6,7,8,9.   Wire length of our loopback cable is 0.25 meters.
+Wires for pins 6,7 should be twisted together as a pair, 
+wires for pins 8,9 should be twisted together as another pair.
+
+The rev 01 cable (EDT part number 016-01617-01) has the clock signal pair
+on pins 8 and 9 swapped at one end.  Without this swap the clock phasing
+is such that the data from the SSE output channel transitions during 
+the rising edge of the clock for frequencies in the region of 270-310 MHz.
+
+
+Type "pciload" from the driver directory to verify that the driver
+sees the board, and that the firmware is current.
+The firmware in flash is corrrect if the name is "pcdssd" with a 
+date of 2002/12/31 or later.  The following shows a correctly
+configured board:
+    %1> pciload
+    pcd unit 0 (pci gp-ecl):
+      4028xla PCI FPGA, AMD 29F010 FPROM
+      Sector 0
+      Sector 1
+      Sector 2  PROM  id: <pcdssd_3v.ncd 4028xlabg256 2002/12/31 13:05:28>
+      Sector 3  PROM  id: <pcdssd_5v.ncd 4028xlabg256 2002/12/31 13:02:38>
+
+If you do not have the correct driver in flash, the following command
+will burn current firmware into flash:
+    pciload pcdssd
+
+The system must be powered down completely then rebooted
+before the new firmware in flash takes effect.
+
+
+If you wish to regress back to the old firmware for use with the
+older driver packages (such as 3.2.1.7 or less), it can be obtained from 
+ftp.edt.com/pub/outgoing/pcd/gpsse/old_flash.zip
+Just unzip this file into your driver directory and type
+    pciload gpsseold
+Then power cycle the machine.
+
+
+
+##############################################################################
+
+The following SSE files are included in the EDT PCI-CD driver directory
+(under Linux/Solaris: /opt/EDTpcd,   WinNT/2K/XP: \edt\pcd):
+
+  sse.README       The file of instructions you are now reading.
+  sse_loopcount.sh Shell script to read counter data from firmware
+  sse_loopback.sh  Shell script to read and write simultaneously
+  sse_dualin.sh    Shell script to read two channels simultaneously
+  ssepdb.c  	   A debugger and utility for handling the SSE.
+  sserd.c	   A sample application program for reading data from the SSE
+  ssewr.c	   A sample application program for writing data to the SSE
+  sserot.c	   Checks sserd output for errors, assumes 8 bit count data.
+  ssedata.c	   C program to generate binary count data for DMA writes
+  sserot8	   Shell script, runs sserot for each of 8 bit alignments
+  bitfiles/4036/sseb*.bit	Config bitfiles for FPGA on the motherboard
+  bitfiles/XC2S100/sset*.bit	Config bitfiles for FPGA on the daughterboard
+
+The following batch scripts are supplied for those running under MS NT/2K/XP,
+replacing the corresponding *.sh files.  
+Executables for the C programs are supplied.
+  sserot8.bat
+  sse_loopcount.bat
+  sse_loopback.bat
+  sse_dualin.bat
+  ssepdb.exe
+  sserd.exe
+  ssewr.exe
+  sserot.exe
+  ssedata.exe
+
+
+##############################################################################
+TESTING
+
+Start a command line console, change to the EDT driver directory.
+Run the following script with the provided loopback cable installed 
+between the two DB9 connectors.
+    on linux:        sse_loopcount.sh
+    on MS NT/2K/XP:  sse_loopcount.bat
+
+This tests a single DMA in channel, using counter data generated 
+by firmware in the daughterboard FPGA.
+
+Read the comments inside the script to see what's going on.
+
+For each frequency that the test is successfull, there should be one
+bit alignment among the eight from sserot.c showing zero errors.
+
+If you are using a big endian host such as a Sun, you might have 
+trouble recovering valid data without trying various combinations 
+of the "-B 1" and "-S 1" options to sserd.c as described below, 
+depending on how the host's DMA engine is configured.
+
+
+####################
+
+Next, with the debug cable still in place, try runninng this script
+for full duplex operation.  This has one DMA channel sending data out
+over channel B (the top DB9), the second DMA channel reading 
+data in from channel A (the DB9 connector closest to the PCI bus).
+    on linux:        sse_loopback.sh
+    on MS NT/2K/XP:  sse_loopback.bat
+
+
+The script only starts up the output channel, you must then initiate
+a read with the following command in a seperate window, test with sserot8:
+
+    sserd -u 0  -f 50 -o out 10000
+    sserot8 out
+
+As noted in the script's comments, the -f argument to sserd can be used
+to determine how high the frequency can go without corrupting the data,
+typically around 200 MHz.  No need to pause ssewr when changing the 
+output frequency.
+
+
+The script for sse_loopback.sh is very similar to sse_loopcount, 
+sse_loopcount has some register bits set to cause the PCD-GPSSE to emit
+"fake" data from channel B rather than DMA data:
+    echo  "w 80 20"               >>sseload.pdb
+
+
+Note that the user can switch between one channel in, one channel out,
+and full duplex operation by initiating the appropriate library
+calls for DMA reads and writes as demonstrated in sserd.c and ssewr.c.
+
+
+
+#################
+
+Some applications require two DMA channels in.
+
+Due to physical resource limitations, this mode of operation requires
+different firmware to be loaded in both the motherboard interface FPGA
+and the daughterboard FPGA.  This is all taken care of within the following
+script file, there is no need to burn new PCI FPGA firmware to flash
+when switching modes.
+
+We assume that both DB9's have cables off to some other equipment
+(could be other PCD-GPSSE boards for which the sse_loopcount.sh script
+has been run).  Execute the following script:
+    on linux:        sse_dualin.sh
+    on MS NT/2K/XP:  sse_dualin.bat
+
+
+The script loops forever reading input from channel A, the lower connector.
+The data received from channel A is not saved to a file by the script, 
+and is thus lost.
+
+In another console, you can then initiate a simultaneous read from 
+channel B, and test this data with sserot8:
+
+    sserd -u 0  -c 1 -o out 10000
+    sserot8 out
+
+The test sserot8 assumes that the data is an 8 bit binary count.
+
+Note that the -f argument to set the frequency of the clock generator
+is not useful in this case, since the clock speed for each channel is 
+determined by the equipment to which we are cabled.
+However, it is a good idea to keep the PLL clock speed at 50 MHz or more
+(as the script does) to allow the -s argument to be used successfully.
+
+The "-c 1" indicates that we are reading from channel B
+An argument of "-c 0" indicates channel A, which is the default
+if no "-c" argument is given.
+
+
+
+############################################################################
+
+The -s option to sserd will cause the bit alignment to shift over by
+the number of bits specified.  Here's an example of how it's used,
+assuming you have just run the script sse_loopback.sh to set things up:
+
+> salmon 150% sserd -u 0 -o out 10000
+> reading 10000 bytes
+> Writing 10000 bytes to out
+>
+> salmon 151% sserot8 out
+> Rot:0  Errors:9961  Bytecount:9999
+> Rot:1  Errors:9961  Bytecount:9999
+> Rot:2  Errors:9961  Bytecount:9999
+> Rot:3  Errors:9961  Bytecount:9999
+> Rot:4  Errors:9961  Bytecount:9999
+> Rot:5  Errors:0     Bytecount:9999
+> Rot:6  Errors:9961  Bytecount:9999
+> Rot:7  Errors:9961  Bytecount:9999
+>
+
+At this point you can call sserd with "-s 5", and it will use sse_shift()
+to shift the state machine in the SSE board five places to the left.
+(The -s option does not work when the SSE's on-board clock generator
+is set to less than 50 MHz as noted below.)
+
+The data read from this call of sserd (and subsequent calls that do not use
+the -s option) will be properly aligned, assuming the incomming clock 
+is not disturbed.  Calling sserot8 again will result in:
+
+> salmon 150% sserd -u 0 -s 5 -o out2 10000
+> reading 10000 bytes
+> Writing 10000 bytes to out2
+>
+> salmon 151% sserot8 out2
+> Rot:0  Errors:0     Bytecount:9999
+> Rot:1  Errors:9961  Bytecount:9999
+> Rot:2  Errors:9961  Bytecount:9999
+> Rot:3  Errors:9961  Bytecount:9999
+> Rot:4  Errors:9961  Bytecount:9999
+> Rot:5  Errors:9961  Bytecount:9999
+> Rot:6  Errors:9961  Bytecount:9999
+> Rot:7  Errors:9961  Bytecount:9999
+> 
+
+The file out2 will have correctly aligned data.
+
+The -s  argument uses the routine sse_shift_chan() within libedt.c,
+which can work with either channel 0 or channel 1.
+Also available in libedt.c is the older verison sse_shift(), 
+which only works on channel 0.
+
+
+##############################################################################
+
+If you run the debugger ssepdb without specifying a batch script,
+then it will take commands interactively.  Type h for a menu.
+The following starts the debugger on the first PCD-GPSSE (unit 0) installed:
+    ssepdb -u 0
+
+
+##############################################################################
+
+
+FURTHER DESCRIPTION OF PROGRAMS PROVIDED
+
+
+Program sserd.c is a good example of how to write an application
+for the SSE board.
+
+The batch file sserot8 reports one byte less than sserd has written to out2
+because bits from the first byte of out2 are borrowed when shifting
+the data over.
+
+You can increase the bytecount (10000 base 10 in this case) up to however
+much RAM the driver is able to lock down, typically many tens of
+megabytes.  In a continuously streaming application, you would
+use four ring buffers (as provided by EDT library calls) rather than 
+the single buffer found in sserd.c
+
+
+
+##########################################################################
+Little Endian vs Big Endian 
+SWAPBITS, SWAPBYTES, SWAPSHORTS
+
+Thus far we have assumed that we are operating under a host 
+with little endian byte ordering (the PCI bus assumes little endian),
+and with a data stream that sends the LS bit first.
+
+The program sserd.c includes the following call:
+    edt_intfc_write(edt_p, SSE_BYTESWAP, sse_bswap) ;
+This writes the 8 bit value sse_bswap out to a hardware register 
+named SSE_BYTESWAP.
+Control bits in SSE_BYTESWAP are defined by SSE_SWAPBITS, SSE_SWAPBYTES, 
+and SSE_SWAPSHORTS in edtreg.h.  (The program sserd.c can set these
+when given the '-b 1', '-B 1', or '-S 1' command line options.)
+
+SSE_SWAPBITS causes each byte to be flipped end for end.
+SSE_SWAPBYTES causes the two bytes in each 16 bit word to be swapped.
+SSE_SWAPSHORTS causes the two D16 words of each D32 word to be swapped.
+
+These three control bits affect both incomming and and outgoing 
+DMA channels on the PCI GP-SSE.  When the 8 bit binary count
+data is generated in firmware, the outgoing data is not affected
+since it does not go through the DMA engine on the PCI GP-SSE.
+This is "a good thing", it makes it easier to determine 
+what is going on with the input channel.
+
+
+On a big endian host, start by figuring out the appropriate SWAPBYTES
+and SWAPSHORTS settings for whatever DMA channel you have.
+Some DMA hardware seems to be configured to pass bytes, some to pass
+16 bit integers, some to pass 32 bit integers, so best just to see
+what works.  Start with the firmware generated 8 bit binary count 
+as generated in sse_loopcount.sh using the loopback cable, and save 
+all 4 permutations of byte swapping and word swapping:
+   sserd -u 0 -o out 10000
+   sserd -u 0 -B 1 -o outB 10000
+   sserd -u 0 -S 1 -o outS 10000
+   sserd -u 0 -BS 1 -o outBS 10000
+
+Then check to see if one of these yields correct data:
+  sserot8 out
+  sserot8 outB
+  sserot8 outS
+  sseort8 outBS
+
+Each call to sserot8 will try the 8 different bit alignments and inspect
+for an 8 bit binary count, one of the 32 passes should show 0 errors.
+
+
+
+
+An alternative to using sserot8 is to call sserd 8 times for each 
+setting with a "-s 1" option to cause bit alignment to skip over 
+one bit on each pass.  For an unknown data source, we should also
+include the SWAPBITS permutation, in case the data is sent MS bit first.
+One of the 64 output files generated by the following commands
+should have recognizable data, aligned to byte boundaries.
+
+   call this 8 times:   sserd -u 0 -s 1 -o out 10000
+   call this 8 times:   sserd -u 0 -s 1 -B 1 -o outB 10000
+   call this 8 times:   sserd -u 0 -s 1 -S 1 -o outS 10000
+   call this 8 times:   sserd -u 0 -s 1 -B 1 -S 1 -o outBS 10000
+   call this 8 times:   sserd -u 0 -s 1 -b 1 -o outb 10000
+   call this 8 times:   sserd -u 0 -s 1 -b 1 -B 1 -o outbB 10000
+   call this 8 times:   sserd -u 0 -s 1 -b 1 -S 1 -o outbS 10000
+   call this 8 times:   sserd -u 0 -s 1 -b 1 -B 1 -S 1 -o outbBS 10000
+
+
+
+##########################################################################
+You can use the debugger to change the frequency of the on-board clock
+generator used to test the board (or edit the sseload.pdb script used above):  
+> ssepdb 0
+>    h			(see a listing of debugger commands)
+>    fosc 400		(set it to 400 MHz)
+>    q			(quit)
+
+You can also call sse_set_out_clk(EdtDev *edt_p, double outFreq)
+from your program.  sserd.c does this when passed the "-f freq" argument,
+where "freq" is a floating point number in MHz.
+A negative value for "freq" will print to the console the closest match
+in MHz that the on-board clock generator can be set to, without actually
+touching the hardware.
+
+
+The precision to which the on-board clock generator can be set varies 
+with the frequency chosen:
+    400-800 MHz:   multiples of 2 MHz
+    200-400 MHz:   multiples of 1 MHz
+    100-200 MHz:   multiples of 0.5 MHz
+     50-100 MHz:   multiples of 0.25 MHz
+0.000050-50 MHz:   very close, but somewhat arbitrary
+
+
+
+
+
+##########################################################################
+Stopping the output clock
+
+We can shut down the clock during output, but it will not be clean.  
+There will be some bad bits when it stops and starts.
+
+For an example of how to go about this, 
+first run the script sse_loopcount.sh 
+
+You can turn off the clock with the following commands:
+  ssedpb 0          #start up the debugger
+    r 02              #Check what value is in reg 0x02, should be 0x00?
+    w 02 80           # OR a value of 0x80 into the old value you found
+    r 80              #Check what value is in reg 0x80, script makes it 0x20
+    w 80 28           # OR a value of 0x08 into the old value you found
+    q
+The clock should now be off.
+
+OR'ing 0x80 into register 0x02 sources the clock from the sub 50 MHz
+clock source on the motherboard rather than the ECL PLL on the daughterboard.
+We can't turn off the ECL PLL.
+
+OR'ing 0x08 into register 0x80 turns off the motherboard clock.
+
+The proceedure above could be performed from a C program 
+using the library calls edt_reg_read() and edt_reg_write().
+
+Restoring the original register values turns back on the clock.
+If the clock freqency is lower than 50 MHz (so bit 0x80 of reg 0x02
+is already set), the effect should be immediate.
+If the clock frequency is 50 MHz or greater, it may take up to 
+10 milliseconds for the ECL PLL to lock into the proper frequency again.
+
+This proceedure will work for DMA out as well as it does for
+the sse_loopcount case where the data out is from a counter in firmware.
+
+
+The notes below indicate that the debugger command "spal 004000" will
+source the channel B output clock from the incomming channel A clock.
+If this feature is being used, the 004000 bit must also be turned off to 
+disable the output clock.  An alternative is to simply turn off
+the clock being supplied through channel A.
+
+
+
+##########################################################################
+
+The script sse_loopcount.sh includes the following lines, 
+which configure the 24 control bits which set up the ECL hardware:
+
+  #Configure the ECL logic for the default of channel A in, channel B out
+  echo  "spal 000000"           >>sseload.pdb
+
+The "spal" command is available interactively within the ssepdb debgger.
+Other useful values for this field are as follows: 
+  spal 011000		#both channels in
+  spal 004000		#channel B out, using clock from channel A connector
+
+The second option allows the user to supply the clock to be used by
+the PCD-GPSSE to generate outgoing data.  Note that the PLL generated clock
+on the PCD-GPSSE may exhibit too much jitter for some applications.
+
+
+Another feature worth knowing about is that of the delay lines for incomming
+data and clock on channel A.  (This is not available for channel B).
+By default, these delays are both set to zero.  The delay lines are
+calibrated in increments of 20 ps.
+Bits 0 and 1 are also used by the MC100E195FN delay lines, 
+but read the data sheet before making these LSB's non-zero.
+
+To delay the incomming ECL data signal by 0x14*20 ps = 0.4 ns:
+  spal 000014		#set the delay value into bits 0-6, bits 0,1 zero
+  spal 000094           #strobe value into delay line with bit 7 rising edge
+  spal 000000           #return all bits back to zero
+
+To delay the incomming ECL clock signal by 0x14*20 ps = 0.4 ns:
+  spal 000014		#set the delay value into bits 0-6, bits 0,1 zero
+  spal 000114           #strobe value into delay line with bit 8 rising edge
+  spal 000000           #return all bits back to zero
+
+
+Note that if both data and clock are delayed by 0x14*20 = 0.400 ns, 
+we are back where we started.
+
+
+This trick can be used to the skew incomming clock versus data such that
+a rising edge of the clock is coincident with stable data.
+
+Often it is easier to simply swap the clock signal pair
+in the cable, so the PCD-GPSSE will grab on the other clock edge.
+
+
+
+##########################################################################
+
+You don't need to fully figure these registers out,
+they are normally handled by library calls or by
+commands within the ssepdb debugger.
+Probably best to start with the sample code provided,
+then modify it as appropriate for the application.
+
+
+
+
+PCD GPSSE Motherboard Interface FPGA Registers:
+
+The following registers are implemented in the interface FPGA of
+the PCD-GPSSE motherboard, mostly following the conventions set
+by the standard PCI-CD interface register set.
+
+Command:   0x00	 
+  0     DNR	    when set, shuts down any outgoing data stream
+  1-2	not used 
+  3	ENABLE      (same as PCICD)    Hi enables both channels
+  4-7	STAT_INT_EN (same as PCICD)    Hi to enable interrupts, not used
+
+DPStat:    0x01		not used 
+
+Funct:     0x02		Bits wired up as described below
+  0	FUNCT0	XCPROG   When set, start loading daughterboard FPGA firmware
+  1	FUNCT1	not used 
+  2	FUNCT2	LOOPIO   Set for motherboard debug
+  3	FUNCT3	CNTDNIO  Set for motherboard debug
+  4	FUNCT4	FSEL6    (same as PCICD)   Set up motherboard AV9110 PLL
+  5	FUNCT5	FSEL7    (same as PCICD)   Set up motherboard AV9110 PLL
+  6	FUNCT6	AVCE     (same as PCICD)   Set up motherboard AV9110 PLL
+  7	FUNCT7	SELAVCLK (0 for ECL PLL from 50-800 MHz, 1 for GP PLL clock)
+
+Stat:      0x03		Bits wired up as described below
+  0	STAT0	not used
+  1	STAT1	not used
+  2	STAT2	XCINITL, Status for programming daughterboard FPGA
+  3	STAT3	XCDONE,  Status for programming daughterboard FPGA
+  4-7	SINT0-3 (same as PCICD)    Interrupts not used
+
+Polarity:  0x04	
+  0-3   POLARITY      (same as PCICD)   Interrupts not used
+  4     STAT_INT_ENA  (same as PCICD)   Interrupts not used
+  5-7   not used
+
+Bswap:     0x0F
+  0	BYTESWAP		Swap bytes within D16 shorts
+  1	not used
+  2	BITSWAP			End-for-end swap of bits within bytes
+  3	SHORTSWAP		Swap D16 shorts within D32 words.
+  4	RSTA			Reset channel A 
+  5	RSTB			Reset channel B
+  6	not used 
+  7	not used 
+
+
+FPGA_PROG: 0x17		Writing a byte of firmware data to this register will 
+                        ship it out serially to the daughterboard FPGA,
+                        generating appropriately timed clock and data signals.
+                        Data is sent most significant bit first.
+
+OPTD:	   0x1D		Same as PCI-CD, used to set PLL clock
+
+OPTE:	   0x1E		Same as PCI-CD, used to set PLL clock
+
+
+
+
+Reg16:     0x10		spal byte 0	(24 bits of data out to ECL control)
+Reg17:     0x11		spal byte 1     ( sent serially to daughterboard PAL)
+Reg18:     0x12		spal byte 2
+Reg19:     0x13		not used
+
+Reg20:     0x14
+  0-6	   QS[0-6]	(7 bits of data back from ECL control, not used)
+  7	   BUSY		When true, indicates spal bytes have not gone out yet
+
+#####################
+
+Daughterboard Registers:
+
+These registers are implemented in the standard firmware for the PCD-GPSSE
+daughterboard, the VHDL source for which is available for reference.
+These registers can easily be extended, must be in range of 0x80 to 0xFF.
+
+
+Reg XREG_CTRL:    0x80
+  0        EN_RSTAB     Hi to allow RSTA/RSTB to reset daughterboard
+  1-3      not used        
+  4        COUNTX       Hi to enable count8 data in channel A for debug
+  5        COUNTX       Hi to enable count8 data in channel B for debug
+  7        not used
+
+Reg XREG_CTRL:    0x81
+  0        FFOFLOWX	Hi when channel A input overflows fifo
+  1        FFOFLOWY     Hi when channel B fifo underflows or overflows
+  2-7      not used
+
+Reg XREG_FILLDAT:  0x82
+  0-7      The filler data to be sent out when no DMA data is available,
+           assuming count data has not been selected
+
+
+The fake data is normally only used on the output channel (channel B).
+However, it can be enabled for input channels also.
+When using fake data on an input channel, it is necessary to supply
+an ECL clock at the DB9 connector, the incomming data is ignored.
+
+#########################################################################
+
+
+
+Jerry Gaffke
+EDT Hardware Engineering
+jerryg@edt.com
+503-690-1234
+

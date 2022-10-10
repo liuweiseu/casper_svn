@@ -1,0 +1,78 @@
+Pocket Spectrometer WalletChain Installation Instructions 
+February, 2006
+
+
+OPERATING SYSTEM: 
+The WalletChain software was developed on a GNU/Linux
+platform, but should compile under most *nixs.
+
+
+DEPENDENCIES: 
+The WalletChain software uses a plotting tool called 'GNUPlot' to
+plot spectra. This tool is commonly installed with many *nix distributions.  It
+is necessary for GNUPlot version 4.0 or higher to be installed and accessible in
+your path for the WalletChain programs to function properly. To check if your
+system has GNUPlot installed, simply enter 'gnuplot' on the command line.  If
+nothing happens, then GNUPlot needs to be installed.  GNUPlot is available from
+www.gnuplot.org for many different operating systems.  If you already have
+GNUPlot installed, version information can be found by typing 'show version' on
+the GNUPlot command line.  If you have a version older than 4.0, you will need
+to install an updated version.
+
+
+INSTALLATION: 
+The WalletChain software distribution is contained in the file
+'walletchain.tar.gz', which will decompress into the directory 'walletchain' 
+Before attempting compilation, you must edit the WalletChain source code to
+reflect the particular system on which it is installed.
+
+
+#1.
+
+Line 20 of 'walletchain/pocketplot.c' reads:
+
+	#include "/root/walletchain/gnuplot_i/gnuplot_i.h"
+
+This line should be edited so that it accurately contains the path to the
+installation directory. For example, if you decompressed 'walletchain.tar.gz' to
+the directory '/home/jdoe', Line 20 should read:
+
+	#include "/home/jdoe/walletchain/gnuplot_i/gnuplot_i.h"
+
+Be sure and use an absolute path here, rather than a relative one such as
+'../jdoe/' or '~jdoe/'
+
+#2.
+
+Line 39 of 'walletchain/pocketplot.c' reads:
+
+	char specport[100]="/dev/ttyS0";
+
+And line 19 of 'walletchain/setacc.c' also reads:
+
+	char specport[100]="/dev/ttyS0";
+
+These lines specify the device name for the serial port used to access the iBob.
+ They may need to be changed if your iBob is connected to a serial device other
+than 'ttyS0'  For information on the serial ports installed on your system try
+'man setserial'
+
+
+Once the above has been completed, simply run the shell script 'compile' in the
+'walletchain' directory using the command './compile'  If all goes well two
+binaries should be created, 'pocketplot' and 'setacc'
+
+USAGE: 
+The program pocketplot connects to the iBob over the serial port, then
+continually receives and plots frequency spectra using GNUPlot.  GNUPlot has
+many useful features, such as mouse zooming and log-plotting.  For instructions
+on using these, refer to the documentation included in your GNUPlot
+distribution.
+Inputs: (none)
+Example: ./pocketplot
+
+The program setacc connects to the iBob over the serial port and sets the number
+of input spectra to be accumulated.  This program is not meant to be used while
+pocketplot is running.
+Inputs: <accumulation length>
+Example: ./setacc 0xffff

@@ -1,0 +1,25 @@
+#pragma ident "@(#)README.pcisstest	1.1 10/13/03 EDT"
+
+pcisstest is a set of bitfiles and a program which tests
+PCI bus traffic on a PCI SS baseboard.  The files are:
+
+	pciss1test.bit:		For boards loaded with pciss1.bit or pciss4.bit.
+	pciss16test.bit:	For boards loaded with pciss16.bit.
+	check_gap_ss.c:		Program to load the bitfile and perform tests.
+
+The bitfiles implement a counter which increments with each PCI clock.
+Data transferred from the board copies this counter for each DMA word,
+hence PCI clocks that are not used for DMA show up as gaps in the
+counter value.
+
+Run "make check_gap_ss" to compile the test program.  When run with
+no arguments it will assume you are running in a 66Mhz (or faster)
+PCI slot, and it will input one 1MB buffer and print a summary
+including overall transfer speed, size and number of block transfers,
+and size and number of gaps.
+
+This program has only been tested on one channel at a time; we plan
+to make it work for up to 16 channels concurrently to test bus
+arbitration between channels.
+
+Contact EDT for more information:  503-690-1234 or tech@edt.com.

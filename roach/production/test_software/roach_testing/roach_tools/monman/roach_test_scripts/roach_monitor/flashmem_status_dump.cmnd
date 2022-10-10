@@ -1,0 +1,5 @@
+# dump flash memory status registers
+r 03c0
+r 03c1
+r 03c2
+r 03c3

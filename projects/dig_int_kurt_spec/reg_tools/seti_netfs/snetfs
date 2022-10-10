@@ -1,0 +1,2 @@
+#./seti_netfs /proc/887/hw/ioreg rec_rec_fifo1 
+./seti_netfs /proc/330/hw/ioreg FIFO

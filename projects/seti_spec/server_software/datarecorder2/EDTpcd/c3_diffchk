@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ "$1" = "-u" ] ; then
+unit=$2
+else
+unit=$1
+fi
+
+if [ "$unit" = "" ] ; then unit=0 ; fi
+
+echo "Setting unit to $unit"
+
+bitload -u $unit c3_16io
+#  check prbs15 on all 8 differential channels
+pdb $unit diffchk.pdb
+chkprbs15 -u $unit -N -c 0 -n 8 -l 0

@@ -1,0 +1,83 @@
+Internet Software Consortium DHCP Server V3.0.1rc12-cygwin-pxe1
+Copyright 1995-2003 Internet Software Consortium.
+All rights reserved.
+For info, please visit http://www.isc.org/products/DHCP
+Wrote 0 leases to leases file.
+Listening on Socket/eth1/192.168.3.0/24
+Sending on   Socket/eth1/192.168.3.0/24
+done.
+done.
+done.
+Erasing flash from 0xfc000000 to 0xfc1bffff...done.
+Copying kernel image to flash...done.
+done.
+Erasing flash from 0xfc200000 to 0xfc5fffff...done.
+Copying initial root file system to flash...error: copy to flash not sucessfull...exiting.
+ 
+
+U-Boot 2008.10-svn1776 (Mar 20 2009 - 14:16:39)
+
+CPU:   AMCC PowerPC 440EPx Rev. A at 528 MHz (PLB=132, OPB=66, EBC=66 MHz)
+       No Security/Kasumi support
+       Bootstrap Option C - Boot ROM Location EBC (16 bits)
+       32 kB I-Cache 32 kB D-Cache
+Board: Roach
+I2C:   ready
+DTT:   1 FAILED INIT
+DRAM:  (spd v1.2) dram: notice: ecc ignored
+512 MB
+SERIAL NUMBER: 020001
+REV:5.1429
+FLASH: 64 MB
+USB:   Host(int phy) Device(ext phy)
+Net:   ppc_4xx_eth0
+
+type run bit to run tests
+
+Hit any key to stop autoboot: 10  9  0 
+=> bootp
+Waiting for PHY auto negotiation to complete... done
+ENET Speed is 1000 Mbps - FULL duplex connection (EMAC0)
+BOOTP broadcast 1
+BOOTP broadcast 2
+DHCP client bound to address 192.168.3.240
+Using ppc_4xx_eth0 device
+TFTP from server 192.168.3.2; our IP address is 192.168.3.240
+Filename 'tftpfile.img'.
+Load address: 0x100000
+Loading: *#
+done
+=> tftp 0x00200000 192.168.3.2:uImage
+Using ppc_4xx_eth0 device
+TFTP from server 192.168.3.2; our IP address is 192.168.3.240
+Filename 'uImage'.
+Load address: 0x200000
+Loading: *#################################################################
+	 ###############################
+done
+Bytes transferred = 1403880 (156be8 hex)
+=> era 0xfc000000 0xfc1bffff
+
+.............. done
+Erased 14 sectors
+=> cp.b 0x200000 0xfc000000 0x1c0000
+Copy to Flash... done
+=> tftp 0x00200000 192.168.3.2:romfs
+Using ppc_4xx_eth0 device
+TFTP from server 192.168.3.2; our IP address is 192.168.3.240
+Filename 'romfs'.
+Load address: 0x200000
+Loading: *#################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #######
+done
+Bytes transferred = 3908608 (3ba400 hex)
+=> era 0xfc200000 0xfc5fffff
+
+................................ done
+Erased 32 sectors
+=> cp.b 0x200000 0xfc200000 0x400000
+Copy to Flash... done
+=> 

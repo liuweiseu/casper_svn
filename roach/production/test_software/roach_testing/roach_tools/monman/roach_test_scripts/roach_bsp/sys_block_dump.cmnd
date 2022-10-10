@@ -1,0 +1,9 @@
+#dump the sys_block registers
+r 0
+r 2
+r 4
+r 6
+w 8 1234
+r 8
+r a
+r c

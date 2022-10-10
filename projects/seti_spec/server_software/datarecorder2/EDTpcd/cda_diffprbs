@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ "$1" = "-u" ] ; then
+unit=$2
+else
+unit=$1
+fi
+
+if [ "$unit" = "" ] ; then unit=0 ; fi
+
+echo "Setting unit to $unit"
+
+initpcd -u $unit -f cda_diffprbs.cfg
+#  generate prbs15 on all 16 differential channels
+genprbs15 -u $unit -N -c 0 -n 16 -l 0

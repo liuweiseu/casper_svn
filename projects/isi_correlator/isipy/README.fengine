@@ -1,0 +1,58 @@
+Running the F-Engine
+====================
+
+-------------
+Control Stage
+-------------
+
+Start the control interface.
+
+$ ./isi_feng_ctrl.py isiroach4
+
+Program the board.
+
+isi> program demo_fengine.bof
+
+Set its basic parameters.
+
+isi> sync_period .25
+isi> fft_shift 0x7f
+isi> eq_coeff 2048
+
+Arm the sync reset.
+
+isi> arm
+
+Quit the control interface.
+
+
+-------------
+Readout Stage
+-------------
+
+Start the data receiver.
+
+$ ./isi_feng_recv.py isidig.isinet 8880
+
+Start the data pusher.
+
+$ ssh root@isiroach4
+$ ./push_fengine isidig.isinet 8880
+
+Data is now flowing across the network.
+
+
+-----------------
+Acquisition Stage
+-----------------
+
+Make sure there is a data directory.
+
+$ mkdir data
+
+Acquire data from the data receiver.
+
+$ ./isi_feng_dump.py
+
+This will acquire a single set of data.
+

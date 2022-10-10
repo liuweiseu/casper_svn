@@ -1,0 +1,70 @@
+#pragma ident "@(#)PCI_SS_PARALLEL_IO	1.2 06/14/02 EDT"
+
+			    Application Note
+
+			PCI SS 16-bit Parallel I/O
+
+OVERVIEW
+
+    The PCI SS board with the RS422 or LVDS option supports high speed
+    parallel I/O similar to the PCI CD running pcd_src.bit or pcd_looped.bit.
+
+
+CONFIGURATION
+
+    The PCI SS must have the pciss1.bit loaded in the PCI flash prom.
+    To check this run "pciload" and you should see "pciss1" in the
+    output text:
+
+	% cd /opt/EDTpcd (or \edt\pcd on Windows)
+	% pciload
+
+	pcd unit 3 (pci ss-4):
+	  XC2S150 Xilinx, AMD 29LV040B FPROM
+	  Sector 0
+	  Sector 1
+	  Sector 2  PROM id: <pciss1_p.ncd 2s150fg456 2002/01/16 13:44:44>
+	  Sector 3  PROM id: <pciss1_p_5v.ncd 2s150fg456 2002/01/16 13:45:02>
+
+    To load pciss1, run "pciload -u <unit#> pciss1" and answer the prompts.
+    Cycle the power on the computer to load the new PCI firmware.
+
+
+    The Interface Xilinx is loaded using "bitload -u <unit#> ss_pci.bit".
+
+    To drive TXT from the onboard oscillator or PLL, clear the 0x02 bit
+    in the PCD_CONFIG register (same as pcd_src.bit on PCI CD).
+
+    To drive TXT looped from RXT, set the 0x02 bit in the PCD_CONFIG
+    register (same as pcd_looped.bit on PCI CD).
+
+
+TESTING AND SAMPLE PROGRAMS
+
+    Most sample parallel DMA programs shipped with the PCD driver, such as
+    simple_getdata.c and simple_putdata.c, will work with this configuration.  
+
+    For this test use pcdin.c and pcdout.c.  Configure two boards as above,
+    and set one for internal TXT and one for looped TXT.  Connect the boards
+    with a CAB-BB cable and run the following commands in separate windows:
+
+	% pcdin -u <first_unit#>
+	% pcdout -u <second_unit#>
+
+    Wait until each program prints "Hit return to continue", then press
+    return first in the pcdin window and second in the pcdout window.
+    pcdin will print a '.' for each buffer transferred and verified, while 
+    pcdout will print a 'o' for each buffer output.  1000 buffers will
+    be transferred in ring buffer mode from one board to the other..
+
+    You may also use modified versions of pcdin.c or pcdout.c to communicate
+    with your device.
+
+
+CONTACTS
+
+   Send questions or comments to tech@edt.com or phone 503-690-1234
+   and ask to speak to an engineer.
+
+   Mark Mason
+   June 14 2002

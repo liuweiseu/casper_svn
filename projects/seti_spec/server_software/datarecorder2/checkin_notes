@@ -1,0 +1,24 @@
+06/01/2006 jeffc
+    - dr2, version 2.0 installed at Arecibo.
+
+06/23/2006 jeffc
+    - Introduced variable WasIdle to save idle state across diskbuf loop
+      iterations.  Idle is potentially getting reset and thus MissingBufs
+      not getting passed the FormatHeader().
+    - Save off the log (dr2_log) for archiving after each exit from dr2.
+    - Copy the saved off log to siren for transfer to SSL.
+
+    ./
+        diskbuf.C
+        do_dr2.csh
+        copy_quicklook.csh do_dr2.csh
+
+06/23/2006 jeffc
+    - Added script read_dr2_tape.csh.
+
+    ./
+        read_dr2_tape.csh
+
+Jeff 10 Sep 2007
+    - The CVS repository is deprecated this date.  We now use SVN.
+

@@ -1,0 +1,13 @@
+# Fabric interface MAC
+w 13000 0123
+w 13002 4567
+w 13004 89ab
+# Fabric gateway
+w 13006 ffff
+# Fabric IP address
+w 13008 ffff
+w 1300a ffff
+# Fabric IF enabled
+w 13010 ffff
+# Fabric UDP port
+w 13012 ffff

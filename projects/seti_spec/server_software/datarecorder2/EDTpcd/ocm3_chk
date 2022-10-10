@@ -1,0 +1,7 @@
+#! /bin/csh -f
+
+ocmload -u 0 -n
+
+pdb -u 0  -f ocm3_ext.pdb
+
+chkprbs7 -u 0 -c 0 -n 2 -i -l 0
